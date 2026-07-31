@@ -5,26 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#0A0E27">
+<meta name="theme-color" content="#562C2C">
 <title>Hamkor Top</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#0A0E27;
-  --card:#141B3A;
-  --accent:#00F0A8;
-  --accent2:#4A5CFF;
-  --gold:#FFB800;
-  --xp:#FF6B6B;
-  --text:#F0F2FF;
-  --muted:#8890B5;
-  --danger:#FF4757;
+  --bg:#562C2C;            /* Espresso */
+  --card:#11686A;          /* Stormy Teal */
+  --accent:#F2542D;        /* Fiery Terracotta */
+  --accent2:#0E9594;       /* Dark Cyan */
+  --gold:#F5DFBB;          /* Wheat */
+  --xp:#F2542D;            /* Fiery Terracotta */
+  --text:#F5DFBB;          /* Wheat */
+  --muted:#D8C4A3;         /* softened Wheat */
+  --danger:#F2542D;
   --radius:18px;
   --radius-sm:10px;
 }
 body{
   font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  background:var(--bg);
+  background:
+    radial-gradient(1200px 500px at 15% 5%, rgba(242,84,45,.35), transparent 60%),
+    radial-gradient(900px 420px at 85% 85%, rgba(14,149,148,.45), transparent 65%),
+    var(--bg);
   color:var(--text);
   min-height:100vh;min-height:100dvh;
   overflow-x:hidden;
@@ -58,7 +61,7 @@ body{
 .btn-primary{background:var(--accent);color:var(--bg)}
 .btn-primary:active{transform:scale(.97);opacity:.9}
 .btn-secondary{background:var(--card);color:var(--text);border:1.5px solid rgba(255,255,255,.1)}
-.btn-secondary:active{background:#1A2245}
+.btn-secondary:active{background:rgba(14,149,148,.28)}
 .btn-small{padding:10px 20px;font-size:14px;width:auto}
 /* ---- STATS BAR ---- */
 .stats-bar{
@@ -95,7 +98,7 @@ body{
 .swipe-card.swiping-left{transform:translateX(-150%) rotate(-30deg);opacity:0}
 .swipe-card.swiping-right{transform:translateX(150%) rotate(30deg);opacity:0}
 .card-img{
-  width:100%;height:180px;background:linear-gradient(135deg,var(--accent2),#1A2155);
+  width:100%;height:180px;background:linear-gradient(135deg,var(--accent2),var(--card));
   display:flex;align-items:center;justify-content:center;font-size:72px
 }
 .card-body{padding:20px}
@@ -104,7 +107,7 @@ body{
 .card-city{color:var(--muted);font-size:13px;margin-bottom:12px}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
 .tag{
-  background:rgba(74,92,255,.2);color:var(--accent2);
+  background:rgba(14,149,148,.28);color:var(--gold);
   padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600
 }
 .card-bio{color:var(--muted);font-size:14px;line-height:1.5}
@@ -125,7 +128,7 @@ body{
 .swipe-super:active{transform:scale(.9)}
 /* ---- COMBO ---- */
 .combo-card{
-  width:100%;max-width:400px;background:linear-gradient(135deg,#1A1F40,#252A55);
+  width:100%;max-width:400px;background:linear-gradient(135deg,rgba(86,44,44,.92),rgba(17,104,106,.92));
   border-radius:var(--radius);padding:16px 20px;margin-bottom:20px;
   border:1px solid rgba(255,184,0,.15)
 }
