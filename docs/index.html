@@ -330,8 +330,17 @@ function saveProfile(){
 function copyInvite(){
   var code=encodeURIComponent(ST.name||'user');var link='https://t.me/hamkor_top_bot?start=ref_'+code;
   ST.inviteDone=true;upd();saveST();
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(link).then(function(){refs.refNote.textContent=tt().linkCopied;setTimeout(function(){refs.refNote.textContent=tt().refHint;},2200);}).catch(function(){prompt('Скопируй ссылку:',link);});}
-  else{prompt('Скопируй ссылку:',link);}
+  function done(){refs.refNote.textContent=tt().linkCopied;setTimeout(function(){refs.refNote.textContent=tt().refHint;},2500);}
+  // try clipboard API first
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(link).then(done).catch(function(){
+      // clipboard failed — show prompt
+      prompt(tt().linkCopied+' Скопируйте вручную:',link);done();
+    });
+  }else{
+    // no clipboard API — use prompt
+    prompt(tt().linkCopied+' Скопируйте вручную:',link);done();
+  }
 }
 function nextPhoto(step){if(!ST.photos.length)return;ST.photoIdx=(ST.photoIdx+step+ST.photos.length)%ST.photos.length;renderProfile();saveST();}
 var touchX=0;
