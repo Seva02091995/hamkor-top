@@ -321,6 +321,11 @@ function fillForm(){
 function saveProfile(){
   ST.name=refs.fName.value.trim()||ST.name;ST.city=refs.fCity.value.trim()||ST.city;ST.roleT=refs.fRole.value.trim()||ST.roleT;
   ST.skills=refs.fSkills.value.trim()||ST.skills;ST.bio=refs.fBio.value.trim()||ST.bio;ST.xp+=50;upd();saveST();show('s-profile');
+  // send to bot for server-side storage
+  try{ if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.sendData){
+    var d={id:tgId,name:ST.name,city:ST.city,role:ST.roleT,skills:ST.skills,bio:ST.bio,lang:ST.lang,roleType:ST.role};
+    window.Telegram.WebApp.sendData(JSON.stringify(d));
+  }}catch(e){}
 }
 function copyInvite(){
   var code=encodeURIComponent(ST.name||'user');var link='https://t.me/hamkor_top_bot?start=ref_'+code;
