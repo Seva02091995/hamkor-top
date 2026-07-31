@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamkor Top — выбор стиля</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#2a1810;color:#f5dfbb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;padding:24px 16px}
+h1{text-align:center;font-size:24px;margin-bottom:4px;color:#f2542d}
+h2{text-align:center;font-size:14px;font-weight:400;color:#d8c4a3;margin-bottom:32px}
+.compare{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.option{flex:1;min-width:280px;max-width:380px;border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.option h3{font-size:16px;text-align:center;margin-bottom:4px}
+.option .label{font-size:11px;text-align:center;opacity:.7;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+
+/* --- VARIANT 1: Контурный --- */
+.v1{background:#f5f0e8;color:#2c2416}
+.v1 h3{color:#2c2416}
+.v1 .label{color:#8b7355}
+.v1 .card{border:2px solid #2c2416;background:#faf7f0;border-radius:14px;padding:16px}
+.v1 .card-avatar{width:56px;height:56px;border:2px solid #2c2416;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.v1 .card-avatar svg{width:28px;height:28px}
+.v1 .card-name{font-size:18px;font-weight:800;color:#2c2416}
+.v1 .card-role{font-size:13px;font-weight:600;color:#6b5b3e;margin:4px 0}
+.v1 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.v1 .tag{border:1.5px solid #2c2416;padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;color:#2c2416}
+.v1 .btn{background:#2c2416;color:#f5f0e8;border:none;padding:12px;border-radius:10px;font-size:14px;font-weight:700;text-align:center;cursor:pointer}
+.v1 .btn2{border:2px solid #2c2416;background:transparent;color:#2c2416;padding:12px;border-radius:10px;font-size:14px;font-weight:700;text-align:center}
+
+/* --- VARIANT 2: Эстетичная геометрия --- */
+.v2{background:#e8efe8;color:#2d4a2d}
+.v2 h3{color:#2d4a2d}
+.v2 .label{color:#5a7d5a}
+.v2 .card{background:rgba(255,255,255,.7);border-radius:16px;padding:16px;box-shadow:0 2px 12px rgba(45,74,45,.08)}
+.v2 .card-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#8fbf8f,#b8d9b8);display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:24px}
+.v2 .card-name{font-size:18px;font-weight:700;color:#2d4a2d}
+.v2 .card-role{font-size:13px;color:#5a7d5a;font-weight:500;margin:4px 0}
+.v2 .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.v2 .tag{background:rgba(143,191,143,.2);color:#3d6b3d;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600}
+.v2 .btn{background:linear-gradient(135deg,#8fbf8f,#6a9a6a);color:#fff;border:none;padding:12px;border-radius:12px;font-size:14px;font-weight:700;text-align:center}
+.v2 .btn2{border:1.5px solid #8fbf8f;background:transparent;color:#5a7d5a;padding:12px;border-radius:12px;font-size:14px;font-weight:700;text-align:center}
+.v2 .deco{display:flex;gap:4px;justify-content:center;margin-top:4px}
+.v2 .deco span{font-size:10px;opacity:.5}
+
+/* --- VARIANT 3: Рукописные эскизы (БУМАГА) --- */
+.v3{
+  background-color:#f2e8d5;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  color:#1a2744;
+  box-shadow:inset 0 0 80px rgba(139,115,85,.15);
+}
+.v3 h3{color:#1a2744;font-family:'Georgia','Times New Roman',serif;font-style:italic}
+.v3 .label{color:#6b5b3e;font-family:'Georgia','Times New Roman',serif}
+.v3 .card{
+  background:rgba(255,252,245,.85);
+  border:1px solid rgba(139,115,85,.2);
+  border-radius:6px;
+  padding:16px;
+  box-shadow:2px 2px 0 rgba(139,115,85,.08);
+  position:relative;
+}
+.v3 .card::before{
+  content:'';
+  position:absolute;top:0;left:24px;bottom:0;width:1px;
+  background:rgba(200,180,160,.25);
+}
+.v3 .card-avatar{
+  width:50px;height:50px;
+  border:1.5px solid #1a2744;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:10px;
+  background:rgba(255,255,255,.5);
+}
+.v3 .card-avatar svg{width:24px;height:24px}
+.v3 .card-name{font-size:17px;font-weight:700;color:#1a2744;font-family:'Georgia',serif}
+.v3 .card-role{font-size:12px;color:#6b5b3e;font-style:italic;margin:4px 0}
+.v3 .tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.v3 .tag{
+  border:1px solid rgba(26,39,68,.2);
+  background:rgba(255,255,255,.6);
+  padding:4px 10px;
+  font-size:11px;font-weight:600;
+  color:#1a2744;
+  font-family:'Georgia',serif;font-style:italic;
+  border-radius:2px;
+}
+.v3 .btn{
+  background:#1a2744;
+  color:#f2e8d5;
+  border:none;
+  padding:12px;
+  font-size:14px;font-weight:700;
+  text-align:center;
+  font-family:'Georgia',serif;font-style:italic;
+  letter-spacing:.5px;
+  position:relative;
+}
+.v3 .btn::after{
+  content:'';
+  position:absolute;inset:3px;
+  border:1px solid rgba(242,232,213,.15);
+  pointer-events:none;
+}
+.v3 .btn2{
+  border:1.5px solid #1a2744;
+  background:rgba(255,255,255,.4);
+  color:#1a2744;
+  padding:12px;
+  font-size:14px;font-weight:700;
+  text-align:center;
+  font-family:'Georgia',serif;font-style:italic;
+}
+.v3 .line{
+  height:1px;background:rgba(139,115,85,.15);
+  margin:8px 0;
+}
+
+.separator{height:2px;background:rgba(245,223,187,.1);margin:40px 0}
+
+</style>
+</head>
+<body>
+
+<h1>Hamkor Top — Выбор стиля</h1>
+<h2>Севара, выбери один из трёх вариантов оформления</h2>
+
+<div class="compare">
+
+<!-- ВАРИАНТ 1: Контурный -->
+<div class="option v1">
+  <div class="label">Вариант 1</div>
+  <h3>✏️ Контурный</h3>
+  <div class="card">
+    <div class="card-avatar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+    </div>
+    <div class="card-name">Артур</div>
+    <div class="card-role">Senior Flutter Dev</div>
+    <div class="tags">
+      <span class="tag">Dart</span>
+      <span class="tag">Flutter</span>
+      <span class="tag">Firebase</span>
+    </div>
+  </div>
+  <div class="btn">👍 Интересно</div>
+  <div class="btn2">👎 Мимо</div>
+  <p style="font-size:11px;margin-top:8px;opacity:.6;text-align:center">Чистые линии, строгий стиль.<br>Как дорогая визитка.</p>
+</div>
+
+<!-- ВАРИАНТ 2: Эстетичная геометрия -->
+<div class="option v2">
+  <div class="label">Вариант 2</div>
+  <h3>🌿 Эстетичная геометрия</h3>
+  <div class="card">
+    <div class="card-avatar">✦</div>
+    <div class="card-name">Малика</div>
+    <div class="card-role">UX/UI Designer</div>
+    <div class="tags">
+      <span class="tag">Figma</span>
+      <span class="tag">Prototyping</span>
+      <span class="tag">Research</span>
+    </div>
+    <div class="deco"><span>✦</span><span>✧</span><span>✦</span><span>✧</span></div>
+  </div>
+  <div class="btn">✦ Интересно</div>
+  <div class="btn2">✧ Мимо</div>
+  <p style="font-size:11px;margin-top:8px;opacity:.6;text-align:center">Нежные формы, воздушный стиль.<br>Звёздочки, клевер, природа.</p>
+</div>
+
+<!-- ВАРИАНТ 3: Рукописные эскизы -->
+<div class="option v3">
+  <div class="label">Вариант 3</div>
+  <h3>📜 Бумажный блокнот</h3>
+  <div class="card">
+    <div class="card-avatar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1a2744" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+    </div>
+    <div class="card-name">Тимур</div>
+    <div class="card-role">Python Backend Dev</div>
+    <div class="tags">
+      <span class="tag">Python</span>
+      <span class="tag">Django</span>
+      <span class="tag">AWS</span>
+    </div>
+    <div class="line"></div>
+  </div>
+  <div class="btn">Интересно</div>
+  <div class="btn2">Мимо</div>
+  <p style="font-size:11px;margin-top:8px;opacity:.6;text-align:center;font-style:italic">Текстура бумаги, рукописный стиль.<br>Ощущение дорогого блокнота.</p>
+</div>
+
+</div>
+
+</body>
+</html>
