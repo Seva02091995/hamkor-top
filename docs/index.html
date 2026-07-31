@@ -19,6 +19,7 @@ body.dark{
 }
 body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-size:calc(1rem * var(--fs, 1));
   background:radial-gradient(900px 300px at 80% -8%,rgba(74,144,226,.16),transparent 55%),radial-gradient(800px 280px at 0% 100%,rgba(163,217,165,.16),transparent 50%),var(--bg);
   color:var(--ink);min-height:100vh;min-height:100dvh;overflow-x:hidden;
 }
@@ -212,6 +213,11 @@ body.dark .act-no{color:var(--muted)}
       <button class="btn btn-primary" id="btnEdit" data-t="edit">Редактировать профиль</button>
       <button class="btn btn-secondary" id="btnLangCh" data-t="chLang">Сменить язык</button>
       <button class="btn btn-secondary" id="btnTheme" data-t="theme">Тёмная тема</button>
+      <div style="display:flex;gap:8px;justify-content:center;margin-top:4px">
+        <button class="ref-btn" id="fsS" style="font-size:11px">A</button>
+        <button class="ref-btn" id="fsM" style="font-size:14px;font-weight:700">A</button>
+        <button class="ref-btn" id="fsL" style="font-size:17px;font-weight:700">A</button>
+      </div>
     </div>
   </div>
   <div class="nav" style="margin-top:auto">
@@ -332,17 +338,15 @@ function saveProfile(){
 }
 function copyInvite(){
   var code=encodeURIComponent(ST.name||'user');var link='https://t.me/hamkor_top_bot?start=ref_'+code;
+  var text='Привет! Нашёл(а) Hamkor Top — платформу для поиска работы и партнёров в Узбекистане. Попробуй: '+link;
   ST.inviteDone=true;upd();saveST();
   function done(){refs.refNote.textContent=tt().linkCopied;setTimeout(function(){refs.refNote.textContent=tt().refHint;},2500);}
-  // try clipboard API first
-  if(navigator.clipboard&&navigator.clipboard.writeText){
-    navigator.clipboard.writeText(link).then(done).catch(function(){
-      // clipboard failed — show prompt
-      prompt(tt().linkCopied+' Скопируйте вручную:',link);done();
-    });
-  }else{
-    // no clipboard API — use prompt
-    prompt(tt().linkCopied+' Скопируйте вручную:',link);done();
+  // try native share sheet (Telegram contacts, phone book, etc.)
+  if(navigator.share){navigator.share({title:'Hamkor Top',text:text}).then(done).catch(function(){fallback();});}
+  else{fallback();}
+  function fallback(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done).catch(function(){prompt(tt().linkCopied,text);done();});}
+    else{prompt(tt().linkCopied,text);done();}
   }
 }
 function nextPhoto(step){if(!ST.photos.length)return;ST.photoIdx=(ST.photoIdx+step+ST.photos.length)%ST.photos.length;renderProfile();saveST();}
@@ -387,6 +391,11 @@ document.querySelectorAll('.nav-item').forEach(function(n){n.addEventListener('c
 });});
 
 applyTheme();tr();upd();renderProfile();
+
+// font size
+function setFS(s){ST.fs=s;document.body.style.setProperty('--fs',s);saveST();}
+el('fsS').onclick=function(){setFS(0.85);};el('fsM').onclick=function(){setFS(1);};el('fsL').onclick=function(){setFS(1.2);};
+if(ST.fs)document.body.style.setProperty('--fs',ST.fs);
 
 if(ST.role){show(ST.lastScreen&&ST.lastScreen!=='s-lang'?ST.lastScreen:'s-main',false);}else{show('s-lang',false);}
 </script>
