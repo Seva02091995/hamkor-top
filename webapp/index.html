@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0A0E27">
+<title>Hamkor Top</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0A0E27;
+  --card:#141B3A;
+  --accent:#00F0A8;
+  --accent2:#4A5CFF;
+  --gold:#FFB800;
+  --xp:#FF6B6B;
+  --text:#F0F2FF;
+  --muted:#8890B5;
+  --danger:#FF4757;
+  --radius:18px;
+  --radius-sm:10px;
+}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;min-height:100dvh;
+  overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
+}
+/* ---- SCREENS ---- */
+.screen{display:none;flex-direction:column;align-items:center;min-height:100vh;padding:24px 20px}
+.screen.active{display:flex}
+/* ---- WELCOME ---- */
+.logo{font-size:42px;font-weight:900;color:var(--accent);margin-top:60px;letter-spacing:-1px}
+.logo span{color:var(--accent2)}
+.sub{color:var(--muted);font-size:16px;margin-top:4px}
+.avatar-big{
+  width:120px;height:120px;border-radius:60px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  margin:40px 0 24px;display:flex;align-items:center;justify-content:center;
+  font-size:52px;box-shadow:0 0 60px rgba(0,240,168,.3);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.welcome-text{font-size:22px;font-weight:700;text-align:center;margin-bottom:8px}
+.welcome-sub{color:var(--muted);text-align:center;margin-bottom:40px;line-height:1.5}
+/* ---- BUTTONS ---- */
+.btn{
+  width:100%;max-width:340px;padding:16px 24px;border:none;border-radius:var(--radius);
+  font-size:17px;font-weight:700;cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-bottom:12px
+}
+.btn-primary{background:var(--accent);color:var(--bg)}
+.btn-primary:active{transform:scale(.97);opacity:.9}
+.btn-secondary{background:var(--card);color:var(--text);border:1.5px solid rgba(255,255,255,.1)}
+.btn-secondary:active{background:#1A2245}
+.btn-small{padding:10px 20px;font-size:14px;width:auto}
+/* ---- STATS BAR ---- */
+.stats-bar{
+  display:flex;justify-content:space-between;width:100%;max-width:400px;
+  gap:12px;margin-bottom:20px
+}
+.stat-card{
+  background:var(--card);border-radius:var(--radius-sm);
+  padding:14px 16px;flex:1;text-align:center
+}
+.stat-value{font-size:24px;font-weight:900;color:var(--accent)}
+.stat-value.xp{color:var(--xp)}
+.stat-label{font-size:11px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+/* ---- XP BAR ---- */
+.xp-bar-wrap{
+  width:100%;max-width:400px;height:8px;background:rgba(255,255,255,.1);
+  border-radius:4px;margin-bottom:4px;overflow:hidden
+}
+.xp-bar-fill{
+  height:100%;background:linear-gradient(90deg,var(--xp),var(--gold));
+  border-radius:4px;transition:width .5s ease
+}
+.xp-label{font-size:11px;color:var(--muted);margin-bottom:16px;width:100%;max-width:400px}
+/* ---- SWIPE CARD ---- */
+.card-area{width:100%;max-width:400px;position:relative;height:420px;margin-bottom:24px}
+.swipe-card{
+  position:absolute;top:0;left:0;right:0;
+  background:var(--card);border-radius:var(--radius);
+  padding:0;overflow:hidden;
+  height:100%;
+  transition:transform .3s ease,opacity .3s ease;
+  border:1px solid rgba(255,255,255,.08);
+}
+.swipe-card.swiping-left{transform:translateX(-150%) rotate(-30deg);opacity:0}
+.swipe-card.swiping-right{transform:translateX(150%) rotate(30deg);opacity:0}
+.card-img{
+  width:100%;height:180px;background:linear-gradient(135deg,var(--accent2),#1A2155);
+  display:flex;align-items:center;justify-content:center;font-size:72px
+}
+.card-body{padding:20px}
+.card-name{font-size:22px;font-weight:800;margin-bottom:4px}
+.card-role{color:var(--accent);font-size:15px;font-weight:600;margin-bottom:12px}
+.card-city{color:var(--muted);font-size:13px;margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.tag{
+  background:rgba(74,92,255,.2);color:var(--accent2);
+  padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600
+}
+.card-bio{color:var(--muted);font-size:14px;line-height:1.5}
+/* ---- SWIPE BUTTONS ---- */
+.swipe-actions{display:flex;gap:28px;align-items:center}
+.swipe-btn{
+  width:60px;height:60px;border-radius:30px;border:none;
+  font-size:28px;cursor:pointer;transition:all .15s;
+  display:flex;align-items:center;justify-content:center
+}
+.swipe-btn:active{transform:scale(.9)}
+.swipe-no{background:var(--card);border:2px solid var(--danger);color:var(--danger)}
+.swipe-yes{background:var(--card);border:2px solid var(--accent);color:var(--accent)}
+.swipe-super{
+  width:48px;height:48px;border-radius:24px;
+  background:var(--accent2);border:none;font-size:22px;cursor:pointer
+}
+.swipe-super:active{transform:scale(.9)}
+/* ---- COMBO ---- */
+.combo-card{
+  width:100%;max-width:400px;background:linear-gradient(135deg,#1A1F40,#252A55);
+  border-radius:var(--radius);padding:16px 20px;margin-bottom:20px;
+  border:1px solid rgba(255,184,0,.15)
+}
+.combo-title{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:10px}
+.combo-tasks{display:flex;flex-direction:column;gap:8px}
+.combo-task{display:flex;align-items:center;gap:10px;font-size:14px}
+.combo-check{
+  width:22px;height:22px;border-radius:11px;border:2px solid var(--muted);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;flex-shrink:0
+}
+.combo-check.done{border-color:var(--accent);background:rgba(0,240,168,.15);color:var(--accent)}
+/* ---- BOTTOM NAV ---- */
+.nav{
+  width:100%;max-width:400px;display:flex;justify-content:space-around;
+  background:var(--card);border-radius:var(--radius) var(--radius) 0 0;
+  padding:12px 0;margin-top:auto;position:sticky;bottom:0
+}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;padding:4px 16px}
+.nav-icon{font-size:22px}
+.nav-label{font-size:10px;color:var(--muted)}
+.nav-item.active .nav-icon{color:var(--accent)}
+.nav-item.active .nav-label{color:var(--accent)}
+/* ---- PROFILE SCREEN ---- */
+.profile-header{
+  display:flex;flex-direction:column;align-items:center;margin-top:30px;margin-bottom:24px
+}
+.profile-avatar{
+  width:90px;height:90px;border-radius:45px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;font-size:40px;
+  margin-bottom:14px
+}
+.profile-name{font-size:24px;font-weight:800}
+.profile-level{color:var(--gold);font-size:14px;font-weight:600;margin-top:4px}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:24px;max-width:400px}
+.badge{
+  background:rgba(74,92,255,.15);padding:8px 14px;border-radius:20px;
+  font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px
+}
+.badge.locked{opacity:.35}
+/* ---- MATH ---- */
+.match-popup{
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(10,14,39,.95);display:flex;
+  flex-direction:column;align-items:center;justify-content:center;
+  z-index:100;animation:fadeIn .3s
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.match-popup h2{font-size:36px;color:var(--accent);margin-bottom:16px}
+.match-popup p{color:var(--muted);font-size:16px}
+.match-dismiss{
+  margin-top:32px;padding:14px 40px;background:var(--accent);color:var(--bg);
+  border:none;border-radius:var(--radius);font-size:16px;font-weight:700;cursor:pointer
+}
+/* ---- FORM ---- */
+.form-group{width:100%;max-width:340px;margin-bottom:16px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px;text-transform:uppercase}
+.form-group input,.form-group textarea{
+  width:100%;padding:14px 16px;background:var(--card);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--radius-sm);color:var(--text);font-size:15px;resize:none;font-family:inherit
+}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--accent)}
+.empty-state{text-align:center;color:var(--muted);margin-top:60px}
+.empty-icon{font-size:64px;margin-bottom:16px;display:block}
+</style>
+</head>
+<body>
+
+<!-- WELCOME SCREEN -->
+<div class="screen active" id="screen-welcome">
+  <div class="logo">Hamkor<span>Top</span></div>
+  <div class="sub">создано в Узбекистане</div>
+  <div class="avatar-big">🤝</div>
+  <div class="welcome-text">Твой AI-партнёр для карьеры</div>
+  <div class="welcome-sub">Свайпай вакансии как в Тиндере.<br>Находи работу, сотрудников, нетворкинг.</div>
+  <button class="btn btn-primary" onclick="showScreen('screen-role')">🔧 Я IT-специалист</button>
+  <button class="btn btn-secondary" onclick="showScreen('screen-role')">🏢 Я работодатель</button>
+</div>
+
+<!-- ROLE SCREEN (quick profile setup) -->
+<div class="screen" id="screen-role">
+  <div style="font-size:20px;font-weight:700;margin-top:80px;margin-bottom:8px">Давай познакомимся</div>
+  <div style="color:var(--muted);margin-bottom:32px;text-align:center">Заполни за 2 минуты — и ты в игре</div>
+  <div class="form-group"><label>Ты кто?</label></div>
+  <button class="btn btn-primary" onclick="setRole('specialist')">🔧 IT-специалист</button>
+  <button class="btn btn-secondary" onclick="setRole('employer')">🏢 Работодатель</button>
+</div>
+
+<!-- MAIN SWIPE SCREEN -->
+<div class="screen" id="screen-main">
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-card"><div class="stat-value" id="xp-display">250</div><div class="stat-label">XP</div></div>
+    <div class="stat-card"><div class="stat-value" id="level-display">2</div><div class="stat-label">Уровень</div></div>
+    <div class="stat-card"><div class="stat-value" id="streak-display">🔥1</div><div class="stat-label">Streak</div></div>
+    <div class="stat-card"><div class="stat-value" id="matches-display">0</div><div class="stat-label">Матчи</div></div>
+  </div>
+  <!-- XP Bar -->
+  <div class="xp-bar-wrap"><div class="xp-bar-fill" id="xp-bar" style="width:25%"></div></div>
+  <div class="xp-label" id="xp-next">50 / 200 XP до уровня 3</div>
+  <!-- Daily Combo -->
+  <div class="combo-card">
+    <div class="combo-title">⚡ Ежедневное комбо (x2 буст)</div>
+    <div class="combo-tasks">
+      <div class="combo-task"><span class="combo-check done">✓</span> Заполнить профиль</div>
+      <div class="combo-task"><span class="combo-check" id="combo-swipe">○</span> 10 свайпов</div>
+      <div class="combo-task"><span class="combo-check" id="combo-invite">○</span> Пригласить друга</div>
+    </div>
+  </div>
+  <!-- Swipe Cards -->
+  <div class="card-area" id="card-area">
+    <div class="empty-state" id="empty-cards"><span class="empty-icon">🎉</span>Все карточки просмотрены!<br>Заходи позже — появятся новые.</div>
+  </div>
+  <!-- Swipe Buttons -->
+  <div class="swipe-actions" id="swipe-actions" style="display:none">
+    <button class="swipe-btn swipe-no" onclick="swipe('left')">👎</button>
+    <button class="swipe-btn swipe-super" onclick="swipe('super')" title="AI-Super Like">⚡</button>
+    <button class="swipe-btn swipe-yes" onclick="swipe('right')">👍</button>
+  </div>
+  <!-- Nav -->
+  <div class="nav">
+    <div class="nav-item active" onclick="showScreen('screen-main')"><span class="nav-icon">💼</span><span class="nav-label">Поиск</span></div>
+    <div class="nav-item" onclick="showScreen('screen-matches')"><span class="nav-icon">💬</span><span class="nav-label">Матчи</span></div>
+    <div class="nav-item" onclick="showScreen('screen-profile')"><span class="nav-icon">👤</span><span class="nav-label">Профиль</span></div>
+  </div>
+</div>
+
+<!-- PROFILE SCREEN -->
+<div class="screen" id="screen-profile">
+  <div class="profile-header">
+    <div class="profile-avatar">👤</div>
+    <div class="profile-name" id="profile-name">Севара</div>
+    <div class="profile-level">🟢 Yangi — Уровень 1</div>
+  </div>
+  <div class="badge-row" id="badge-row">
+    <span class="badge locked">🟢 Junior</span>
+    <span class="badge locked">🔵 Middle</span>
+    <span class="badge locked">🟣 Senior</span>
+    <span class="badge locked">🔥 Streak 7</span>
+  </div>
+  <button class="btn btn-primary" style="max-width:340px" onclick="showScreen('screen-edit-profile')">✏️ Редактировать профиль</button>
+  <div class="nav" style="margin-top:auto">
+    <div class="nav-item" onclick="showScreen('screen-main')"><span class="nav-icon">💼</span><span class="nav-label">Поиск</span></div>
+    <div class="nav-item" onclick="showScreen('screen-matches')"><span class="nav-icon">💬</span><span class="nav-label">Матчи</span></div>
+    <div class="nav-item active"><span class="nav-icon">👤</span><span class="nav-label">Профиль</span></div>
+  </div>
+</div>
+
+<!-- MATCHES SCREEN -->
+<div class="screen" id="screen-matches">
+  <div style="font-size:20px;font-weight:700;margin-top:40px;margin-bottom:24px">Твои матчи</div>
+  <div class="empty-state"><span class="empty-icon">💬</span>Пока нет матчей.<br>Свайпай вправо чтобы находить партнёров!</div>
+  <div class="nav" style="margin-top:auto">
+    <div class="nav-item" onclick="showScreen('screen-main')"><span class="nav-icon">💼</span><span class="nav-label">Поиск</span></div>
+    <div class="nav-item active"><span class="nav-icon">💬</span><span class="nav-label">Матчи</span></div>
+    <div class="nav-item" onclick="showScreen('screen-profile')"><span class="nav-icon">👤</span><span class="nav-label">Профиль</span></div>
+  </div>
+</div>
+
+<!-- EDIT PROFILE SCREEN -->
+<div class="screen" id="screen-edit-profile">
+  <div style="font-size:20px;font-weight:700;margin-top:60px;margin-bottom:24px">Редактировать профиль</div>
+  <div class="form-group"><label>Имя</label><input id="edit-name" type="text" placeholder="Твоё имя" value="Севара"></div>
+  <div class="form-group"><label>Город</label><input id="edit-city" type="text" placeholder="Ташкент" value="Ташкент"></div>
+  <div class="form-group"><label>Роль</label><input id="edit-role" type="text" placeholder="Например: Senior Flutter Dev" value="Product Owner"></div>
+  <div class="form-group"><label>Скиллы (через запятую)</label><input id="edit-skills" type="text" placeholder="Python, Figma, Product Strategy" value="Product Strategy, UX Research, Figma, AI"></div>
+  <div class="form-group"><label>О себе</label><textarea id="edit-bio" rows="3" placeholder="Расскажи о своём опыте...">Основатель Hamkor. Строю AI-платформу для карьеры в СНГ.</textarea></div>
+  <button class="btn btn-primary" onclick="saveProfile()">💾 Сохранить (+50 XP)</button>
+  <button class="btn btn-secondary" onclick="showScreen('screen-profile')">← Назад</button>
+</div>
+
+<script>
+// ---- STATE ----
+const state = {
+  role: 'specialist',
+  xp: 250,
+  level: 2,
+  streak: 1,
+  matches: 0,
+  swipesToday: 3,
+  comboDone: {profile:true, swipe3:false, swipe7:false, invite:false},
+  name: 'Севара',
+  city: 'Ташкент',
+  userRole: 'Product Owner',
+  skills: 'Product Strategy, UX Research, Figma, AI',
+  bio: 'Основатель Hamkor. Строю AI-платформу для карьеры в СНГ.'
+};
+
+const cards = [
+  {name:'Артур',role:'Senior Flutter Dev',city:'Ташкент',skills:'Dart,Flutter,Firebase,REST API',bio:'5 лет опыта. Делал приложения для финтеха и e-com. Ищу интересный проект.',emoji:'📱'},
+  {name:'Малика',role:'UX/UI Designer',city:'Самарканд',skills:'Figma,Prototyping,User Research,Design Systems',bio:'4 года в дизайне. Создаю интерфейсы которые любят пользователи.',emoji:'🎨'},
+  {name:'Тимур',role:'Python Backend Dev',city:'Алматы',skills:'Python,Django,PostgreSQL,Docker,AWS',bio:'Backend-разработчик с опытом highload. Работал в стартапах Кремниевой долины.',emoji:'🐍'},
+  {name:'Нодира',role:'QA Automation',city:'Ташкент',skills:'Selenium,Cypress,Jest,CI/CD,TestRail',bio:'Автоматизирую тестирование чтобы баги не добирались до пользователей.',emoji:'🧪'},
+  {name:'Алексей',role:'DevOps Engineer',city:'Минск',skills:'Kubernetes,Terraform,AWS,CI/CD,Grafana',bio:'Строю инфраструктуру которая не падает. 7 лет в DevOps.',emoji:'☁️'}
+];
+let cardIndex = 0;
+
+// ---- NAVIGATION ----
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if(id==='screen-main') renderCards();
+  if(id==='screen-profile') renderProfile();
+  if(id==='screen-edit-profile') fillEditForm();
+}
+
+// ---- SET ROLE ----
+function setRole(r){
+  state.role = r;
+  state.xp += 50;
+  updateStats();
+  showScreen('screen-main');
+}
+
+// ---- RENDER CARDS ----
+function renderCards(){
+  const area = document.getElementById('card-area');
+  const actions = document.getElementById('swipe-actions');
+  const empty = document.getElementById('empty-cards');
+  area.querySelectorAll('.swipe-card').forEach(c=>c.remove());
+
+  if(cardIndex >= cards.length){
+    empty.style.display = 'block';
+    actions.style.display = 'none';
+    return;
+  }
+
+  empty.style.display = 'none';
+  actions.style.display = 'flex';
+
+  const c = cards[cardIndex];
+  const card = document.createElement('div');
+  card.className = 'swipe-card';
+  card.innerHTML = `
+    <div class="card-img">${c.emoji}</div>
+    <div class="card-body">
+      <div class="card-name">${c.name}</div>
+      <div class="card-role">${c.role}</div>
+      <div class="card-city">📍 ${c.city}</div>
+      <div class="tags">${c.skills.split(',').map(s=>`<span class="tag">${s.trim()}</span>`).join('')}</div>
+      <div class="card-bio">${c.bio}</div>
+    </div>`;
+  area.appendChild(card);
+}
+
+// ---- SWIPE ----
+function swipe(dir){
+  const card = document.querySelector('.swipe-card');
+  if(!card) return;
+
+  const animClass = dir==='right'?'swiping-right':'swiping-left';
+  card.classList.add(animClass);
+
+  state.swipesToday++;
+  state.xp += 2;
+  document.getElementById('combo-swipe').textContent = state.swipesToday >= 3 ? '✓' : state.swipesToday;
+  if(state.swipesToday >= 3) document.getElementById('combo-swipe').classList.add('done');
+
+  // Random match (15% chance on right swipe)
+  if(dir==='right' && Math.random() < 0.15){
+    setTimeout(()=>{
+      state.matches++;
+      state.xp += 100;
+      updateStats();
+      showMatchPopup(cards[cardIndex].name);
+    },350);
+  }
+
+  setTimeout(()=>{
+    card.remove();
+    cardIndex++;
+    updateStats();
+    renderCards();
+  },300);
+}
+
+// ---- MATCH POPUP ----
+function showMatchPopup(name){
+  const popup = document.createElement('div');
+  popup.className = 'match-popup';
+  popup.innerHTML = `<h2>🤝 Это матч!</h2><p>Ты и ${name} — обоюдный интерес!</p><p style="font-size:14px;margin-top:8px">+100 XP</p><button class="match-dismiss" onclick="this.parentElement.remove()">Круто!</button>`;
+  document.body.appendChild(popup);
+}
+
+// ---- UPDATE STATS ----
+function updateStats(){
+  document.getElementById('xp-display').textContent = state.xp;
+  document.getElementById('level-display').textContent = state.level;
+  document.getElementById('streak-display').textContent = '🔥'+state.streak;
+  document.getElementById('matches-display').textContent = state.matches;
+  const pct = Math.min(100,(state.xp % 200)/200*100);
+  document.getElementById('xp-bar').style.width = pct+'%';
+  document.getElementById('xp-next').textContent = (state.xp%200)+' / 200 XP до уровня '+(state.level+1);
+}
+
+// ---- PROFILE ----
+function renderProfile(){
+  document.getElementById('profile-name').textContent = state.name;
+}
+
+function fillEditForm(){
+  document.getElementById('edit-name').value = state.name;
+  document.getElementById('edit-city').value = state.city;
+  document.getElementById('edit-role').value = state.userRole;
+  document.getElementById('edit-skills').value = state.skills;
+  document.getElementById('edit-bio').value = state.bio;
+}
+
+function saveProfile(){
+  state.name = document.getElementById('edit-name').value;
+  state.city = document.getElementById('edit-city').value;
+  state.userRole = document.getElementById('edit-role').value;
+  state.skills = document.getElementById('edit-skills').value;
+  state.bio = document.getElementById('edit-bio').value;
+  state.xp += 50;
+  updateStats();
+  showScreen('screen-profile');
+}
+
+// ---- INIT ----
+updateStats();
+</script>
+</body>
+</html>
