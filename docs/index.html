@@ -1,450 +1,394 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="theme-color" content="#562C2C">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#F5DFBB" />
 <title>Hamkor Top</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#562C2C;
-  --card:#11686A;
-  --accent:#F2542D;
-  --accent2:#0E9594;
-  --gold:#F5DFBB;
-  --xp:#F2542D;
-  --text:#F5DFBB;
-  --muted:#D8C4A3;
-  --danger:#F2542D;
+  --paper:#F5DFBB;
+  --paper-soft:#FAF3E7;
+  --ink:#223047;
+  --ink-soft:#556074;
+  --cyan:#0E9594;
+  --teal:#11686A;
+  --terracotta:#F2542D;
+  --line:#D8C7AE;
   --radius:14px;
-  --radius-sm:12px;
 }
-
-/* ---- Бумажная текстура фона ---- */
 body{
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  background-color:#562C2C;
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E"),
-    radial-gradient(900px 400px at 15% 0%, rgba(242,84,45,.3), transparent 60%),
-    radial-gradient(800px 350px at 85% 90%, rgba(14,149,148,.35), transparent 60%);
-  color:var(--text);
-  min-height:100vh;min-height:100dvh;
-  overflow-x:hidden;
-  -webkit-tap-highlight-color:transparent;
-  user-select:none;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1100px 420px at 15% -10%, rgba(17,104,106,.10), transparent 55%),
+    radial-gradient(800px 320px at 90% 100%, rgba(14,149,148,.08), transparent 55%),
+    var(--paper-soft);
+  min-height:100vh;
+}
+/* subtle paper texture */
+body::before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
 }
 
-/* ---- SCREENS ---- */
-.screen{display:none;flex-direction:column;align-items:center;min-height:100vh;padding:24px 20px}
+.screen{display:none;min-height:100vh;padding:22px 16px 26px;flex-direction:column;align-items:center}
 .screen.active{display:flex}
 
-/* ---- TYPOGRAPHY ---- */
-h1,h2,h3,.serif,.logo,.welcome-text,.card-name,.btn,.combo-title,.stat-value,.profile-name,.nav-label{
-  font-family:'Georgia','Times New Roman',serif;
-}
-.logo{font-size:42px;font-weight:900;color:var(--accent);margin-top:60px;letter-spacing:-1px}
-.logo span{color:var(--accent2)}
-.sub{color:var(--muted);font-size:16px;margin-top:4px;font-family:'Georgia',serif;font-style:italic}
-
-/* ---- Аватар (SVG-стиль из варианта 3) ---- */
-.avatar-big{
-  width:120px;height:120px;border-radius:50%;
-  border:2px solid rgba(245,223,187,.4);
-  background:rgba(14,149,148,.15);
-  margin:36px 0 20px;
-  display:flex;align-items:center;justify-content:center;
-}
-.avatar-big svg{width:52px;height:52px;opacity:.8}
-.welcome-text{font-size:22px;font-weight:700;text-align:center;margin-bottom:6px}
-.welcome-sub{color:var(--muted);text-align:center;margin-bottom:36px;line-height:1.5;font-size:14px}
-
-/* ---- Звёздочки (из варианта 2) ---- */
-.stars{display:flex;gap:8px;justify-content:center;margin:10px 0;opacity:.5;font-size:12px;color:var(--gold)}
-.stars span:nth-child(odd){color:var(--accent)}
-.stars span:nth-child(even){color:var(--accent2)}
-
-/* ---- BUTTONS (закруглённые как в варианте 2) ---- */
-.btn{
-  width:100%;max-width:340px;padding:15px 24px;border:none;border-radius:14px;
-  font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  margin-bottom:12px;font-family:'Georgia',serif;letter-spacing:.3px
-}
-.btn-primary{background:var(--accent);color:var(--gold)}
-.btn-primary:active{transform:scale(.97);opacity:.9}
-.btn-secondary{
-  background:rgba(14,149,148,.15);
-  color:var(--gold);
-  border:1.5px solid rgba(14,149,148,.3);
-}
-.btn-secondary:active{background:rgba(14,149,148,.28)}
-
-/* ---- STATS BAR ---- */
-.stats-bar{
-  display:flex;justify-content:space-between;width:100%;max-width:400px;
-  gap:8px;margin-bottom:16px
-}
-.stat-card{
-  background:rgba(17,104,106,.6);
-  border-radius:var(--radius-sm);padding:12px 10px;flex:1;text-align:center;
-  box-shadow:0 2px 8px rgba(0,0,0,.15);
-}
-.stat-value{font-size:22px;font-weight:900;color:var(--gold)}
-.stat-value.xp{color:var(--accent)}
-.stat-label{font-size:10px;color:var(--muted);margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
-
-/* ---- XP BAR ---- */
-.xp-bar-wrap{
-  width:100%;max-width:400px;height:8px;background:rgba(245,223,187,.1);
-  border-radius:6px;margin-bottom:4px;overflow:hidden
-}
-.xp-bar-fill{
-  height:100%;background:linear-gradient(90deg,var(--accent),var(--gold));
-  border-radius:6px;transition:width .5s ease
-}
-.xp-label{font-size:11px;color:var(--muted);margin-bottom:14px;width:100%;max-width:400px;font-style:italic}
-
-/* ---- COMBO CARD ---- */
-.combo-card{
-  width:100%;max-width:400px;
-  background:rgba(86,44,44,.75);
-  border-radius:var(--radius);padding:16px 18px;margin-bottom:18px;
-  border:1px solid rgba(245,223,187,.08);
-  box-shadow:0 3px 12px rgba(0,0,0,.2);
-}
-.combo-title{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:10px}
-.combo-tasks{display:flex;flex-direction:column;gap:7px}
-.combo-task{display:flex;align-items:center;gap:10px;font-size:13px}
-.combo-check{
-  width:22px;height:22px;border-radius:50%;border:2px solid var(--muted);
-  display:flex;align-items:center;justify-content:center;
-  font-size:11px;flex-shrink:0
-}
-.combo-check.done{border-color:var(--accent2);background:rgba(14,149,148,.2);color:var(--accent2)}
-
-/* ---- SWIPE CARD ---- */
-.card-area{width:100%;max-width:400px;position:relative;height:440px;margin-bottom:20px}
-.swipe-card{
-  position:absolute;top:0;left:0;right:0;
-  background:rgba(17,104,106,.85);
-  border-radius:14px;
-  padding:0;overflow:hidden;
-  height:100%;
-  transition:transform .3s ease,opacity .3s ease;
-  border:1px solid rgba(245,223,187,.08);
-  box-shadow:0 6px 24px rgba(0,0,0,.25);
-}
-.swipe-card.swiping-left{transform:translateX(-150%) rotate(-30deg);opacity:0}
-.swipe-card.swiping-right{transform:translateX(150%) rotate(30deg);opacity:0}
-.card-img{
-  width:100%;height:170px;
-  background:linear-gradient(135deg,rgba(14,149,148,.5),rgba(17,104,106,.8));
-  display:flex;align-items:center;justify-content:center;
-}
-.card-img svg{width:64px;height:64px;opacity:.7}
-.card-body{padding:18px}
-.card-name{font-size:22px;font-weight:800;margin-bottom:4px;color:var(--gold)}
-.card-role{color:var(--accent);font-size:14px;font-weight:600;margin-bottom:10px}
-.card-city{color:var(--muted);font-size:12px;margin-bottom:10px;font-style:italic}
-
-/* ---- ТЕГИ (закруглённые как в варианте 2) ---- */
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-.tag{
-  background:rgba(14,149,148,.2);
-  color:var(--gold);
-  padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;
-  border:1px solid rgba(14,149,148,.2);
-}
-.card-bio{color:var(--muted);font-size:13px;line-height:1.5}
-
-/* ---- SWIPE BUTTONS (закруглённые) ---- */
-.swipe-actions{display:flex;gap:24px;align-items:center}
-.swipe-btn{
-  width:56px;height:56px;border-radius:50%;border:none;
-  font-size:24px;cursor:pointer;transition:all .15s;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 3px 10px rgba(0,0,0,.2);
-}
-.swipe-btn:active{transform:scale(.9)}
-.swipe-no{
-  background:rgba(17,104,106,.8);
-  border:2px solid var(--accent);
-  color:var(--accent);
-}
-.swipe-yes{
-  background:rgba(17,104,106,.8);
-  border:2px solid var(--accent2);
-  color:var(--accent2);
-}
-.swipe-super{
-  width:44px;height:44px;border-radius:50%;
-  background:var(--accent2);border:none;
-  font-size:18px;cursor:pointer;
-  box-shadow:0 3px 10px rgba(0,0,0,.2);
-}
-.swipe-super:active{transform:scale(.9)}
-
-/* ---- MATCH POPUP ---- */
-.match-popup{
-  position:fixed;top:0;left:0;right:0;bottom:0;
-  background:rgba(86,44,44,.97);display:flex;
-  flex-direction:column;align-items:center;justify-content:center;
-  z-index:100;animation:fadeIn .3s
-}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.match-popup h2{font-size:36px;color:var(--accent);margin-bottom:14px;font-family:'Georgia',serif}
-.match-popup p{color:var(--muted);font-size:15px}
-.match-dismiss{
-  margin-top:28px;padding:14px 36px;background:var(--accent);color:var(--gold);
-  border:none;border-radius:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Georgia',serif
+.card{
+  width:100%;max-width:420px;background:var(--paper);
+  border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 8px 24px rgba(34,48,71,.08);
 }
 
-/* ---- PROFILE ---- */
-.profile-header{display:flex;flex-direction:column;align-items:center;margin-top:30px;margin-bottom:22px}
+.logo{font-family:Georgia,serif;font-size:42px;color:var(--teal);font-weight:700;margin-top:42px}
+.logo span{color:var(--cyan)}
+.subtitle{color:var(--ink-soft);margin-top:4px;font-size:14px}
+.hero-avatar{
+  width:110px;height:110px;border-radius:50%;margin:28px 0 18px;
+  border:1.5px solid #cdbda6;background:#fff8ed;display:grid;place-items:center;
+}
+.hero-avatar svg{width:48px;height:48px;color:var(--teal)}
+.hero-title{font-family:Georgia,serif;font-size:24px;color:var(--ink);text-align:center}
+.hero-sub{margin-top:8px;text-align:center;color:var(--ink-soft);line-height:1.45;max-width:360px}
+
+.lang-row{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;justify-content:center}
+.lang-btn{
+  border:1px solid var(--line);background:#fff7ea;color:var(--ink);
+  border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer
+}
+.lang-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+.btn{width:100%;max-width:360px;border:none;border-radius:14px;padding:14px 16px;font-weight:600;cursor:pointer}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-secondary{background:#fff7ea;color:var(--ink);border:1px solid var(--line)}
+.btn + .btn{margin-top:10px}
+
+.top-block{width:100%;max-width:420px;display:grid;gap:10px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.stat{background:#fff7ea;border:1px solid var(--line);border-radius:12px;padding:9px;text-align:center}
+.stat .v{font-family:Georgia,serif;font-size:18px;color:var(--teal);font-weight:700}
+.stat .l{font-size:10px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.5px}
+
+.xp-wrap{height:8px;background:#eadcc7;border-radius:999px;overflow:hidden}
+.xp-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--teal));width:35%}
+.xp-note{font-size:11px;color:var(--ink-soft)}
+
+.combo{padding:12px 14px}
+.combo h4{font-family:Georgia,serif;font-size:14px;color:var(--ink);margin-bottom:8px}
+.task{display:flex;align-items:center;gap:8px;color:var(--ink-soft);font-size:13px;margin:5px 0}
+.dot{width:18px;height:18px;border-radius:50%;border:1px solid #c8b79d;display:grid;place-items:center;font-size:12px;color:var(--teal)}
+
+.swipe-area{width:100%;max-width:420px;position:relative;height:440px;margin-top:12px}
+.profile-card{position:absolute;inset:0;overflow:hidden}
+.card-head{height:150px;background:linear-gradient(135deg,#d9ecec,#c6dfdf);display:grid;place-items:center}
+.card-head .avatar-round{width:74px;height:74px;border-radius:50%;border:1.5px solid #a8c8c8;background:#fff;display:grid;place-items:center}
+.card-head svg{width:30px;height:30px;color:var(--teal)}
+.card-body{padding:14px}
+.name{font-family:Georgia,serif;font-size:24px;color:var(--ink)}
+.role{font-size:13px;color:var(--teal);margin-top:4px}
+.city{font-size:12px;color:var(--ink-soft);margin-top:5px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tag{padding:6px 12px;border-radius:999px;background:#e8f4f3;color:var(--teal);font-size:12px;border:1px solid #cde7e5}
+.bio{margin-top:10px;color:var(--ink-soft);font-size:13px;line-height:1.45}
+
+.actions{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:14px}
+.act{
+  border:none;border-radius:999px;min-width:54px;height:54px;padding:0 18px;
+  font-weight:700;cursor:pointer;box-shadow:0 6px 14px rgba(34,48,71,.10)
+}
+.act.no{background:#fff;border:1px solid #e3b9ad;color:#9b5345}
+.act.super{background:#fff;border:1px solid #c7dede;color:var(--cyan);min-width:44px;height:44px}
+.act.yes{background:var(--teal);color:#fff}
+
+.bottom-nav{
+  width:100%;max-width:420px;margin-top:auto;
+  background:#fff7ea;border:1px solid var(--line);
+  border-radius:16px;
+  padding:10px 8px;
+  display:flex;justify-content:space-around;align-items:center;
+  margin-bottom:calc(env(safe-area-inset-bottom,0px) + 10px);
+}
+.nav-item{text-align:center;font-size:11px;color:var(--ink-soft);cursor:pointer;padding:4px 8px;border-radius:10px}
+.nav-item.active{color:var(--teal);background:#efe2cf}
+
+.profile-wrap{width:100%;max-width:420px}
+.profile-top{display:flex;flex-direction:column;align-items:center;margin-top:24px}
 .profile-avatar{
-  width:88px;height:88px;border-radius:50%;
-  border:2px solid rgba(245,223,187,.35);
-  background:rgba(14,149,148,.15);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:14px;
+  width:88px;height:88px;border-radius:50%;overflow:hidden;
+  border:1.5px solid #cbb9a0;background:#fff8ed;display:grid;place-items:center;
 }
-.profile-avatar svg{width:38px;height:38px;opacity:.7}
-.profile-name{font-size:24px;font-weight:800;color:var(--gold)}
-.profile-level{color:var(--accent);font-size:13px;font-weight:600;margin-top:4px;font-style:italic}
-.badge-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:22px;max-width:400px}
-.badge{
-  background:rgba(14,149,148,.15);padding:8px 14px;border-radius:20px;
-  font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px;
-  border:1px solid rgba(14,149,148,.15);
-}
-.badge.locked{opacity:.35}
+.profile-avatar img{width:100%;height:100%;object-fit:cover}
+.profile-avatar svg{width:34px;height:34px;color:var(--teal)}
+.profile-name{font-family:Georgia,serif;font-size:24px;margin-top:12px}
+.profile-level{font-size:13px;color:var(--ink-soft);margin-top:4px}
 
-/* ---- FORM ---- */
-.form-group{width:100%;max-width:340px;margin-bottom:14px}
-.form-group label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px;text-transform:uppercase;font-family:'Georgia',serif}
-.form-group input,.form-group textarea{
-  width:100%;padding:13px 16px;
-  background:rgba(17,104,106,.6);
-  border:1px solid rgba(245,223,187,.1);
-  border-radius:12px;color:var(--text);font-size:14px;resize:none;font-family:inherit
+.form{width:100%;max-width:360px;margin-top:18px}
+.group{margin-bottom:10px}
+.group label{display:block;font-size:12px;color:var(--ink-soft);margin-bottom:4px}
+.input,.textarea{
+  width:100%;border:1px solid var(--line);background:#fffaf0;color:var(--ink);
+  border-radius:12px;padding:12px;font-size:14px
 }
-.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--accent2)}
+.textarea{min-height:84px;resize:vertical}
 
-/* ---- NAV ---- */
-.nav{
-  width:100%;max-width:400px;display:flex;justify-content:space-around;
-  background:rgba(17,104,106,.85);
-  border-radius:14px 14px 0 0;
-  padding:12px 0;margin-top:auto;position:sticky;bottom:0;
-  box-shadow:0 -2px 12px rgba(0,0,0,.15);
-  border-top:1px solid rgba(245,223,187,.06);
-}
-.nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:4px 14px}
-.nav-icon{font-size:20px}
-.nav-label{font-size:10px;color:var(--muted)}
-.nav-item.active .nav-icon{color:var(--accent)}
-.nav-item.active .nav-label{color:var(--accent)}
+.upload{display:flex;align-items:center;gap:10px;margin-top:8px}
+.file{font-size:12px}
 
-/* ---- EMPTY ---- */
-.empty-state{text-align:center;color:var(--muted);margin-top:60px}
-.empty-icon{font-size:56px;margin-bottom:14px;display:block;opacity:.6}
+.note{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:8px}
 
-/* ---- PAPER OVERLAY (объём бумаги на карточках) ---- */
-.paper-texture{
-  position:relative;
-}
-.paper-texture::after{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-  border-radius:inherit;
-}
+.hide{display:none}
 </style>
 </head>
 <body>
 
-<!-- WELCOME SCREEN -->
-<div class="screen active" id="screen-welcome">
+<!-- 1. LANGUAGE SCREEN -->
+<section id="screen-lang" class="screen active">
   <div class="logo">Hamkor<span>Top</span></div>
-  <div class="sub">создано в Узбекистане</div>
-  <div class="avatar-big">
-    <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+  <div class="subtitle" data-i18n="madeIn">создано в Узбекистане</div>
+  <div class="hero-avatar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
   </div>
-  <div class="welcome-text">Твой AI-партнёр для карьеры</div>
-  <div class="welcome-sub">Смахни вправо — интересно, влево — мимо.<br>Находи работу, сотрудников, нетворкинг.</div>
-  <div class="stars"><span>✦</span><span>✧</span><span>✦</span><span>✧</span><span>✦</span></div>
-  <button class="btn btn-primary" onclick="showScreen('screen-role')">Я IT-специалист</button>
-  <button class="btn btn-secondary" onclick="showScreen('screen-role')">Я работодатель</button>
-</div>
+  <div class="hero-title" data-i18n="chooseLang">Выбери язык</div>
+  <div class="hero-sub" data-i18n="langHint">Можно сменить позже в профиле. Английские профессиональные термины остаются как есть.</div>
 
-<!-- ROLE SCREEN -->
-<div class="screen" id="screen-role">
-  <div style="font-size:20px;font-weight:700;margin-top:80px;margin-bottom:6px;font-family:'Georgia',serif;color:var(--gold)">Давай познакомимся</div>
-  <div style="color:var(--muted);margin-bottom:28px;text-align:center;font-style:italic">Заполни за 2 минуты — и ты в игре</div>
-  <button class="btn btn-primary" onclick="setRole('specialist')">Я IT-специалист</button>
-  <button class="btn btn-secondary" onclick="setRole('employer')">Я работодатель</button>
-  <div class="stars" style="margin-top:20px"><span>✦</span><span>✧</span><span>✦</span></div>
-</div>
-
-<!-- MAIN SWIPE SCREEN -->
-<div class="screen" id="screen-main">
-  <div class="stats-bar">
-    <div class="stat-card"><div class="stat-value" id="xp-display">250</div><div class="stat-label">XP</div></div>
-    <div class="stat-card"><div class="stat-value" id="level-display">2</div><div class="stat-label">Уровень</div></div>
-    <div class="stat-card"><div class="stat-value" id="streak-display">🔥1</div><div class="stat-label">Дней</div></div>
-    <div class="stat-card"><div class="stat-value" id="matches-display">0</div><div class="stat-label">Матчи</div></div>
+  <div class="lang-row">
+    <button class="lang-btn active" data-lang="ru">Русский</button>
+    <button class="lang-btn" data-lang="uz">O'zbekcha</button>
+    <button class="lang-btn" data-lang="en">English</button>
   </div>
-  <div class="xp-bar-wrap"><div class="xp-bar-fill" id="xp-bar" style="width:25%"></div></div>
-  <div class="xp-label" id="xp-next">50 / 200 XP до уровня 3</div>
 
-  <div class="combo-card paper-texture">
-    <div class="combo-title">✦ Ежедневное комбо (×2 буст)</div>
-    <div class="combo-tasks">
-      <div class="combo-task"><span class="combo-check done">✓</span> Заполнить профиль</div>
-      <div class="combo-task"><span class="combo-check" id="combo-swipe">○</span> 10 свайпов</div>
-      <div class="combo-task"><span class="combo-check" id="combo-invite">○</span> Пригласить друга</div>
+  <div style="height:18px"></div>
+  <button class="btn btn-primary" id="langContinue" data-i18n="continue">Продолжить</button>
+</section>
+
+<!-- 2. WELCOME -->
+<section id="screen-welcome" class="screen">
+  <div class="logo">Hamkor<span>Top</span></div>
+  <div class="subtitle" data-i18n="madeIn">создано в Узбекистане</div>
+  <div class="hero-avatar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+  </div>
+  <div class="hero-title" data-i18n="heroTitle">Твой AI-партнёр для карьеры</div>
+  <div class="hero-sub" data-i18n="heroSub">Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.</div>
+  <div class="lang-row" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span></div>
+  <div style="height:14px"></div>
+  <button class="btn btn-primary" id="btnSpecialist" data-i18n="specialist">Я IT-специалист</button>
+  <button class="btn btn-secondary" id="btnEmployer" data-i18n="employer">Я работодатель</button>
+</section>
+
+<!-- 3. MAIN SWIPE -->
+<section id="screen-main" class="screen">
+  <div class="top-block">
+    <div class="stats">
+      <div class="stat"><div class="v" id="xpVal">250</div><div class="l">XP</div></div>
+      <div class="stat"><div class="v" id="levelVal">2</div><div class="l" data-i18n="level">Уровень</div></div>
+      <div class="stat"><div class="v" id="streakVal">1</div><div class="l" data-i18n="days">Дней</div></div>
+      <div class="stat"><div class="v" id="matchVal">0</div><div class="l" data-i18n="matches">Матчи</div></div>
+    </div>
+    <div class="xp-wrap"><div class="xp-fill" id="xpFill"></div></div>
+    <div class="xp-note" id="xpNote">50 / 200 XP</div>
+
+    <div class="card combo">
+      <h4 data-i18n="dailyCombo">Ежедневное комбо (x2 видимость)</h4>
+      <div class="task"><span class="dot">✓</span><span data-i18n="taskProfile">Заполнить профиль</span></div>
+      <div class="task"><span class="dot" id="swipeDot">○</span><span data-i18n="taskSwipes">10 свайпов</span></div>
+      <div class="task"><span class="dot">○</span><span data-i18n="taskInvite">Пригласить друга</span></div>
     </div>
   </div>
 
-  <div class="card-area" id="card-area">
-    <div class="empty-state" id="empty-cards"><span class="empty-icon">✦</span>Карточки просмотрены!<br>Заходи позже — появятся новые.</div>
+  <div class="swipe-area" id="swipeArea"></div>
+
+  <div class="actions">
+    <button class="act no" id="btnNo" data-i18n="skip">Мимо</button>
+    <button class="act super">✦</button>
+    <button class="act yes" id="btnYes" data-i18n="interesting">Интересно</button>
   </div>
 
-  <div class="swipe-actions" id="swipe-actions" style="display:none">
-    <button class="swipe-btn swipe-no" onclick="swipe('left')">✕</button>
-    <button class="swipe-btn swipe-super" onclick="swipe('super')">✦</button>
-    <button class="swipe-btn swipe-yes" onclick="swipe('right')">✓</button>
+  <div class="bottom-nav">
+    <div class="nav-item active" data-tab="main" data-i18n="search">Поиск</div>
+    <div class="nav-item" data-tab="matches" data-i18n="matches">Матчи</div>
+    <div class="nav-item" data-tab="profile" data-i18n="profile">Профиль</div>
   </div>
+</section>
 
-  <div class="nav">
-    <div class="nav-item active" onclick="showScreen('screen-main')"><span class="nav-icon">◈</span><span class="nav-label">Поиск</span></div>
-    <div class="nav-item" onclick="showScreen('screen-matches')"><span class="nav-icon">◉</span><span class="nav-label">Матчи</span></div>
-    <div class="nav-item" onclick="showScreen('screen-profile')"><span class="nav-icon">◎</span><span class="nav-label">Профиль</span></div>
+<!-- 4. MATCHES -->
+<section id="screen-matches" class="screen">
+  <div class="hero-title" style="margin-top:30px" data-i18n="matchesTitle">Твои матчи</div>
+  <div class="hero-sub" data-i18n="matchesEmpty">Пока пусто. Нажимай «Интересно», чтобы открыть новые диалоги.</div>
+  <div style="height:16px"></div>
+  <button class="btn btn-secondary" id="goMainFromMatches" data-i18n="backToSearch">Вернуться к поиску</button>
+  <div class="bottom-nav">
+    <div class="nav-item" data-tab="main" data-i18n="search">Поиск</div>
+    <div class="nav-item active" data-tab="matches" data-i18n="matches">Матчи</div>
+    <div class="nav-item" data-tab="profile" data-i18n="profile">Профиль</div>
   </div>
-</div>
+</section>
 
-<!-- PROFILE SCREEN -->
-<div class="screen" id="screen-profile">
-  <div class="profile-header">
-    <div class="profile-avatar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+<!-- 5. PROFILE -->
+<section id="screen-profile" class="screen">
+  <div class="profile-wrap">
+    <div class="profile-top">
+      <div class="profile-avatar" id="profileAvatar"></div>
+      <div class="profile-name" id="profileName">Севара</div>
+      <div class="profile-level" id="profileLevel">Yangi • Level 1</div>
+      <div class="note" data-i18n="avatarHint">Фото можно менять в редактировании профиля</div>
     </div>
-    <div class="profile-name" id="profile-name">Севара</div>
-    <div class="profile-level">✦ Yangi — Уровень 1</div>
-  </div>
-  <div class="stars" style="margin-bottom:16px"><span>✧</span><span>✦</span><span>✧</span></div>
-  <div class="badge-row" id="badge-row">
-    <span class="badge locked">◈ Junior</span>
-    <span class="badge locked">◉ Middle</span>
-    <span class="badge locked">◎ Senior</span>
-    <span class="badge locked">✦ Streak 7</span>
-  </div>
-  <button class="btn btn-primary" style="max-width:340px" onclick="showScreen('screen-edit-profile')">Редактировать профиль</button>
-  <div class="nav" style="margin-top:auto">
-    <div class="nav-item" onclick="showScreen('screen-main')"><span class="nav-icon">◈</span><span class="nav-label">Поиск</span></div>
-    <div class="nav-item" onclick="showScreen('screen-matches')"><span class="nav-icon">◉</span><span class="nav-label">Матчи</span></div>
-    <div class="nav-item active"><span class="nav-icon">◎</span><span class="nav-label">Профиль</span></div>
-  </div>
-</div>
 
-<!-- MATCHES SCREEN -->
-<div class="screen" id="screen-matches">
-  <div style="font-size:20px;font-weight:700;margin-top:40px;margin-bottom:22px;font-family:'Georgia',serif;color:var(--gold)">Твои матчи</div>
-  <div class="stars" style="margin-bottom:16px"><span>✧</span><span>✦</span><span>✧</span></div>
-  <div class="empty-state"><span class="empty-icon">◉</span>Пока нет матчей.<br>Свайпай вправо чтобы находить партнёров!</div>
-  <div class="nav" style="margin-top:auto">
-    <div class="nav-item" onclick="showScreen('screen-main')"><span class="nav-icon">◈</span><span class="nav-label">Поиск</span></div>
-    <div class="nav-item active"><span class="nav-icon">◉</span><span class="nav-label">Матчи</span></div>
-    <div class="nav-item" onclick="showScreen('screen-profile')"><span class="nav-icon">◎</span><span class="nav-label">Профиль</span></div>
+    <div class="form">
+      <button class="btn btn-primary" id="editProfileBtn" data-i18n="editProfile">Редактировать профиль</button>
+      <button class="btn btn-secondary" id="changeLangBtn" data-i18n="changeLanguage">Сменить язык</button>
+    </div>
   </div>
-</div>
 
-<!-- EDIT PROFILE -->
-<div class="screen" id="screen-edit-profile">
-  <div style="font-size:20px;font-weight:700;margin-top:50px;margin-bottom:20px;font-family:'Georgia',serif;color:var(--gold)">Редактировать профиль</div>
-  <div class="form-group"><label>Имя</label><input id="edit-name" type="text" placeholder="Твоё имя" value="Севара"></div>
-  <div class="form-group"><label>Город</label><input id="edit-city" type="text" placeholder="Ташкент" value="Ташкент"></div>
-  <div class="form-group"><label>Роль</label><input id="edit-role" type="text" placeholder="Senior Flutter Dev" value="Product Owner"></div>
-  <div class="form-group"><label>Скиллы (через запятую)</label><input id="edit-skills" type="text" placeholder="Python, Figma, Product Strategy" value="Product Strategy, UX Research, Figma, AI"></div>
-  <div class="form-group"><label>О себе</label><textarea id="edit-bio" rows="3" placeholder="Расскажи о своём опыте...">Основатель Hamkor. Строю AI-платформу для карьеры в СНГ.</textarea></div>
-  <button class="btn btn-primary" onclick="saveProfile()">Сохранить (+50 XP)</button>
-  <button class="btn btn-secondary" onclick="showScreen('screen-profile')">Назад</button>
-</div>
+  <div class="bottom-nav">
+    <div class="nav-item" data-tab="main" data-i18n="search">Поиск</div>
+    <div class="nav-item" data-tab="matches" data-i18n="matches">Матчи</div>
+    <div class="nav-item active" data-tab="profile" data-i18n="profile">Профиль</div>
+  </div>
+</section>
+
+<!-- 6. EDIT PROFILE -->
+<section id="screen-edit" class="screen">
+  <div class="hero-title" style="margin-top:18px" data-i18n="editProfile">Редактировать профиль</div>
+  <div class="form">
+    <div class="group"><label data-i18n="name">Имя</label><input class="input" id="fName"/></div>
+    <div class="group"><label data-i18n="city">Город</label><input class="input" id="fCity"/></div>
+    <div class="group"><label data-i18n="role">Роль</label><input class="input" id="fRole"/></div>
+    <div class="group"><label data-i18n="skills">Навыки (через запятую)</label><input class="input" id="fSkills"/></div>
+    <div class="group"><label data-i18n="about">О себе</label><textarea class="textarea" id="fBio"></textarea></div>
+
+    <div class="group">
+      <label data-i18n="photo">Фото аватара</label>
+      <div class="upload">
+        <input id="avatarFile" type="file" accept="image/*" class="file" />
+      </div>
+    </div>
+
+    <button class="btn btn-primary" id="saveBtn" data-i18n="save">Сохранить</button>
+    <button class="btn btn-secondary" id="cancelBtn" data-i18n="cancel">Отмена</button>
+  </div>
+</section>
 
 <script>
-const state={role:'specialist',xp:250,level:2,streak:1,matches:0,swipesToday:3,comboDone:{profile:true,swipe3:false,swipe7:false,invite:false},name:'Севара',city:'Ташкент',userRole:'Product Owner',skills:'Product Strategy, UX Research, Figma, AI',bio:'Основатель Hamkor. Строю AI-платформу для карьеры в СНГ.'};
-const cards=[
-  {name:'Артур',role:'Senior Flutter Dev',city:'Ташкент',skills:'Dart,Flutter,Firebase,REST API',bio:'5 лет опыта. Делал приложения для финтеха и e-com. Ищу интересный проект.'},
-  {name:'Малика',role:'UX/UI Designer',city:'Самарканд',skills:'Figma,Prototyping,User Research,Design Systems',bio:'4 года в дизайне. Создаю интерфейсы которые любят пользователи.'},
-  {name:'Тимур',role:'Python Backend Dev',city:'Алматы',skills:'Python,Django,PostgreSQL,Docker,AWS',bio:'Backend-разработчик с опытом highload. Работал в стартапах.'},
-  {name:'Нодира',role:'QA Automation',city:'Ташкент',skills:'Selenium,Cypress,Jest,CI/CD,TestRail',bio:'Автоматизирую тестирование чтобы баги не добирались до пользователей.'},
-  {name:'Алексей',role:'DevOps Engineer',city:'Минск',skills:'Kubernetes,Terraform,AWS,CI/CD,Grafana',bio:'Строю инфраструктуру которая не падает. 7 лет в DevOps.'}
+const i18n={
+  ru:{madeIn:'создано в Узбекистане',chooseLang:'Выбери язык',langHint:'Можно сменить позже в профиле. Английские профессиональные термины остаются как есть.',continue:'Продолжить',heroTitle:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',specialist:'Я IT-специалист',employer:'Я работодатель',level:'Уровень',days:'Дней',matches:'Матчи',dailyCombo:'Ежедневное комбо (x2 видимость)',taskProfile:'Заполнить профиль',taskSwipes:'10 свайпов',taskInvite:'Пригласить друга',skip:'Мимо',interesting:'Интересно',search:'Поиск',profile:'Профиль',matchesTitle:'Твои матчи',matchesEmpty:'Пока пусто. Нажимай «Интересно», чтобы открыть новые диалоги.',backToSearch:'Вернуться к поиску',avatarHint:'Фото можно менять в редактировании профиля',editProfile:'Редактировать профиль',changeLanguage:'Сменить язык',name:'Имя',city:'Город',role:'Роль',skills:'Навыки (через запятую)',about:'О себе',photo:'Фото аватара',save:'Сохранить',cancel:'Отмена'},
+  uz:{madeIn:'Oʻzbekistonda yaratilgan',chooseLang:'Tilni tanlang',langHint:'Tilni keyin profil bo‘limida o‘zgartirasiz. Professional inglizcha terminlar saqlanadi.',continue:'Davom etish',heroTitle:'Karyera uchun AI hamkor',heroSub:'Oʻngga suring — qiziq, chapga — o‘tib ketish. Ish, xodim va networking toping.',specialist:'Men IT mutaxassisman',employer:'Men ish beruvchiman',level:'Daraja',days:'Kun',matches:'Matchlar',dailyCombo:'Kunlik combo (x2 ko‘rinish)',taskProfile:'Profilni to‘ldirish',taskSwipes:'10 ta swipe',taskInvite:'Do‘st taklif qilish',skip:'O‘tish',interesting:'Qiziq',search:'Qidiruv',profile:'Profil',matchesTitle:'Sizning matchlaringiz',matchesEmpty:'Hozircha bo‘sh. Yangi dialoglar uchun «Qiziq» tugmasini bosing.',backToSearch:'Qidiruvga qaytish',avatarHint:'Avatar rasmini profil tahririda almashtirasiz',editProfile:'Profilni tahrirlash',changeLanguage:'Tilni almashtirish',name:'Ism',city:'Shahar',role:'Rol',skills:'Ko‘nikmalar (vergul bilan)',about:'O‘zingiz haqingizda',photo:'Avatar rasmi',save:'Saqlash',cancel:'Bekor qilish'},
+  en:{madeIn:'created in Uzbekistan',chooseLang:'Choose language',langHint:'You can change it later in profile. Professional English terms stay as-is.',continue:'Continue',heroTitle:'Your AI partner for career',heroSub:'Swipe right — interesting, left — pass. Find jobs, talent and networking.',specialist:'I am an IT specialist',employer:'I am an employer',level:'Level',days:'Days',matches:'Matches',dailyCombo:'Daily combo (x2 visibility)',taskProfile:'Complete profile',taskSwipes:'10 swipes',taskInvite:'Invite a friend',skip:'Pass',interesting:'Interesting',search:'Search',profile:'Profile',matchesTitle:'Your matches',matchesEmpty:'No matches yet. Press “Interesting” to open new chats.',backToSearch:'Back to search',avatarHint:'You can change photo in profile edit',editProfile:'Edit profile',changeLanguage:'Change language',name:'Name',city:'City',role:'Role',skills:'Skills (comma separated)',about:'About',photo:'Avatar photo',save:'Save',cancel:'Cancel'}
+};
+
+const state={
+  lang:'ru',role:'specialist',xp:250,level:2,streak:1,matches:0,swipes:0,
+  name:'Севара',city:'Tashkent',userRole:'Product Owner',skills:'Figma, Prototyping, Research',bio:'Основатель Hamkor Top',avatar:''
+};
+
+const people=[
+  {name:'Артур',role:'Senior Flutter Dev',city:'Tashkent',skills:['Dart','Flutter','Firebase'],bio:'5 лет опыта в mobile.'},
+  {name:'Malika',role:'UX/UI Designer',city:'Samarkand',skills:['Figma','Research','Design System'],bio:'Создаёт понятные интерфейсы.'},
+  {name:'Timur',role:'Python Backend Dev',city:'Almaty',skills:['Python','Django','AWS'],bio:'Backend и архитектура сервисов.'}
 ];
 let cardIndex=0;
 
-function showScreen(id){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  if(id==='screen-main')renderCards();
-  if(id==='screen-profile')renderProfile();
-  if(id==='screen-edit-profile')fillEditForm();
-}
-function setRole(r){state.role=r;state.xp+=50;updateStats();showScreen('screen-main');}
-function renderCards(){
-  const area=document.getElementById('card-area');
-  const actions=document.getElementById('swipe-actions');
-  const empty=document.getElementById('empty-cards');
-  area.querySelectorAll('.swipe-card').forEach(c=>c.remove());
-  if(cardIndex>=cards.length){empty.style.display='block';actions.style.display='none';return;}
-  empty.style.display='none';actions.style.display='flex';
-  const c=cards[cardIndex];
-  const card=document.createElement('div');
-  card.className='swipe-card paper-texture';
-  card.innerHTML=`<div class="card-img"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><rect x="3" y="2" width="18" height="20" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg></div><div class="card-body"><div class="card-name">${c.name}</div><div class="card-role">✦ ${c.role}</div><div class="card-city">${c.city}</div><div class="tags">${c.skills.split(',').map(s=>`<span class="tag">${s.trim()}</span>`).join('')}</div><div class="card-bio">${c.bio}</div></div>`;
-  area.appendChild(card);
-}
-function swipe(dir){
-  const card=document.querySelector('.swipe-card');if(!card)return;
-  card.classList.add(dir==='right'?'swiping-right':'swiping-left');
-  state.swipesToday++;state.xp+=2;
-  document.getElementById('combo-swipe').textContent=state.swipesToday>=3?'✓':state.swipesToday;
-  if(state.swipesToday>=3)document.getElementById('combo-swipe').classList.add('done');
-  if(dir==='right'&&Math.random()<0.15){setTimeout(()=>{state.matches++;state.xp+=100;updateStats();showMatchPopup(cards[cardIndex].name);},350);}
-  setTimeout(()=>{card.remove();cardIndex++;updateStats();renderCards();},300);
-}
-function showMatchPopup(name){
-  const popup=document.createElement('div');popup.className='match-popup';
-  popup.innerHTML=`<h2>✦ Это матч!</h2><p>Ты и ${name} — обоюдный интерес!</p><p style="font-size:14px;margin-top:8px;color:var(--accent)">+100 XP</p><button class="match-dismiss" onclick="this.parentElement.remove()">Продолжить</button>`;
-  document.body.appendChild(popup);
-}
+const screens=['screen-lang','screen-welcome','screen-main','screen-matches','screen-profile','screen-edit'];
+function show(id){screens.forEach(s=>document.getElementById(s).classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='screen-main')renderCard();if(id==='screen-profile')renderProfile();if(id==='screen-edit')fillForm();}
+
+function t(){const d=i18n[state.lang];document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k])el.textContent=d[k];});}
+
 function updateStats(){
-  document.getElementById('xp-display').textContent=state.xp;
-  document.getElementById('level-display').textContent=state.level;
-  document.getElementById('streak-display').textContent='🔥'+state.streak;
-  document.getElementById('matches-display').textContent=state.matches;
-  document.getElementById('xp-bar').style.width=Math.min(100,(state.xp%200)/200*100)+'%';
-  document.getElementById('xp-next').textContent=(state.xp%200)+' / 200 XP до уровня '+(state.level+1);
+  document.getElementById('xpVal').textContent=state.xp;
+  document.getElementById('levelVal').textContent=state.level;
+  document.getElementById('streakVal').textContent=state.streak;
+  document.getElementById('matchVal').textContent=state.matches;
+  const p=Math.min(100,(state.xp%200)/200*100);
+  document.getElementById('xpFill').style.width=p+'%';
+  document.getElementById('xpNote').textContent=`${state.xp%200} / 200 XP`;
 }
-function renderProfile(){document.getElementById('profile-name').textContent=state.name;}
-function fillEditForm(){
-  document.getElementById('edit-name').value=state.name;
-  document.getElementById('edit-city').value=state.city;
-  document.getElementById('edit-role').value=state.userRole;
-  document.getElementById('edit-skills').value=state.skills;
-  document.getElementById('edit-bio').value=state.bio;
+
+function profileIcon(){
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>`;
 }
-function saveProfile(){
-  state.name=document.getElementById('edit-name').value;
-  state.city=document.getElementById('edit-city').value;
-  state.userRole=document.getElementById('edit-role').value;
-  state.skills=document.getElementById('edit-skills').value;
-  state.bio=document.getElementById('edit-bio').value;
-  state.xp+=50;updateStats();showScreen('screen-profile');
+
+function renderCard(){
+  const area=document.getElementById('swipeArea');
+  area.innerHTML='';
+  if(cardIndex>=people.length){area.innerHTML=`<div class="card" style="padding:20px;text-align:center;color:var(--ink-soft)">Карточки закончились на сегодня</div>`;return;}
+  const p=people[cardIndex];
+  const tags=p.skills.map(s=>`<span class="tag">${s}</span>`).join('');
+  area.innerHTML=`
+    <div class="card profile-card">
+      <div class="card-head">
+        <div class="avatar-round">${profileIcon()}</div>
+      </div>
+      <div class="card-body">
+        <div class="name">${p.name}</div>
+        <div class="role">${p.role}</div>
+        <div class="city">${p.city}</div>
+        <div class="tags">${tags}</div>
+        <div class="bio">${p.bio}</div>
+      </div>
+    </div>`;
 }
-updateStats();
+
+function swipe(dir){
+  state.swipes++; state.xp+=2;
+  if(state.swipes>=10) document.getElementById('swipeDot').textContent='✓';
+  if(dir==='yes' && Math.random()<0.2){state.matches++; state.xp+=100; alert(state.lang==='uz'?'Yangi match!':state.lang==='en'?'New match!':'Новый матч!');}
+  cardIndex++; updateStats(); renderCard();
+}
+
+function renderProfile(){
+  document.getElementById('profileName').textContent=state.name;
+  const box=document.getElementById('profileAvatar');
+  box.innerHTML=state.avatar?`<img src="${state.avatar}" alt="avatar"/>`:profileIcon();
+}
+
+function fillForm(){
+  fName.value=state.name; fCity.value=state.city; fRole.value=state.userRole; fSkills.value=state.skills; fBio.value=state.bio;
+}
+
+function save(){
+  state.name=fName.value.trim()||state.name;
+  state.city=fCity.value.trim()||state.city;
+  state.userRole=fRole.value.trim()||state.userRole;
+  state.skills=fSkills.value.trim()||state.skills;
+  state.bio=fBio.value.trim()||state.bio;
+  state.xp+=50;updateStats();show('screen-profile');
+}
+
+// events
+langContinue.onclick=()=>show('screen-welcome');
+btnSpecialist.onclick=()=>{state.role='specialist';show('screen-main');};
+btnEmployer.onclick=()=>{state.role='employer';show('screen-main');};
+btnNo.onclick=()=>swipe('no');
+btnYes.onclick=()=>swipe('yes');
+editProfileBtn.onclick=()=>show('screen-edit');
+changeLangBtn.onclick=()=>show('screen-lang');
+goMainFromMatches.onclick=()=>show('screen-main');
+saveBtn.onclick=save;
+cancelBtn.onclick=()=>show('screen-profile');
+
+avatarFile.addEventListener('change',e=>{
+  const file=e.target.files?.[0]; if(!file) return;
+  const r=new FileReader();
+  r.onload=()=>{state.avatar=r.result; renderProfile();};
+  r.readAsDataURL(file);
+});
+
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active'); state.lang=b.dataset.lang; t();
+}));
+
+document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>{
+  const tab=n.dataset.tab;
+  if(tab==='main')show('screen-main');
+  if(tab==='matches')show('screen-matches');
+  if(tab==='profile')show('screen-profile');
+}));
+
+t(); updateStats(); renderProfile();
 </script>
 </body>
 </html>
