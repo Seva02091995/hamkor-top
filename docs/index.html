@@ -8,15 +8,12 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --blue:#4A90E2; --blue-soft:#7996A2; --green:#2ECC71; --green-soft:#A3D9A5;
-  --yellow:#F1C40F; --yellow-soft:#F7DC6F; --white:#F5F5F5;
+  --blue:#4A90E2; --green:#2ECC71; --yellow:#F1C40F;
   --bg:#F0F4F8; --ink:#1F2A37; --muted:#607187; --line:#DCE7F1;
   --card:#FFFFFF; --card2:#F7FBFF;
-  --radius:16px;
 }
 body.dark{
-  --blue:#5BA0F5; --blue-soft:#889FAB; --green:#34E089; --green-soft:#8BCFA0;
-  --yellow:#F5C828; --yellow-soft:#F5DD8A; --white:#1C2430;
+  --blue:#5BA0F5; --green:#34E089; --yellow:#F5C828;
   --bg:#131A22; --ink:#EFF2F6; --muted:#8E9BAC; --line:#25313F;
   --card:#1C2735; --card2:#15202D;
 }
@@ -30,72 +27,59 @@ body{
 }
 .screen{display:none;min-height:100vh;padding:20px 14px 28px;flex-direction:column;align-items:center}
 .screen.active{display:flex}
-
-/* brand */
 .brand{font-family:Georgia,serif;font-size:38px;color:#2C5A88;margin-top:36px}
 .brand span{color:#2DA66E}
-.brand-sub{font-size:13px;color:var(--muted);margin-top:4px}
 body.dark .brand{color:#7DB5F5}body.dark .brand span{color:var(--green)}
+.brand-sub{font-size:13px;color:var(--muted);margin-top:4px}
 
-/* avatar */
 .av{width:100px;height:100px;border-radius:50%;border:2px solid rgba(74,144,226,.4);margin:26px 0 16px;display:grid;place-items:center;background:var(--card)}
 .av svg{width:44px;height:44px;color:var(--blue)}
-body.dark .av{border-color:rgba(91,160,245,.45);background:var(--card)}
-body.dark .av svg{color:var(--blue)}
-
 .hero-title{font-family:Georgia,serif;font-size:22px;text-align:center;margin-bottom:6px}
 .hero-sub{text-align:center;color:var(--muted);line-height:1.45;max-width:340px;font-size:14px;margin-bottom:22px}
 
-/* buttons */
-.btn{width:100%;max-width:360px;border:none;border-radius:12px;padding:14px 16px;font-weight:700;cursor:pointer;font-family:Georgia,serif;font-size:16px;margin-bottom:10px}
-.btn-primary{background:linear-gradient(135deg,var(--green),var(--blue));color:#fff;box-shadow:0 8px 20px rgba(46,204,113,.2)}
-.btn-secondary{background:var(--card);color:var(--ink);border:1px solid var(--line)}
-
-/* language */
 .lang-row{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap;justify-content:center}
 .lang-btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer}
 .lang-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
 
-/* stats */
+.btn{width:100%;max-width:360px;border:none;border-radius:12px;padding:14px 16px;font-weight:700;cursor:pointer;font-family:Georgia,serif;font-size:16px;margin-bottom:10px;text-align:center}
+.btn-primary{background:linear-gradient(135deg,var(--green),var(--blue));color:#fff;box-shadow:0 8px 20px rgba(46,204,113,.2)}
+.btn-secondary{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:400px;margin-bottom:12px}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center}
-.stat .v{font-family:Georgia,serif;font-size:20px;font-weight:700;color:var(--blue);line-height:1.2}
-body.dark .stat .v{color:var(--blue)}
-.stat .l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:3px}
+.stat .v{font-family:Inter,system-ui,sans-serif;font-size:20px;font-weight:700;color:var(--blue);line-height:1;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1,"lnum" 1}
+.stat .l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:5px}
 
-/* hunt */
-.hunt{width:100%;max-width:400px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin-bottom:12px}
+.track{height:7px;background:#E7EEF5;border-radius:999px;overflow:hidden}
+body.dark .track{background:#1E2B3A}
+.fill{height:100%;width:30%;background:linear-gradient(90deg,var(--green),var(--blue))}
+.note{font-size:11px;color:var(--muted)}
+
+.hunt{width:100%;max-width:400px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin:10px 0 12px}
 .hunt-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .hunt-title{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#47698A;font-weight:600}
 body.dark .hunt-title{color:#9EB8D6}
 .hunt-pill{font-size:10px;background:#E7F6ED;color:#1D8D57;border:1px solid #CFEEDD;border-radius:999px;padding:3px 7px}
 body.dark .hunt-pill{background:#16382A;color:var(--green);border-color:#22513D}
-.track{height:7px;background:#E7EEF5;border-radius:999px;overflow:hidden;margin-bottom:6px}
-body.dark .track{background:#1E2B3A}
-.fill{height:100%;width:35%;background:linear-gradient(90deg,var(--green),var(--blue))}
-.hunt-note{font-size:11px;color:var(--muted);text-align:right}
-.hunt-note b{color:#2DA66E}body.dark .hunt-note b{color:var(--green)}
-
-/* combo tasks */
-.tasks{margin-top:10px;display:flex;flex-direction:column;gap:5px}
+.hunt-note{font-size:11px;color:var(--muted);text-align:right;margin-top:6px}
+.tasks{margin-top:10px;display:flex;flex-direction:column;gap:6px}
 .task{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
 .dot{width:18px;height:18px;border-radius:50%;border:1px solid #CDDEEB;display:grid;place-items:center;font-size:10px;color:var(--green)}
 body.dark .dot{border-color:#31445C}
+.ref-row{display:flex;justify-content:flex-end;margin-top:8px}
+.ref-btn{padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:11px;cursor:pointer}
 
-/* card */
 .card-area{width:100%;max-width:400px;position:relative;height:430px;margin-bottom:12px}
 .card{position:absolute;inset:0;border-radius:20px;overflow:hidden;background:linear-gradient(170deg,var(--card),var(--card2));border:1px solid var(--line);box-shadow:0 14px 30px rgba(42,74,112,.10)}
 body.dark .card{box-shadow:0 14px 30px rgba(0,0,0,.40)}
-.card.swipe-left{transform:translateX(-150%)rotate(-30deg);opacity:0;transition:.35s}
-.card.swipe-right{transform:translateX(150%)rotate(30deg);opacity:0;transition:.35s}
+.card-left{transform:translateX(-150%) rotate(-30deg);opacity:0;transition:.35s}
+.card-right{transform:translateX(150%) rotate(30deg);opacity:0;transition:.35s}
 .rare-tag{text-align:center;font-size:10px;letter-spacing:2px;font-weight:700;color:#7A5A00;padding:7px;background:linear-gradient(90deg,transparent,rgba(241,196,15,.20),transparent);border-bottom:1px solid rgba(241,196,15,.35)}
-body.dark .rare-tag{color:var(--yellow);background:linear-gradient(90deg,transparent,rgba(245,200,40,.15),transparent);border-color:rgba(245,200,40,.28)}
+body.dark .rare-tag{color:var(--yellow)}
 .card-head{height:150px;background:linear-gradient(145deg,#DFF0FF,#EAF8EE);display:flex;align-items:center;justify-content:center;position:relative}
 body.dark .card-head{background:linear-gradient(145deg,#192A3A,#1D3040)}
-.card-glow{position:absolute;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(241,196,15,.20),transparent 65%);pointer-events:none}
-body.dark .card-glow{background:radial-gradient(circle,rgba(245,200,40,.22),transparent 65%)}
+.card-glow{position:absolute;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(241,196,15,.20),transparent 65%)}
 .card-av{width:80px;height:80px;border-radius:50%;border:2px solid rgba(74,144,226,.45);background:var(--card);display:grid;place-items:center;position:relative;z-index:2}
-body.dark .card-av{border-color:rgba(91,160,245,.45)}
 .card-av svg{width:34px;height:34px;color:var(--blue)}
 .card-body{padding:16px}
 .card-name{font-family:Georgia,serif;font-size:24px;color:#22496E;margin-bottom:2px}
@@ -104,68 +88,58 @@ body.dark .card-name{color:#D6E4F5}
 body.dark .card-role{color:var(--green)}
 .card-city{font-size:12px;color:var(--muted);margin-bottom:8px}
 
-/* score ring */
 .score{display:flex;gap:10px;align-items:center;margin:10px 0}
 .ring{width:46px;height:46px;border-radius:50%;background:conic-gradient(var(--yellow) 0 84%,#EAF0F6 84% 100%);display:grid;place-items:center}
 body.dark .ring{background:conic-gradient(var(--yellow) 0 84%,#1C2A3A 84% 100%)}
-.ring-in{width:35px;height:35px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-weight:700;font-size:14px;color:#7A5A00}
+.ring-in{width:35px;height:35px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-weight:700;font-size:14px;color:#7A5A00;font-family:Inter,sans-serif;font-variant-numeric:tabular-nums}
 body.dark .ring-in{color:var(--yellow)}
 .score-t1{font-size:12px;color:#1E5E94;font-weight:600}
 body.dark .score-t1{color:#7DB5F5}
 .score-t2{font-size:10px;color:var(--muted)}
 
-/* tags */
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
 .tag{padding:5px 11px;border-radius:999px;background:#EEF7FF;border:1px solid #D8E8F7;color:#2D5C89;font-size:11px}
 body.dark .tag{background:#1E3145;border-color:#27415C;color:#7DB5F5}
 .bio-text{font-size:13px;line-height:1.45;color:#52657B}
 body.dark .bio-text{color:var(--muted)}
 
-/* actions */
 .actions{width:100%;max-width:400px;display:flex;flex-direction:column;gap:10px}
 .act{height:52px;border-radius:12px;font-family:Georgia,serif;font-size:17px;font-weight:700;cursor:pointer;border:1px solid transparent}
 .act-yes{background:linear-gradient(135deg,var(--green),var(--blue));color:#fff;box-shadow:0 8px 20px rgba(46,204,113,.2)}
 .act-no{background:var(--card);color:#4F647A;border-color:var(--line)}
-body.dark .act-no{background:var(--card);color:var(--muted);border-color:var(--line)}
-
+body.dark .act-no{color:var(--muted)}
 .hint{text-align:center;font-size:11px;color:var(--muted);margin-top:8px}
-.hint b{color:#2DA66E}body.dark .hint b{color:var(--green)}
+.hint b{color:#2DA66E} body.dark .hint b{color:var(--green)}
 
-/* nav */
-.nav{width:100%;max-width:400px;display:flex;justify-content:space-around;background:var(--card);border-radius:var(--radius);border:1px solid var(--line);padding:10px 6px;margin-top:auto;margin-bottom:calc(env(safe-area-inset-bottom,0px)+8px)}
+.nav{width:100%;max-width:400px;display:flex;justify-content:space-around;background:var(--card);border-radius:16px;border:1px solid var(--line);padding:10px 6px;margin-top:auto;margin-bottom:calc(env(safe-area-inset-bottom,0px)+8px)}
 .nav-item{text-align:center;font-size:11px;color:var(--muted);cursor:pointer;padding:4px 10px;border-radius:10px}
 .nav-item.active{color:var(--blue);font-weight:600}
 
-/* profile */
 .pf-wrap{width:100%;max-width:400px}
 .pf-top{display:flex;flex-direction:column;align-items:center;margin-top:28px}
-.pf-av{width:88px;height:88px;border-radius:50%;border:2px solid rgba(74,144,226,.4);background:var(--card);display:grid;place-items:center;margin-bottom:12px}
+.pf-av{width:88px;height:88px;border-radius:50%;border:2px solid rgba(74,144,226,.4);background:var(--card);display:grid;place-items:center;margin-bottom:12px;overflow:hidden}
+.pf-av img{width:100%;height:100%;object-fit:cover;object-position:center}
 .pf-av svg{width:36px;height:36px;color:var(--blue)}
 .pf-name{font-family:Georgia,serif;font-size:24px}
 .pf-level{font-size:13px;color:var(--muted);margin-top:4px}
 .pf-note{font-size:11px;color:var(--muted);margin-top:6px}
+.photo-nav{display:flex;gap:8px;margin-top:8px}
+.photo-btn{padding:5px 9px;border-radius:8px;border:1px solid var(--line);background:var(--card);font-size:11px;color:var(--ink);cursor:pointer}
 
-/* form */
-.form{width:100%;max-width:360px;margin-top:16px}
+.form{width:100%;max-width:360px;margin:16px auto 0}
 .fg{margin-bottom:10px}
 .fg label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
 .input,.textarea{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:11px;font-size:14px}
 .textarea{min-height:80px;resize:vertical}
-
 .upload{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .file-hide{position:absolute;left:-9999px;opacity:0}
 .file-btn{display:inline-flex;align-items:center;padding:10px 14px;border:1px solid var(--line);background:var(--card);border-radius:10px;color:var(--ink);font-weight:600;cursor:pointer;font-size:13px}
 .file-name{font-size:11px;color:var(--muted)}
-
-/* extras */
-.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:11px;cursor:pointer;margin-bottom:16px}
-.note{font-size:12px;color:var(--muted);text-align:center}
 </style>
 </head>
 <body>
 
-<!-- LANGUAGE -->
-<div class="screen active" id="s-lang">
+<section class="screen active" id="s-lang">
   <div class="brand">Hamkor<span>Top</span></div>
   <div class="brand-sub" data-t="made">создано в Узбекистане</div>
   <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div>
@@ -177,10 +151,9 @@ body.dark .act-no{background:var(--card);color:var(--muted);border-color:var(--l
     <button class="lang-btn" data-lang="en">English</button>
   </div>
   <button class="btn btn-primary" id="btnLang" data-t="go">Продолжить</button>
-</div>
+</section>
 
-<!-- WELCOME -->
-<div class="screen" id="s-welcome">
+<section class="screen" id="s-welcome">
   <div class="brand">Hamkor<span>Top</span></div>
   <div class="brand-sub" data-t="made">создано в Узбекистане</div>
   <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div>
@@ -188,28 +161,28 @@ body.dark .act-no{background:var(--card);color:var(--muted);border-color:var(--l
   <div class="hero-sub" data-t="heroSub">Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.</div>
   <button class="btn btn-primary" id="btnSpec" data-t="spec">Я IT-специалист</button>
   <button class="btn btn-secondary" id="btnEmp" data-t="emp">Я работодатель</button>
-</div>
+</section>
 
-<!-- MAIN -->
-<div class="screen" id="s-main">
+<section class="screen" id="s-main">
   <div class="stats">
-    <div class="stat"><div class="v" id="xpV">250</div><div class="l">XP</div></div>
+    <div class="stat"><div class="v" id="xpV">250</div><div class="l" data-t="points">Очки</div></div>
     <div class="stat"><div class="v" id="lvlV">2</div><div class="l" data-t="lvl">Уровень</div></div>
     <div class="stat"><div class="v" id="strkV">1</div><div class="l" data-t="days">Дней</div></div>
-    <div class="stat"><div class="v" id="matchV">0</div><div class="l" data-t="mch">Матчи</div></div>
+    <div class="stat"><div class="v" id="matchV">0</div><div class="l" data-t="contacts">Контакты</div></div>
   </div>
   <div class="track"><div class="fill" id="xpFill" style="width:30%"></div></div>
-  <div class="hunt-note" id="xpNote" style="text-align:left;margin-bottom:10px">50 / 200 XP</div>
+  <div class="note" id="xpNote" style="margin-top:6px;margin-bottom:8px">50 / 200</div>
 
   <div class="hunt">
-    <div class="hunt-top"><div class="hunt-title" data-t="hunt">Сегодняшняя охота</div><div class="hunt-pill" data-t="boost">+68% мотивация</div></div>
+    <div class="hunt-top"><div class="hunt-title" data-t="hunt">Прогресс дня</div><div class="hunt-pill" data-t="boost">+68% активность</div></div>
     <div class="track"><div class="fill" id="huntFill" style="width:60%"></div></div>
-    <div class="hunt-note"><b id="huntFound">3</b> из 5 найдено</div>
+    <div class="hunt-note" data-t="foundText">Подходящих: <b id="huntFound">3</b> из 5</div>
     <div class="tasks">
       <div class="task"><span class="dot">✓</span><span data-t="task1">Заполнить профиль</span></div>
-      <div class="task"><span class="dot" id="swDot">○</span><span data-t="task2">10 свайпов</span></div>
-      <div class="task"><span class="dot">○</span><span data-t="task3">Пригласить друга</span></div>
+      <div class="task"><span class="dot" id="swDot">○</span><span data-t="task2">Посмотреть 10 карточек</span></div>
+      <div class="task"><span class="dot" id="refDot">○</span><span data-t="task3">Пригласить друга</span></div>
     </div>
+    <div class="ref-row"><button class="ref-btn" id="refBtn" data-t="getLink">Получить ссылку</button></div>
   </div>
 
   <div class="card-area" id="cardArea"></div>
@@ -218,32 +191,34 @@ body.dark .act-no{background:var(--card);color:var(--muted);border-color:var(--l
     <button class="act act-yes" id="btnYes" data-t="yes">Интересно</button>
     <button class="act act-no" id="btnNo" data-t="no">Мимо</button>
   </div>
-  <div class="hint" data-t="hint">Ещё <b id="hintLeft">2</b> свайпа — и бонусная карточка</div>
+  <div class="hint" id="hintText"></div>
 
   <div class="nav">
     <div class="nav-item active" data-tab="main" data-t="tabSearch">Поиск</div>
-    <div class="nav-item" data-tab="matches" data-t="tabMatch">Матчи</div>
+    <div class="nav-item" data-tab="matches" data-t="tabContacts">Контакты</div>
     <div class="nav-item" data-tab="profile" data-t="tabProf">Профиль</div>
   </div>
-</div>
+</section>
 
-<!-- MATCHES -->
-<div class="screen" id="s-matches">
-  <div class="hero-title" style="margin-top:50px" data-t="mTitle">Твои матчи</div>
-  <div class="hero-sub" data-t="mEmpty">Пока пусто. Свайпай «Интересно» чтобы открыть диалоги.</div>
+<section class="screen" id="s-matches">
+  <div class="hero-title" style="margin-top:50px" data-t="mTitle">Твои контакты</div>
+  <div class="hero-sub" data-t="mEmpty">Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.</div>
   <button class="btn btn-secondary" id="btnToMain" data-t="back">Вернуться к поиску</button>
   <div class="nav" style="margin-top:auto">
     <div class="nav-item" data-tab="main" data-t="tabSearch">Поиск</div>
-    <div class="nav-item active" data-tab="matches" data-t="tabMatch">Матчи</div>
+    <div class="nav-item active" data-tab="matches" data-t="tabContacts">Контакты</div>
     <div class="nav-item" data-tab="profile" data-t="tabProf">Профиль</div>
   </div>
-</div>
+</section>
 
-<!-- PROFILE -->
-<div class="screen" id="s-profile">
+<section class="screen" id="s-profile">
   <div class="pf-wrap">
     <div class="pf-top">
-      <div class="pf-av" id="pfAv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+      <div class="pf-av" id="pfAv"></div>
+      <div class="photo-nav">
+        <button class="photo-btn" id="photoPrev">◀</button>
+        <button class="photo-btn" id="photoNext">▶</button>
+      </div>
       <div class="pf-name" id="pfName">Севара</div>
       <div class="pf-level">Yangi · Level 1</div>
       <div class="pf-note" data-t="pfHint">Фото меняется в редактировании</div>
@@ -256,13 +231,12 @@ body.dark .act-no{background:var(--card);color:var(--muted);border-color:var(--l
   </div>
   <div class="nav" style="margin-top:auto">
     <div class="nav-item" data-tab="main" data-t="tabSearch">Поиск</div>
-    <div class="nav-item" data-tab="matches" data-t="tabMatch">Матчи</div>
+    <div class="nav-item" data-tab="matches" data-t="tabContacts">Контакты</div>
     <div class="nav-item active" data-tab="profile" data-t="tabProf">Профиль</div>
   </div>
-</div>
+</section>
 
-<!-- EDIT -->
-<div class="screen" id="s-edit">
+<section class="screen" id="s-edit">
   <div class="hero-title" style="margin-top:24px" data-t="edit">Редактировать профиль</div>
   <div class="form">
     <div class="fg"><label data-t="fName">Имя</label><input class="input" id="fName"/></div>
@@ -270,9 +244,9 @@ body.dark .act-no{background:var(--card);color:var(--muted);border-color:var(--l
     <div class="fg"><label data-t="fRole">Роль</label><input class="input" id="fRole"/></div>
     <div class="fg"><label data-t="fSkills">Навыки (через запятую)</label><input class="input" id="fSkills"/></div>
     <div class="fg"><label data-t="fBio">О себе</label><textarea class="textarea" id="fBio"></textarea></div>
-    <div class="fg"><label data-t="fPhoto">Фото аватара</label>
+    <div class="fg"><label data-t="fPhoto">Фото (можно несколько)</label>
       <div class="upload">
-        <input type="file" accept="image/*" class="file-hide" id="fileAv"/>
+        <input type="file" accept="image/*" class="file-hide" id="fileAv" multiple/>
         <label for="fileAv" class="file-btn" data-t="choose">Выбрать фото</label>
         <span class="file-name" id="fileName" data-t="none">Не выбрано</span>
       </div>
@@ -280,79 +254,86 @@ body.dark .act-no{background:var(--card);color:var(--muted);border-color:var(--l
     <button class="btn btn-primary" id="btnSave" data-t="save">Сохранить</button>
     <button class="btn btn-secondary" id="btnCancel" data-t="cancel">Отмена</button>
   </div>
-</div>
+</section>
 
 <script>
 const i18n={
-  ru:{made:'создано в Узбекистане',lang:'Выбери язык',langHint:'Можно сменить позже. Профессиональные термины остаются как есть.',go:'Продолжить',hero:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',spec:'Я IT-специалист',emp:'Я работодатель',lvl:'Уровень',days:'Дней',mch:'Матчи',hunt:'Сегодняшняя охота',boost:'+68% мотивация',task1:'Заполнить профиль',task2:'10 свайпов',task3:'Пригласить друга',yes:'Интересно',no:'Мимо',hint:'Ещё SWIPE свайпов — и бонусная карточка',tabSearch:'Поиск',tabMatch:'Матчи',tabProf:'Профиль',mTitle:'Твои матчи',mEmpty:'Пока пусто. Свайпай «Интересно» чтобы открыть диалоги.',back:'Вернуться к поиску',pfHint:'Фото меняется в редактировании',edit:'Редактировать профиль',chLang:'Сменить язык',theme:'Тёмная тема',fName:'Имя',fCity:'Город',fRole:'Роль',fSkills:'Навыки (через запятую)',fBio:'О себе',fPhoto:'Фото аватара',choose:'Выбрать фото',none:'Не выбрано',save:'Сохранить',cancel:'Отмена'},
-  uz:{made:"O'zbekistonda yaratilgan",lang:'Tilni tanlang',langHint:"Keyin profil bo'limida o'zgartirasiz.",go:'Davom etish',hero:'Karyera uchun AI hamkor',heroSub:"O'ngga — qiziq, chapga — o'tish. Ish va networking toping.",spec:'Men IT mutaxassisman',emp:'Men ish beruvchiman',lvl:'Daraja',days:'Kun',mch:'Matchlar',hunt:"Bugungi ov",boost:'+68% motivatsiya',task1:"Profilni to'ldirish",task2:'10 ta swipe',task3:"Do'st taklif qilish",yes:'Qiziq',no:"O'tish",hint:'Yana SWIPE swipe — bonus karta',tabSearch:'Qidiruv',tabMatch:'Matchlar',tabProf:'Profil',mTitle:'Matchlaringiz',mEmpty:"Hozircha bo'sh.",back:"Qidiruvga qaytish",pfHint:"Foto profil tahririda yangilanadi",edit:"Profilni tahrirlash",chLang:"Tilni almashtirish",theme:"Tungi rejim",fName:'Ism',fCity:'Shahar',fRole:'Rol',fSkills:"Ko'nikmalar",fBio:"O'zingiz haqingizda",fPhoto:'Avatar rasmi',choose:'Rasm tanlash',none:'Fayl tanlanmagan',save:'Saqlash',cancel:'Bekor qilish'},
-  en:{made:'created in Uzbekistan',lang:'Choose language',langHint:'You can change it later in profile.',go:'Continue',hero:'Your AI partner for career',heroSub:'Swipe right — interesting, left — pass. Find jobs, talent, networking.',spec:'I am an IT specialist',emp:'I am an employer',lvl:'Level',days:'Days',mch:'Matches',hunt:"Today's hunt",boost:'+68% motivation',task1:'Complete profile',task2:'10 swipes',task3:'Invite a friend',yes:'Interesting',no:'Pass',hint:'SWIPE more swipes for a bonus card',tabSearch:'Search',tabMatch:'Matches',tabProf:'Profile',mTitle:'Your matches',mEmpty:'No matches yet.',back:'Back to search',pfHint:'Change photo in profile edit',edit:'Edit profile',chLang:'Change language',theme:'Dark mode',fName:'Name',fCity:'City',fRole:'Role',fSkills:'Skills',fBio:'About',fPhoto:'Avatar photo',choose:'Choose photo',none:'None',save:'Save',cancel:'Cancel'}
+ru:{made:'создано в Узбекистане',lang:'Выбери язык',langHint:'Можно сменить позже. Профессиональные термины остаются как есть.',go:'Продолжить',hero:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',spec:'Я IT-специалист',emp:'Я работодатель',points:'Очки',lvl:'Уровень',days:'Дней',contacts:'Контакты',hunt:'Прогресс дня',boost:'+68% активность',foundText:'Подходящих: ',task1:'Заполнить профиль',task2:'Посмотреть 10 карточек',task3:'Пригласить друга',getLink:'Получить ссылку',yes:'Интересно',no:'Мимо',hint:'Ещё N карточек — и откроется новый кандидат',tabSearch:'Поиск',tabContacts:'Контакты',tabProf:'Профиль',mTitle:'Твои контакты',mEmpty:'Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.',back:'Вернуться к поиску',pfHint:'Фото меняется в редактировании',edit:'Редактировать профиль',chLang:'Сменить язык',theme:'Тёмная тема',fName:'Имя',fCity:'Город',fRole:'Роль',fSkills:'Навыки (через запятую)',fBio:'О себе',fPhoto:'Фото (можно несколько)',choose:'Выбрать фото',none:'Не выбрано',save:'Сохранить',cancel:'Отмена',linkCopied:'Ссылка скопирована'},
+uz:{made:"O'zbekistonda yaratilgan",lang:'Tilni tanlang',langHint:"Keyin o'zgartirasiz.",go:'Davom etish',hero:'Karyera uchun AI hamkor',heroSub:"O'ngga — qiziq, chapga — o'tish.",spec:'Men IT mutaxassisman',emp:'Men ish beruvchiman',points:'Ball',lvl:'Daraja',days:'Kun',contacts:'Kontaktlar',hunt:'Kun progressi',boost:'+68% faollik',foundText:'Moslar: ',task1:"Profilni to'ldirish",task2:'10 ta kartani ko‘rish',task3:"Do'st taklif qilish",getLink:'Havolani olish',yes:'Qiziq',no:"O'tish",hint:'Yana N karta — yangi nomzod ochiladi',tabSearch:'Qidiruv',tabContacts:'Kontaktlar',tabProf:'Profil',mTitle:'Kontaktlaringiz',mEmpty:"Hozircha bo'sh.",back:"Qidiruvga qaytish",pfHint:"Rasmni tahrirda almashtirasiz",edit:"Profilni tahrirlash",chLang:"Tilni almashtirish",theme:"Tungi rejim",fName:'Ism',fCity:'Shahar',fRole:'Rol',fSkills:"Ko'nikmalar",fBio:"O'zingiz haqingizda",fPhoto:'Rasmlar (bir nechta)',choose:'Rasm tanlash',none:'Tanlanmagan',save:'Saqlash',cancel:'Bekor qilish',linkCopied:'Havola nusxalandi'},
+en:{made:'created in Uzbekistan',lang:'Choose language',langHint:'You can change it later.',go:'Continue',hero:'Your AI partner for career',heroSub:'Right — interesting, left — pass.',spec:'I am an IT specialist',emp:'I am an employer',points:'Points',lvl:'Level',days:'Days',contacts:'Contacts',hunt:'Day progress',boost:'+68% activity',foundText:'Suitable: ',task1:'Complete profile',task2:'View 10 cards',task3:'Invite a friend',getLink:'Get invite link',yes:'Interesting',no:'Pass',hint:'N more cards and a new candidate unlocks',tabSearch:'Search',tabContacts:'Contacts',tabProf:'Profile',mTitle:'Your contacts',mEmpty:'No contacts yet.',back:'Back to search',pfHint:'Change photo in profile edit',edit:'Edit profile',chLang:'Change language',theme:'Dark mode',fName:'Name',fCity:'City',fRole:'Role',fSkills:'Skills',fBio:'About',fPhoto:'Photos (multiple)',choose:'Choose photos',none:'None selected',save:'Save',cancel:'Cancel',linkCopied:'Link copied'}
 };
-const st={lang:'ru',role:'specialist',xp:250,lvl:2,streak:1,matches:0,swipes:3,name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',avatar:''};
+const st={lang:'ru',role:'specialist',xp:250,lvl:2,streak:1,contacts:0,views:3,name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',photos:[],photoIdx:0,inviteDone:false,langReturn:'s-welcome'};
 const people=[
-  {name:'Дилшод',role:'Senior Flutter Dev',city:'Tashkent',skills:['Dart','Flutter','Firebase','REST API'],bio:'5 лет опыта в mobile. Делал приложения для финтеха и e-com.',rare:true,emoji:'📱'},
-  {name:'Malika',role:'UX/UI Designer',city:'Samarkand',skills:['Figma','Research','Design System'],bio:'Создаю интерфейсы, которые увеличивают удержание и конверсию.',rare:false,emoji:'🎨'},
-  {name:'Timur',role:'Python Backend Dev',city:'Tashkent',skills:['Python','Django','AWS'],bio:'Backend и архитектура для стартапов. 8 лет в разработке.',rare:true,emoji:'🐍'},
-  {name:'Nodira',role:'QA Automation',city:'Tashkent',skills:['Selenium','Cypress','CI/CD'],bio:'Автоматизирую тестирование чтобы баги не доходили до юзеров.',rare:false,emoji:'🧪'},
-  {name:'Alexey',role:'DevOps Engineer',city:'Almaty',skills:['Kubernetes','Terraform','AWS'],bio:'Строю надёжную инфраструктуру. 7 лет в DevOps.',rare:false,emoji:'☁️'}
+  {name:'Дилшод',role:'Senior Flutter Dev',city:'Tashkent',skills:['Dart','Flutter','Firebase','REST API'],bio:'5 лет опыта в mobile. Делал приложения для финтеха и e-com.',rare:true},
+  {name:'Malika',role:'UX/UI Designer',city:'Samarkand',skills:['Figma','Research','Design System'],bio:'Создаю интерфейсы, которые увеличивают удержание и конверсию.',rare:false},
+  {name:'Timur',role:'Python Backend Dev',city:'Tashkent',skills:['Python','Django','AWS'],bio:'Backend и архитектура для стартапов. 8 лет в разработке.',rare:true},
+  {name:'Nodira',role:'QA Automation',city:'Tashkent',skills:['Selenium','Cypress','CI/CD'],bio:'Автоматизирую тестирование чтобы баги не доходили до юзеров.',rare:false},
+  {name:'Alexey',role:'DevOps Engineer',city:'Almaty',skills:['Kubernetes','Terraform','AWS'],bio:'Строю надёжную инфраструктуру. 7 лет в DevOps.',rare:false}
 ];
 let ci=0;
+const screens=['s-lang','s-welcome','s-main','s-matches','s-profile','s-edit'];
 
-const scr=['s-lang','s-welcome','s-main','s-matches','s-profile','s-edit'];
-function show(id){scr.forEach(s=>document.getElementById(s).classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='s-main')renderCard();if(id==='s-profile')renderPf();if(id==='s-edit')fillForm();}
-function t(){const d=i18n[st.lang];document.querySelectorAll('[data-t]').forEach(el=>{const k=el.getAttribute('data-t');if(d[k])el.textContent=d[k];});renderHint();}
-
-function upd(){
-  xpV.textContent=st.xp;lvlV.textContent=st.lvl;strkV.textContent=st.streak;matchV.textContent=st.matches;
-  xpFill.style.width=Math.min(100,(st.xp%200)/200*100)+'%';xpNote.textContent=(st.xp%200)+' / 200 XP';
-}
+function icon(){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>'}
+function show(id){screens.forEach(s=>document.getElementById(s).classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='s-main')renderCard();if(id==='s-profile')renderProfile();if(id==='s-edit')fillForm();}
+function L(){return i18n[st.lang]}
+function tr(){const d=L();document.querySelectorAll('[data-t]').forEach(el=>{const k=el.getAttribute('data-t');if(d[k])el.textContent=d[k]});renderHint();renderFoundText();}
+function renderFoundText(){const d=L();const found=Math.min(st.views,5);const el=document.querySelector('[data-t="foundText"]');if(el){el.innerHTML=d.foundText+'<b id="huntFound">'+found+'</b> / 5';}}
+function renderHint(){const left=Math.max(0,5-st.views);const txt=L().hint.replace('N',left);const h=document.getElementById('hintText');if(h)h.textContent=txt;}
+function upd(){xpV.textContent=st.xp;lvlV.textContent=st.lvl;strkV.textContent=st.streak;matchV.textContent=st.contacts;xpFill.style.width=Math.min(100,(st.xp%200)/200*100)+'%';xpNote.textContent=(st.xp%200)+' / 200';document.getElementById('swDot').textContent=st.views>=10?'✓':'○';document.getElementById('refDot').textContent=st.inviteDone?'✓':'○';document.getElementById('huntFill').style.width=Math.min(100,(st.views/5)*100)+'%';renderHint();renderFoundText();}
 
 function renderCard(){
-  const area=cardArea;area.innerHTML='';
-  if(ci>=people.length){area.innerHTML='<div class="card" style="display:flex;align-items:center;justify-content:center;color:var(--muted)">Карточки закончились на сегодня</div>';return}
+  cardArea.innerHTML='';
+  if(ci>=people.length){cardArea.innerHTML='<div class="card" style="display:flex;align-items:center;justify-content:center;color:var(--muted)">Карточки закончились на сегодня</div>';return}
   const p=people[ci];
-  area.innerHTML=`
-    <div class="card">
-      ${p.rare?'<div class="rare-tag">✦ РЕДКИЙ ПАРТНЁР</div>':''}
-      <div class="card-head"><div class="card-glow"></div><div class="card-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div></div>
-      <div class="card-body">
-        <div class="card-name">${p.name}</div><div class="card-role">${p.role}</div><div class="card-city">${p.city}</div>
-        <div class="score"><div class="ring"><div class="ring-in">${80+Math.floor(Math.random()*15)}</div></div><div><div class="score-t1">Совместимость высокая</div><div class="score-t2">Отличный мэтч для тебя</div></div></div>
-        <div class="tags">${p.skills.map(s=>`<span class="tag">${s}</span>`).join('')}</div>
-        <div class="bio-text">${p.bio}</div>
-      </div>
-    </div>`;
+  const score=80+Math.floor(Math.random()*15);
+  cardArea.innerHTML=`<div class="card">${p.rare?'<div class="rare-tag">✦ РЕДКИЙ ПАРТНЁР</div>':''}<div class="card-head"><div class="card-glow"></div><div class="card-av">${icon()}</div></div><div class="card-body"><div class="card-name">${p.name}</div><div class="card-role">${p.role}</div><div class="card-city">${p.city}</div><div class="score"><div class="ring"><div class="ring-in">${score}</div></div><div><div class="score-t1">Похожесть ${score}%</div><div class="score-t2">по навыкам и целям</div></div></div><div class="tags">${p.skills.map(s=>'<span class="tag">'+s+'</span>').join('')}</div><div class="bio-text">${p.bio}</div></div></div>`;
+}
+function swipe(dir){st.views++;st.xp+=2;if(dir==='yes'){st.contacts++;st.xp+=20;}ci++;upd();renderCard();}
+
+function renderProfile(){
+  pfName.textContent=st.name;
+  if(st.photos.length){pfAv.innerHTML='<img src="'+st.photos[st.photoIdx]+'" alt="avatar"/>';} else {pfAv.innerHTML=icon();}
+}
+function fillForm(){fName.value=st.name;fCity.value=st.city;fRole.value=st.roleT;fSkills.value=st.skills;fBio.value=st.bio;fileName.textContent=L().none;}
+function save(){st.name=fName.value.trim()||st.name;st.city=fCity.value.trim()||st.city;st.roleT=fRole.value.trim()||st.roleT;st.skills=fSkills.value.trim()||st.skills;st.bio=fBio.value.trim()||st.bio;st.xp+=50;upd();show('s-profile');}
+
+function copyInvite(){
+  const link='https://t.me/hamkor_top_bot?start=ref_'+(st.name||'user');
+  st.inviteDone=true;upd();
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(link).then(()=>alert(L().linkCopied+': '+link)).catch(()=>prompt('Скопируй ссылку:',link));}
+  else prompt('Скопируй ссылку:',link);
 }
 
-function swipe(dir){
-  st.swipes++;st.xp+=2;
-  if(st.swipes>=10&&swDot)swDot.textContent='✓';
-  ci++;upd();renderCard();renderHint();
-}
-
-function renderHint(){const left=Math.max(0,5-st.swipes);if(hintLeft)hintLeft.textContent=left;}
-
-function renderPf(){pfName.textContent=st.name;pfAv.innerHTML=st.avatar?'<img src="'+st.avatar+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/>':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>';}
-function fillForm(){fName.value=st.name;fCity.value=st.city;fRole.value=st.roleT;fSkills.value=st.skills;fBio.value=st.bio;}
-
-// events
-btnLang.onclick=()=>show('s-welcome');
+btnLang.onclick=()=>show(st.langReturn||'s-welcome');
 btnSpec.onclick=()=>{st.role='specialist';show('s-main');};
 btnEmp.onclick=()=>{st.role='employer';show('s-main');};
 btnYes.onclick=()=>swipe('yes');
 btnNo.onclick=()=>swipe('no');
 btnEdit.onclick=()=>show('s-edit');
-btnLangCh.onclick=()=>show('s-lang');
+btnLangCh.onclick=()=>{st.langReturn='s-profile';show('s-lang');};
 btnToMain.onclick=()=>show('s-main');
-btnTheme.onclick=()=>{document.body.classList.toggle('dark');btnTheme.textContent=document.body.classList.contains('dark')?'Светлая тема':'Тёмная тема';};
-btnSave.onclick=()=>{st.name=fName.value.trim()||st.name;st.city=fCity.value.trim()||st.city;st.roleT=fRole.value.trim()||st.roleT;st.skills=fSkills.value.trim()||st.skills;st.bio=fBio.value.trim()||st.bio;st.xp+=50;upd();show('s-profile');};
-btnCancel.onclick=()=>show('s-profile');
+btnTheme.onclick=()=>{document.body.classList.toggle('dark');btnTheme.textContent=document.body.classList.contains('dark')?(st.lang==='ru'?'Светлая тема':st.lang==='uz'?'Yorugʻ mavzu':'Light mode'):(st.lang==='ru'?'Тёмная тема':st.lang==='uz'?'Tungi rejim':'Dark mode');};
+btnSave.onclick=save;btnCancel.onclick=()=>show('s-profile');
+refBtn.onclick=copyInvite;
 
-document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');st.lang=b.dataset.lang;t();}));
+photoPrev.onclick=()=>{if(!st.photos.length)return;st.photoIdx=(st.photoIdx-1+st.photos.length)%st.photos.length;renderProfile();}
+photoNext.onclick=()=>{if(!st.photos.length)return;st.photoIdx=(st.photoIdx+1)%st.photos.length;renderProfile();}
+
+fileAv.addEventListener('change',e=>{
+  const files=[...(e.target.files||[])];
+  if(!files.length){fileName.textContent=L().none;return;}
+  fileName.textContent=files.length+' фото';
+  const readers=files.map(f=>new Promise(res=>{const r=new FileReader();r.onload=()=>res(r.result);r.readAsDataURL(f);}));
+  Promise.all(readers).then(arr=>{st.photos=arr;st.photoIdx=0;renderProfile();});
+});
+
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');st.lang=b.dataset.lang;tr();}));
 document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>{const tab=n.dataset.tab;if(tab==='main')show('s-main');if(tab==='matches')show('s-matches');if(tab==='profile')show('s-profile');}));
-fileAv.addEventListener('change',e=>{const f=e.target.files?.[0];if(!f){fileName.textContent=i18n[st.lang].none;return}fileName.textContent=f.name;const r=new FileReader();r.onload=()=>{st.avatar=r.result;renderPf()};r.readAsDataURL(f);});
 
-t();upd();renderPf();
+// default first run returns from language to welcome
+st.langReturn='s-welcome';
+pfAv.innerHTML=icon();
+tr();upd();renderProfile();
 </script>
 </body>
 </html>
