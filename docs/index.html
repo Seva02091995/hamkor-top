@@ -15,6 +15,7 @@
   --cyan:#0E9594;
   --teal:#11686A;
   --terracotta:#F2542D;
+  --espresso:#562C2C;
   --line:#D8C7AE;
   --radius:14px;
 }
@@ -22,8 +23,8 @@ body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   color:var(--ink);
   background:
-    radial-gradient(1100px 420px at 15% -10%, rgba(17,104,106,.10), transparent 55%),
-    radial-gradient(800px 320px at 90% 100%, rgba(14,149,148,.08), transparent 55%),
+    radial-gradient(1100px 460px at 10% -12%, rgba(86,44,44,.22), transparent 55%),
+    radial-gradient(860px 340px at 92% 100%, rgba(17,104,106,.10), transparent 60%),
     var(--paper-soft);
   min-height:100vh;
 }
@@ -94,13 +95,13 @@ body::before{
 .tag{padding:6px 12px;border-radius:999px;background:#e8f4f3;color:var(--teal);font-size:12px;border:1px solid #cde7e5}
 .bio{margin-top:10px;color:var(--ink-soft);font-size:13px;line-height:1.45}
 
-.actions{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:14px}
+.actions{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;width:100%;max-width:420px}
 .act{
-  border:none;border-radius:999px;min-width:54px;height:54px;padding:0 18px;
-  font-weight:700;cursor:pointer;box-shadow:0 6px 14px rgba(34,48,71,.10)
+  border:none;border-radius:14px;height:54px;padding:0 12px;
+  font-weight:700;cursor:pointer;box-shadow:0 6px 14px rgba(34,48,71,.10);
+  flex:1;font-size:15px
 }
 .act.no{background:#fff;border:1px solid #e3b9ad;color:#9b5345}
-.act.super{background:#fff;border:1px solid #c7dede;color:var(--cyan);min-width:44px;height:44px}
 .act.yes{background:var(--teal);color:#fff}
 
 .bottom-nav{
@@ -127,15 +128,20 @@ body::before{
 
 .form{width:100%;max-width:360px;margin-top:18px}
 .group{margin-bottom:10px}
-.group label{display:block;font-size:12px;color:var(--ink-soft);margin-bottom:4px}
+.group label{display:block;font-size:12px;color:var(--ink-soft);margin-bottom:4px;font-family:Georgia,serif}
 .input,.textarea{
   width:100%;border:1px solid var(--line);background:#fffaf0;color:var(--ink);
   border-radius:12px;padding:12px;font-size:14px
 }
 .textarea{min-height:84px;resize:vertical}
 
-.upload{display:flex;align-items:center;gap:10px;margin-top:8px}
-.file{font-size:12px}
+.edit-shell{padding:14px 14px 16px;background:linear-gradient(180deg,#fff8ec,#f9eddc)}
+.edit-shell .hero-title{margin-top:4px;margin-bottom:10px}
+
+.upload{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
+.file-hidden{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+.file-btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#fff7ea;color:var(--ink);font-weight:600;cursor:pointer;font-family:Georgia,serif}
+.file-name{font-size:12px;color:var(--ink-soft)}
 
 .note{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:8px}
 
@@ -202,9 +208,8 @@ body::before{
   <div class="swipe-area" id="swipeArea"></div>
 
   <div class="actions">
-    <button class="act no" id="btnNo" data-i18n="skip">Мимо</button>
-    <button class="act super">✦</button>
-    <button class="act yes" id="btnYes" data-i18n="interesting">Интересно</button>
+    <button class="act no" id="btnNo" data-i18n="skip">✕ Мимо</button>
+    <button class="act yes" id="btnYes" data-i18n="interesting">🤝 Интересно</button>
   </div>
 
   <div class="bottom-nav">
@@ -252,31 +257,35 @@ body::before{
 
 <!-- 6. EDIT PROFILE -->
 <section id="screen-edit" class="screen">
-  <div class="hero-title" style="margin-top:18px" data-i18n="editProfile">Редактировать профиль</div>
-  <div class="form">
-    <div class="group"><label data-i18n="name">Имя</label><input class="input" id="fName"/></div>
-    <div class="group"><label data-i18n="city">Город</label><input class="input" id="fCity"/></div>
-    <div class="group"><label data-i18n="role">Роль</label><input class="input" id="fRole"/></div>
-    <div class="group"><label data-i18n="skills">Навыки (через запятую)</label><input class="input" id="fSkills"/></div>
-    <div class="group"><label data-i18n="about">О себе</label><textarea class="textarea" id="fBio"></textarea></div>
+  <div class="card edit-shell">
+    <div class="hero-title" style="margin-top:8px" data-i18n="editProfile">Редактировать профиль</div>
+    <div class="form">
+      <div class="group"><label data-i18n="name">Имя</label><input class="input" id="fName"/></div>
+      <div class="group"><label data-i18n="city">Город</label><input class="input" id="fCity"/></div>
+      <div class="group"><label data-i18n="role">Роль</label><input class="input" id="fRole"/></div>
+      <div class="group"><label data-i18n="skills">Навыки (через запятую)</label><input class="input" id="fSkills"/></div>
+      <div class="group"><label data-i18n="about">О себе</label><textarea class="textarea" id="fBio"></textarea></div>
 
-    <div class="group">
-      <label data-i18n="photo">Фото аватара</label>
-      <div class="upload">
-        <input id="avatarFile" type="file" accept="image/*" class="file" />
+      <div class="group">
+        <label data-i18n="photo">Фото аватара</label>
+        <div class="upload">
+          <input id="avatarFile" type="file" accept="image/*" class="file-hidden" />
+          <label for="avatarFile" class="file-btn" data-i18n="chooseFile">Выбрать фото</label>
+          <span id="fileName" class="file-name" data-i18n="noFile">Файл не выбран</span>
+        </div>
       </div>
-    </div>
 
-    <button class="btn btn-primary" id="saveBtn" data-i18n="save">Сохранить</button>
-    <button class="btn btn-secondary" id="cancelBtn" data-i18n="cancel">Отмена</button>
+      <button class="btn btn-primary" id="saveBtn" data-i18n="save">Сохранить</button>
+      <button class="btn btn-secondary" id="cancelBtn" data-i18n="cancel">Отмена</button>
+    </div>
   </div>
 </section>
 
 <script>
 const i18n={
-  ru:{madeIn:'создано в Узбекистане',chooseLang:'Выбери язык',langHint:'Можно сменить позже в профиле. Английские профессиональные термины остаются как есть.',continue:'Продолжить',heroTitle:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',specialist:'Я IT-специалист',employer:'Я работодатель',level:'Уровень',days:'Дней',matches:'Матчи',dailyCombo:'Ежедневное комбо (x2 видимость)',taskProfile:'Заполнить профиль',taskSwipes:'10 свайпов',taskInvite:'Пригласить друга',skip:'Мимо',interesting:'Интересно',search:'Поиск',profile:'Профиль',matchesTitle:'Твои матчи',matchesEmpty:'Пока пусто. Нажимай «Интересно», чтобы открыть новые диалоги.',backToSearch:'Вернуться к поиску',avatarHint:'Фото можно менять в редактировании профиля',editProfile:'Редактировать профиль',changeLanguage:'Сменить язык',name:'Имя',city:'Город',role:'Роль',skills:'Навыки (через запятую)',about:'О себе',photo:'Фото аватара',save:'Сохранить',cancel:'Отмена'},
-  uz:{madeIn:'Oʻzbekistonda yaratilgan',chooseLang:'Tilni tanlang',langHint:'Tilni keyin profil bo‘limida o‘zgartirasiz. Professional inglizcha terminlar saqlanadi.',continue:'Davom etish',heroTitle:'Karyera uchun AI hamkor',heroSub:'Oʻngga suring — qiziq, chapga — o‘tib ketish. Ish, xodim va networking toping.',specialist:'Men IT mutaxassisman',employer:'Men ish beruvchiman',level:'Daraja',days:'Kun',matches:'Matchlar',dailyCombo:'Kunlik combo (x2 ko‘rinish)',taskProfile:'Profilni to‘ldirish',taskSwipes:'10 ta swipe',taskInvite:'Do‘st taklif qilish',skip:'O‘tish',interesting:'Qiziq',search:'Qidiruv',profile:'Profil',matchesTitle:'Sizning matchlaringiz',matchesEmpty:'Hozircha bo‘sh. Yangi dialoglar uchun «Qiziq» tugmasini bosing.',backToSearch:'Qidiruvga qaytish',avatarHint:'Avatar rasmini profil tahririda almashtirasiz',editProfile:'Profilni tahrirlash',changeLanguage:'Tilni almashtirish',name:'Ism',city:'Shahar',role:'Rol',skills:'Ko‘nikmalar (vergul bilan)',about:'O‘zingiz haqingizda',photo:'Avatar rasmi',save:'Saqlash',cancel:'Bekor qilish'},
-  en:{madeIn:'created in Uzbekistan',chooseLang:'Choose language',langHint:'You can change it later in profile. Professional English terms stay as-is.',continue:'Continue',heroTitle:'Your AI partner for career',heroSub:'Swipe right — interesting, left — pass. Find jobs, talent and networking.',specialist:'I am an IT specialist',employer:'I am an employer',level:'Level',days:'Days',matches:'Matches',dailyCombo:'Daily combo (x2 visibility)',taskProfile:'Complete profile',taskSwipes:'10 swipes',taskInvite:'Invite a friend',skip:'Pass',interesting:'Interesting',search:'Search',profile:'Profile',matchesTitle:'Your matches',matchesEmpty:'No matches yet. Press “Interesting” to open new chats.',backToSearch:'Back to search',avatarHint:'You can change photo in profile edit',editProfile:'Edit profile',changeLanguage:'Change language',name:'Name',city:'City',role:'Role',skills:'Skills (comma separated)',about:'About',photo:'Avatar photo',save:'Save',cancel:'Cancel'}
+  ru:{madeIn:'создано в Узбекистане',chooseLang:'Выбери язык',langHint:'Можно сменить позже в профиле. Английские профессиональные термины остаются как есть.',continue:'Продолжить',heroTitle:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',specialist:'Я IT-специалист',employer:'Я работодатель',level:'Уровень',days:'Дней',matches:'Матчи',dailyCombo:'Ежедневное комбо (x2 видимость)',taskProfile:'Заполнить профиль',taskSwipes:'10 свайпов',taskInvite:'Пригласить друга',skip:'✕ Мимо',interesting:'🤝 Интересно',search:'Поиск',profile:'Профиль',matchesTitle:'Твои матчи',matchesEmpty:'Пока пусто. Нажимай «Интересно», чтобы открыть новые диалоги.',backToSearch:'Вернуться к поиску',avatarHint:'Фото можно менять в редактировании профиля',editProfile:'Редактировать профиль',changeLanguage:'Сменить язык',name:'Имя',city:'Город',role:'Роль',skills:'Навыки (через запятую)',about:'О себе',photo:'Фото аватара',chooseFile:'Выбрать фото',noFile:'Файл не выбран',save:'Сохранить',cancel:'Отмена'},
+  uz:{madeIn:'Oʻzbekistonda yaratilgan',chooseLang:'Tilni tanlang',langHint:'Tilni keyin profil bo‘limida o‘zgartirasiz. Professional inglizcha terminlar saqlanadi.',continue:'Davom etish',heroTitle:'Karyera uchun AI hamkor',heroSub:'Oʻngga suring — qiziq, chapga — o‘tib ketish. Ish, xodim va networking toping.',specialist:'Men IT mutaxassisman',employer:'Men ish beruvchiman',level:'Daraja',days:'Kun',matches:'Matchlar',dailyCombo:'Kunlik combo (x2 ko‘rinish)',taskProfile:'Profilni to‘ldirish',taskSwipes:'10 ta swipe',taskInvite:'Do‘st taklif qilish',skip:'✕ O‘tish',interesting:'🤝 Qiziq',search:'Qidiruv',profile:'Profil',matchesTitle:'Sizning matchlaringiz',matchesEmpty:'Hozircha bo‘sh. Yangi dialoglar uchun «Qiziq» tugmasini bosing.',backToSearch:'Qidiruvga qaytish',avatarHint:'Avatar rasmini profil tahririda almashtirasiz',editProfile:'Profilni tahrirlash',changeLanguage:'Tilni almashtirish',name:'Ism',city:'Shahar',role:'Rol',skills:'Ko‘nikmalar (vergul bilan)',about:'O‘zingiz haqingizda',photo:'Avatar rasmi',chooseFile:'Rasm tanlash',noFile:'Fayl tanlanmagan',save:'Saqlash',cancel:'Bekor qilish'},
+  en:{madeIn:'created in Uzbekistan',chooseLang:'Choose language',langHint:'You can change it later in profile. Professional English terms stay as-is.',continue:'Continue',heroTitle:'Your AI partner for career',heroSub:'Swipe right — interesting, left — pass. Find jobs, talent and networking.',specialist:'I am an IT specialist',employer:'I am an employer',level:'Level',days:'Days',matches:'Matches',dailyCombo:'Daily combo (x2 visibility)',taskProfile:'Complete profile',taskSwipes:'10 swipes',taskInvite:'Invite a friend',skip:'✕ Pass',interesting:'🤝 Interesting',search:'Search',profile:'Profile',matchesTitle:'Your matches',matchesEmpty:'No matches yet. Press “Interesting” to open new chats.',backToSearch:'Back to search',avatarHint:'You can change photo in profile edit',editProfile:'Edit profile',changeLanguage:'Change language',name:'Name',city:'City',role:'Role',skills:'Skills (comma separated)',about:'About',photo:'Avatar photo',chooseFile:'Choose photo',noFile:'No file selected',save:'Save',cancel:'Cancel'}
 };
 
 const state={
@@ -294,7 +303,15 @@ let cardIndex=0;
 const screens=['screen-lang','screen-welcome','screen-main','screen-matches','screen-profile','screen-edit'];
 function show(id){screens.forEach(s=>document.getElementById(s).classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='screen-main')renderCard();if(id==='screen-profile')renderProfile();if(id==='screen-edit')fillForm();}
 
-function t(){const d=i18n[state.lang];document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(d[k])el.textContent=d[k];});}
+function t(){
+  const d=i18n[state.lang];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(!d[k]) return;
+    if(el.id==='fileName' && avatarFile.files?.length) return;
+    el.textContent=d[k];
+  });
+}
 
 function updateStats(){
   document.getElementById('xpVal').textContent=state.xp;
@@ -370,7 +387,13 @@ saveBtn.onclick=save;
 cancelBtn.onclick=()=>show('screen-profile');
 
 avatarFile.addEventListener('change',e=>{
-  const file=e.target.files?.[0]; if(!file) return;
+  const file=e.target.files?.[0];
+  const fileNameEl=document.getElementById('fileName');
+  if(!file){
+    fileNameEl.textContent=i18n[state.lang].noFile;
+    return;
+  }
+  fileNameEl.textContent=file.name;
   const r=new FileReader();
   r.onload=()=>{state.avatar=r.result; renderProfile();};
   r.readAsDataURL(file);
