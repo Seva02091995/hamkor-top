@@ -13,8 +13,9 @@ from pathlib import Path
 
 # ---- КОНФИГУРАЦИЯ ----
 BOT_TOKEN = "8877540443:AAEMfWYjusdNCaMMvQBVOJ_QHwaDoPOWSwY"
-WEBAPP_DIR = Path(__file__).parent.parent / "webapp"
+WEBAPP_DIR = Path(__file__).parent.parent / "docs"
 PORT = 8080
+WEBAPP_URL = "https://seva02091995.github.io/hamkor-top/"
 
 # ---- Mini App HTTP-сервер (обслуживает index.html) ----
 class HamkorHandler(http.server.SimpleHTTPRequestHandler):
@@ -47,19 +48,6 @@ try:
 except ImportError:
     AIOGRAM_AVAILABLE = False
     print("⚠️ aiogram не установлен. Установи: pip install aiogram")
-
-# --- ВРЕМЕННАЯ ЗАГЛУШКА (пока нет публичного URL) ---
-# Для реальной работы Mini App в Telegram нужен HTTPS URL.
-# Варианты быстрого развёртывания:
-# 1. ngrok (локальный туннель) — временно для теста
-# 2. PythonAnywhere (бесплатный хостинг Python)
-# 3. Railway / Render (бесплатный tier)
-# 
-# Пока используем локальный URL — бот будет работать,
-# Mini App откроется в браузере.
-
-# Заглушка: позже заменить на реальный URL
-WEBAPP_URL = f"http://localhost:{PORT}"
 
 async def on_start(message: types.Message):
     """Обработчик /start"""
