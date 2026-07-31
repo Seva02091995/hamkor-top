@@ -1,421 +1,358 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#F5DFBB" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<meta name="theme-color" content="#F5F5F5"/>
 <title>Hamkor Top</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --paper:#F5EEDC;
-  --paper-soft:#FAF4E7;
-  --ink:#1F2E4A;
-  --ink-soft:#5F6C82;
-  --cyan:#8A5B3A;
-  --teal:#1F2E4A;
-  --terracotta:#D89A64;
-  --espresso:#2A1B15;
-  --line:#D8CCB6;
-  --radius:14px;
+  --blue:#4A90E2; --blue-soft:#7996A2; --green:#2ECC71; --green-soft:#A3D9A5;
+  --yellow:#F1C40F; --yellow-soft:#F7DC6F; --white:#F5F5F5;
+  --bg:#F0F4F8; --ink:#1F2A37; --muted:#607187; --line:#DCE7F1;
+  --card:#FFFFFF; --card2:#F7FBFF;
+  --radius:16px;
+}
+body.dark{
+  --blue:#5BA0F5; --blue-soft:#889FAB; --green:#34E089; --green-soft:#8BCFA0;
+  --yellow:#F5C828; --yellow-soft:#F5DD8A; --white:#1C2430;
+  --bg:#131A22; --ink:#EFF2F6; --muted:#8E9BAC; --line:#25313F;
+  --card:#1C2735; --card2:#15202D;
 }
 body{
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--ink);
   background:
-    radial-gradient(950px 420px at 50% -20%, rgba(216,154,100,.20), transparent 60%),
-    var(--espresso);
-  min-height:100vh;
+    radial-gradient(900px 300px at 80% -8%, rgba(74,144,226,.16), transparent 55%),
+    radial-gradient(800px 280px at 0% 100%, rgba(163,217,165,.16), transparent 50%),
+    var(--bg);
+  color:var(--ink);min-height:100vh;min-height:100dvh;overflow-x:hidden;
 }
-/* subtle paper texture */
-body::before{
-  content:"";
-  position:fixed;inset:0;pointer-events:none;z-index:-1;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-}
-
-.screen{display:none;min-height:100vh;padding:22px 16px 26px;flex-direction:column;align-items:center}
+.screen{display:none;min-height:100vh;padding:20px 14px 28px;flex-direction:column;align-items:center}
 .screen.active{display:flex}
 
-#screen-main,#screen-profile,#screen-matches,#screen-edit,#screen-welcome,#screen-lang{
-  max-width:430px;margin:10px auto;border-radius:20px;background:var(--paper-soft);
-  box-shadow:0 14px 34px rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.18);
-}
+/* brand */
+.brand{font-family:Georgia,serif;font-size:38px;color:#2C5A88;margin-top:36px}
+.brand span{color:#2DA66E}
+.brand-sub{font-size:13px;color:var(--muted);margin-top:4px}
+body.dark .brand{color:#7DB5F5}body.dark .brand span{color:var(--green)}
 
-.card{
-  width:100%;max-width:420px;background:var(--paper);
-  border:1px solid var(--line);border-radius:16px;
-  box-shadow:0 8px 24px rgba(34,48,71,.08);
-}
+/* avatar */
+.av{width:100px;height:100px;border-radius:50%;border:2px solid rgba(74,144,226,.4);margin:26px 0 16px;display:grid;place-items:center;background:var(--card)}
+.av svg{width:44px;height:44px;color:var(--blue)}
+body.dark .av{border-color:rgba(91,160,245,.45);background:var(--card)}
+body.dark .av svg{color:var(--blue)}
 
-.logo{font-family:Georgia,serif;font-size:42px;color:var(--teal);font-weight:700;margin-top:42px}
-.logo span{color:var(--cyan)}
-.subtitle{color:var(--ink-soft);margin-top:4px;font-size:14px}
-.hero-avatar{
-  width:110px;height:110px;border-radius:50%;margin:28px 0 18px;
-  border:1.5px solid #cdbda6;background:#fff8ed;display:grid;place-items:center;
-}
-.hero-avatar svg{width:48px;height:48px;color:var(--teal)}
-.hero-title{font-family:Georgia,serif;font-size:24px;color:var(--ink);text-align:center}
-.hero-sub{margin-top:8px;text-align:center;color:var(--ink-soft);line-height:1.45;max-width:360px}
+.hero-title{font-family:Georgia,serif;font-size:22px;text-align:center;margin-bottom:6px}
+.hero-sub{text-align:center;color:var(--muted);line-height:1.45;max-width:340px;font-size:14px;margin-bottom:22px}
 
-.lang-row{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;justify-content:center}
-.lang-btn{
-  border:1px solid var(--line);background:#fff7ea;color:var(--ink);
-  border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer
-}
-.lang-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+/* buttons */
+.btn{width:100%;max-width:360px;border:none;border-radius:12px;padding:14px 16px;font-weight:700;cursor:pointer;font-family:Georgia,serif;font-size:16px;margin-bottom:10px}
+.btn-primary{background:linear-gradient(135deg,var(--green),var(--blue));color:#fff;box-shadow:0 8px 20px rgba(46,204,113,.2)}
+.btn-secondary{background:var(--card);color:var(--ink);border:1px solid var(--line)}
 
-.btn{width:100%;max-width:360px;border:none;border-radius:14px;padding:14px 16px;font-weight:600;cursor:pointer}
-.btn-primary{background:var(--teal);color:#fff}
-.btn-secondary{background:#fff7ea;color:var(--ink);border:1px solid var(--line)}
-.btn + .btn{margin-top:10px}
+/* language */
+.lang-row{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap;justify-content:center}
+.lang-btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer}
+.lang-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
 
-.top-block{width:100%;max-width:420px;display:grid;gap:10px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.stat{background:#fff7ea;border:1px solid var(--line);border-radius:12px;padding:9px;text-align:center}
-.stat .v{font-family:Georgia,serif;font-size:18px;color:var(--teal);font-weight:700}
-.stat .l{font-size:10px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.5px}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:400px;margin-bottom:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center}
+.stat .v{font-family:Georgia,serif;font-size:20px;font-weight:700;color:var(--blue);line-height:1.2}
+body.dark .stat .v{color:var(--blue)}
+.stat .l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:3px}
 
-.xp-wrap{height:8px;background:#eadcc7;border-radius:999px;overflow:hidden}
-.xp-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--teal));width:35%}
-.xp-note{font-size:11px;color:var(--ink-soft)}
+/* hunt */
+.hunt{width:100%;max-width:400px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin-bottom:12px}
+.hunt-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.hunt-title{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#47698A;font-weight:600}
+body.dark .hunt-title{color:#9EB8D6}
+.hunt-pill{font-size:10px;background:#E7F6ED;color:#1D8D57;border:1px solid #CFEEDD;border-radius:999px;padding:3px 7px}
+body.dark .hunt-pill{background:#16382A;color:var(--green);border-color:#22513D}
+.track{height:7px;background:#E7EEF5;border-radius:999px;overflow:hidden;margin-bottom:6px}
+body.dark .track{background:#1E2B3A}
+.fill{height:100%;width:35%;background:linear-gradient(90deg,var(--green),var(--blue))}
+.hunt-note{font-size:11px;color:var(--muted);text-align:right}
+.hunt-note b{color:#2DA66E}body.dark .hunt-note b{color:var(--green)}
 
-.combo{padding:12px 14px}
-.combo h4{font-family:Georgia,serif;font-size:14px;color:var(--ink);margin-bottom:8px}
-.task{display:flex;align-items:center;gap:8px;color:var(--ink-soft);font-size:13px;margin:5px 0}
-.dot{width:18px;height:18px;border-radius:50%;border:1px solid #c8b79d;display:grid;place-items:center;font-size:12px;color:var(--teal)}
+/* combo tasks */
+.tasks{margin-top:10px;display:flex;flex-direction:column;gap:5px}
+.task{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.dot{width:18px;height:18px;border-radius:50%;border:1px solid #CDDEEB;display:grid;place-items:center;font-size:10px;color:var(--green)}
+body.dark .dot{border-color:#31445C}
 
-.swipe-area{width:100%;max-width:420px;position:relative;height:440px;margin-top:12px}
-.profile-card{position:absolute;inset:0;overflow:hidden}
-.card-head{height:150px;background:linear-gradient(135deg,#d9ecec,#c6dfdf);display:grid;place-items:center}
-.card-head .avatar-round{width:74px;height:74px;border-radius:50%;border:1.5px solid #a8c8c8;background:#fff;display:grid;place-items:center}
-.card-head svg{width:30px;height:30px;color:var(--teal)}
-.card-body{padding:14px}
-.name{font-family:Georgia,serif;font-size:24px;color:var(--ink)}
-.role{font-size:13px;color:var(--teal);margin-top:4px}
-.city{font-size:12px;color:var(--ink-soft);margin-top:5px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.tag{padding:5px 12px;border-radius:4px;background:#fffdf8;color:var(--ink);font-size:12px;border:1px solid #C8BDD0;font-family:Georgia,serif;font-style:italic}
-.bio{margin-top:10px;color:var(--ink-soft);font-size:13px;line-height:1.45}
+/* card */
+.card-area{width:100%;max-width:400px;position:relative;height:430px;margin-bottom:12px}
+.card{position:absolute;inset:0;border-radius:20px;overflow:hidden;background:linear-gradient(170deg,var(--card),var(--card2));border:1px solid var(--line);box-shadow:0 14px 30px rgba(42,74,112,.10)}
+body.dark .card{box-shadow:0 14px 30px rgba(0,0,0,.40)}
+.card.swipe-left{transform:translateX(-150%)rotate(-30deg);opacity:0;transition:.35s}
+.card.swipe-right{transform:translateX(150%)rotate(30deg);opacity:0;transition:.35s}
+.rare-tag{text-align:center;font-size:10px;letter-spacing:2px;font-weight:700;color:#7A5A00;padding:7px;background:linear-gradient(90deg,transparent,rgba(241,196,15,.20),transparent);border-bottom:1px solid rgba(241,196,15,.35)}
+body.dark .rare-tag{color:var(--yellow);background:linear-gradient(90deg,transparent,rgba(245,200,40,.15),transparent);border-color:rgba(245,200,40,.28)}
+.card-head{height:150px;background:linear-gradient(145deg,#DFF0FF,#EAF8EE);display:flex;align-items:center;justify-content:center;position:relative}
+body.dark .card-head{background:linear-gradient(145deg,#192A3A,#1D3040)}
+.card-glow{position:absolute;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(241,196,15,.20),transparent 65%);pointer-events:none}
+body.dark .card-glow{background:radial-gradient(circle,rgba(245,200,40,.22),transparent 65%)}
+.card-av{width:80px;height:80px;border-radius:50%;border:2px solid rgba(74,144,226,.45);background:var(--card);display:grid;place-items:center;position:relative;z-index:2}
+body.dark .card-av{border-color:rgba(91,160,245,.45)}
+.card-av svg{width:34px;height:34px;color:var(--blue)}
+.card-body{padding:16px}
+.card-name{font-family:Georgia,serif;font-size:24px;color:#22496E;margin-bottom:2px}
+body.dark .card-name{color:#D6E4F5}
+.card-role{font-size:14px;color:#2DA66E;margin-bottom:6px}
+body.dark .card-role{color:var(--green)}
+.card-city{font-size:12px;color:var(--muted);margin-bottom:8px}
 
-.actions{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:10px;margin-top:14px;width:100%;max-width:420px}
-.act{
-  border-radius:0;height:52px;padding:0 12px;
-  font-weight:700;cursor:pointer;box-shadow:none;
-  width:100%;font-size:15px
-}
-.act.yes{background:var(--ink);color:var(--paper-soft);border:1px solid #3B4A68;font-family:Georgia,serif;font-style:italic;font-size:34px}
-.act.no{background:#F6F0E4;border:1px solid #3B4A68;color:var(--ink);font-family:Georgia,serif;font-style:italic;font-size:34px}
+/* score ring */
+.score{display:flex;gap:10px;align-items:center;margin:10px 0}
+.ring{width:46px;height:46px;border-radius:50%;background:conic-gradient(var(--yellow) 0 84%,#EAF0F6 84% 100%);display:grid;place-items:center}
+body.dark .ring{background:conic-gradient(var(--yellow) 0 84%,#1C2A3A 84% 100%)}
+.ring-in{width:35px;height:35px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-weight:700;font-size:14px;color:#7A5A00}
+body.dark .ring-in{color:var(--yellow)}
+.score-t1{font-size:12px;color:#1E5E94;font-weight:600}
+body.dark .score-t1{color:#7DB5F5}
+.score-t2{font-size:10px;color:var(--muted)}
 
-.bottom-nav{
-  width:100%;max-width:420px;margin-top:auto;
-  background:#fff7ea;border:1px solid var(--line);
-  border-radius:16px;
-  padding:10px 8px;
-  display:flex;justify-content:space-around;align-items:center;
-  margin-bottom:calc(env(safe-area-inset-bottom,0px) + 10px);
-}
-.nav-item{text-align:center;font-size:11px;color:var(--ink-soft);cursor:pointer;padding:4px 8px;border-radius:10px}
-.nav-item.active{color:var(--teal);background:#efe2cf}
+/* tags */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.tag{padding:5px 11px;border-radius:999px;background:#EEF7FF;border:1px solid #D8E8F7;color:#2D5C89;font-size:11px}
+body.dark .tag{background:#1E3145;border-color:#27415C;color:#7DB5F5}
+.bio-text{font-size:13px;line-height:1.45;color:#52657B}
+body.dark .bio-text{color:var(--muted)}
 
-.profile-wrap{width:100%;max-width:420px}
-.profile-top{display:flex;flex-direction:column;align-items:center;margin-top:24px}
-.profile-avatar{
-  width:88px;height:88px;border-radius:50%;overflow:hidden;
-  border:1.5px solid #cbb9a0;background:#fff8ed;display:grid;place-items:center;
-}
-.profile-avatar img{width:100%;height:100%;object-fit:cover}
-.profile-avatar svg{width:34px;height:34px;color:var(--teal)}
-.profile-name{font-family:Georgia,serif;font-size:24px;margin-top:12px}
-.profile-level{font-size:13px;color:var(--ink-soft);margin-top:4px}
+/* actions */
+.actions{width:100%;max-width:400px;display:flex;flex-direction:column;gap:10px}
+.act{height:52px;border-radius:12px;font-family:Georgia,serif;font-size:17px;font-weight:700;cursor:pointer;border:1px solid transparent}
+.act-yes{background:linear-gradient(135deg,var(--green),var(--blue));color:#fff;box-shadow:0 8px 20px rgba(46,204,113,.2)}
+.act-no{background:var(--card);color:#4F647A;border-color:var(--line)}
+body.dark .act-no{background:var(--card);color:var(--muted);border-color:var(--line)}
 
-.form{width:100%;max-width:360px;margin-top:18px}
-.group{margin-bottom:10px}
-.group label{display:block;font-size:12px;color:var(--ink-soft);margin-bottom:4px;font-family:Georgia,serif}
-.input,.textarea{
-  width:100%;border:1px solid var(--line);background:#fffaf0;color:var(--ink);
-  border-radius:12px;padding:12px;font-size:14px
-}
-.textarea{min-height:84px;resize:vertical}
+.hint{text-align:center;font-size:11px;color:var(--muted);margin-top:8px}
+.hint b{color:#2DA66E}body.dark .hint b{color:var(--green)}
 
-.edit-shell{padding:14px 14px 16px;background:linear-gradient(180deg,#fff8ec,#f9eddc)}
-.edit-shell .hero-title{margin-top:4px;margin-bottom:10px}
+/* nav */
+.nav{width:100%;max-width:400px;display:flex;justify-content:space-around;background:var(--card);border-radius:var(--radius);border:1px solid var(--line);padding:10px 6px;margin-top:auto;margin-bottom:calc(env(safe-area-inset-bottom,0px)+8px)}
+.nav-item{text-align:center;font-size:11px;color:var(--muted);cursor:pointer;padding:4px 10px;border-radius:10px}
+.nav-item.active{color:var(--blue);font-weight:600}
 
-.upload{display:flex;align-items:center;gap:10px;margin-top:8px;flex-wrap:wrap}
-.file-hidden{position:absolute;left:-9999px;opacity:0;pointer-events:none}
-.file-btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#fff7ea;color:var(--ink);font-weight:600;cursor:pointer;font-family:Georgia,serif}
-.file-name{font-size:12px;color:var(--ink-soft)}
+/* profile */
+.pf-wrap{width:100%;max-width:400px}
+.pf-top{display:flex;flex-direction:column;align-items:center;margin-top:28px}
+.pf-av{width:88px;height:88px;border-radius:50%;border:2px solid rgba(74,144,226,.4);background:var(--card);display:grid;place-items:center;margin-bottom:12px}
+.pf-av svg{width:36px;height:36px;color:var(--blue)}
+.pf-name{font-family:Georgia,serif;font-size:24px}
+.pf-level{font-size:13px;color:var(--muted);margin-top:4px}
+.pf-note{font-size:11px;color:var(--muted);margin-top:6px}
 
-.note{font-size:12px;color:var(--ink-soft);text-align:center;margin-top:8px}
+/* form */
+.form{width:100%;max-width:360px;margin-top:16px}
+.fg{margin-bottom:10px}
+.fg label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.input,.textarea{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:11px;font-size:14px}
+.textarea{min-height:80px;resize:vertical}
 
-.hide{display:none}
+.upload{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.file-hide{position:absolute;left:-9999px;opacity:0}
+.file-btn{display:inline-flex;align-items:center;padding:10px 14px;border:1px solid var(--line);background:var(--card);border-radius:10px;color:var(--ink);font-weight:600;cursor:pointer;font-size:13px}
+.file-name{font-size:11px;color:var(--muted)}
+
+/* extras */
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:11px;cursor:pointer;margin-bottom:16px}
+.note{font-size:12px;color:var(--muted);text-align:center}
 </style>
 </head>
 <body>
 
-<!-- 1. LANGUAGE SCREEN -->
-<section id="screen-lang" class="screen active">
-  <div class="logo">Hamkor<span>Top</span></div>
-  <div class="subtitle" data-i18n="madeIn">создано в Узбекистане</div>
-  <div class="hero-avatar">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
-  </div>
-  <div class="hero-title" data-i18n="chooseLang">Выбери язык</div>
-  <div class="hero-sub" data-i18n="langHint">Можно сменить позже в профиле. Английские профессиональные термины остаются как есть.</div>
-
+<!-- LANGUAGE -->
+<div class="screen active" id="s-lang">
+  <div class="brand">Hamkor<span>Top</span></div>
+  <div class="brand-sub" data-t="made">создано в Узбекистане</div>
+  <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+  <div class="hero-title" data-t="lang">Выбери язык</div>
+  <div class="hero-sub" data-t="langHint">Можно сменить позже. Профессиональные термины остаются как есть.</div>
   <div class="lang-row">
     <button class="lang-btn active" data-lang="ru">Русский</button>
     <button class="lang-btn" data-lang="uz">O'zbekcha</button>
     <button class="lang-btn" data-lang="en">English</button>
   </div>
+  <button class="btn btn-primary" id="btnLang" data-t="go">Продолжить</button>
+</div>
 
-  <div style="height:18px"></div>
-  <button class="btn btn-primary" id="langContinue" data-i18n="continue">Продолжить</button>
-</section>
+<!-- WELCOME -->
+<div class="screen" id="s-welcome">
+  <div class="brand">Hamkor<span>Top</span></div>
+  <div class="brand-sub" data-t="made">создано в Узбекистане</div>
+  <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+  <div class="hero-title" data-t="hero">Твой AI-партнёр для карьеры</div>
+  <div class="hero-sub" data-t="heroSub">Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.</div>
+  <button class="btn btn-primary" id="btnSpec" data-t="spec">Я IT-специалист</button>
+  <button class="btn btn-secondary" id="btnEmp" data-t="emp">Я работодатель</button>
+</div>
 
-<!-- 2. WELCOME -->
-<section id="screen-welcome" class="screen">
-  <div class="logo">Hamkor<span>Top</span></div>
-  <div class="subtitle" data-i18n="madeIn">создано в Узбекистане</div>
-  <div class="hero-avatar">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+<!-- MAIN -->
+<div class="screen" id="s-main">
+  <div class="stats">
+    <div class="stat"><div class="v" id="xpV">250</div><div class="l">XP</div></div>
+    <div class="stat"><div class="v" id="lvlV">2</div><div class="l" data-t="lvl">Уровень</div></div>
+    <div class="stat"><div class="v" id="strkV">1</div><div class="l" data-t="days">Дней</div></div>
+    <div class="stat"><div class="v" id="matchV">0</div><div class="l" data-t="mch">Матчи</div></div>
   </div>
-  <div class="hero-title" data-i18n="heroTitle">Твой AI-партнёр для карьеры</div>
-  <div class="hero-sub" data-i18n="heroSub">Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.</div>
-  <div class="lang-row" aria-hidden="true"><span>✦</span><span>✧</span><span>✦</span></div>
-  <div style="height:14px"></div>
-  <button class="btn btn-primary" id="btnSpecialist" data-i18n="specialist">Я IT-специалист</button>
-  <button class="btn btn-secondary" id="btnEmployer" data-i18n="employer">Я работодатель</button>
-</section>
+  <div class="track"><div class="fill" id="xpFill" style="width:30%"></div></div>
+  <div class="hunt-note" id="xpNote" style="text-align:left;margin-bottom:10px">50 / 200 XP</div>
 
-<!-- 3. MAIN SWIPE -->
-<section id="screen-main" class="screen">
-  <div class="top-block">
-    <div class="stats">
-      <div class="stat"><div class="v" id="xpVal">250</div><div class="l">XP</div></div>
-      <div class="stat"><div class="v" id="levelVal">2</div><div class="l" data-i18n="level">Уровень</div></div>
-      <div class="stat"><div class="v" id="streakVal">1</div><div class="l" data-i18n="days">Дней</div></div>
-      <div class="stat"><div class="v" id="matchVal">0</div><div class="l" data-i18n="matches">Матчи</div></div>
-    </div>
-    <div class="xp-wrap"><div class="xp-fill" id="xpFill"></div></div>
-    <div class="xp-note" id="xpNote">50 / 200 XP</div>
-
-    <div class="card combo">
-      <h4 data-i18n="dailyCombo">Ежедневное комбо (x2 видимость)</h4>
-      <div class="task"><span class="dot">✓</span><span data-i18n="taskProfile">Заполнить профиль</span></div>
-      <div class="task"><span class="dot" id="swipeDot">○</span><span data-i18n="taskSwipes">10 свайпов</span></div>
-      <div class="task"><span class="dot">○</span><span data-i18n="taskInvite">Пригласить друга</span></div>
+  <div class="hunt">
+    <div class="hunt-top"><div class="hunt-title" data-t="hunt">Сегодняшняя охота</div><div class="hunt-pill" data-t="boost">+68% мотивация</div></div>
+    <div class="track"><div class="fill" id="huntFill" style="width:60%"></div></div>
+    <div class="hunt-note"><b id="huntFound">3</b> из 5 найдено</div>
+    <div class="tasks">
+      <div class="task"><span class="dot">✓</span><span data-t="task1">Заполнить профиль</span></div>
+      <div class="task"><span class="dot" id="swDot">○</span><span data-t="task2">10 свайпов</span></div>
+      <div class="task"><span class="dot">○</span><span data-t="task3">Пригласить друга</span></div>
     </div>
   </div>
 
-  <div class="swipe-area" id="swipeArea"></div>
+  <div class="card-area" id="cardArea"></div>
 
   <div class="actions">
-    <button class="act yes" id="btnYes" data-i18n="interesting">Интересно</button>
-    <button class="act no" id="btnNo" data-i18n="skip">Мимо</button>
+    <button class="act act-yes" id="btnYes" data-t="yes">Интересно</button>
+    <button class="act act-no" id="btnNo" data-t="no">Мимо</button>
   </div>
+  <div class="hint" data-t="hint">Ещё <b id="hintLeft">2</b> свайпа — и бонусная карточка</div>
 
-  <div class="bottom-nav">
-    <div class="nav-item active" data-tab="main" data-i18n="search">Поиск</div>
-    <div class="nav-item" data-tab="matches" data-i18n="matches">Матчи</div>
-    <div class="nav-item" data-tab="profile" data-i18n="profile">Профиль</div>
+  <div class="nav">
+    <div class="nav-item active" data-tab="main" data-t="tabSearch">Поиск</div>
+    <div class="nav-item" data-tab="matches" data-t="tabMatch">Матчи</div>
+    <div class="nav-item" data-tab="profile" data-t="tabProf">Профиль</div>
   </div>
-</section>
+</div>
 
-<!-- 4. MATCHES -->
-<section id="screen-matches" class="screen">
-  <div class="hero-title" style="margin-top:30px" data-i18n="matchesTitle">Твои матчи</div>
-  <div class="hero-sub" data-i18n="matchesEmpty">Пока пусто. Нажимай «Интересно», чтобы открыть новые диалоги.</div>
-  <div style="height:16px"></div>
-  <button class="btn btn-secondary" id="goMainFromMatches" data-i18n="backToSearch">Вернуться к поиску</button>
-  <div class="bottom-nav">
-    <div class="nav-item" data-tab="main" data-i18n="search">Поиск</div>
-    <div class="nav-item active" data-tab="matches" data-i18n="matches">Матчи</div>
-    <div class="nav-item" data-tab="profile" data-i18n="profile">Профиль</div>
+<!-- MATCHES -->
+<div class="screen" id="s-matches">
+  <div class="hero-title" style="margin-top:50px" data-t="mTitle">Твои матчи</div>
+  <div class="hero-sub" data-t="mEmpty">Пока пусто. Свайпай «Интересно» чтобы открыть диалоги.</div>
+  <button class="btn btn-secondary" id="btnToMain" data-t="back">Вернуться к поиску</button>
+  <div class="nav" style="margin-top:auto">
+    <div class="nav-item" data-tab="main" data-t="tabSearch">Поиск</div>
+    <div class="nav-item active" data-tab="matches" data-t="tabMatch">Матчи</div>
+    <div class="nav-item" data-tab="profile" data-t="tabProf">Профиль</div>
   </div>
-</section>
+</div>
 
-<!-- 5. PROFILE -->
-<section id="screen-profile" class="screen">
-  <div class="profile-wrap">
-    <div class="profile-top">
-      <div class="profile-avatar" id="profileAvatar"></div>
-      <div class="profile-name" id="profileName">Севара</div>
-      <div class="profile-level" id="profileLevel">Yangi • Level 1</div>
-      <div class="note" data-i18n="avatarHint">Фото можно менять в редактировании профиля</div>
+<!-- PROFILE -->
+<div class="screen" id="s-profile">
+  <div class="pf-wrap">
+    <div class="pf-top">
+      <div class="pf-av" id="pfAv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+      <div class="pf-name" id="pfName">Севара</div>
+      <div class="pf-level">Yangi · Level 1</div>
+      <div class="pf-note" data-t="pfHint">Фото меняется в редактировании</div>
     </div>
-
     <div class="form">
-      <button class="btn btn-primary" id="editProfileBtn" data-i18n="editProfile">Редактировать профиль</button>
-      <button class="btn btn-secondary" id="changeLangBtn" data-i18n="changeLanguage">Сменить язык</button>
+      <button class="btn btn-primary" id="btnEdit" data-t="edit">Редактировать профиль</button>
+      <button class="btn btn-secondary" id="btnLangCh" data-t="chLang">Сменить язык</button>
+      <button class="btn btn-secondary" id="btnTheme" data-t="theme">Тёмная тема</button>
     </div>
   </div>
-
-  <div class="bottom-nav">
-    <div class="nav-item" data-tab="main" data-i18n="search">Поиск</div>
-    <div class="nav-item" data-tab="matches" data-i18n="matches">Матчи</div>
-    <div class="nav-item active" data-tab="profile" data-i18n="profile">Профиль</div>
+  <div class="nav" style="margin-top:auto">
+    <div class="nav-item" data-tab="main" data-t="tabSearch">Поиск</div>
+    <div class="nav-item" data-tab="matches" data-t="tabMatch">Матчи</div>
+    <div class="nav-item active" data-tab="profile" data-t="tabProf">Профиль</div>
   </div>
-</section>
+</div>
 
-<!-- 6. EDIT PROFILE -->
-<section id="screen-edit" class="screen">
-  <div class="card edit-shell">
-    <div class="hero-title" style="margin-top:8px" data-i18n="editProfile">Редактировать профиль</div>
-    <div class="form">
-      <div class="group"><label data-i18n="name">Имя</label><input class="input" id="fName"/></div>
-      <div class="group"><label data-i18n="city">Город</label><input class="input" id="fCity"/></div>
-      <div class="group"><label data-i18n="role">Роль</label><input class="input" id="fRole"/></div>
-      <div class="group"><label data-i18n="skills">Навыки (через запятую)</label><input class="input" id="fSkills"/></div>
-      <div class="group"><label data-i18n="about">О себе</label><textarea class="textarea" id="fBio"></textarea></div>
-
-      <div class="group">
-        <label data-i18n="photo">Фото аватара</label>
-        <div class="upload">
-          <input id="avatarFile" type="file" accept="image/*" class="file-hidden" />
-          <label for="avatarFile" class="file-btn" data-i18n="chooseFile">Выбрать фото</label>
-          <span id="fileName" class="file-name" data-i18n="noFile">Файл не выбран</span>
-        </div>
+<!-- EDIT -->
+<div class="screen" id="s-edit">
+  <div class="hero-title" style="margin-top:24px" data-t="edit">Редактировать профиль</div>
+  <div class="form">
+    <div class="fg"><label data-t="fName">Имя</label><input class="input" id="fName"/></div>
+    <div class="fg"><label data-t="fCity">Город</label><input class="input" id="fCity"/></div>
+    <div class="fg"><label data-t="fRole">Роль</label><input class="input" id="fRole"/></div>
+    <div class="fg"><label data-t="fSkills">Навыки (через запятую)</label><input class="input" id="fSkills"/></div>
+    <div class="fg"><label data-t="fBio">О себе</label><textarea class="textarea" id="fBio"></textarea></div>
+    <div class="fg"><label data-t="fPhoto">Фото аватара</label>
+      <div class="upload">
+        <input type="file" accept="image/*" class="file-hide" id="fileAv"/>
+        <label for="fileAv" class="file-btn" data-t="choose">Выбрать фото</label>
+        <span class="file-name" id="fileName" data-t="none">Не выбрано</span>
       </div>
-
-      <button class="btn btn-primary" id="saveBtn" data-i18n="save">Сохранить</button>
-      <button class="btn btn-secondary" id="cancelBtn" data-i18n="cancel">Отмена</button>
     </div>
+    <button class="btn btn-primary" id="btnSave" data-t="save">Сохранить</button>
+    <button class="btn btn-secondary" id="btnCancel" data-t="cancel">Отмена</button>
   </div>
-</section>
+</div>
 
 <script>
 const i18n={
-  ru:{madeIn:'создано в Узбекистане',chooseLang:'Выбери язык',langHint:'Можно сменить позже в профиле. Английские профессиональные термины остаются как есть.',continue:'Продолжить',heroTitle:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',specialist:'Я IT-специалист',employer:'Я работодатель',level:'Уровень',days:'Дней',matches:'Матчи',dailyCombo:'Ежедневное комбо (x2 видимость)',taskProfile:'Заполнить профиль',taskSwipes:'10 свайпов',taskInvite:'Пригласить друга',skip:'Мимо',interesting:'Интересно',search:'Поиск',profile:'Профиль',matchesTitle:'Твои матчи',matchesEmpty:'Пока пусто. Нажимай «Интересно», чтобы открыть новые диалоги.',backToSearch:'Вернуться к поиску',avatarHint:'Фото можно менять в редактировании профиля',editProfile:'Редактировать профиль',changeLanguage:'Сменить язык',name:'Имя',city:'Город',role:'Роль',skills:'Навыки (через запятую)',about:'О себе',photo:'Фото аватара',chooseFile:'Выбрать фото',noFile:'Файл не выбран',save:'Сохранить',cancel:'Отмена'},
-  uz:{madeIn:'Oʻzbekistonda yaratilgan',chooseLang:'Tilni tanlang',langHint:'Tilni keyin profil bo‘limida o‘zgartirasiz. Professional inglizcha terminlar saqlanadi.',continue:'Davom etish',heroTitle:'Karyera uchun AI hamkor',heroSub:'Oʻngga suring — qiziq, chapga — o‘tib ketish. Ish, xodim va networking toping.',specialist:'Men IT mutaxassisman',employer:'Men ish beruvchiman',level:'Daraja',days:'Kun',matches:'Matchlar',dailyCombo:'Kunlik combo (x2 ko‘rinish)',taskProfile:'Profilni to‘ldirish',taskSwipes:'10 ta swipe',taskInvite:'Do‘st taklif qilish',skip:'O‘tish',interesting:'Qiziq',search:'Qidiruv',profile:'Profil',matchesTitle:'Sizning matchlaringiz',matchesEmpty:'Hozircha bo‘sh. Yangi dialoglar uchun «Qiziq» tugmasini bosing.',backToSearch:'Qidiruvga qaytish',avatarHint:'Avatar rasmini profil tahririda almashtirasiz',editProfile:'Profilni tahrirlash',changeLanguage:'Tilni almashtirish',name:'Ism',city:'Shahar',role:'Rol',skills:'Ko‘nikmalar (vergul bilan)',about:'O‘zingiz haqingizda',photo:'Avatar rasmi',chooseFile:'Rasm tanlash',noFile:'Fayl tanlanmagan',save:'Saqlash',cancel:'Bekor qilish'},
-  en:{madeIn:'created in Uzbekistan',chooseLang:'Choose language',langHint:'You can change it later in profile. Professional English terms stay as-is.',continue:'Continue',heroTitle:'Your AI partner for career',heroSub:'Swipe right — interesting, left — pass. Find jobs, talent and networking.',specialist:'I am an IT specialist',employer:'I am an employer',level:'Level',days:'Days',matches:'Matches',dailyCombo:'Daily combo (x2 visibility)',taskProfile:'Complete profile',taskSwipes:'10 swipes',taskInvite:'Invite a friend',skip:'Pass',interesting:'Interesting',search:'Search',profile:'Profile',matchesTitle:'Your matches',matchesEmpty:'No matches yet. Press “Interesting” to open new chats.',backToSearch:'Back to search',avatarHint:'You can change photo in profile edit',editProfile:'Edit profile',changeLanguage:'Change language',name:'Name',city:'City',role:'Role',skills:'Skills (comma separated)',about:'About',photo:'Avatar photo',chooseFile:'Choose photo',noFile:'No file selected',save:'Save',cancel:'Cancel'}
+  ru:{made:'создано в Узбекистане',lang:'Выбери язык',langHint:'Можно сменить позже. Профессиональные термины остаются как есть.',go:'Продолжить',hero:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',spec:'Я IT-специалист',emp:'Я работодатель',lvl:'Уровень',days:'Дней',mch:'Матчи',hunt:'Сегодняшняя охота',boost:'+68% мотивация',task1:'Заполнить профиль',task2:'10 свайпов',task3:'Пригласить друга',yes:'Интересно',no:'Мимо',hint:'Ещё SWIPE свайпов — и бонусная карточка',tabSearch:'Поиск',tabMatch:'Матчи',tabProf:'Профиль',mTitle:'Твои матчи',mEmpty:'Пока пусто. Свайпай «Интересно» чтобы открыть диалоги.',back:'Вернуться к поиску',pfHint:'Фото меняется в редактировании',edit:'Редактировать профиль',chLang:'Сменить язык',theme:'Тёмная тема',fName:'Имя',fCity:'Город',fRole:'Роль',fSkills:'Навыки (через запятую)',fBio:'О себе',fPhoto:'Фото аватара',choose:'Выбрать фото',none:'Не выбрано',save:'Сохранить',cancel:'Отмена'},
+  uz:{made:"O'zbekistonda yaratilgan",lang:'Tilni tanlang',langHint:"Keyin profil bo'limida o'zgartirasiz.",go:'Davom etish',hero:'Karyera uchun AI hamkor',heroSub:"O'ngga — qiziq, chapga — o'tish. Ish va networking toping.",spec:'Men IT mutaxassisman',emp:'Men ish beruvchiman',lvl:'Daraja',days:'Kun',mch:'Matchlar',hunt:"Bugungi ov",boost:'+68% motivatsiya',task1:"Profilni to'ldirish",task2:'10 ta swipe',task3:"Do'st taklif qilish",yes:'Qiziq',no:"O'tish",hint:'Yana SWIPE swipe — bonus karta',tabSearch:'Qidiruv',tabMatch:'Matchlar',tabProf:'Profil',mTitle:'Matchlaringiz',mEmpty:"Hozircha bo'sh.",back:"Qidiruvga qaytish",pfHint:"Foto profil tahririda yangilanadi",edit:"Profilni tahrirlash",chLang:"Tilni almashtirish",theme:"Tungi rejim",fName:'Ism',fCity:'Shahar',fRole:'Rol',fSkills:"Ko'nikmalar",fBio:"O'zingiz haqingizda",fPhoto:'Avatar rasmi',choose:'Rasm tanlash',none:'Fayl tanlanmagan',save:'Saqlash',cancel:'Bekor qilish'},
+  en:{made:'created in Uzbekistan',lang:'Choose language',langHint:'You can change it later in profile.',go:'Continue',hero:'Your AI partner for career',heroSub:'Swipe right — interesting, left — pass. Find jobs, talent, networking.',spec:'I am an IT specialist',emp:'I am an employer',lvl:'Level',days:'Days',mch:'Matches',hunt:"Today's hunt",boost:'+68% motivation',task1:'Complete profile',task2:'10 swipes',task3:'Invite a friend',yes:'Interesting',no:'Pass',hint:'SWIPE more swipes for a bonus card',tabSearch:'Search',tabMatch:'Matches',tabProf:'Profile',mTitle:'Your matches',mEmpty:'No matches yet.',back:'Back to search',pfHint:'Change photo in profile edit',edit:'Edit profile',chLang:'Change language',theme:'Dark mode',fName:'Name',fCity:'City',fRole:'Role',fSkills:'Skills',fBio:'About',fPhoto:'Avatar photo',choose:'Choose photo',none:'None',save:'Save',cancel:'Cancel'}
 };
-
-const state={
-  lang:'ru',role:'specialist',xp:250,level:2,streak:1,matches:0,swipes:0,
-  name:'Севара',city:'Tashkent',userRole:'Product Owner',skills:'Figma, Prototyping, Research',bio:'Основатель Hamkor Top',avatar:''
-};
-
+const st={lang:'ru',role:'specialist',xp:250,lvl:2,streak:1,matches:0,swipes:3,name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',avatar:''};
 const people=[
-  {name:'Артур',role:'Senior Flutter Dev',city:'Tashkent',skills:['Dart','Flutter','Firebase'],bio:'5 лет опыта в mobile.'},
-  {name:'Malika',role:'UX/UI Designer',city:'Samarkand',skills:['Figma','Research','Design System'],bio:'Создаёт понятные интерфейсы.'},
-  {name:'Timur',role:'Python Backend Dev',city:'Almaty',skills:['Python','Django','AWS'],bio:'Backend и архитектура сервисов.'}
+  {name:'Дилшод',role:'Senior Flutter Dev',city:'Tashkent',skills:['Dart','Flutter','Firebase','REST API'],bio:'5 лет опыта в mobile. Делал приложения для финтеха и e-com.',rare:true,emoji:'📱'},
+  {name:'Malika',role:'UX/UI Designer',city:'Samarkand',skills:['Figma','Research','Design System'],bio:'Создаю интерфейсы, которые увеличивают удержание и конверсию.',rare:false,emoji:'🎨'},
+  {name:'Timur',role:'Python Backend Dev',city:'Tashkent',skills:['Python','Django','AWS'],bio:'Backend и архитектура для стартапов. 8 лет в разработке.',rare:true,emoji:'🐍'},
+  {name:'Nodira',role:'QA Automation',city:'Tashkent',skills:['Selenium','Cypress','CI/CD'],bio:'Автоматизирую тестирование чтобы баги не доходили до юзеров.',rare:false,emoji:'🧪'},
+  {name:'Alexey',role:'DevOps Engineer',city:'Almaty',skills:['Kubernetes','Terraform','AWS'],bio:'Строю надёжную инфраструктуру. 7 лет в DevOps.',rare:false,emoji:'☁️'}
 ];
-let cardIndex=0;
+let ci=0;
 
-const screens=['screen-lang','screen-welcome','screen-main','screen-matches','screen-profile','screen-edit'];
-function show(id){screens.forEach(s=>document.getElementById(s).classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='screen-main')renderCard();if(id==='screen-profile')renderProfile();if(id==='screen-edit')fillForm();}
+const scr=['s-lang','s-welcome','s-main','s-matches','s-profile','s-edit'];
+function show(id){scr.forEach(s=>document.getElementById(s).classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='s-main')renderCard();if(id==='s-profile')renderPf();if(id==='s-edit')fillForm();}
+function t(){const d=i18n[st.lang];document.querySelectorAll('[data-t]').forEach(el=>{const k=el.getAttribute('data-t');if(d[k])el.textContent=d[k];});renderHint();}
 
-function t(){
-  const d=i18n[state.lang];
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k=el.getAttribute('data-i18n');
-    if(!d[k]) return;
-    if(el.id==='fileName' && avatarFile.files?.length) return;
-    el.textContent=d[k];
-  });
-}
-
-function updateStats(){
-  document.getElementById('xpVal').textContent=state.xp;
-  document.getElementById('levelVal').textContent=state.level;
-  document.getElementById('streakVal').textContent=state.streak;
-  document.getElementById('matchVal').textContent=state.matches;
-  const p=Math.min(100,(state.xp%200)/200*100);
-  document.getElementById('xpFill').style.width=p+'%';
-  document.getElementById('xpNote').textContent=`${state.xp%200} / 200 XP`;
-}
-
-function profileIcon(){
-  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>`;
+function upd(){
+  xpV.textContent=st.xp;lvlV.textContent=st.lvl;strkV.textContent=st.streak;matchV.textContent=st.matches;
+  xpFill.style.width=Math.min(100,(st.xp%200)/200*100)+'%';xpNote.textContent=(st.xp%200)+' / 200 XP';
 }
 
 function renderCard(){
-  const area=document.getElementById('swipeArea');
-  area.innerHTML='';
-  if(cardIndex>=people.length){area.innerHTML=`<div class="card" style="padding:20px;text-align:center;color:var(--ink-soft)">Карточки закончились на сегодня</div>`;return;}
-  const p=people[cardIndex];
-  const tags=p.skills.map(s=>`<span class="tag">${s}</span>`).join('');
+  const area=cardArea;area.innerHTML='';
+  if(ci>=people.length){area.innerHTML='<div class="card" style="display:flex;align-items:center;justify-content:center;color:var(--muted)">Карточки закончились на сегодня</div>';return}
+  const p=people[ci];
   area.innerHTML=`
-    <div class="card profile-card">
-      <div class="card-head">
-        <div class="avatar-round">${profileIcon()}</div>
-      </div>
+    <div class="card">
+      ${p.rare?'<div class="rare-tag">✦ РЕДКИЙ ПАРТНЁР</div>':''}
+      <div class="card-head"><div class="card-glow"></div><div class="card-av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div></div>
       <div class="card-body">
-        <div class="name">${p.name}</div>
-        <div class="role">${p.role}</div>
-        <div class="city">${p.city}</div>
-        <div class="tags">${tags}</div>
-        <div class="bio">${p.bio}</div>
+        <div class="card-name">${p.name}</div><div class="card-role">${p.role}</div><div class="card-city">${p.city}</div>
+        <div class="score"><div class="ring"><div class="ring-in">${80+Math.floor(Math.random()*15)}</div></div><div><div class="score-t1">Совместимость высокая</div><div class="score-t2">Отличный мэтч для тебя</div></div></div>
+        <div class="tags">${p.skills.map(s=>`<span class="tag">${s}</span>`).join('')}</div>
+        <div class="bio-text">${p.bio}</div>
       </div>
     </div>`;
 }
 
 function swipe(dir){
-  state.swipes++; state.xp+=2;
-  if(state.swipes>=10) document.getElementById('swipeDot').textContent='✓';
-  if(dir==='yes' && Math.random()<0.2){state.matches++; state.xp+=100; alert(state.lang==='uz'?'Yangi match!':state.lang==='en'?'New match!':'Новый матч!');}
-  cardIndex++; updateStats(); renderCard();
+  st.swipes++;st.xp+=2;
+  if(st.swipes>=10&&swDot)swDot.textContent='✓';
+  ci++;upd();renderCard();renderHint();
 }
 
-function renderProfile(){
-  document.getElementById('profileName').textContent=state.name;
-  const box=document.getElementById('profileAvatar');
-  box.innerHTML=state.avatar?`<img src="${state.avatar}" alt="avatar"/>`:profileIcon();
-}
+function renderHint(){const left=Math.max(0,5-st.swipes);if(hintLeft)hintLeft.textContent=left;}
 
-function fillForm(){
-  fName.value=state.name; fCity.value=state.city; fRole.value=state.userRole; fSkills.value=state.skills; fBio.value=state.bio;
-}
-
-function save(){
-  state.name=fName.value.trim()||state.name;
-  state.city=fCity.value.trim()||state.city;
-  state.userRole=fRole.value.trim()||state.userRole;
-  state.skills=fSkills.value.trim()||state.skills;
-  state.bio=fBio.value.trim()||state.bio;
-  state.xp+=50;updateStats();show('screen-profile');
-}
+function renderPf(){pfName.textContent=st.name;pfAv.innerHTML=st.avatar?'<img src="'+st.avatar+'" style="width:100%;height:100%;object-fit:cover;border-radius:50%"/>':'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>';}
+function fillForm(){fName.value=st.name;fCity.value=st.city;fRole.value=st.roleT;fSkills.value=st.skills;fBio.value=st.bio;}
 
 // events
-langContinue.onclick=()=>show('screen-welcome');
-btnSpecialist.onclick=()=>{state.role='specialist';show('screen-main');};
-btnEmployer.onclick=()=>{state.role='employer';show('screen-main');};
-btnNo.onclick=()=>swipe('no');
+btnLang.onclick=()=>show('s-welcome');
+btnSpec.onclick=()=>{st.role='specialist';show('s-main');};
+btnEmp.onclick=()=>{st.role='employer';show('s-main');};
 btnYes.onclick=()=>swipe('yes');
-editProfileBtn.onclick=()=>show('screen-edit');
-changeLangBtn.onclick=()=>show('screen-lang');
-goMainFromMatches.onclick=()=>show('screen-main');
-saveBtn.onclick=save;
-cancelBtn.onclick=()=>show('screen-profile');
+btnNo.onclick=()=>swipe('no');
+btnEdit.onclick=()=>show('s-edit');
+btnLangCh.onclick=()=>show('s-lang');
+btnToMain.onclick=()=>show('s-main');
+btnTheme.onclick=()=>{document.body.classList.toggle('dark');btnTheme.textContent=document.body.classList.contains('dark')?'Светлая тема':'Тёмная тема';};
+btnSave.onclick=()=>{st.name=fName.value.trim()||st.name;st.city=fCity.value.trim()||st.city;st.roleT=fRole.value.trim()||st.roleT;st.skills=fSkills.value.trim()||st.skills;st.bio=fBio.value.trim()||st.bio;st.xp+=50;upd();show('s-profile');};
+btnCancel.onclick=()=>show('s-profile');
 
-avatarFile.addEventListener('change',e=>{
-  const file=e.target.files?.[0];
-  const fileNameEl=document.getElementById('fileName');
-  if(!file){
-    fileNameEl.textContent=i18n[state.lang].noFile;
-    return;
-  }
-  fileNameEl.textContent=file.name;
-  const r=new FileReader();
-  r.onload=()=>{state.avatar=r.result; renderProfile();};
-  r.readAsDataURL(file);
-});
+document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');st.lang=b.dataset.lang;t();}));
+document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>{const tab=n.dataset.tab;if(tab==='main')show('s-main');if(tab==='matches')show('s-matches');if(tab==='profile')show('s-profile');}));
+fileAv.addEventListener('change',e=>{const f=e.target.files?.[0];if(!f){fileName.textContent=i18n[st.lang].none;return}fileName.textContent=f.name;const r=new FileReader();r.onload=()=>{st.avatar=r.result;renderPf()};r.readAsDataURL(f);});
 
-document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active'); state.lang=b.dataset.lang; t();
-}));
-
-document.querySelectorAll('.nav-item').forEach(n=>n.addEventListener('click',()=>{
-  const tab=n.dataset.tab;
-  if(tab==='main')show('screen-main');
-  if(tab==='matches')show('screen-matches');
-  if(tab==='profile')show('screen-profile');
-}));
-
-t(); updateStats(); renderProfile();
+t();upd();renderPf();
 </script>
 </body>
 </html>

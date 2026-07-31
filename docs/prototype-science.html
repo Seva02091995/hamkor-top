@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hamkor Top — Science Palette Preview</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#4A90E2;
+  --blue-soft:#7996A2;
+  --green:#2ECC71;
+  --green-soft:#A3D9A5;
+  --yellow:#F1C40F;
+  --yellow-soft:#F7DC6F;
+  --white:#F5F5F5;
+  --bg:#F0F4F8;
+  --ink:#1F2A37;
+  --muted:#607187;
+}
+body{
+  min-height:100vh;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(900px 280px at 85% -5%, rgba(74,144,226,.18), transparent 55%),
+    radial-gradient(800px 320px at 0% 100%, rgba(163,217,165,.18), transparent 50%),
+    var(--bg);
+  color:var(--ink);
+  padding:20px 14px;
+}
+.container{max-width:430px;margin:0 auto}
+.header{
+  background:var(--white);border:1px solid #DFE7EE;border-radius:16px;padding:14px 16px;
+  box-shadow:0 8px 22px rgba(74,144,226,.10);margin-bottom:12px;
+}
+.brand{font-family:Georgia,serif;font-size:28px;color:#2C5A88}
+.brand span{color:#2DA66E}
+.sub{font-size:12px;color:var(--muted);margin-top:3px}
+
+.hunt{
+  background:linear-gradient(160deg,#FFFFFF,#F7FBFF);
+  border:1px solid #DCE7F1;border-radius:16px;padding:13px 14px;margin-bottom:10px;
+  box-shadow:0 10px 24px rgba(42,74,112,.08);
+}
+.hunt .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.hunt .ttl{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#47698A;font-weight:600}
+.hunt .pill{font-size:11px;background:#E7F6ED;color:#1D8D57;border:1px solid #CFEEDD;border-radius:999px;padding:4px 8px}
+.track{height:8px;background:#E7EEF5;border-radius:99px;overflow:hidden}
+.fill{height:100%;width:68%;background:linear-gradient(90deg,var(--green),var(--blue));}
+.note{margin-top:6px;text-align:right;font-size:11px;color:var(--muted)}
+.note b{color:#2DA66E}
+
+.card{
+  border-radius:20px;overflow:hidden;
+  background:linear-gradient(170deg,#FFFFFF,#F7FBFF);
+  border:1px solid #DCE7F1;
+  box-shadow:0 16px 34px rgba(42,74,112,.12);
+  margin-bottom:11px;
+}
+.rare{
+  text-align:center;font-size:10px;letter-spacing:2px;font-weight:700;
+  color:#7A5A00;padding:8px;
+  background:linear-gradient(90deg,transparent,rgba(241,196,15,.20),transparent);
+  border-bottom:1px solid rgba(241,196,15,.35);
+}
+.head{
+  height:152px;
+  background:linear-gradient(145deg,#DFF0FF,#EAF8EE);
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.glow{
+  position:absolute;width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle, rgba(241,196,15,.22), transparent 65%);
+  animation:pulse 2.2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{transform:scale(.95);opacity:.7}50%{transform:scale(1.06);opacity:1}}
+.avatar{
+  position:relative;z-index:2;width:84px;height:84px;border-radius:50%;
+  border:2px solid rgba(74,144,226,.45);background:#FFFFFF;display:grid;place-items:center;
+}
+.avatar svg{width:36px;height:36px;color:#4A90E2}
+.body{padding:16px}
+.name{font-family:Georgia,serif;font-size:28px;color:#22496E}
+.role{font-size:14px;color:#2DA66E;margin-top:2px}
+.city{font-size:12px;color:var(--muted);margin-top:5px}
+
+.score{display:flex;gap:10px;align-items:center;margin:12px 0}
+.ring{width:48px;height:48px;border-radius:50%;background:conic-gradient(var(--yellow) 0 84%, #EAF0F6 84% 100%);display:grid;place-items:center}
+.inner{width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:Inter,sans-serif;font-size:15px;font-weight:700;color:#7A5A00}
+.score .t1{font-size:13px;color:#1E5E94;font-weight:600}
+.score .t2{font-size:10px;color:var(--muted)}
+
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}
+.tag{padding:5px 11px;border-radius:999px;background:#EEF7FF;border:1px solid #D8E8F7;color:#2D5C89;font-size:12px}
+.bio{font-size:13px;line-height:1.45;color:#52657B}
+
+.actions{display:flex;flex-direction:column;gap:10px}
+.btn{height:52px;border-radius:12px;font-family:Georgia,serif;font-size:18px;cursor:pointer;border:1px solid transparent}
+.btn.ok{background:linear-gradient(135deg,#2ECC71,#4A90E2);color:#fff;box-shadow:0 10px 20px rgba(46,204,113,.25)}
+.btn.no{background:#FFFFFF;color:#4F647A;border-color:#D7E2EC}
+
+.palette{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.sw{border-radius:10px;padding:8px 7px;color:#111;font-size:10px;border:1px solid rgba(0,0,0,.08)}
+.sw b{display:block;margin-bottom:3px;font-size:11px}
+
+.footer{margin-top:10px;font-size:11px;color:#5E6F84;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="brand">Hamkor <span>Top</span></div>
+    <div class="sub">научная палитра: eye comfort + mood + productivity</div>
+  </div>
+
+  <div class="hunt">
+    <div class="top">
+      <div class="ttl">Сегодняшняя охота</div>
+      <div class="pill">мотивация +68%</div>
+    </div>
+    <div class="track"><div class="fill"></div></div>
+    <div class="note">Прогресс: <b>3 из 5</b> найдено</div>
+  </div>
+
+  <div class="card">
+    <div class="rare">✦ РЕДКИЙ ПАРТНЁР</div>
+    <div class="head">
+      <div class="glow"></div>
+      <div class="avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+      </div>
+    </div>
+    <div class="body">
+      <div class="name">Malika</div>
+      <div class="role">UX/UI Product Designer</div>
+      <div class="city">Tashkent • 6 лет опыта</div>
+
+      <div class="score">
+        <div class="ring"><div class="inner">84</div></div>
+        <div>
+          <div class="t1">Совместимость 84%</div>
+          <div class="t2">Сильный мэтч для проекта</div>
+        </div>
+      </div>
+
+      <div class="tags">
+        <span class="tag">Figma</span>
+        <span class="tag">Research</span>
+        <span class="tag">Prototyping</span>
+      </div>
+
+      <div class="bio">Создаю интерфейсы, которые увеличивают удержание и конверсию. Люблю продукты с амбициями.</div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn ok">Интересно</button>
+    <button class="btn no">Мимо</button>
+  </div>
+
+  <div class="palette">
+    <div class="sw" style="background:#4A90E2"><b>#4A90E2</b>Blue</div>
+    <div class="sw" style="background:#2ECC71"><b>#2ECC71</b>Green</div>
+    <div class="sw" style="background:#F1C40F"><b>#F1C40F</b>Yellow</div>
+    <div class="sw" style="background:#7996A2"><b>#7996A2</b>Blue soft</div>
+    <div class="sw" style="background:#A3D9A5"><b>#A3D9A5</b>Green soft</div>
+    <div class="sw" style="background:#F5F5F5"><b>#F5F5F5</b>White soft</div>
+  </div>
+
+  <div class="footer">Визуальная цель: «не устают глаза + есть вау и драйв свайпать»</div>
+</div>
+
+<style>
+.dark-mode{--blue:#5BA0F5;--blue-soft:#889FAB;--green:#34E089;--green-soft:#8BCFA0;--yellow:#F5C828;--yellow-soft:#F5DD8A;--white:#1C2430;--bg:#131A22;--ink:#EFF2F6;--muted:#8E9BAC}
+.dark-box{background:#1C2735;border-color:#25313F;box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.dt-hunt{background:linear-gradient(160deg,#1C2735,#15202D);border-color:#25313F}
+.dt-card{background:linear-gradient(170deg,#1C2735,#15202D);border-color:#25313F;box-shadow:0 16px 34px rgba(0,0,0,.45)}
+.dt-rare{color:#F5C828;background:linear-gradient(90deg,transparent,rgba(245,200,40,.15),transparent);border-color:rgba(245,200,40,.28)}
+.dt-head{background:linear-gradient(145deg,#192A3A,#1D3040)}
+.dt-glow{background:radial-gradient(circle,rgba(245,200,40,.24),transparent 65%)}
+.dt-avatar{border-color:rgba(91,160,245,.45);background:#1C2735}
+.dt-name{color:#D6E4F5}.dt-role{color:#34E089}.dt-city{color:#8E9BAC}
+.dt-ring{background:conic-gradient(#F5C828 0 84%,#1C2A3A 84% 100%)}.dt-inner{background:#1C2430;color:#F5C828}
+.dt-t1{color:#7DB5F5}.dt-t2{color:#8E9BAC}
+.dt-tag{background:#1E3145;border-color:#27415C;color:#7DB5F5}
+.dt-bio{color:#8E9BAC}.dt-btn-no{background:#1C2735;color:#8E9BAC;border-color:#25313F}
+.dt-pill{background:#16382A;color:#34E089;border-color:#22513D}
+.dt-ttl{color:#9EB8D6}.dt-track{background:#1E2B3A}
+</style>
+
+<div class="container" style="margin-top:28px">
+  <div class="header dark-box"><div class="brand" style="color:#7DB5F5">Hamkor <span style="color:#34E089">Top</span></div><div class="sub" style="color:#8E9BAC">dark mode • научная палитра</div></div>
+
+  <div class="hunt dt-hunt"><div class="top"><div class="ttl dt-ttl">Сегодняшняя охота</div><div class="pill dt-pill">мотивация +68%</div></div><div class="track dt-track"><div class="fill"></div></div><div class="note" style="color:#8E9BAC">Прогресс: <b style="color:#34E089">3 из 5</b> найдено</div></div>
+
+  <div class="card dt-card"><div class="rare dt-rare">✦ РЕДКИЙ ПАРТНЁР</div><div class="head dt-head"><div class="glow dt-glow"></div><div class="avatar dt-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="#5BA0F5" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div></div>
+  <div class="body"><div class="name dt-name">Timur</div><div class="role dt-role">Python Backend Developer</div><div class="city dt-city">Tashkent • 8 лет опыта</div>
+  <div class="score"><div class="ring dt-ring"><div class="inner dt-inner">91</div></div><div><div class="t1 dt-t1">Совместимость 91%</div><div class="t2 dt-t2">Редкий мэтч — не упускай</div></div></div>
+  <div class="tags"><span class="tag dt-tag">Python</span><span class="tag dt-tag">Django</span><span class="tag dt-tag">AWS</span></div>
+  <div class="bio dt-bio">Построил архитектуру для трёх стартапов, вышедших на прибыль. Ищу продукт с масштабом.</div></div></div>
+
+  <div class="actions"><button class="btn ok">Интересно</button><button class="btn no dt-btn-no">Мимо</button></div>
+  <div class="footer" style="margin-top:8px">Dark mode — комфорт глаз + дофамин-акценты</div>
+</div>
+</body>
+</html>

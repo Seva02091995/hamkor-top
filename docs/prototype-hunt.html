@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hamkor Top — Hunt Concept v2</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  /* DARK NATURAL */
+  --bg:#1F2922;
+  --bg2:#2E3A30;
+  --surface:#2B352D;
+  --surface-2:#374339;
+  --text:#EFE7D7;
+  --muted:#B8AD97;
+  --line:rgba(239,231,215,.14);
+  --accent:#D2A86A;
+  --accent-2:#B9884A;
+  --badge:#6F8E72;
+}
+
+body.light{
+  /* LIGHT NATURAL (same family) */
+  --bg:#EFE7D7;
+  --bg2:#E3D7C2;
+  --surface:#FBF6EC;
+  --surface-2:#F4EBDD;
+  --text:#2A2F2A;
+  --muted:#6F7668;
+  --line:rgba(42,47,42,.12);
+  --accent:#B9884A;
+  --accent-2:#A87537;
+  --badge:#7C9C7F;
+}
+
+body{
+  min-height:100vh;
+  background:radial-gradient(1200px 460px at 50% -10%, var(--bg2), var(--bg));
+  color:var(--text);
+  font-family:Georgia, 'Times New Roman', serif;
+  display:flex;flex-direction:column;align-items:center;
+  padding:18px 14px 26px;
+  overflow:hidden;
+}
+
+/* paper grain */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.wrap{position:relative;z-index:1;width:100%;max-width:410px}
+
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.title{font-size:18px;color:var(--text);opacity:.95}
+.toggle{
+  border:1px solid var(--line);background:var(--surface);
+  color:var(--text);padding:8px 12px;border-radius:999px;
+  font-size:12px;cursor:pointer
+}
+
+.hunt{
+  background:rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius:14px;padding:13px 14px;
+  margin-bottom:12px;
+  backdrop-filter:blur(8px);
+}
+.hunt .lbl{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.track{height:7px;background:rgba(0,0,0,.18);border-radius:99px;overflow:hidden;margin-bottom:6px}
+.fill{height:100%;width:62%;background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 0 10px rgba(185,136,74,.35)}
+.counter{font-size:11px;color:var(--muted);text-align:right}
+.counter b{color:var(--accent)}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.stat{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center}
+.stat .icon{font-size:15px;margin-bottom:4px;opacity:.85}
+.metric{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-size:24px;font-weight:700;color:var(--accent);
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:"tnum" 1, "lnum" 1;
+}
+.stat .small{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-top:5px}
+
+.card{
+  border-radius:20px;overflow:hidden;
+  background:linear-gradient(160deg, var(--surface), var(--surface-2));
+  border:1px solid var(--line);
+  box-shadow:
+    0 0 0 2px rgba(185,136,74,.35),
+    0 0 38px rgba(185,136,74,.16),
+    0 18px 44px rgba(0,0,0,.25);
+}
+.card .rare{
+  text-align:center;padding:8px;font-size:10px;letter-spacing:2px;
+  color:var(--accent);border-bottom:1px solid rgba(185,136,74,.24);
+  background:linear-gradient(90deg,transparent,rgba(185,136,74,.10),transparent);
+}
+
+.head{height:152px;display:grid;place-items:center;background:linear-gradient(145deg, rgba(111,142,114,.35), rgba(0,0,0,.12))}
+.avatar{width:82px;height:82px;border-radius:50%;border:2px solid rgba(185,136,74,.5);display:grid;place-items:center;background:rgba(255,255,255,.06)}
+.avatar svg{width:35px;height:35px;color:var(--accent)}
+
+.body{padding:16px}
+.name{font-size:27px;color:var(--text)}
+.role{font-size:14px;color:var(--accent);margin-top:2px}
+.city{font-size:12px;color:var(--muted);margin-top:6px}
+
+.score{display:flex;gap:10px;align-items:center;margin:12px 0}
+.ring{width:46px;height:46px;border-radius:50%;background:conic-gradient(var(--accent) 0 86%, rgba(255,255,255,.08) 86% 100%);display:grid;place-items:center}
+.ring-in{width:35px;height:35px;border-radius:50%;background:var(--surface);display:grid;place-items:center}
+.ring-in span{font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:700;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+.score .t1{font-size:13px;color:var(--accent)}
+.score .t2{font-size:10px;color:var(--muted)}
+
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.tag{padding:5px 11px;border-radius:4px;border:1px solid rgba(185,136,74,.28);background:rgba(185,136,74,.08);font-size:12px;color:var(--text);font-style:italic}
+.bio{font-size:13px;line-height:1.45;color:var(--muted)}
+
+.actions{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.btn{height:52px;border:1px solid var(--line);cursor:pointer;font-family:Georgia,serif;font-style:italic;font-size:17px}
+.btn.ok{background:linear-gradient(135deg,#313A33,#283129);color:var(--accent);border-color:rgba(185,136,74,.45)}
+.btn.no{background:rgba(255,255,255,.03);color:var(--muted)}
+
+.hint{margin-top:9px;text-align:center;color:var(--muted);font-size:11px}
+.hint b{color:var(--accent)}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="title">Hamkor Top • Hunt UI</div>
+      <button class="toggle" id="toggleTheme">Light mode</button>
+    </div>
+
+    <div class="hunt">
+      <div class="lbl">Сегодняшняя охота</div>
+      <div class="track"><div class="fill"></div></div>
+      <div class="counter">Найдено <b>3</b> из 5 партнёров</div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="icon">○</div><div class="metric">47</div><div class="small">находок</div></div>
+      <div class="stat"><div class="icon">◍</div><div class="metric">12</div><div class="small">редких</div></div>
+      <div class="stat"><div class="icon">◉</div><div class="metric">3</div><div class="small">легендарных</div></div>
+    </div>
+
+    <div class="card">
+      <div class="rare">✦ РЕДКИЙ ПАРТНЁР</div>
+      <div class="head">
+        <div class="avatar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+        </div>
+      </div>
+      <div class="body">
+        <div class="name">Дилшод</div>
+        <div class="role">Senior Flutter Developer</div>
+        <div class="city">Ташкент • 7 лет опыта</div>
+
+        <div class="score">
+          <div class="ring"><div class="ring-in"><span>87</span></div></div>
+          <div>
+            <div class="t1">Совместимость 87%</div>
+            <div class="t2">Отличный мэтч для тебя</div>
+          </div>
+        </div>
+
+        <div class="tags">
+          <span class="tag">Dart</span>
+          <span class="tag">Flutter</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">REST API</span>
+        </div>
+
+        <div class="bio">Создаю мобильные приложения, которыми пользуются миллионы. Ищу сильную команду и амбициозный продукт.</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn ok">Интересно</button>
+      <button class="btn no">Мимо</button>
+    </div>
+
+    <div class="hint">Ещё <b>2 свайпа</b> — и откроется бонусная карточка</div>
+  </div>
+
+<script>
+const btn=document.getElementById('toggleTheme');
+btn.addEventListener('click',()=>{
+  document.body.classList.toggle('light');
+  btn.textContent=document.body.classList.contains('light')?'Dark mode':'Light mode';
+});
+</script>
+</body>
+</html>
