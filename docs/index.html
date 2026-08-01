@@ -118,7 +118,7 @@ body.dark .act-no{color:var(--muted)}
 .hint b{color:#2DA66E}body.dark .hint b{color:var(--green)}
 /* bottom nav */
 .nav{width:100%;max-width:400px;display:flex;justify-content:space-around;background:var(--card);border-top:1px solid var(--line);padding:10px 6px;position:fixed;bottom:0;z-index:200;background:var(--card)}
-.nav-item{text-align:center;font-size:11px;color:var(--muted);cursor:pointer;padding:4px 10px;flex:1}
+.nav-item{text-align:center;font-size:11px;color:var(--muted);cursor:pointer;padding:4px 10px;flex:1;pointer-events:auto}
 .nav-item.active{color:var(--blue);font-weight:600}
 .fab{position:fixed;bottom:80px;right:20px;width:56px;height:56px;background:var(--blue);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:28px;box-shadow:0 4px 15px rgba(74,144,226,.4);z-index:190;cursor:pointer}
 .streak7{width:100%;max-width:400px;display:flex;gap:6px;justify-content:center;margin:8px 0 10px}
@@ -506,6 +506,7 @@ var refs={
 };
 
 function show(id,remember){
+  console.log('Navigating to:', id);
   if(remember===undefined)remember=true;
   screens.forEach(function(s){
     var e=el(s);
