@@ -203,12 +203,6 @@ body.dark .streak-day.on{color:#FBBF24}
   </div>
   <div class="hint" id="hintText"></div>
   <div class="fab" id="fabBtn">+</div>
-  <div class="nav">
-    <div class="nav-item active" data-tab="main" data-t="tabSearch" onclick="show('s-main')">Поиск</div>
-    <div class="nav-item" data-tab="feed" data-t="tabFeed" onclick="show('s-feed')">Лента</div>
-    <div class="nav-item" data-tab="matches" data-t="tabContacts" onclick="show('s-matches')">Контакты</div>
-    <div class="nav-item" data-tab="profile" data-t="tabProf" onclick="show('s-profile')">Профиль</div>
-  </div>
 </div>
 
 <div class="screen" id="s-feed">
@@ -371,6 +365,14 @@ body.dark .streak-day.on{color:#FBBF24}
   <div style="padding:10px" id="plusFile">📎 Файл</div>
   <div style="padding:10px" id="plusAI" style="color:var(--blue)">✨ AI-инструменты</div>
 </div>
+
+<div class="nav" id="globalNav">
+    <div class="nav-item active" data-tab="main" data-t="tabSearch" onclick="show('s-main')">Поиск</div>
+    <div class="nav-item" data-tab="feed" data-t="tabFeed" onclick="show('s-feed')">Лента</div>
+    <div class="nav-item" data-tab="matches" data-t="tabContacts" onclick="show('s-matches')">Контакты</div>
+    <div class="nav-item" data-tab="profile" data-t="tabProf" onclick="show('s-profile')">Профиль</div>
+</div>
+
 <script>
 var i18n={
 ru:{made:'создано в Узбекистане',lang:'Выбери язык',langHint:'Можно сменить позже. Профессиональные термины остаются как есть.',go:'Продолжить',hero:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',spec:'Я IT-специалист',emp:'Я работодатель',points:'Очки',lvl:'Уровень',days:'Дней',contacts:'Контакты',hunt:'Прогресс дня',boost:'+68% активность',foundPrefix:'Подходящих: ',task1:'Заполнить профиль',task2:'Посмотреть 10 карточек',task3:'Пригласить друга',getLink:'Получить ссылку',refHint:'Нажмите — ссылка скопируется',linkCopied:'Ссылка скопирована',yes:'Интересно',no:'Мимо',hint:'Ещё N карточек — и откроется новый кандидат',hintDone:'Список на сегодня закончился. Обнови профиль или пригласи друга, чтобы открыть новых кандидатов.',tabSearch:'Поиск',tabFeed:'Лента',tabContacts:'Контакты',tabProf:'Профиль',chestBtn:'🎁 Сундук дня',nextQuest:'Следующий шаг: выполни задание',chestOpen:'Крутим награду...',chestReady:'Сундук уже открыт сегодня',chestBoost:'x2 на следующий свайп!',lbBadge:'🏆 Лига',lbTitle:'Рейтинг недели',lbYou:'Ты',thoughtTitle:'✏️ Добавить мысль',thoughtPh:'Что у вас на уме? Напишите здесь...',thoughtPublish:'✏️ Опубликовать',thoughtDraft:'Черновик',feedTitle:'Лента роста',feedSub:'Короткие кейсы, советы по карьере и разборы, чтобы прогревать интерес к продукту.',feedBadge1:'+ Практика',feedItem1Title:'Как найти 1‑го клиента за 7 дней',feedItem1Text:'Сценарий: профиль → 10 релевантных контактов → короткий оффер.',feedBadge2:'🔥 Кейс',feedItem2Title:'Почему визуальная воронка поднимает отклик',feedItem2Text:'Прогресс и награды повышают шанс, что человек завершит целевое действие.',mTitle:'Твои контакты',mEmpty:'Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.',back:'Вернуться к поиску',pfHint:'Фото меняется в редактировании',edit:'Редактировать профиль',chLang:'Сменить язык',themeDark:'Тёмная тема',themeLight:'Светлая тема',fName:'Имя',fCity:'Город',fRole:'Роль',fSkills:'Навыки (через запятую)',fBio:'О себе',fPhoto:'Фото (можно несколько)',choose:'Выбрать фото',none:'Не выбрано',save:'Сохранить',cancel:'Отмена',biz:'🚀 Услуги для бизнеса',issue:'💡 Сообщить о проблеме',bizTitle:'Бизнес-услуги Hamkor Top',bizSub:'Мы помогаем компаниям находить клиентов и автоматизировать процессы.',biz1:'Разработка сайтов и приложений',biz2:'CRM-интеграции и автоматизация',biz3:'Маркетинг и стратегия',biz4:'Поиск сотрудников под ключ',bizCTA:'Оставить заявку',bizSent:'Заявка отправлена! Мы свяжемся с вами.',issueTitle:'Сообщить о проблеме или идее',issueSub:'Мы платим за полезные идеи и найденные проблемы в Узбекистане.',issuePlaceholder:'Опишите проблему или идею...',issueContact:'Ваш Telegram или телефон',issueReward:'За accepted идеи платим до 50 000 сум',issueSent:'Спасибо! Если идею примут — мы свяжемся и выплатим вознаграждение.',btnPost:'📝 Создать пост',postTitle:'Мастерская постов',postWrite:'✍️ Сам напишу',postAI:'🤖 AI поможет',postPlaceholder:'О чём хотите рассказать?',postHint:'Нажмите «AI поможет» — ассистент напишет пост в вашем стиле на основе профиля.',postSend:'📤 Отправить в канал',postCopy:'📋 Копировать',zeroTitle:'Карточки на сегодня закончились',zeroSub:'Чтобы открыть новых кандидатов, сделай одно действие:',zeroA:'Обновить профиль',zeroB:'Пригласить друга',aiBio:'✨ AI улучшит описание',aiPost:'📝 Сгенерировать пост из опыта'},
