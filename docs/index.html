@@ -231,6 +231,9 @@ body.dark .act-no{color:var(--muted)}
 
 <div class="screen" id="s-edit">
   <div class="hero-title" style="margin-top:24px" data-t="edit">Редактировать профиль</div>
+  <div style="display:flex;justify-content:center;margin-bottom:14px">
+    <div class="pf-av" id="editAv" style="width:72px;height:72px"></div>
+  </div>
   <div class="form">
     <div class="fg"><label data-t="fName">Имя</label><input class="input" id="fName"/></div>
     <div class="fg"><label data-t="fCity">Город</label><input class="input" id="fCity"/></div>
@@ -279,6 +282,16 @@ body.dark .act-no{color:var(--muted)}
   </div>
 </div>
 
+<div class="screen" id="s-biz-next">
+  <div class="hero-title" style="margin-top:30px">Заявка принята!</div>
+  <div class="hero-sub">Мы свяжемся с вами в ближайшее время.<br>А пока — посмотрите как мы строим<br>Hamkor Top с нуля.</div>
+  <div style="width:100%;max-width:360px;margin-top:10px">
+    <a href="https://t.me/hamkor_top_bot" target="_blank" class="btn btn-primary" style="text-decoration:none;display:block">📱 Подписаться на канал Hamkor Top</a>
+    <div class="note" style="margin:10px 0">Там мы показываем всю кухню: как создаём продукт, какие задачи решаем, какие результаты получаем.</div>
+    <button class="btn btn-secondary" id="btnBizNextBack">← Вернуться в профиль</button>
+  </div>
+</div>
+
 <script>
 var i18n={
 ru:{made:'создано в Узбекистане',lang:'Выбери язык',langHint:'Можно сменить позже. Профессиональные термины остаются как есть.',go:'Продолжить',hero:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',spec:'Я IT-специалист',emp:'Я работодатель',points:'Очки',lvl:'Уровень',days:'Дней',contacts:'Контакты',hunt:'Прогресс дня',boost:'+68% активность',foundPrefix:'Подходящих: ',task1:'Заполнить профиль',task2:'Посмотреть 10 карточек',task3:'Пригласить друга',getLink:'Получить ссылку',refHint:'Нажмите — ссылка скопируется',linkCopied:'Ссылка скопирована',yes:'Интересно',no:'Мимо',hint:'Ещё N карточек — и откроется новый кандидат',hintDone:'Список на сегодня закончился. Обнови профиль или пригласи друга, чтобы открыть новых кандидатов.',tabSearch:'Поиск',tabContacts:'Контакты',tabProf:'Профиль',mTitle:'Твои контакты',mEmpty:'Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.',back:'Вернуться к поиску',pfHint:'Фото меняется в редактировании',edit:'Редактировать профиль',chLang:'Сменить язык',themeDark:'Тёмная тема',themeLight:'Светлая тема',fName:'Имя',fCity:'Город',fRole:'Роль',fSkills:'Навыки (через запятую)',fBio:'О себе',fPhoto:'Фото (можно несколько)',choose:'Выбрать фото',none:'Не выбрано',save:'Сохранить',cancel:'Отмена',biz:'🚀 Услуги для бизнеса',issue:'💡 Сообщить о проблеме',bizTitle:'Бизнес-услуги Hamkor Top',bizSub:'Мы помогаем компаниям находить клиентов и автоматизировать процессы.',biz1:'Разработка сайтов и приложений',biz2:'CRM-интеграции и автоматизация',biz3:'Маркетинг и стратегия',biz4:'Поиск сотрудников под ключ',bizCTA:'Оставить заявку',bizSent:'Заявка отправлена! Мы свяжемся с вами.',issueTitle:'Сообщить о проблеме или идее',issueSub:'Мы платим за полезные идеи и найденные проблемы в Узбекистане.',issuePlaceholder:'Опишите проблему или идею...',issueContact:'Ваш Telegram или телефон',issueReward:'За accepted идеи платим до 50 000 сум',issueSent:'Спасибо! Если идею примут — мы свяжемся и выплатим вознаграждение.',zeroTitle:'Карточки на сегодня закончились',zeroSub:'Чтобы открыть новых кандидатов, сделай одно действие:',zeroA:'Обновить профиль',zeroB:'Пригласить друга',aiBio:'✨ AI улучшит описание',aiPost:'📝 Сгенерировать пост из опыта'},
@@ -319,9 +332,9 @@ var refs={
 };
 
 function show(id,remember){if(remember===undefined)remember=true;screens.forEach(function(s){el(s).classList.remove('active');});el(id).classList.add('active');if(remember&&id!=='s-lang'){ST.lastScreen=id;saveST();}if(id==='s-main')renderCard();if(id==='s-profile')renderProfile();if(id==='s-edit')fillForm();}
-var screens=['s-lang','s-welcome','s-main','s-matches','s-profile','s-edit','s-biz','s-issue'];
+var screens=['s-lang','s-welcome','s-main','s-matches','s-profile','s-edit','s-biz','s-biz-next','s-issue'];
 
-function tr(){var d=tt();document.querySelectorAll('[data-t]').forEach(function(e){var k=e.getAttribute('data-t');if(d[k])e.textContent=d[k];});renderFoundText();renderHint();if(refs.refNote)refs.refNote.textContent=d.refHint;if(refs.btnTheme)refs.btnTheme.textContent=ST.theme==='dark'?d.themeLight:d.themeDark;if(refs.fileName&&(!refs.fileAv.files||refs.fileAv.files.length===0)&&ST.photos.length===0)refs.fileName.textContent=d.none;}
+function tr(){var d=tt();document.querySelectorAll('[data-t]').forEach(function(e){var k=e.getAttribute('data-t');if(k==='boost'){e.textContent='+'+calcBoost()+'% активность';return;}if(d[k])e.textContent=d[k];});renderFoundText();renderHint();if(refs.refNote)refs.refNote.textContent=d.refHint;if(refs.btnTheme)refs.btnTheme.textContent=ST.theme==='dark'?d.themeLight:d.themeDark;if(refs.fileName&&(!refs.fileAv.files||refs.fileAv.files.length===0)&&ST.photos.length===0)refs.fileName.textContent=d.none;}
 function renderFoundText(){var d=tt();var f=Math.min(ST.views,5);refs.huntNote.innerHTML=d.foundPrefix+'<b>'+f+'</b> / 5';}
 function renderHint(){var d=tt();var left=Math.max(0,5-ST.views);refs.hintText.textContent=left===0?d.hintDone:d.hint.replace('N',left);}
 function upd(){
@@ -355,6 +368,7 @@ function renderProfile(){
 function fillForm(){
   refs.fName.value=ST.name;refs.fCity.value=ST.city;refs.fRole.value=ST.roleT;refs.fSkills.value=ST.skills;refs.fBio.value=ST.bio;
   refs.fileName.textContent=ST.photos.length?ST.photos.length+' фото':tt().none;
+  var ea=el('editAv');if(ea){if(ST.photos.length){ea.innerHTML='<img src="'+ST.photos[ST.photoIdx]+'" alt="avatar"/>';}else{ea.innerHTML=icon();}}
 }
 function saveProfile(){
   ST.name=refs.fName.value.trim()||ST.name;ST.city=refs.fCity.value.trim()||ST.city;ST.roleT=refs.fRole.value.trim()||ST.roleT;
@@ -396,10 +410,19 @@ refs.refBtn.onclick=copyInvite;
 refs.photoPrev.onclick=function(){nextPhoto(-1);};refs.photoNext.onclick=function(){nextPhoto(1);};
 el('btnBiz').onclick=function(){show('s-biz');};
 el('btnBizBack').onclick=function(){show('s-profile');};
-el('btnBizSend').onclick=function(){alert(tt().bizSent);show('s-profile');};
+el('btnBizSend').onclick=function(){alert(tt().bizSent);show('s-biz-next');};
 el('btnIssue').onclick=function(){show('s-issue');};
 el('btnIssueBack').onclick=function(){show('s-profile');};
 el('btnIssueSend').onclick=function(){alert(tt().issueSent);show('s-profile');};
+el('btnBizNextBack').onclick=function(){show('s-profile');};
+
+function calcBoost(){
+  var f=0,t=6;
+  if(ST.name&&ST.name!=='Севара')f++; if(ST.city&&ST.city!=='Tashkent')f++; if(ST.roleT&&ST.roleT!=='Product Owner')f++;
+  if(ST.skills&&ST.skills!=='Figma,Prototyping,Research')f++; if(ST.bio&&ST.bio!=='Основатель Hamkor Top')f++;
+  if(ST.photos.length)f++;
+  return Math.min(100,Math.round(f/t*100+68));
+}
 el('aiBio').onclick=function(){
   var p='Улучши описание профиля. Имя: '+ST.name+'. Роль: '+ST.roleT+'. Навыки: '+ST.skills+'. Текущее описание: '+(ST.bio||'нет')+'. Напиши улучшенную версию на русском, 2-3 предложения, деловым и тёплым тоном.';
   try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiBio',prompt:p}));refs.fBio.value='✨ AI думает...';}
