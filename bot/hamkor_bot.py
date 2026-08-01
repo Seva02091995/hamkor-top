@@ -2,7 +2,7 @@
 Hamkor Top — Telegram Bot + Mini App Server
 Принимает данные из Mini App, сохраняет профили, пересылает B2B-заявки.
 """
-import asyncio, json, os, logging
+import asyncio, json, os, logging, base64, urllib.parse
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO)
@@ -34,16 +34,27 @@ except ImportError:
     AIOGRAM_AVAILABLE = False
 
 async def on_start(message: types.Message):
+    user_id = str(message.from_user.id)
+    users = load_json(USERS_FILE)
+    
+    webapp_url = WEBAPP_URL
+    if user_id in users:
+        # кодируем профиль в URL чтобы Mini App восстановил
+        prof = json.dumps(users[user_id], ensure_ascii=False)
+        encoded = base64.urlsafe_b64encode(prof.encode('utf-8')).decode('utf-8')
+        webapp_url = WEBAPP_URL + '&load=' + encoded
+    
     kb = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="🚀 Открыть Hamkor Top", web_app=WebAppInfo(url=WEBAPP_URL))],
+        [InlineKeyboardButton(text="🚀 Открыть Hamkor Top", web_app=WebAppInfo(url=webapp_url))],
         [InlineKeyboardButton(text="📋 Что это?", callback_data="about")]
     ])
-    await message.answer(
-        "🤝 <b>Hamkor Top</b> — твой AI-партнёр для карьеры!\n\n"
-        "Свайпай вакансии. Находи работу, сотрудников и нетворкинг.\n"
-        "Создано в Узбекистане 🇺🇿",
-        reply_markup=kb, parse_mode="HTML"
-    )
+    greeting = "🤝 <b>Hamkor Top</b> — твой AI-партнёр для карьеры!\n\n"
+    if user_id in users:
+        greeting += "✨ Твой профиль уже сохранён. Нажми кнопку чтобы продолжить."
+    else:
+        greeting += "Свайпай вакансии. Находи работу, сотрудников и нетворкинг.\nСоздано в Узбекистане 🇺🇿"
+    
+    await message.answer(greeting, reply_markup=kb, parse_mode="HTML")
 
 async def on_about(callback: types.CallbackQuery):
     await callback.message.answer(

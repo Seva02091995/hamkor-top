@@ -216,6 +216,7 @@ body.dark .act-no{color:var(--muted)}
       <button class="btn btn-secondary" id="btnTheme" data-t="theme">Тёмная тема</button>
       <button class="btn btn-secondary" id="btnBiz" data-t="biz">🚀 Услуги для бизнеса</button>
       <button class="btn btn-secondary" id="btnIssue" data-t="issue">💡 Сообщить о проблеме</button>
+      <button class="btn btn-secondary" id="btnPost" data-t="btnPost">📝 Создать пост</button>
       <div style="display:flex;gap:8px;justify-content:center;margin-top:4px">
         <button class="ref-btn" id="fsS" style="font-size:11px">A</button>
         <button class="ref-btn" id="fsM" style="font-size:14px;font-weight:700">A</button>
@@ -293,9 +294,26 @@ body.dark .act-no{color:var(--muted)}
   </div>
 </div>
 
+<div class="screen" id="s-post">
+  <div class="hero-title" style="margin-top:24px" data-t="postTitle">Создать пост</div>
+  <div class="form">
+    <div style="display:flex;gap:6px;margin-bottom:10px">
+      <button class="btn btn-primary" id="postWrite" data-t="postWrite">✍️ Сам напишу</button>
+      <button class="btn btn-secondary" id="postAI" data-t="postAI">🤖 AI поможет</button>
+    </div>
+    <textarea class="textarea" id="postText" style="min-height:200px;font-size:15px" data-t="postPlaceholder" placeholder="О чём хотите рассказать?"></textarea>
+    <div class="note" id="postHint" style="display:none" data-t="postHint">Нажмите «AI поможет» — и ассистент напишет пост в вашем стиле на основе профиля.</div>
+    <div style="display:flex;gap:6px">
+      <button class="btn btn-primary" id="postSend" data-t="postSend">📤 Отправить в канал</button>
+      <button class="btn btn-secondary" id="postCopy" data-t="postCopy">📋 Копировать</button>
+    </div>
+    <button class="btn btn-secondary" id="btnPostBack">← Назад</button>
+  </div>
+</div>
+
 <script>
 var i18n={
-ru:{made:'создано в Узбекистане',lang:'Выбери язык',langHint:'Можно сменить позже. Профессиональные термины остаются как есть.',go:'Продолжить',hero:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',spec:'Я IT-специалист',emp:'Я работодатель',points:'Очки',lvl:'Уровень',days:'Дней',contacts:'Контакты',hunt:'Прогресс дня',boost:'+68% активность',foundPrefix:'Подходящих: ',task1:'Заполнить профиль',task2:'Посмотреть 10 карточек',task3:'Пригласить друга',getLink:'Получить ссылку',refHint:'Нажмите — ссылка скопируется',linkCopied:'Ссылка скопирована',yes:'Интересно',no:'Мимо',hint:'Ещё N карточек — и откроется новый кандидат',hintDone:'Список на сегодня закончился. Обнови профиль или пригласи друга, чтобы открыть новых кандидатов.',tabSearch:'Поиск',tabContacts:'Контакты',tabProf:'Профиль',mTitle:'Твои контакты',mEmpty:'Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.',back:'Вернуться к поиску',pfHint:'Фото меняется в редактировании',edit:'Редактировать профиль',chLang:'Сменить язык',themeDark:'Тёмная тема',themeLight:'Светлая тема',fName:'Имя',fCity:'Город',fRole:'Роль',fSkills:'Навыки (через запятую)',fBio:'О себе',fPhoto:'Фото (можно несколько)',choose:'Выбрать фото',none:'Не выбрано',save:'Сохранить',cancel:'Отмена',biz:'🚀 Услуги для бизнеса',issue:'💡 Сообщить о проблеме',bizTitle:'Бизнес-услуги Hamkor Top',bizSub:'Мы помогаем компаниям находить клиентов и автоматизировать процессы.',biz1:'Разработка сайтов и приложений',biz2:'CRM-интеграции и автоматизация',biz3:'Маркетинг и стратегия',biz4:'Поиск сотрудников под ключ',bizCTA:'Оставить заявку',bizSent:'Заявка отправлена! Мы свяжемся с вами.',issueTitle:'Сообщить о проблеме или идее',issueSub:'Мы платим за полезные идеи и найденные проблемы в Узбекистане.',issuePlaceholder:'Опишите проблему или идею...',issueContact:'Ваш Telegram или телефон',issueReward:'За accepted идеи платим до 50 000 сум',issueSent:'Спасибо! Если идею примут — мы свяжемся и выплатим вознаграждение.',zeroTitle:'Карточки на сегодня закончились',zeroSub:'Чтобы открыть новых кандидатов, сделай одно действие:',zeroA:'Обновить профиль',zeroB:'Пригласить друга',aiBio:'✨ AI улучшит описание',aiPost:'📝 Сгенерировать пост из опыта'},
+ru:{made:'создано в Узбекистане',lang:'Выбери язык',langHint:'Можно сменить позже. Профессиональные термины остаются как есть.',go:'Продолжить',hero:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',spec:'Я IT-специалист',emp:'Я работодатель',points:'Очки',lvl:'Уровень',days:'Дней',contacts:'Контакты',hunt:'Прогресс дня',boost:'+68% активность',foundPrefix:'Подходящих: ',task1:'Заполнить профиль',task2:'Посмотреть 10 карточек',task3:'Пригласить друга',getLink:'Получить ссылку',refHint:'Нажмите — ссылка скопируется',linkCopied:'Ссылка скопирована',yes:'Интересно',no:'Мимо',hint:'Ещё N карточек — и откроется новый кандидат',hintDone:'Список на сегодня закончился. Обнови профиль или пригласи друга, чтобы открыть новых кандидатов.',tabSearch:'Поиск',tabContacts:'Контакты',tabProf:'Профиль',mTitle:'Твои контакты',mEmpty:'Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.',back:'Вернуться к поиску',pfHint:'Фото меняется в редактировании',edit:'Редактировать профиль',chLang:'Сменить язык',themeDark:'Тёмная тема',themeLight:'Светлая тема',fName:'Имя',fCity:'Город',fRole:'Роль',fSkills:'Навыки (через запятую)',fBio:'О себе',fPhoto:'Фото (можно несколько)',choose:'Выбрать фото',none:'Не выбрано',save:'Сохранить',cancel:'Отмена',biz:'🚀 Услуги для бизнеса',issue:'💡 Сообщить о проблеме',bizTitle:'Бизнес-услуги Hamkor Top',bizSub:'Мы помогаем компаниям находить клиентов и автоматизировать процессы.',biz1:'Разработка сайтов и приложений',biz2:'CRM-интеграции и автоматизация',biz3:'Маркетинг и стратегия',biz4:'Поиск сотрудников под ключ',bizCTA:'Оставить заявку',bizSent:'Заявка отправлена! Мы свяжемся с вами.',issueTitle:'Сообщить о проблеме или идее',issueSub:'Мы платим за полезные идеи и найденные проблемы в Узбекистане.',issuePlaceholder:'Опишите проблему или идею...',issueContact:'Ваш Telegram или телефон',issueReward:'За accepted идеи платим до 50 000 сум',issueSent:'Спасибо! Если идею примут — мы свяжемся и выплатим вознаграждение.',btnPost:'📝 Создать пост',postTitle:'Мастерская постов',postWrite:'✍️ Сам напишу',postAI:'🤖 AI поможет',postPlaceholder:'О чём хотите рассказать?',postHint:'Нажмите «AI поможет» — ассистент напишет пост в вашем стиле на основе профиля.',postSend:'📤 Отправить в канал',postCopy:'📋 Копировать',zeroTitle:'Карточки на сегодня закончились',zeroSub:'Чтобы открыть новых кандидатов, сделай одно действие:',zeroA:'Обновить профиль',zeroB:'Пригласить друга',aiBio:'✨ AI улучшит описание',aiPost:'📝 Сгенерировать пост из опыта'},
 uz:{made:"O'zbekistonda yaratilgan",lang:'Tilni tanlang',langHint:"Keyin o'zgartirasiz.",go:'Davom etish',hero:'Karyera uchun AI hamkor',heroSub:"O'ngga — qiziq, chapga — o'tish.",spec:'Men IT mutaxassisman',emp:'Men ish beruvchiman',points:'Ball',lvl:'Daraja',days:'Kun',contacts:'Kontaktlar',hunt:'Kun progressi',boost:'+68% faollik',foundPrefix:'Moslar: ',task1:"Profilni to'ldirish",task2:'10 ta kartani ko\'rish',task3:"Do'st taklif qilish",getLink:'Havolani olish',refHint:'Bosing — havola nusxalanadi',linkCopied:'Havola nusxalandi',yes:'Qiziq',no:"O'tish",hint:'Yana N karta — yangi nomzod ochiladi',hintDone:'Bugungi ro\'yxat tugadi. Yangi nomzodlar uchun profilni yangilang yoki do\'st taklif qiling.',tabSearch:'Qidiruv',tabContacts:'Kontaktlar',tabProf:'Profil',mTitle:'Kontaktlaringiz',mEmpty:"Hozircha bo'sh.",back:"Qidiruvga qaytish",pfHint:"Rasmni tahrirda almashtirasiz",edit:"Profilni tahrirlash",chLang:"Tilni almashtirish",themeDark:'Tungi rejim',themeLight:'Yorug\' rejim',fName:'Ism',fCity:'Shahar',fRole:'Rol',fSkills:"Ko'nikmalar",fBio:"O'zingiz haqingizda",fPhoto:'Rasmlar (bir nechta)',choose:'Rasm tanlash',none:'Tanlanmagan',save:'Saqlash',cancel:'Bekor qilish',zeroTitle:'Bugun kartalar tugadi',zeroSub:'Yangi nomzodlar uchun bitta amal qiling:',zeroA:'Profilni yangilash',zeroB:'Do\'st taklif qilish',aiBio:'✨ AI tavsifni yaxshilaydi',aiPost:'📝 Tajribadan post yaratish',biz:'🚀 Biznes xizmatlar',issue:'💡 Muammo haqida xabar',bizTitle:'Biznes xizmatlari',bizSub:'Kompaniyalarga mijoz topishda yordam beramiz.',biz1:'Sayt va ilovalar',biz2:'CRM va avtomatlashtirish',biz3:'Marketing va strategiya',biz4:'Xodim topish',bizCTA:'Ariza qoldirish',bizSent:'Ariza qabul qilindi!',issueTitle:'Muammo yoki g\'oya',issueSub:'Foydali g\'oyalar uchun to\'lov qilamiz.',issueContact:'Telegram yoki telefon',issueReward:'50 000 so\'mgacha',issueSent:'Rahmat! Qabul qilinsa — bog\'lanamiz.'},
 en:{made:'created in Uzbekistan',lang:'Choose language',langHint:'You can change it later.',go:'Continue',hero:'Your AI partner for career',heroSub:'Right — interesting, left — pass.',spec:'I am an IT specialist',emp:'I am an employer',points:'Points',lvl:'Level',days:'Days',contacts:'Contacts',hunt:'Day progress',boost:'+68% activity',foundPrefix:'Suitable: ',task1:'Complete profile',task2:'View 10 cards',task3:'Invite a friend',getLink:'Get invite link',refHint:'Tap and the link will be copied',linkCopied:'Link copied',yes:'Interesting',no:'Pass',hint:'N more cards and a new candidate unlocks',hintDone:'No more cards today. Update profile or invite a friend to unlock new candidates.',tabSearch:'Search',tabContacts:'Contacts',tabProf:'Profile',mTitle:'Your contacts',mEmpty:'No contacts yet.',back:'Back to search',pfHint:'Change photo in profile edit',edit:'Edit profile',chLang:'Change language',themeDark:'Dark mode',themeLight:'Light mode',fName:'Name',fCity:'City',fRole:'Role',fSkills:'Skills',fBio:'About',fPhoto:'Photos (multiple)',choose:'Choose photos',none:'None selected',save:'Save',cancel:'Cancel',zeroTitle:'No more cards today',zeroSub:'Do one quick action to unlock more:',zeroA:'Update profile',zeroB:'Invite a friend',aiBio:'✨ AI improve description',aiPost:'📝 Generate post from experience',biz:'🚀 Business',issue:'💡 Report issue',bizTitle:'Business services',bizSub:'We help companies grow.',biz1:'Web & apps',biz2:'CRM & automation',biz3:'Marketing strategy',biz4:'Recruitment',bizCTA:'Submit',bizSent:'Request sent!',issueTitle:'Report an issue',issueSub:'We pay for useful ideas.',issueContact:'Telegram or phone',issueReward:'Up to 50 000 UZS',issueSent:'Thanks! Accepted ideas get paid.'}
 };
@@ -306,7 +324,21 @@ var KEY='hamkorTop:'+tgId;
 var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,contacts:0,views:0,name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',photos:[],photoIdx:0,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0};
 function loadST(){try{var r=localStorage.getItem(KEY);if(!r)return false;var d=JSON.parse(r);ST={};for(var k in defaultST)ST[k]=defaultST[k];for(var k in d)ST[k]=d[k];if(!Array.isArray(ST.photos))ST.photos=[];return true;}catch(e){return false;}}
 if(!loadST()){ST={};for(var k in defaultST)ST[k]=defaultST[k];}
+function tryRestore(){
+  var m=location.search.match(/[?&]load=([^&]+)/);
+  if(!m)return;
+  try{
+    var j=JSON.parse(atob(m[1].replace(/-/g,'+').replace(/_/g,'/')));
+    for(var k in j){if(defaultST.hasOwnProperty(k))ST[k]=j[k];}
+    ST.photos=[];saveST();renderProfile();
+    if(window.history&&window.history.replaceState){window.history.replaceState({},'',location.pathname+'?v=6');}
+  }catch(e){}
+}
+tryRestore();
 function saveST(){try{localStorage.setItem(KEY,JSON.stringify(ST));}catch(e){}}
+function saveToServer(){
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'saveProfile',name:ST.name,city:ST.city,role:ST.roleT,skills:ST.skills,bio:ST.bio,updatedAt:new Date().toISOString()}));}catch(e){}
+}
 function applyTheme(){document.body.classList.toggle('dark',ST.theme==='dark');}
 function tt(){return i18n[ST.lang]||i18n.ru;}
 
@@ -333,7 +365,7 @@ var refs={
 };
 
 function show(id,remember){if(remember===undefined)remember=true;screens.forEach(function(s){el(s).classList.remove('active');});el(id).classList.add('active');if(remember&&id!=='s-lang'){ST.lastScreen=id;saveST();}if(id==='s-main')renderCard();if(id==='s-profile')renderProfile();if(id==='s-edit')fillForm();}
-var screens=['s-lang','s-welcome','s-main','s-matches','s-profile','s-edit','s-biz','s-biz-next','s-issue'];
+var screens=['s-lang','s-welcome','s-main','s-matches','s-profile','s-edit','s-biz','s-biz-next','s-issue','s-post'];
 
 function tr(){var d=tt();document.querySelectorAll('[data-t]').forEach(function(e){var k=e.getAttribute('data-t');if(k==='boost'){e.textContent='+'+calcBoost()+'% активность';return;}if(d[k])e.textContent=d[k];});renderFoundText();renderHint();if(refs.refNote)refs.refNote.textContent=d.refHint;if(refs.btnTheme)refs.btnTheme.textContent=ST.theme==='dark'?d.themeLight:d.themeDark;if(refs.fileName&&(!refs.fileAv.files||refs.fileAv.files.length===0)&&ST.photos.length===0)refs.fileName.textContent=d.none;}
 function renderFoundText(){var d=tt();var f=Math.min(ST.views,5);refs.huntNote.innerHTML=d.foundPrefix+'<b>'+f+'</b> / 5';}
@@ -374,11 +406,7 @@ function fillForm(){
 function saveProfile(){
   ST.name=refs.fName.value.trim()||ST.name;ST.city=refs.fCity.value.trim()||ST.city;ST.roleT=refs.fRole.value.trim()||ST.roleT;
   ST.skills=refs.fSkills.value.trim()||ST.skills;ST.bio=refs.fBio.value.trim()||ST.bio;ST.xp+=50;upd();saveST();show('s-profile');
-  // send to bot for server-side storage
-  try{ if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.sendData){
-    var d={id:tgId,name:ST.name,city:ST.city,role:ST.roleT,skills:ST.skills,bio:ST.bio,lang:ST.lang,roleType:ST.role};
-    window.Telegram.WebApp.sendData(JSON.stringify(d));
-  }}catch(e){}
+  saveToServer();
 }
 function copyInvite(){
   var code=encodeURIComponent(ST.name||'user');var link='https://t.me/hamkor_top_bot?start=ref_'+code;
@@ -423,6 +451,30 @@ el('btnIssue').onclick=function(){show('s-issue');};
 el('btnIssueBack').onclick=function(){show('s-profile');};
 el('btnIssueSend').onclick=function(){alert(tt().issueSent);show('s-profile');};
 el('btnBizNextBack').onclick=function(){show('s-profile');};
+
+el('btnPost').onclick=function(){show('s-post');};
+el('btnPostBack').onclick=function(){show('s-profile');};
+el('postWrite').onclick=function(){
+  el('postHint').style.display='block';el('postText').focus();
+  el('postWrite').className='btn btn-primary';el('postAI').className='btn btn-secondary';
+};
+el('postAI').onclick=function(){
+  var p='Напиши пост для Telegram на основе профиля. Имя: '+ST.name+'. Роль: '+ST.roleT+'. Навыки: '+ST.skills+'. О себе: '+ST.bio+'. Тёплый профессиональный тон, 3-4 абзаца, с призывом к нетворкингу.';
+  el('postText').value='✨ AI думает...';el('postHint').style.display='none';
+  el('postAI').className='btn btn-primary';el('postWrite').className='btn btn-secondary';
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiPost',prompt:p}));}
+  catch(e){el('postText').value='Скопируйте текст и отправьте боту: '+p;}
+};
+el('postCopy').onclick=function(){
+  var t=el('postText').value;
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){alert('Скопировано!');});}
+  else{prompt('Скопируйте:',t);}
+};
+el('postSend').onclick=function(){
+  var t=el('postText').value;
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'postToChannel',text:t}));alert('Отправлено в канал!');}
+  catch(e){alert('Откройте через Telegram чтобы отправить в канал.');}
+};
 
 function calcBoost(){
   var f=0,t=6;
