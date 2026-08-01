@@ -1,132 +1,151 @@
 """
 Hamkor Top — Telegram Bot + Mini App Server
-MVP версия: бот запускает Mini App интерфейс для свайп-матчинга
+Принимает данные из Mini App, сохраняет профили, пересылает B2B-заявки.
 """
-
-import asyncio
-import json
-import os
-import http.server
-import socketserver
-import threading
+import asyncio, json, os, logging
 from pathlib import Path
 
-# ---- КОНФИГУРАЦИЯ ----
+logging.basicConfig(level=logging.INFO)
+
 BOT_TOKEN = "8877540443:AAEMfWYjusdNCaMMvQBVOJ_QHwaDoPOWSwY"
-WEBAPP_DIR = Path(__file__).parent.parent / "docs"
-PORT = 8080
-WEBAPP_URL = "https://seva02091995.github.io/hamkor-top/"
+WEBAPP_URL = "https://seva02091995.github.io/hamkor-top/?v=5"
+OWNER_ID = 7802498650  # telegram id Севары для пересылки заявок
+DATA_DIR = Path(__file__).parent.parent / "data"
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+USERS_FILE = DATA_DIR / "users.json"
+LEADS_FILE = DATA_DIR / "leads.json"
 
-# ---- Mini App HTTP-сервер (обслуживает index.html) ----
-class HamkorHandler(http.server.SimpleHTTPRequestHandler):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, directory=str(WEBAPP_DIR), **kwargs)
-    
-    def end_headers(self):
-        self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Cache-Control", "no-cache")
-        super().end_headers()
-    
-    def log_message(self, format, *args):
-        pass  # тихий режим
+def load_json(path, default=None):
+    if default is None: default = {}
+    try:
+        if path.exists(): return json.loads(path.read_text(encoding='utf-8'))
+    except: pass
+    return default
 
-def start_web_server():
-    """Запускает HTTP-сервер для раздачи Mini App"""
-    with socketserver.TCPServer(("", PORT), HamkorHandler) as httpd:
-        print(f"🌐 Mini App доступен: http://localhost:{PORT}")
-        httpd.serve_forever()
+def save_json(path, data):
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
 
-# ---- Telegram Bot (aiogram 3) ----
 try:
-    from aiogram import Bot, Dispatcher, types
+    from aiogram import Bot, Dispatcher, types, F
     from aiogram.filters import Command
-    from aiogram.types import (
-        InlineKeyboardMarkup, InlineKeyboardButton,
-        WebAppInfo, MenuButtonWebApp
-    )
+    from aiogram.types import (InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo, MenuButtonWebApp)
     AIOGRAM_AVAILABLE = True
 except ImportError:
     AIOGRAM_AVAILABLE = False
-    print("⚠️ aiogram не установлен. Установи: pip install aiogram")
 
 async def on_start(message: types.Message):
-    """Обработчик /start"""
     kb = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(
-            text="🚀 Открыть Hamkor Top",
-            web_app=WebAppInfo(url=WEBAPP_URL)
-        )],
-        [InlineKeyboardButton(
-            text="📋 Что это?",
-            callback_data="about"
-        )]
+        [InlineKeyboardButton(text="🚀 Открыть Hamkor Top", web_app=WebAppInfo(url=WEBAPP_URL))],
+        [InlineKeyboardButton(text="📋 Что это?", callback_data="about")]
     ])
-    
     await message.answer(
         "🤝 <b>Hamkor Top</b> — твой AI-партнёр для карьеры!\n\n"
-        "Свайпай вакансии как в Тиндере. "
-        "Находи работу, сотрудников и нетворкинг.\n\n"
+        "Свайпай вакансии. Находи работу, сотрудников и нетворкинг.\n"
         "Создано в Узбекистане 🇺🇿",
-        reply_markup=kb,
-        parse_mode="HTML"
+        reply_markup=kb, parse_mode="HTML"
     )
 
 async def on_about(callback: types.CallbackQuery):
-    """Обработчик кнопки 'Что это?'"""
     await callback.message.answer(
         "🎯 <b>Как это работает:</b>\n\n"
-        "1. Заполни профиль за 2 минуты\n"
-        "2. Свайпай карточки вакансий/специалистов\n"
-        "3. 👍 Вправо — интересно\n"
-        "4. 👎 Влево — не подходит\n"
-        "5. Обоюдный лайк = Матч! 🎉\n\n"
-        "<b>Геймификация:</b>\n"
-        "• XP за каждое действие\n"
-        "• Уровни от Yangi до Hamkor\n"
-        "• Ежедневное комбо (x2 буст)\n"
-        "• Бейджи и достижения\n",
+        "1. Заполни профиль за 2 минуты\n2. Свайпай карточки\n"
+        "3. 👍 Вправо — интересно\n4. 👎 Влево — мимо\n5. Обоюдный интерес = Контакт! 🎉",
         parse_mode="HTML"
     )
     await callback.answer()
 
+async def on_webapp_data(message: types.Message):
+    """Принимает данные из Mini App (sendData)"""
+    if not message.web_app_data:
+        return
+    try:
+        data = json.loads(message.web_app_data.data)
+    except:
+        await message.answer("❌ Ошибка формата данных")
+        return
+
+    action = data.get("action", "")
+    user_id = str(message.from_user.id)
+    username = message.from_user.username or message.from_user.full_name or user_id
+
+    logging.info(f"WebApp data from {username}: action={action}")
+
+    # --- Сохранение профиля ---
+    if action == "saveProfile":
+        users = load_json(USERS_FILE)
+        users[user_id] = {
+            "tg_id": user_id,
+            "username": username,
+            "name": data.get("name", ""),
+            "city": data.get("city", ""),
+            "role": data.get("role", ""),
+            "skills": data.get("skills", ""),
+            "bio": data.get("bio", ""),
+            "updated_at": data.get("updatedAt", "")
+        }
+        save_json(USERS_FILE, users)
+        await message.answer("✅ Профиль сохранён!")
+
+    # --- B2B заявка ---
+    elif action == "bizLead":
+        lead = {
+            "tg_id": user_id,
+            "username": username,
+            "name": data.get("name", ""),
+            "contact": data.get("contact", ""),
+            "msg": data.get("msg", ""),
+            "profile": data.get("profile", {}),
+            "ts": data.get("ts", "")
+        }
+        leads = load_json(LEADS_FILE, [])
+        leads.append(lead)
+        save_json(LEADS_FILE, leads)
+
+        # Уведомление Севаре
+        owner_msg = (
+            f"📩 <b>Новая B2B-заявка!</b>\n\n"
+            f"👤 <b>Имя:</b> {lead['name']}\n"
+            f"📞 <b>Контакт:</b> {lead['contact']}\n"
+            f"📝 <b>Запрос:</b> {lead['msg']}\n"
+            f"🆔 <b>TG:</b> @{username} ({user_id})"
+        )
+        try:
+            await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
+        except Exception as e:
+            logging.error(f"Не удалось отправить уведомление: {e}")
+
+        await message.answer("✅ Заявка принята! Мы свяжемся с вами в ближайшее время.")
+
+    # --- AI-запросы ---
+    elif action == "aiBio":
+        await message.answer("✨ Сейчас улучшу описание... (функция в разработке)")
+    elif action == "aiPost":
+        await message.answer("📝 Готовлю пост... (функция в разработке)")
+
+    else:
+        await message.answer("✅ Данные получены")
+
+    await message.bot.send_message(OWNER_ID, 
+        f"📨 <b>Hamkor:</b> {username} отправил action=<code>{action}</code>", 
+        parse_mode="HTML"
+    )
+
 async def main():
-    """Запуск Telegram-бота"""
     if not AIOGRAM_AVAILABLE:
-        print("❌ aiogram не найден. Установка...")
         os.system("pip install aiogram")
         return
-    
     bot = Bot(token=BOT_TOKEN)
     dp = Dispatcher()
-    
-    # Регистрируем обработчики
     dp.message.register(on_start, Command("start"))
     dp.callback_query.register(on_about, lambda c: c.data == "about")
-    
-    # Устанавливаем кнопку меню (Mini App в боковом меню Telegram)
+    dp.message.register(on_webapp_data, F.web_app_data)
     try:
         await bot.set_chat_menu_button(
-            menu_button=MenuButtonWebApp(
-                text="🚀 Hamkor Top",
-                web_app=WebAppInfo(url=WEBAPP_URL)
-            )
+            menu_button=MenuButtonWebApp(text="🚀 Hamkor Top", web_app=WebAppInfo(url=WEBAPP_URL))
         )
-        print("✅ Кнопка меню установлена")
-    except Exception as e:
-        print(f"⚠️ Не удалось установить кнопку меню: {e}")
-    
+    except: pass
     print("🤖 Бот @hamkor_top_bot запущен!")
     await dp.start_polling(bot)
 
-# ---- ГЛАВНЫЙ ЗАПУСК ----
 if __name__ == "__main__":
-    print("=" * 50)
-    print("🤝 HAMKOR TOP — AI Career Platform")
-    print("=" * 50)
-    
-    # Запускаем HTTP-сервер в отдельном потоке
-    web_thread = threading.Thread(target=start_web_server, daemon=True)
-    web_thread.start()
-    
-    # Запускаем бота
     asyncio.run(main())

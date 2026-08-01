@@ -57,8 +57,9 @@ body.dark .hunt-pill{background:#16382A;color:var(--green);border-color:#22513D}
 .hunt-note{font-size:11px;color:var(--muted);text-align:right;margin-top:6px}
 .tasks{margin-top:10px;display:flex;flex-direction:column;gap:6px}
 .task{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
-.dot{width:18px;height:18px;border-radius:50%;border:1px solid #CDDEEB;display:grid;place-items:center;font-size:10px;color:var(--green)}
-body.dark .dot{border-color:#31445C}
+.dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-size:10px;color:var(--ink)}
+.dot.done{border-color:var(--green);color:var(--green);background:rgba(45,138,78,.12)}
+body.dark .dot{border-color:var(--muted)}
 .ref-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px}
 .ref-btn{padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:11px;cursor:pointer}
 .ref-note{font-size:10px;color:var(--muted)}
@@ -340,9 +341,9 @@ function renderHint(){var d=tt();var left=Math.max(0,5-ST.views);refs.hintText.t
 function upd(){
   refs.xpV.textContent=ST.xp;refs.lvlV.textContent=ST.lvl;refs.strkV.textContent=ST.streak;refs.matchV.textContent=ST.contacts;
   refs.xpFill.style.width=Math.min(100,(ST.xp%200)/200*100)+'%';refs.xpNote.textContent=(ST.xp%200)+' / 200';
-  refs.task1dot.innerHTML='&#x2713;';var d=tt();if(refs.task1dot)refs.task1dot.innerHTML='&#x2713;';
-  refs.task2dot.innerHTML=ST.views>=10?'&#x2713;':'&#x25CB;';
-  refs.task3dot.innerHTML=ST.inviteDone?'&#x2713;':'&#x25CB;';
+  refs.task1dot.innerHTML='&#x2713;';refs.task1dot.classList.add('done');
+  refs.task2dot.innerHTML=ST.views>=10?'&#x2713;':'&#x25CB;';if(ST.views>=10)refs.task2dot.classList.add('done');else refs.task2dot.classList.remove('done');
+  refs.task3dot.innerHTML=ST.inviteDone?'&#x2713;':'&#x25CB;';if(ST.inviteDone)refs.task3dot.classList.add('done');else refs.task3dot.classList.remove('done');
   refs.huntFill.style.width=Math.min(100,(Math.max(ST.views,1)/5)*100)+'%';
   renderFoundText();renderHint();
 }
@@ -410,7 +411,14 @@ refs.refBtn.onclick=copyInvite;
 refs.photoPrev.onclick=function(){nextPhoto(-1);};refs.photoNext.onclick=function(){nextPhoto(1);};
 el('btnBiz').onclick=function(){show('s-biz');};
 el('btnBizBack').onclick=function(){show('s-profile');};
-el('btnBizSend').onclick=function(){alert(tt().bizSent);show('s-biz-next');};
+el('btnBizSend').onclick=function(){
+  var msg=refs.bizMsg.value.trim();var contact=refs.bizContact.value.trim();
+  if(!contact){alert('Введите Telegram или телефон');return;}
+  var data=JSON.stringify({action:'bizLead',name:ST.name,contact:contact,msg:msg,profile:ST});
+  try{window.Telegram.WebApp.sendData(data);}
+  catch(e){}
+  show('s-biz-next');
+};
 el('btnIssue').onclick=function(){show('s-issue');};
 el('btnIssueBack').onclick=function(){show('s-profile');};
 el('btnIssueSend').onclick=function(){alert(tt().issueSent);show('s-profile');};
@@ -434,10 +442,20 @@ el('aiPost').onclick=function(){
   catch(e){prompt('Скопируй и отправь это в чат бота:',p);}
 };
 
+function compressPhoto(dataUrl,cb){
+  var img=new Image();img.onload=function(){
+    var max=400;var w=img.width,h=img.height;
+    if(w<=max&&h<=max){cb(dataUrl);return;}
+    var r=Math.min(max/w,max/h);var c=document.createElement('canvas');
+    c.width=Math.round(w*r);c.height=Math.round(h*r);
+    c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+    cb(c.toDataURL('image/jpeg',0.7));
+  };img.src=dataUrl;
+}
 refs.fileAv.addEventListener('change',function(e){
   var files=[].slice.call(e.target.files||[]);if(!files.length){refs.fileName.textContent=tt().none;return;}
   refs.fileName.textContent=files.length+' фото';
-  Promise.all(files.map(function(f){return new Promise(function(res){var r=new FileReader();r.onload=function(){res(r.result);};r.readAsDataURL(f);});}))
+  Promise.all(files.map(function(f){return new Promise(function(res){var r=new FileReader();r.onload=function(){compressPhoto(r.result,res);};r.readAsDataURL(f);});}))
     .then(function(arr){ST.photos=ST.photos.concat(arr);ST.photoIdx=ST.photos.length-arr.length;renderProfile();saveST();refs.fileName.textContent=ST.photos.length+' фото';});
 });
 
