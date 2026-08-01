@@ -157,11 +157,11 @@ body.dark .streak-day.on{color:#FBBF24}
   <div class="hero-title" data-t="lang">Выбери язык</div>
   <div class="hero-sub" data-t="langHint">Можно сменить позже. Профессиональные термины остаются как есть.</div>
   <div class="lang-row">
-    <button class="lang-btn active" data-lang="ru">Русский</button>
-    <button class="lang-btn" data-lang="uz">O'zbekcha</button>
-    <button class="lang-btn" data-lang="en">English</button>
+    <button class="lang-btn active" data-lang="ru" onclick="pickLang('ru',this)">Русский</button>
+    <button class="lang-btn" data-lang="uz" onclick="pickLang('uz',this)">O'zbekcha</button>
+    <button class="lang-btn" data-lang="en" onclick="pickLang('en',this)">English</button>
   </div>
-  <button class="btn btn-primary" id="btnLang" data-t="go">Продолжить</button>
+  <button class="btn btn-primary" id="btnLang" data-t="go" onclick="show(ST.returnScreen||(ST.role?'s-main':'s-welcome'),false)">Продолжить</button>
 </div>
 
 <div class="screen" id="s-welcome">
@@ -170,8 +170,8 @@ body.dark .streak-day.on{color:#FBBF24}
   <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div>
   <div class="hero-title" data-t="hero">Твой AI-партнёр для карьеры</div>
   <div class="hero-sub" data-t="heroSub">Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.</div>
-  <button class="btn btn-primary" id="btnSpec" data-t="spec">Я IT-специалист</button>
-  <button class="btn btn-secondary" id="btnEmp" data-t="emp">Я работодатель</button>
+  <button class="btn btn-primary" id="btnSpec" data-t="spec" onclick="ST.role='specialist';ST.lastScreen='s-main';saveST();show('s-main')">Я IT-специалист</button>
+  <button class="btn btn-secondary" id="btnEmp" data-t="emp" onclick="ST.role='employer';ST.lastScreen='s-main';saveST();show('s-main')">Я работодатель</button>
 </div>
 
 <div class="screen" id="s-main">
@@ -381,6 +381,14 @@ var ST=null;
 var tgId='guest';
 (function(){try{if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initDataUnsafe&&window.Telegram.WebApp.initDataUnsafe.user&&window.Telegram.WebApp.initDataUnsafe.user.id)tgId=String(window.Telegram.WebApp.initDataUnsafe.user.id);}catch(e){}})();
 var KEY='hamkorTop:'+tgId;
+// --- Telegram Mini App init ---
+(function(){try{if(window.Telegram&&window.Telegram.WebApp){window.Telegram.WebApp.ready();window.Telegram.WebApp.expand();}}catch(e){}})();
+
+function pickLang(lang,btn){
+  ST.lang=lang;saveST();tr();
+  document.querySelectorAll('.lang-btn').forEach(function(x){x.classList.remove('active');});
+  btn.classList.add('active');
+}
 var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,streakLast:'',contacts:0,views:0,dailyBonus:false,chestDate:'',boost2x:0,thoughtDate:'',thoughtCount:0,interviewAnswers:[],name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',photos:[],photoIdx:0,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0,claim10:false,rewardProfile:false,rewardInvite:false,rewardBiz:false,rewardIssue:false,badges:[]};
 function loadST(){try{var r=localStorage.getItem(KEY);if(!r)return false;var d=JSON.parse(r);ST={};for(var k in defaultST)ST[k]=defaultST[k];for(var k in d)ST[k]=d[k];if(!Array.isArray(ST.photos))ST.photos=[];return true;}catch(e){return false;}}
 if(!loadST()){ST={};for(var k in defaultST)ST[k]=defaultST[k];}
@@ -391,7 +399,7 @@ function tryRestore(){
     var j=JSON.parse(atob(m[1].replace(/-/g,'+').replace(/_/g,'/')));
     for(var k in j){if(defaultST.hasOwnProperty(k))ST[k]=j[k];}
     ST.photos=[];saveST();renderProfile();
-    if(window.history&&window.history.replaceState){window.history.replaceState({},'',location.pathname+'?v=6');}
+    if(window.history&&window.history.replaceState){window.history.replaceState({},'',location.pathname+'?v=14');}
   }catch(e){}
 }
 tryRestore();
@@ -576,9 +584,6 @@ var touchX=0;
 refs.pfAv.addEventListener('touchstart',function(e){touchX=e.changedTouches[0].clientX;},{passive:true});
 refs.pfAv.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)<28)return;if(dx<0)nextPhoto(1);else nextPhoto(-1);},{passive:true});
 
-refs.btnLang.onclick=function(){show(ST.returnScreen||(ST.role?'s-main':'s-welcome'),false);};
-refs.btnSpec.onclick=function(){ST.role='specialist';ST.lastScreen='s-main';saveST();show('s-main');};
-refs.btnEmp.onclick=function(){ST.role='employer';ST.lastScreen='s-main';saveST();show('s-main');};
 refs.btnYes.onclick=function(){swipe('yes');};refs.btnNo.onclick=function(){swipe('no');};
 refs.btnEdit.onclick=function(){show('s-edit');};
 refs.btnLangCh.onclick=function(){ST.returnScreen='s-profile';saveST();show('s-lang',false);};
@@ -734,13 +739,11 @@ refs.fileAv.addEventListener('change',function(e){
     .then(function(arr){ST.photos=ST.photos.concat(arr);ST.photoIdx=ST.photos.length-arr.length;renderProfile();saveST();refs.fileName.textContent=ST.photos.length+' фото';});
 });
 
-document.querySelectorAll('.lang-btn').forEach(function(b){b.addEventListener('click',function(){
-  document.querySelectorAll('.lang-btn').forEach(function(x){x.classList.remove('active');});b.classList.add('active');ST.lang=b.dataset.lang;saveST();tr();
-});});
 document.querySelectorAll('.nav-item').forEach(function(n){n.addEventListener('click',function(){
   var tab=n.dataset.tab;if(tab==='main')show('s-main');if(tab==='feed')show('s-feed');if(tab==='matches')show('s-matches');if(tab==='profile')show('s-profile');
 });});
 
+document.addEventListener('DOMContentLoaded',function(){
 updateStreak();
 applyTheme();tr();upd();renderProfile();renderStreak7();
 var d=localStorage.getItem(KEY+':draft');if(d&&refs.thoughtInput)refs.thoughtInput.value=d;
@@ -751,6 +754,7 @@ el('fsS').onclick=function(){setFS(0.85);};el('fsM').onclick=function(){setFS(1)
 if(ST.fs)document.body.style.setProperty('--fs',ST.fs);
 
 if(ST.role){show(ST.lastScreen&&ST.lastScreen!=='s-lang'?ST.lastScreen:'s-main',false);}else{show('s-lang',false);}
+});
 </script>
 </body>
 </html>
