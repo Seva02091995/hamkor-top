@@ -233,24 +233,12 @@ body.dark .streak-day.on{color:#FBBF24}
       <div style="font-size:13px;color:var(--muted)"><span data-t="lbYou">Ты:</span> <b id="lbPlace">#24</b> · XP <b id="lbScore">250</b></div>
     </div>
   </div>
-  <div class="nav" style="margin-top:auto">
-    <div class="nav-item" data-tab="main" data-t="tabSearch">Поиск</div>
-    <div class="nav-item active" data-tab="feed" data-t="tabFeed">Лента</div>
-    <div class="nav-item" data-tab="matches" data-t="tabContacts">Контакты</div>
-    <div class="nav-item" data-tab="profile" data-t="tabProf">Профиль</div>
-  </div>
 </div>
 
 <div class="screen" id="s-matches">
   <div class="hero-title" style="margin-top:50px" data-t="mTitle">Твои контакты</div>
   <div class="hero-sub" data-t="mEmpty">Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.</div>
   <button class="btn btn-secondary" id="btnToMain" data-t="back">Вернуться к поиску</button>
-  <div class="nav" style="margin-top:auto">
-    <div class="nav-item" data-tab="main" data-t="tabSearch">Поиск</div>
-    <div class="nav-item" data-tab="feed" data-t="tabFeed">Лента</div>
-    <div class="nav-item active" data-tab="matches" data-t="tabContacts">Контакты</div>
-    <div class="nav-item" data-tab="profile" data-t="tabProf">Профиль</div>
-  </div>
 </div>
 
 <div class="screen" id="s-profile">
@@ -278,12 +266,6 @@ body.dark .streak-day.on{color:#FBBF24}
         <button class="ref-btn" id="fsL" style="font-size:17px;font-weight:700">A</button>
       </div>
     </div>
-  </div>
-  <div class="nav" style="margin-top:auto">
-    <div class="nav-item" data-tab="main" data-t="tabSearch">Поиск</div>
-    <div class="nav-item" data-tab="feed" data-t="tabFeed">Лента</div>
-    <div class="nav-item" data-tab="matches" data-t="tabContacts">Контакты</div>
-    <div class="nav-item active" data-tab="profile" data-t="tabProf">Профиль</div>
   </div>
 </div>
 
@@ -500,7 +482,7 @@ var refs={
   huntFill:el('huntFill'),huntNote:el('huntNote'),cardArea:el('cardArea'),hintText:el('hintText'),nextQuest:el('nextQuest'),chestBtn:el('chestBtn'),lbPlace:el('lbPlace'),lbScore:el('lbScore'),thoughtInput:el('thoughtInput'),thoughtPublish:el('thoughtPublish'),thoughtDraft:el('thoughtDraft'),
   task1dot:el('task1dot'),task2dot:el('task2dot'),task3dot:el('task3dot'),
   pfAv:el('pfAv'),pfName:el('pfName'),fileName:el('fileName'),fileAv:el('fileAv'),
-  fName:el('fName'),fCity:el('fCity'),fRole:el('fRole'),fSkills:el('fSkills'),fBio:el('fBio'),refNote:el('refNote'),
+  fName:el('fName'),fCity:el('fCity'),fRole:el('fRole'),fSkills:el('fSkills'),fBio:el('fBio'),refNote:el('refNote'),bizMsg:el('bizMsg'),bizContact:el('bizContact'),
   btnLang:el('btnLang'),btnSpec:el('btnSpec'),btnEmp:el('btnEmp'),btnYes:el('btnYes'),btnNo:el('btnNo'),
   btnEdit:el('btnEdit'),btnLangCh:el('btnLangCh'),btnToMain:el('btnToMain'),btnTheme:el('btnTheme'),
   btnSave:el('btnSave'),btnCancel:el('btnCancel'),refBtn:el('refBtn'),
@@ -508,7 +490,6 @@ var refs={
 };
 
 function show(id,remember){
-  console.log('Navigating to:', id);
   if(remember===undefined)remember=true;
   screens.forEach(function(s){
     var e=el(s);
@@ -521,6 +502,20 @@ function show(id,remember){
   } else {
     console.error('Screen not found:', id);
   }
+
+  var nav=el('globalNav');
+  if(nav){
+    var hideNav=(id==='s-lang'||id==='s-welcome'||id==='s-edit'||id==='s-biz'||id==='s-issue'||id==='s-biz-next'||id==='s-interview');
+    nav.style.display=hideNav?'none':'flex';
+    document.querySelectorAll('#globalNav .nav-item').forEach(function(i){i.classList.remove('active');});
+    var m={ 's-main':'main','s-feed':'feed','s-matches':'matches','s-profile':'profile' };
+    var tab=m[id];
+    if(tab){
+      var a=document.querySelector('#globalNav .nav-item[data-tab="'+tab+'"]');
+      if(a)a.classList.add('active');
+    }
+  }
+
   if(remember&&id!=='s-lang'){ST.lastScreen=id;saveST();}
   if(id==='s-main')renderCard();
   if(id==='s-profile')renderProfile();
@@ -651,24 +646,24 @@ el('intNext').onclick=function(){
   }
 };
 el('plusAI').onclick=function(){show('s-interview');el('fabMenu').style.display='none';el('intQuestion').textContent=intQ[0];};
-el('btnPostBack').onclick=function(){show('s-profile');};
-el('postWrite').onclick=function(){
+if(el('btnPostBack'))el('btnPostBack').onclick=function(){show('s-profile');};
+if(el('postWrite'))el('postWrite').onclick=function(){
   el('postHint').style.display='block';el('postText').focus();
   el('postWrite').className='btn btn-primary';el('postAI').className='btn btn-secondary';
 };
-el('postAI').onclick=function(){
+if(el('postAI'))el('postAI').onclick=function(){
   var p='Напиши пост для Telegram на основе профиля. Имя: '+ST.name+'. Роль: '+ST.roleT+'. Навыки: '+ST.skills+'. О себе: '+ST.bio+'. Тёплый профессиональный тон, 3-4 абзаца, с призывом к нетворкингу.';
   el('postText').value='✨ AI думает...';el('postHint').style.display='none';
   el('postAI').className='btn btn-primary';el('postWrite').className='btn btn-secondary';
   try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiPost',prompt:p}));}
   catch(e){el('postText').value='Скопируйте текст и отправьте боту: '+p;}
 };
-el('postCopy').onclick=function(){
+if(el('postCopy'))el('postCopy').onclick=function(){
   var t=el('postText').value;
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){alert('Скопировано!');});}
   else{prompt('Скопируйте:',t);}
 };
-el('postSend').onclick=function(){
+if(el('postSend'))el('postSend').onclick=function(){
   var t=el('postText').value;
   try{window.Telegram.WebApp.sendData(JSON.stringify({action:'postToChannel',text:t}));alert('Отправлено в канал!');}
   catch(e){alert('Откройте через Telegram чтобы отправить в канал.');}
