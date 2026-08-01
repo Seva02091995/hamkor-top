@@ -116,9 +116,11 @@ body.dark .bio-text{color:var(--muted)}
 body.dark .act-no{color:var(--muted)}
 .hint{text-align:center;font-size:11px;color:var(--muted);margin-top:8px}
 .hint b{color:#2DA66E}body.dark .hint b{color:var(--green)}
-.nav{width:calc(100% - 28px);max-width:400px;display:flex;justify-content:space-around;background:var(--card);border-radius:16px;border:1px solid var(--line);padding:10px 6px;position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px)+8px);z-index:120;box-shadow:0 10px 24px rgba(15,25,35,.14)}
-.nav-item{text-align:center;font-size:11px;color:var(--muted);cursor:pointer;padding:4px 10px;border-radius:10px}
+/* bottom nav */
+.nav{width:100%;max-width:400px;display:flex;justify-content:space-around;background:var(--card);border-top:1px solid var(--line);padding:10px 6px;position:fixed;bottom:0;z-index:200;background:var(--card)}
+.nav-item{text-align:center;font-size:11px;color:var(--muted);cursor:pointer;padding:4px 10px;flex:1}
 .nav-item.active{color:var(--blue);font-weight:600}
+.fab{position:fixed;bottom:80px;right:20px;width:56px;height:56px;background:var(--blue);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:28px;box-shadow:0 4px 15px rgba(74,144,226,.4);z-index:190;cursor:pointer}
 .streak7{width:100%;max-width:400px;display:flex;gap:6px;justify-content:center;margin:8px 0 10px}
 .streak-day{width:24px;height:24px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;font-size:12px;color:var(--muted);background:var(--card)}
 .streak-day.on{border-color:#F59E0B;background:rgba(245,158,11,.15);color:#B45309;font-weight:700}
@@ -200,6 +202,7 @@ body.dark .streak-day.on{color:#FBBF24}
     <button class="act act-no" id="btnNo" data-t="no">Мимо</button>
   </div>
   <div class="hint" id="hintText"></div>
+  <div class="fab" id="fabBtn">+</div>
   <div class="nav">
     <div class="nav-item active" data-tab="main" data-t="tabSearch">Поиск</div>
     <div class="nav-item" data-tab="feed" data-t="tabFeed">Лента</div>
@@ -353,23 +356,21 @@ body.dark .streak-day.on{color:#FBBF24}
   </div>
 </div>
 
-<div class="screen" id="s-post">
-  <div class="hero-title" style="margin-top:24px" data-t="postTitle">Создать пост</div>
-  <div class="form">
-    <div style="display:flex;gap:6px;margin-bottom:10px">
-      <button class="btn btn-primary" id="postWrite" data-t="postWrite">✍️ Сам напишу</button>
-      <button class="btn btn-secondary" id="postAI" data-t="postAI">🤖 AI поможет</button>
-    </div>
-    <textarea class="textarea" id="postText" style="min-height:200px;font-size:15px" data-t="postPlaceholder" placeholder="О чём хотите рассказать?"></textarea>
-    <div class="note" id="postHint" style="display:none" data-t="postHint">Нажмите «AI поможет» — и ассистент напишет пост в вашем стиле на основе профиля.</div>
-    <div style="display:flex;gap:6px">
-      <button class="btn btn-primary" id="postSend" data-t="postSend">📤 Отправить в канал</button>
-      <button class="btn btn-secondary" id="postCopy" data-t="postCopy">📋 Копировать</button>
-    </div>
-    <button class="btn btn-secondary" id="btnPostBack">← Назад</button>
+<div class="screen" id="s-interview">
+  <div class="hero-title" style="margin-top:24px">🎙️ Интервью со мной</div>
+  <div class="hero-sub">Ответьте на 5 вопросов, и я определю ваш уникальный стиль общения.</div>
+  <div class="form" id="intForm">
+    <div id="intQuestion" style="font-size:16px;margin-bottom:15px;font-weight:700">Загрузка...</div>
+    <textarea class="textarea" id="intAns" placeholder="Ваш ответ..."></textarea>
+    <button class="btn btn-primary" id="intNext" style="margin-top:10px">Следующий вопрос</button>
   </div>
 </div>
 
+<div class="fab-menu" id="fabMenu" style="display:none;position:fixed;bottom:150px;right:20px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;z-index:210;box-shadow:0 10px 25px rgba(0,0,0,.2)">
+  <div style="padding:10px" id="plusPhoto">📷 Фото</div>
+  <div style="padding:10px" id="plusFile">📎 Файл</div>
+  <div style="padding:10px" id="plusAI" style="color:var(--blue)">✨ AI-инструменты</div>
+</div>
 <script>
 var i18n={
 ru:{made:'создано в Узбекистане',lang:'Выбери язык',langHint:'Можно сменить позже. Профессиональные термины остаются как есть.',go:'Продолжить',hero:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',spec:'Я IT-специалист',emp:'Я работодатель',points:'Очки',lvl:'Уровень',days:'Дней',contacts:'Контакты',hunt:'Прогресс дня',boost:'+68% активность',foundPrefix:'Подходящих: ',task1:'Заполнить профиль',task2:'Посмотреть 10 карточек',task3:'Пригласить друга',getLink:'Получить ссылку',refHint:'Нажмите — ссылка скопируется',linkCopied:'Ссылка скопирована',yes:'Интересно',no:'Мимо',hint:'Ещё N карточек — и откроется новый кандидат',hintDone:'Список на сегодня закончился. Обнови профиль или пригласи друга, чтобы открыть новых кандидатов.',tabSearch:'Поиск',tabFeed:'Лента',tabContacts:'Контакты',tabProf:'Профиль',chestBtn:'🎁 Сундук дня',nextQuest:'Следующий шаг: выполни задание',chestOpen:'Крутим награду...',chestReady:'Сундук уже открыт сегодня',chestBoost:'x2 на следующий свайп!',lbBadge:'🏆 Лига',lbTitle:'Рейтинг недели',lbYou:'Ты',thoughtTitle:'✏️ Добавить мысль',thoughtPh:'Что у вас на уме? Напишите здесь...',thoughtPublish:'✏️ Опубликовать',thoughtDraft:'Черновик',feedTitle:'Лента роста',feedSub:'Короткие кейсы, советы по карьере и разборы, чтобы прогревать интерес к продукту.',feedBadge1:'+ Практика',feedItem1Title:'Как найти 1‑го клиента за 7 дней',feedItem1Text:'Сценарий: профиль → 10 релевантных контактов → короткий оффер.',feedBadge2:'🔥 Кейс',feedItem2Title:'Почему визуальная воронка поднимает отклик',feedItem2Text:'Прогресс и награды повышают шанс, что человек завершит целевое действие.',mTitle:'Твои контакты',mEmpty:'Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.',back:'Вернуться к поиску',pfHint:'Фото меняется в редактировании',edit:'Редактировать профиль',chLang:'Сменить язык',themeDark:'Тёмная тема',themeLight:'Светлая тема',fName:'Имя',fCity:'Город',fRole:'Роль',fSkills:'Навыки (через запятую)',fBio:'О себе',fPhoto:'Фото (можно несколько)',choose:'Выбрать фото',none:'Не выбрано',save:'Сохранить',cancel:'Отмена',biz:'🚀 Услуги для бизнеса',issue:'💡 Сообщить о проблеме',bizTitle:'Бизнес-услуги Hamkor Top',bizSub:'Мы помогаем компаниям находить клиентов и автоматизировать процессы.',biz1:'Разработка сайтов и приложений',biz2:'CRM-интеграции и автоматизация',biz3:'Маркетинг и стратегия',biz4:'Поиск сотрудников под ключ',bizCTA:'Оставить заявку',bizSent:'Заявка отправлена! Мы свяжемся с вами.',issueTitle:'Сообщить о проблеме или идее',issueSub:'Мы платим за полезные идеи и найденные проблемы в Узбекистане.',issuePlaceholder:'Опишите проблему или идею...',issueContact:'Ваш Telegram или телефон',issueReward:'За accepted идеи платим до 50 000 сум',issueSent:'Спасибо! Если идею примут — мы свяжемся и выплатим вознаграждение.',btnPost:'📝 Создать пост',postTitle:'Мастерская постов',postWrite:'✍️ Сам напишу',postAI:'🤖 AI поможет',postPlaceholder:'О чём хотите рассказать?',postHint:'Нажмите «AI поможет» — ассистент напишет пост в вашем стиле на основе профиля.',postSend:'📤 Отправить в канал',postCopy:'📋 Копировать',zeroTitle:'Карточки на сегодня закончились',zeroSub:'Чтобы открыть новых кандидатов, сделай одно действие:',zeroA:'Обновить профиль',zeroB:'Пригласить друга',aiBio:'✨ AI улучшит описание',aiPost:'📝 Сгенерировать пост из опыта'},
@@ -380,7 +381,7 @@ var ST=null;
 var tgId='guest';
 (function(){try{if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initDataUnsafe&&window.Telegram.WebApp.initDataUnsafe.user&&window.Telegram.WebApp.initDataUnsafe.user.id)tgId=String(window.Telegram.WebApp.initDataUnsafe.user.id);}catch(e){}})();
 var KEY='hamkorTop:'+tgId;
-var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,streakLast:'',contacts:0,views:0,dailyBonus:false,chestDate:'',boost2x:0,thoughtDate:'',thoughtCount:0,name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',photos:[],photoIdx:0,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0,claim10:false,rewardProfile:false,rewardInvite:false,rewardBiz:false,rewardIssue:false,badges:[]};
+var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,streakLast:'',contacts:0,views:0,dailyBonus:false,chestDate:'',boost2x:0,thoughtDate:'',thoughtCount:0,interviewAnswers:[],name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',photos:[],photoIdx:0,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0,claim10:false,rewardProfile:false,rewardInvite:false,rewardBiz:false,rewardIssue:false,badges:[]};
 function loadST(){try{var r=localStorage.getItem(KEY);if(!r)return false;var d=JSON.parse(r);ST={};for(var k in defaultST)ST[k]=defaultST[k];for(var k in d)ST[k]=d[k];if(!Array.isArray(ST.photos))ST.photos=[];return true;}catch(e){return false;}}
 if(!loadST()){ST={};for(var k in defaultST)ST[k]=defaultST[k];}
 function tryRestore(){
@@ -497,7 +498,7 @@ var refs={
 };
 
 function show(id,remember){if(remember===undefined)remember=true;screens.forEach(function(s){el(s).classList.remove('active');});el(id).classList.add('active');if(remember&&id!=='s-lang'){ST.lastScreen=id;saveST();}if(id==='s-main')renderCard();if(id==='s-profile')renderProfile();if(id==='s-edit')fillForm();}
-var screens=['s-lang','s-welcome','s-main','s-feed','s-matches','s-profile','s-edit','s-biz','s-biz-next','s-issue','s-post'];
+var screens=['s-lang','s-welcome','s-main','s-feed','s-matches','s-profile','s-edit','s-biz','s-biz-next','s-issue','s-post','s-interview'];
 
 function tr(){var d=tt();document.querySelectorAll('[data-t]').forEach(function(e){var k=e.getAttribute('data-t');if(k==='boost'){e.textContent=boostLabel(calcBoost());return;}if(d[k])e.textContent=d[k];});if(refs.strkLabel)refs.strkLabel.textContent='🔥 '+dayWord(ST.streak||1);renderFoundText();renderHint();updateNextQuest();if(refs.refNote)refs.refNote.textContent=d.refHint;if(refs.btnTheme)refs.btnTheme.textContent=ST.theme==='dark'?d.themeLight:d.themeDark;if(refs.fileName&&(!refs.fileAv.files||refs.fileAv.files.length===0)&&ST.photos.length===0)refs.fileName.textContent=d.none;}
 function renderFoundText(){var d=tt();var f=Math.min(ST.views,5);refs.huntNote.innerHTML=d.foundPrefix+'<b>'+f+'</b> / 5';}
@@ -601,7 +602,30 @@ el('btnIssueBack').onclick=function(){show('s-profile');};
 el('btnIssueSend').onclick=function(){if(!ST.rewardIssue){ST.rewardIssue=true;ST.xp+=20;reward(20,'Спасибо за идею!');upd();saveST();}alert(tt().issueSent);show('s-profile');};
 el('btnBizNextBack').onclick=function(){show('s-profile');};
 
-el('btnPost').onclick=function(){show('s-post');};
+el('fabBtn').onclick=function(){var m=el('fabMenu');m.style.display=m.style.display==='none'?'block':'none';};
+var intQ=[
+  'Как бы вы объяснили свою последнюю мысль лучшему другу?',
+  'А как бы вы объяснили её начальнику?',
+  'Какие 3 слова вы используете чаще всего?',
+  'О чем вы пишете чаще всего?',
+  'Кто ваша идеальная аудитория?'
+];
+var intIdx=0;
+el('intNext').onclick=function(){
+  var ans=el('intAns').value.trim();
+  if(!ans){alert('Ответьте на вопрос!');return;}
+  ST.interviewAnswers.push(ans);
+  el('intAns').value='';
+  intIdx++;
+  if(intIdx<intQ.length){
+    el('intQuestion').textContent=intQ[intIdx];
+  }else{
+    alert('Интервью завершено! AI изучает ваш стиль...');
+    try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiInterview',answers:ST.interviewAnswers}));}catch(e){}
+    ST.interviewAnswers=[];show('s-profile');
+  }
+};
+el('plusAI').onclick=function(){show('s-interview');el('fabMenu').style.display='none';el('intQuestion').textContent=intQ[0];};
 el('btnPostBack').onclick=function(){show('s-profile');};
 el('postWrite').onclick=function(){
   el('postHint').style.display='block';el('postText').focus();

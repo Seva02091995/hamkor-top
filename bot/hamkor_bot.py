@@ -128,10 +128,17 @@ async def on_webapp_data(message: types.Message):
         await message.answer("✅ Заявка принята! Мы свяжемся с вами в ближайшее время.")
 
     # --- AI-запросы ---
-    elif action == "aiBio":
-        await message.answer("✨ Сейчас улучшу описание... (функция в разработке)")
-    elif action == "aiPost":
-        await message.answer("📝 Готовлю пост... (функция в разработке)")
+    elif action == "aiInterview":
+        answers = data.get("answers", [])
+        owner_msg = (
+            f"🎙️ <b>Результаты AI-интервью от @{username}:</b>\n\n"
+            f"1. {answers[0]}\n2. {answers[1]}\n3. {answers[2]}\n4. {answers[3]}\n5. {answers[4]}\n\n"
+            f"👤 <b>ID:</b> {user_id}"
+        )
+        try:
+            await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
+        except: pass
+        await message.answer("✅ Интервью пройдено! Мы скоро вернёмся с результатами анализа стиля.")
 
     else:
         await message.answer("✅ Данные получены")
