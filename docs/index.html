@@ -756,10 +756,6 @@ refs.fileAv.addEventListener('change',function(e){
     .then(function(arr){ST.photos=ST.photos.concat(arr);ST.photoIdx=ST.photos.length-arr.length;renderProfile();saveST();refs.fileName.textContent=ST.photos.length+' фото';});
 });
 
-document.querySelectorAll('.nav-item').forEach(function(n){n.addEventListener('click',function(){
-  var tab=n.dataset.tab;if(tab==='main')show('s-main');if(tab==='feed')show('s-feed');if(tab==='matches')show('s-matches');if(tab==='profile')show('s-profile');
-});});
-
 document.addEventListener('DOMContentLoaded',function(){
 updateStreak();
 applyTheme();tr();upd();renderProfile();renderStreak7();
