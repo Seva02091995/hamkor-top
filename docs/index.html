@@ -60,6 +60,17 @@ body.dark .hunt-pill{background:#16382A;color:var(--green);border-color:#22513D}
 .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-size:10px;color:var(--ink)}
 .dot.done{border-color:var(--green);color:var(--green);background:rgba(45,138,78,.12)}
 body.dark .dot{border-color:var(--muted)}
+/* gamification */
+.xp-popup{position:fixed;top:20%;left:50%;transform:translate(-50%,0);font-size:28px;font-weight:800;color:var(--green);z-index:999;pointer-events:none;animation:xpUp 1.8s ease-out forwards}
+@keyframes xpUp{0%{opacity:0;transform:translate(-50%,30px)}20%{opacity:1;transform:translate(-50%,0)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-60px)}}
+.confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:998}
+.confetti-piece{position:absolute;width:10px;height:10px;animation:confettiFall 2s ease-out forwards}
+@keyframes confettiFall{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+.streak-fire{display:inline-block;animation:firePulse .6s ease-in-out infinite alternate}
+@keyframes firePulse{0%{transform:scale(1)}100%{transform:scale(1.25)}}
+.progress-fill{transition:width .6s cubic-bezier(.4,0,.2,1)}
+.card-badge{position:absolute;top:8px;right:8px;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;animation:badgeIn .4s ease-out}
+@keyframes badgeIn{0%{transform:scale(0)}60%{transform:scale(1.2)}100%{transform:scale(1)}}
 .ref-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px}
 .ref-btn{padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:11px;cursor:pointer}
 .ref-note{font-size:10px;color:var(--muted)}
@@ -321,7 +332,7 @@ var ST=null;
 var tgId='guest';
 (function(){try{if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initDataUnsafe&&window.Telegram.WebApp.initDataUnsafe.user&&window.Telegram.WebApp.initDataUnsafe.user.id)tgId=String(window.Telegram.WebApp.initDataUnsafe.user.id);}catch(e){}})();
 var KEY='hamkorTop:'+tgId;
-var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,contacts:0,views:0,name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',photos:[],photoIdx:0,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0};
+var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,contacts:0,views:0,dailyBonus:false,name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',photos:[],photoIdx:0,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0};
 function loadST(){try{var r=localStorage.getItem(KEY);if(!r)return false;var d=JSON.parse(r);ST={};for(var k in defaultST)ST[k]=defaultST[k];for(var k in d)ST[k]=d[k];if(!Array.isArray(ST.photos))ST.photos=[];return true;}catch(e){return false;}}
 if(!loadST()){ST={};for(var k in defaultST)ST[k]=defaultST[k];}
 function tryRestore(){
@@ -371,7 +382,7 @@ function tr(){var d=tt();document.querySelectorAll('[data-t]').forEach(function(
 function renderFoundText(){var d=tt();var f=Math.min(ST.views,5);refs.huntNote.innerHTML=d.foundPrefix+'<b>'+f+'</b> / 5';}
 function renderHint(){var d=tt();var left=Math.max(0,5-ST.views);refs.hintText.textContent=left===0?d.hintDone:d.hint.replace('N',left);}
 function upd(){
-  refs.xpV.textContent=ST.xp;refs.lvlV.textContent=ST.lvl;refs.strkV.textContent=ST.streak;refs.matchV.textContent=ST.contacts;
+  refs.xpV.textContent=ST.xp;refs.lvlV.textContent=ST.lvl;refs.strkV.innerHTML=fireStreak();refs.matchV.textContent=ST.contacts;
   refs.xpFill.style.width=Math.min(100,(ST.xp%200)/200*100)+'%';refs.xpNote.textContent=(ST.xp%200)+' / 200';
   refs.task1dot.innerHTML='&#x2713;';refs.task1dot.classList.add('done');
   refs.task2dot.innerHTML=ST.views>=10?'&#x2713;':'&#x25CB;';if(ST.views>=10)refs.task2dot.classList.add('done');else refs.task2dot.classList.remove('done');
@@ -391,7 +402,15 @@ function renderCard(){
 }
 function swipe(dir){
   var card=el('liveCard');if(card){card.classList.add(dir==='yes'?'card-right':'card-left');}
-  setTimeout(function(){ST.views++;ST.xp+=2;if(dir==='yes'){ST.contacts++;ST.xp+=20;}ST.cardIndex++;upd();renderCard();saveST();},220);
+  setTimeout(function(){
+    var bonus=dir==='yes'?25:5;
+    ST.views++;ST.xp+=bonus;
+    if(dir==='yes'){ST.contacts++;}
+    if(ST.views>=10&&!ST.claim10){ST.xp+=50;ST.claim10=true;reward(50,'10 карточек! 🎯');}
+    ST.cardIndex++;upd();renderCard();saveST();
+    reward(bonus,dir==='yes'?'Интересно!':'Пропуск');
+    checkDailyComplete();
+  },220);
 }
 function renderProfile(){
   refs.pfName.textContent=ST.name;
@@ -407,6 +426,8 @@ function saveProfile(){
   ST.name=refs.fName.value.trim()||ST.name;ST.city=refs.fCity.value.trim()||ST.city;ST.roleT=refs.fRole.value.trim()||ST.roleT;
   ST.skills=refs.fSkills.value.trim()||ST.skills;ST.bio=refs.fBio.value.trim()||ST.bio;ST.xp+=50;upd();saveST();show('s-profile');
   saveToServer();
+  reward(50,'Профиль обновлён!');
+  checkDailyComplete();
 }
 function copyInvite(){
   var code=encodeURIComponent(ST.name||'user');var link='https://t.me/hamkor_top_bot?start=ref_'+code;
@@ -482,6 +503,44 @@ function calcBoost(){
   if(ST.skills&&ST.skills!=='Figma,Prototyping,Research')f++; if(ST.bio&&ST.bio!=='Основатель Hamkor Top')f++;
   if(ST.photos.length)f++;
   return Math.min(100,Math.round(f/t*100+68));
+}
+
+// --- Duolingo-style gamification ---
+function reward(xp,label){
+  ST.xp+=xp;upd();saveST();
+  var el=document.createElement('div');el.className='xp-popup';el.innerHTML='+'+xp+' ⚡<br><small>'+label+'</small>';
+  document.body.appendChild(el);
+  setTimeout(function(){el.remove();},1900);
+  if(navigator.vibrate)navigator.vibrate(30);
+}
+function confetti(){
+  var colors=['#4a90e2','#a3d9a5','#f59e0b','#ef4444','#8b5cf6','#06b6d4'];
+  var c=document.createElement('div');c.className='confetti-container';
+  for(var i=0;i<50;i++){
+    var p=document.createElement('div');p.className='confetti-piece';
+    p.style.left=Math.random()*100+'%';p.style.top=-20-Math.random()*100+'px';
+    p.style.background=colors[Math.floor(Math.random()*colors.length)];
+    p.style.animationDuration=(1.5+Math.random()*2)+'s';
+    p.style.animationDelay=Math.random()*0.5+'s';
+    p.style.borderRadius=Math.random()>.5?'50%':'2px';
+    c.appendChild(p);
+  }
+  document.body.appendChild(c);
+  setTimeout(function(){c.remove();},3000);
+}
+function checkDailyComplete(){
+  var allDone=(refs.task1dot.innerHTML.charCodeAt(0)===10003)&&
+    (refs.task2dot.innerHTML.charCodeAt(0)===10003)&&
+    (refs.task3dot.innerHTML.charCodeAt(0)===10003);
+  if(allDone&&!ST.dailyBonus){
+    ST.dailyBonus=true;ST.xp+=100;saveST();upd();
+    reward(100,'Бонус дня!');
+    setTimeout(confetti,500);
+  }
+}
+function fireStreak(){
+  var s=ST.streak||1;
+  return '<span class="streak-fire">🔥</span> '+s+' '+(s===1?'день':'дней');
 }
 el('aiBio').onclick=function(){
   var p='Улучши описание профиля. Имя: '+ST.name+'. Роль: '+ST.roleT+'. Навыки: '+ST.skills+'. Текущее описание: '+(ST.bio||'нет')+'. Напиши улучшенную версию на русском, 2-3 предложения, деловым и тёплым тоном.';
