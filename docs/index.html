@@ -505,8 +505,8 @@ var refs={
   photoPrev:el('photoPrev'),photoNext:el('photoNext')
 };
 
-function show(id,remember){if(remember===undefined)remember=true;screens.forEach(function(s){el(s).classList.remove('active');});el(id).classList.add('active');if(remember&&id!=='s-lang'){ST.lastScreen=id;saveST();}if(id==='s-main')renderCard();if(id==='s-profile')renderProfile();if(id==='s-edit')fillForm();}
-var screens=['s-lang','s-welcome','s-main','s-feed','s-matches','s-profile','s-edit','s-biz','s-biz-next','s-issue','s-post','s-interview'];
+function show(id,remember){if(remember===undefined)remember=true;screens.forEach(function(s){var e=el(s);if(e)e.classList.remove('active');});var target=el(id);if(target)target.classList.add('active');if(remember&&id!=='s-lang'){ST.lastScreen=id;saveST();}if(id==='s-main')renderCard();if(id==='s-profile')renderProfile();if(id==='s-edit')fillForm();}
+var screens=['s-lang','s-welcome','s-main','s-feed','s-matches','s-profile','s-edit','s-biz','s-biz-next','s-issue','s-interview'];
 
 function tr(){var d=tt();document.querySelectorAll('[data-t]').forEach(function(e){var k=e.getAttribute('data-t');if(k==='boost'){e.textContent=boostLabel(calcBoost());return;}if(d[k])e.textContent=d[k];});if(refs.strkLabel)refs.strkLabel.textContent='🔥 '+dayWord(ST.streak||1);renderFoundText();renderHint();updateNextQuest();if(refs.refNote)refs.refNote.textContent=d.refHint;if(refs.btnTheme)refs.btnTheme.textContent=ST.theme==='dark'?d.themeLight:d.themeDark;if(refs.fileName&&(!refs.fileAv.files||refs.fileAv.files.length===0)&&ST.photos.length===0)refs.fileName.textContent=d.none;}
 function renderFoundText(){var d=tt();var f=Math.min(ST.views,5);refs.huntNote.innerHTML=d.foundPrefix+'<b>'+f+'</b> / 5';}
