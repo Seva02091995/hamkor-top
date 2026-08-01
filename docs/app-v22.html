@@ -1,0 +1,772 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<meta name="theme-color" content="#F5F5F5"/>
+<title>Hamkor Top</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#4A90E2; --green:#2ECC71; --yellow:#F1C40F;
+  --bg:#F0F4F8; --ink:#1F2A37; --muted:#607187; --line:#DCE7F1;
+  --card:#FFFFFF; --card2:#F7FBFF;
+}
+body.dark{
+  --blue:#5BA0F5; --green:#34E089; --yellow:#F5C828;
+  --bg:#131A22; --ink:#EFF2F6; --muted:#8E9BAC; --line:#25313F;
+  --card:#1C2735; --card2:#15202D;
+}
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-size:calc(1rem * var(--fs, 1));
+  background:radial-gradient(900px 300px at 80% -8%,rgba(74,144,226,.16),transparent 55%),radial-gradient(800px 280px at 0% 100%,rgba(163,217,165,.16),transparent 50%),var(--bg);
+  color:var(--ink);min-height:100vh;min-height:100dvh;overflow-x:hidden;
+}
+.screen{display:none;min-height:100vh;padding:20px 14px 110px;flex-direction:column;align-items:center}
+.screen.active{display:flex}
+.brand{font-family:Georgia,serif;font-size:38px;color:#2C5A88;margin-top:36px}
+.brand span{color:#2DA66E}
+body.dark .brand{color:#7DB5F5}body.dark .brand span{color:var(--green)}
+.brand-sub{font-size:13px;color:var(--muted);margin-top:4px}
+.av{width:100px;height:100px;border-radius:50%;border:2px solid rgba(74,144,226,.4);margin:26px 0 16px;display:grid;place-items:center;background:var(--card);overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover}
+.av svg{width:44px;height:44px;color:var(--blue)}
+.hero-title{font-family:Georgia,serif;font-size:22px;text-align:center;margin-bottom:6px}
+.hero-sub{text-align:center;color:var(--muted);line-height:1.45;max-width:340px;font-size:14px;margin-bottom:22px}
+.lang-row{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap;justify-content:center}
+.lang-btn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer}
+.lang-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn{width:100%;max-width:360px;border:none;border-radius:12px;padding:14px 16px;font-weight:700;cursor:pointer;font-family:Georgia,serif;font-size:16px;margin-bottom:10px;text-align:center}
+.btn-primary{background:linear-gradient(135deg,var(--green),var(--blue));color:#fff;box-shadow:0 8px 20px rgba(46,204,113,.2)}
+.btn-secondary{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:400px;margin-bottom:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 8px;text-align:center}
+.stat .v{font-family:Inter,sans-serif;font-size:20px;font-weight:700;color:var(--blue);line-height:1;font-variant-numeric:tabular-nums;font-feature-settings:"tnum"1,"lnum"1}
+.stat .l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-top:5px}
+.track{height:7px;background:#E7EEF5;border-radius:999px;overflow:hidden}
+body.dark .track{background:#1E2B3A}
+.fill{height:100%;width:30%;background:linear-gradient(90deg,var(--green),var(--blue));transition:width .55s cubic-bezier(.4,0,.2,1)}
+.note{font-size:11px;color:var(--muted)}
+.hunt{width:100%;max-width:400px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;margin:10px 0 12px}
+.hunt-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.hunt-title{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:#47698A;font-weight:600}
+body.dark .hunt-title{color:#9EB8D6}
+.hunt-pill{font-size:10px;background:#E7F6ED;color:#1D8D57;border:1px solid #CFEEDD;border-radius:999px;padding:3px 7px}
+body.dark .hunt-pill{background:#16382A;color:var(--green);border-color:#22513D}
+.hunt-note{font-size:11px;color:var(--muted);text-align:right;margin-top:6px}
+.tasks{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.task{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-size:10px;color:var(--ink)}
+.dot.done{border-color:var(--green);color:var(--green);background:rgba(45,138,78,.12)}
+body.dark .dot{border-color:var(--muted)}
+/* gamification */
+.xp-focus{position:fixed;inset:0;background:rgba(8,16,28,.42);z-index:997;pointer-events:none;animation:fadeFx 1.1s ease-out forwards}
+.xp-popup{position:fixed;top:20%;left:50%;transform:translate(-50%,0);font-size:30px;font-weight:900;color:#F8FFFD;z-index:999;pointer-events:none;animation:xpUp 1.8s ease-out forwards;background:linear-gradient(135deg,rgba(31,42,55,.95),rgba(28,39,53,.95));border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:14px 18px;text-align:center;box-shadow:0 20px 45px rgba(0,0,0,.35)}
+.xp-popup small{display:block;margin-top:4px;font-size:13px;color:#BDF5D7;font-weight:700}
+@keyframes fadeFx{0%{opacity:0}20%{opacity:1}100%{opacity:0}}
+@keyframes xpUp{0%{opacity:0;transform:translate(-50%,30px) scale(.92)}20%{opacity:1;transform:translate(-50%,0) scale(1)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-60px) scale(1.02)}}
+.confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:998}
+.confetti-piece{position:absolute;width:10px;height:10px;animation:confettiFall 2s ease-out forwards}
+@keyframes confettiFall{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+.streak-fire{display:inline-block;animation:firePulse .6s ease-in-out infinite alternate}
+@keyframes firePulse{0%{transform:scale(1)}100%{transform:scale(1.25)}}
+.progress-fill{transition:width .6s cubic-bezier(.4,0,.2,1)}
+.card-badge{position:absolute;top:8px;right:8px;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px;animation:badgeIn .4s ease-out}
+@keyframes badgeIn{0%{transform:scale(0)}60%{transform:scale(1.2)}100%{transform:scale(1)}}
+.ref-row{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px}
+.ref-btn{padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:11px;cursor:pointer}
+.ref-note{font-size:10px;color:var(--muted)}
+.card-area{width:100%;max-width:400px;position:relative;height:430px;margin-bottom:12px}
+.card{position:absolute;inset:0;border-radius:20px;overflow:hidden;background:linear-gradient(170deg,var(--card),var(--card2));border:1px solid var(--line);box-shadow:0 14px 30px rgba(42,74,112,.10)}
+body.dark .card{box-shadow:0 14px 30px rgba(0,0,0,.40)}
+.card-left{transform:translateX(-150%)rotate(-30deg);opacity:0;transition:.35s}
+.card-right{transform:translateX(150%)rotate(30deg);opacity:0;transition:.35s}
+.rare-tag{text-align:center;font-size:10px;letter-spacing:2px;font-weight:700;color:#7A5A00;padding:7px;background:linear-gradient(90deg,transparent,rgba(241,196,15,.20),transparent);border-bottom:1px solid rgba(241,196,15,.35)}
+body.dark .rare-tag{color:var(--yellow)}
+.card-head{height:150px;background:linear-gradient(145deg,#DFF0FF,#EAF8EE);display:flex;align-items:center;justify-content:center;position:relative}
+body.dark .card-head{background:linear-gradient(145deg,#192A3A,#1D3040)}
+.card-glow{position:absolute;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(241,196,15,.20),transparent 65%)}
+.card-av{width:80px;height:80px;border-radius:50%;border:2px solid rgba(74,144,226,.45);background:var(--card);display:grid;place-items:center;position:relative;z-index:2;overflow:hidden}
+.card-av img{width:100%;height:100%;object-fit:cover}
+.card-av svg{width:34px;height:34px;color:var(--blue)}
+.card-body{padding:16px}
+.card-name{font-family:Georgia,serif;font-size:24px;color:#22496E;margin-bottom:2px}
+body.dark .card-name{color:#D6E4F5}
+.card-role{font-size:14px;color:#2DA66E;margin-bottom:6px}
+body.dark .card-role{color:var(--green)}
+.card-city{font-size:12px;color:var(--muted);margin-bottom:8px}
+.score{display:flex;gap:10px;align-items:center;margin:10px 0}
+.ring{width:46px;height:46px;border-radius:50%;background:conic-gradient(var(--yellow)0 84%,#EAF0F6 84% 100%);display:grid;place-items:center}
+body.dark .ring{background:conic-gradient(var(--yellow)0 84%,#1C2A3A 84% 100%)}
+.ring-in{width:35px;height:35px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-weight:700;font-size:14px;color:#7A5A00;font-family:Inter,sans-serif;font-variant-numeric:tabular-nums}
+body.dark .ring-in{color:var(--yellow)}
+.score-t1{font-size:12px;color:#1E5E94;font-weight:600}
+body.dark .score-t1{color:#7DB5F5}
+.score-t2{font-size:10px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.tag{padding:5px 11px;border-radius:999px;background:#EEF7FF;border:1px solid #D8E8F7;color:#2D5C89;font-size:11px}
+body.dark .tag{background:#1E3145;border-color:#27415C;color:#7DB5F5}
+.bio-text{font-size:13px;line-height:1.45;color:#52657B}
+body.dark .bio-text{color:var(--muted)}
+.actions{width:100%;max-width:400px;display:flex;flex-direction:column;gap:10px}
+.act{height:52px;border-radius:12px;font-family:Georgia,serif;font-size:17px;font-weight:700;cursor:pointer;border:1px solid transparent}
+.act-yes{background:linear-gradient(135deg,var(--green),var(--blue));color:#fff;box-shadow:0 8px 20px rgba(46,204,113,.2)}
+.act-no{background:var(--card);color:#4F647A;border-color:var(--line)}
+body.dark .act-no{color:var(--muted)}
+.hint{text-align:center;font-size:11px;color:var(--muted);margin-top:8px}
+.hint b{color:#2DA66E}body.dark .hint b{color:var(--green)}
+/* bottom nav */
+.nav{width:100%;max-width:400px;display:flex;justify-content:space-around;background:var(--card);border-top:1px solid var(--line);padding:10px 6px;position:fixed;bottom:0;z-index:200;background:var(--card)}
+.nav-item{text-align:center;font-size:11px;color:var(--muted);cursor:pointer;padding:4px 10px;flex:1;pointer-events:auto}
+.nav-item.active{color:var(--blue);font-weight:600}
+.fab{position:fixed;bottom:80px;right:20px;width:56px;height:56px;background:var(--blue);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:28px;box-shadow:0 4px 15px rgba(74,144,226,.4);z-index:190;cursor:pointer}
+.streak7{width:100%;max-width:400px;display:flex;gap:6px;justify-content:center;margin:8px 0 10px}
+.streak-day{width:24px;height:24px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;font-size:12px;color:var(--muted);background:var(--card)}
+.streak-day.on{border-color:#F59E0B;background:rgba(245,158,11,.15);color:#B45309;font-weight:700}
+body.dark .streak-day.on{color:#FBBF24}
+.pf-wrap{width:100%;max-width:400px}
+.pf-wrap .form{max-width:360px;margin:16px auto 0;display:flex;flex-direction:column;align-items:stretch}
+.pf-wrap .form .btn{max-width:100%}
+.pf-top{display:flex;flex-direction:column;align-items:center;margin-top:28px}
+.pf-av{width:88px;height:88px;border-radius:50%;border:2px solid rgba(74,144,226,.4);background:var(--card);display:grid;place-items:center;margin-bottom:12px;overflow:hidden}
+.pf-av img{width:100%;height:100%;object-fit:cover;object-position:center}
+.pf-av svg{width:36px;height:36px;color:var(--blue)}
+.photo-nav{display:flex;gap:8px;margin-top:8px}
+.photo-btn{padding:5px 9px;border-radius:8px;border:1px solid var(--line);background:var(--card);font-size:13px;color:var(--ink);cursor:pointer}
+.pf-name{font-family:Georgia,serif;font-size:24px}
+.pf-level{font-size:13px;color:var(--muted);margin-top:4px}
+.pf-note{font-size:11px;color:var(--muted);margin-top:6px}
+.form{width:100%;max-width:360px;margin:16px auto 0}
+.fg{margin-bottom:10px}
+.fg label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.input,.textarea{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:11px;font-size:14px}
+.textarea{min-height:80px;resize:vertical}
+.upload{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.file-hide{position:absolute;left:-9999px;opacity:0}
+.file-btn{display:inline-flex;align-items:center;padding:10px 14px;border:1px solid var(--line);background:var(--card);border-radius:10px;color:var(--ink);font-weight:600;cursor:pointer;font-size:13px}
+.file-name{font-size:11px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="screen active" id="s-lang">
+  <div class="brand">Hamkor<span>Top</span></div>
+  <div class="brand-sub" data-t="made">создано в Узбекистане</div>
+  <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+  <div class="hero-title" data-t="lang">Выбери язык</div>
+  <div class="hero-sub" data-t="langHint">Можно сменить позже. Профессиональные термины остаются как есть.</div>
+  <div class="lang-row">
+    <button class="lang-btn active" data-lang="ru" onclick="pickLang('ru',this)">Русский</button>
+    <button class="lang-btn" data-lang="uz" onclick="pickLang('uz',this)">O'zbekcha</button>
+    <button class="lang-btn" data-lang="en" onclick="pickLang('en',this)">English</button>
+  </div>
+  <button class="btn btn-primary" id="btnLang" data-t="go" onclick="show(ST.returnScreen||(ST.role?'s-main':'s-welcome'),false)">Продолжить</button>
+</div>
+
+<div class="screen" id="s-welcome">
+  <div class="brand">Hamkor<span>Top</span></div>
+  <div class="brand-sub" data-t="made">создано в Узбекистане</div>
+  <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg></div>
+  <div class="hero-title" data-t="hero">Твой AI-партнёр для карьеры</div>
+  <div class="hero-sub" data-t="heroSub">Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.</div>
+  <button class="btn btn-primary" id="btnSpec" data-t="spec" onclick="ST.role='specialist';ST.lastScreen='s-main';saveST();show('s-main')">Я IT-специалист</button>
+  <button class="btn btn-secondary" id="btnEmp" data-t="emp" onclick="ST.role='employer';ST.lastScreen='s-main';saveST();show('s-main')">Я работодатель</button>
+</div>
+
+<div class="screen" id="s-main">
+  <div class="stats">
+    <div class="stat"><div class="v" id="xpV">250</div><div class="l" data-t="points">Очки</div></div>
+    <div class="stat"><div class="v" id="lvlV">2</div><div class="l" data-t="lvl">Уровень</div></div>
+    <div class="stat"><div class="v" id="strkV">1</div><div class="l" id="strkLabel" data-t="days">Дней</div></div>
+    <div class="stat"><div class="v" id="matchV">0</div><div class="l" data-t="contacts">Контакты</div></div>
+  </div>
+  <div class="streak7" id="streak7"></div>
+  <div class="track"><div class="fill" id="xpFill" style="width:30%"></div></div>
+  <div class="note" id="xpNote" style="margin-top:6px;margin-bottom:8px">50 / 200</div>
+  <div class="hunt">
+    <div class="hunt-top"><div class="hunt-title" data-t="hunt">Прогресс дня</div><div class="hunt-pill" data-t="boost">+68% активность</div></div>
+    <div class="track"><div class="fill" id="huntFill" style="width:0%"></div></div>
+    <div class="hunt-note" id="huntNote"></div>
+    <div class="tasks">
+      <div class="task"><span class="dot" id="task1dot">&#x25CB;</span><span data-t="task1">Заполнить профиль</span></div>
+      <div class="task"><span class="dot" id="task2dot">&#x25CB;</span><span data-t="task2">Посмотреть 10 карточек</span></div>
+      <div class="task"><span class="dot" id="task3dot">&#x25CB;</span><span data-t="task3">Пригласить друга</span></div>
+    </div>
+    <div class="ref-row"><button class="ref-btn" id="refBtn" data-t="getLink">Получить ссылку</button><span class="ref-note" id="refNote" data-t="refHint">Нажмите — ссылка скопируется</span></div>
+    <div class="ref-row"><button class="ref-btn" id="chestBtn" data-t="chestBtn">🎁 Сундук дня</button><span class="ref-note" id="nextQuest" data-t="nextQuest">Следующий шаг: заполни профиль</span></div>
+  </div>
+  <div class="card-area" id="cardArea"></div>
+  <div class="actions">
+    <button class="act act-yes" id="btnYes" data-t="yes">Интересно</button>
+    <button class="act act-no" id="btnNo" data-t="no">Мимо</button>
+  </div>
+  <div class="hint" id="hintText"></div>
+  <div class="fab" id="fabBtn">+</div>
+</div>
+
+<div class="screen" id="s-feed">
+  <div class="hero-title" style="margin-top:24px" data-t="feedTitle">Лента роста</div>
+  <div class="hero-sub" data-t="feedSub">Короткие кейсы, советы по карьере и разборы, чтобы прогревать интерес к твоему продукту.</div>
+  <div class="card" style="position:relative;height:auto;padding:12px;width:100%;max-width:400px;margin-bottom:10px">
+    <div style="font-weight:700;margin-bottom:6px" data-t="thoughtTitle">✏️ Добавить мысль</div>
+    <textarea class="textarea" id="thoughtInput" data-t="thoughtPh" placeholder="Что у вас на уме? Напишите здесь..."></textarea>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button class="btn btn-primary" id="thoughtPublish" data-t="thoughtPublish" style="max-width:none;flex:1;margin:0">✏️ Опубликовать</button>
+      <button class="btn btn-secondary" id="thoughtDraft" data-t="thoughtDraft" style="max-width:none;flex:1;margin:0">Черновик</button>
+    </div>
+  </div>
+  <div style="width:100%;max-width:400px;display:flex;flex-direction:column;gap:10px">
+    <div class="card" style="position:relative;height:auto;padding:14px">
+      <div class="card-badge" data-t="feedBadge1">+ Практика</div>
+      <div style="font-weight:700;margin-bottom:6px" data-t="feedItem1Title">Как найти 1‑го клиента за 7 дней</div>
+      <div style="font-size:13px;color:var(--muted)" data-t="feedItem1Text">Пошаговый сценарий: профиль → 10 релевантных контактов → короткий оффер.</div>
+    </div>
+    <div class="card" style="position:relative;height:auto;padding:14px">
+      <div class="card-badge" data-t="feedBadge2">🔥 Кейс</div>
+      <div style="font-weight:700;margin-bottom:6px" data-t="feedItem2Title">Почему визуальная воронка поднимает отклик</div>
+      <div style="font-size:13px;color:var(--muted)" data-t="feedItem2Text">Когда человек видит прогресс и награды — он чаще завершает целевое действие.</div>
+    </div>
+    <div class="card" style="position:relative;height:auto;padding:14px">
+      <div class="card-badge" data-t="lbBadge">🏆 Лига</div>
+      <div style="font-weight:700;margin-bottom:6px" data-t="lbTitle">Рейтинг недели</div>
+      <div style="font-size:13px;color:var(--muted)"><span data-t="lbYou">Ты:</span> <b id="lbPlace">#24</b> · XP <b id="lbScore">250</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="s-matches">
+  <div class="hero-title" style="margin-top:50px" data-t="mTitle">Твои контакты</div>
+  <div class="hero-sub" data-t="mEmpty">Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.</div>
+  <button class="btn btn-secondary" id="btnToMain" data-t="back">Вернуться к поиску</button>
+</div>
+
+<div class="screen" id="s-profile">
+  <div class="pf-wrap">
+    <div class="pf-top">
+      <div class="pf-av" id="pfAv"></div>
+      <div class="photo-nav">
+        <button class="photo-btn" id="photoPrev">&lt;</button>
+        <button class="photo-btn" id="photoNext">&gt;</button>
+      </div>
+      <div class="pf-name" id="pfName">Севара</div>
+      <div class="pf-level">Yangi &middot; Level 1</div>
+      <div class="pf-note" data-t="pfHint">Фото меняется в редактировании</div>
+    </div>
+    <div class="form">
+      <button class="btn btn-primary" id="btnEdit" data-t="edit">Редактировать профиль</button>
+      <button class="btn btn-secondary" id="btnLangCh" data-t="chLang">Сменить язык</button>
+      <button class="btn btn-secondary" id="btnTheme" data-t="theme">Тёмная тема</button>
+      <button class="btn btn-secondary" id="btnBiz" data-t="biz">🚀 Услуги для бизнеса</button>
+      <button class="btn btn-secondary" id="btnIssue" data-t="issue">💡 Сообщить о проблеме</button>
+      <button class="btn btn-secondary" id="btnPost" data-t="btnPost">📝 Создать пост</button>
+      <div style="display:flex;gap:8px;justify-content:center;margin-top:4px">
+        <button class="ref-btn" id="fsS" style="font-size:11px">A</button>
+        <button class="ref-btn" id="fsM" style="font-size:14px;font-weight:700">A</button>
+        <button class="ref-btn" id="fsL" style="font-size:17px;font-weight:700">A</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="screen" id="s-edit">
+  <div class="hero-title" style="margin-top:24px" data-t="edit">Редактировать профиль</div>
+  <div style="display:flex;justify-content:center;margin-bottom:14px">
+    <div class="pf-av" id="editAv" style="width:72px;height:72px"></div>
+  </div>
+  <div class="form">
+    <div class="fg"><label data-t="fName">Имя</label><input class="input" id="fName"/></div>
+    <div class="fg"><label data-t="fCity">Город</label><input class="input" id="fCity"/></div>
+    <div class="fg"><label data-t="fRole">Роль</label><input class="input" id="fRole"/></div>
+    <div class="fg"><label data-t="fSkills">Навыки (через запятую)</label><input class="input" id="fSkills"/></div>
+    <div class="fg"><label data-t="fBio">О себе</label><textarea class="textarea" id="fBio"></textarea></div>
+    <div class="fg"><label data-t="fBio">О себе</label><textarea class="textarea" id="fBio"></textarea></div>
+    <div class="fg"><button class="ref-btn" id="aiBio" data-t="aiBio">✨ AI улучшит описание</button></div>
+    <div class="fg"><button class="ref-btn" id="aiPost" data-t="aiPost">📝 Сгенерировать пост из опыта</button></div>
+    <div class="fg"><label data-t="fPhoto">Фото (можно несколько)</label>
+      <div class="upload">
+        <input type="file" accept="image/*" class="file-hide" id="fileAv" multiple/>
+        <label for="fileAv" class="file-btn" data-t="choose">Выбрать фото</label>
+        <span class="file-name" id="fileName" data-t="none">Не выбрано</span>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="btnSave" data-t="save">Сохранить</button>
+    <button class="btn btn-secondary" id="btnCancel" data-t="cancel">Отмена</button>
+  </div>
+</div>
+
+<div class="screen" id="s-biz">
+  <div class="hero-title" style="margin-top:24px" data-t="bizTitle">Бизнес-услуги Hamkor Top</div>
+  <div class="hero-sub" data-t="bizSub">Мы помогаем компаниям находить клиентов и автоматизировать процессы.</div>
+  <div class="form">
+    <div class="fg" style="text-align:center;padding:12px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;cursor:pointer" data-t="biz1">Разработка сайтов и приложений</div>
+    <div class="fg" style="text-align:center;padding:12px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;cursor:pointer" data-t="biz2">CRM-интеграции и автоматизация</div>
+    <div class="fg" style="text-align:center;padding:12px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;cursor:pointer" data-t="biz3">Маркетинг и стратегия</div>
+    <div class="fg" style="text-align:center;padding:12px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;cursor:pointer" data-t="biz4">Поиск сотрудников под ключ</div>
+    <textarea class="textarea" id="bizMsg" style="margin-bottom:8px" placeholder="Опишите ваш запрос..."></textarea>
+    <input class="input" id="bizContact" placeholder="Telegram или телефон" style="margin-bottom:10px"/>
+    <button class="btn btn-primary" id="btnBizSend" data-t="bizCTA">Оставить заявку</button>
+    <button class="btn btn-secondary" id="btnBizBack">← Назад</button>
+  </div>
+</div>
+
+<div class="screen" id="s-issue">
+  <div class="hero-title" style="margin-top:24px" data-t="issueTitle">Сообщить о проблеме или идее</div>
+  <div class="hero-sub" data-t="issueSub">Мы платим за полезные идеи и найденные проблемы в Узбекистане.</div>
+  <div class="form">
+    <textarea class="textarea" id="issueMsg" data-t="issuePlaceholder" placeholder="Опишите проблему или идею..."></textarea>
+    <input class="input" id="issueContact" placeholder="Telegram или телефон" style="margin:8px 0"/>
+    <div class="note" style="margin-bottom:10px" data-t="issueReward">За accepted идеи платим до 50 000 сум</div>
+    <button class="btn btn-primary" id="btnIssueSend" data-t="bizCTA">Отправить</button>
+    <button class="btn btn-secondary" id="btnIssueBack">← Назад</button>
+  </div>
+</div>
+
+<div class="screen" id="s-biz-next">
+  <div class="hero-title" style="margin-top:30px">Заявка принята!</div>
+  <div class="hero-sub">Мы свяжемся с вами в ближайшее время.<br>А пока — посмотрите как мы строим<br>Hamkor Top с нуля.</div>
+  <div style="width:100%;max-width:360px;margin-top:10px">
+    <a href="https://t.me/hamkor_top_bot" target="_blank" class="btn btn-primary" style="text-decoration:none;display:block">📱 Подписаться на канал Hamkor Top</a>
+    <div class="note" style="margin:10px 0">Там мы показываем всю кухню: как создаём продукт, какие задачи решаем, какие результаты получаем.</div>
+    <button class="btn btn-secondary" id="btnBizNextBack">← Вернуться в профиль</button>
+  </div>
+</div>
+
+<div class="screen" id="s-interview">
+  <div class="hero-title" style="margin-top:24px">🎙️ Интервью со мной</div>
+  <div class="hero-sub">Ответьте на 5 вопросов, и я определю ваш уникальный стиль общения.</div>
+  <div class="form" id="intForm">
+    <div id="intQuestion" style="font-size:16px;margin-bottom:15px;font-weight:700">Загрузка...</div>
+    <textarea class="textarea" id="intAns" placeholder="Ваш ответ..."></textarea>
+    <button class="btn btn-primary" id="intNext" style="margin-top:10px">Следующий вопрос</button>
+  </div>
+</div>
+
+<div class="fab-menu" id="fabMenu" style="display:none;position:fixed;bottom:150px;right:20px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;z-index:210;box-shadow:0 10px 25px rgba(0,0,0,.2)">
+  <div style="padding:10px" id="plusPhoto">📷 Фото</div>
+  <div style="padding:10px" id="plusFile">📎 Файл</div>
+  <div style="padding:10px" id="plusAI" style="color:var(--blue)">✨ AI-инструменты</div>
+</div>
+
+<div class="nav" id="globalNav">
+    <div class="nav-item active" data-tab="main" data-t="tabSearch" onclick="show('s-main')">Поиск</div>
+    <div class="nav-item" data-tab="feed" data-t="tabFeed" onclick="show('s-feed')">Лента</div>
+    <div class="nav-item" data-tab="matches" data-t="tabContacts" onclick="show('s-matches')">Контакты</div>
+    <div class="nav-item" data-tab="profile" data-t="tabProf" onclick="show('s-profile')">Профиль</div>
+</div>
+
+<script>
+var i18n={
+ru:{made:'создано в Узбекистане',lang:'Выбери язык',langHint:'Можно сменить позже. Профессиональные термины остаются как есть.',go:'Продолжить',hero:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',spec:'Я IT-специалист',emp:'Я работодатель',points:'Очки',lvl:'Уровень',days:'Дней',contacts:'Контакты',hunt:'Прогресс дня',boost:'+68% активность',foundPrefix:'Подходящих: ',task1:'Заполнить профиль',task2:'Посмотреть 10 карточек',task3:'Пригласить друга',getLink:'Получить ссылку',refHint:'Нажмите — ссылка скопируется',linkCopied:'Ссылка скопирована',yes:'Интересно',no:'Мимо',hint:'Ещё N карточек — и откроется новый кандидат',hintDone:'Список на сегодня закончился. Обнови профиль или пригласи друга, чтобы открыть новых кандидатов.',tabSearch:'Поиск',tabFeed:'Лента',tabContacts:'Контакты',tabProf:'Профиль',chestBtn:'🎁 Сундук дня',nextQuest:'Следующий шаг: выполни задание',chestOpen:'Крутим награду...',chestReady:'Сундук уже открыт сегодня',chestBoost:'x2 на следующий свайп!',lbBadge:'🏆 Лига',lbTitle:'Рейтинг недели',lbYou:'Ты',thoughtTitle:'✏️ Добавить мысль',thoughtPh:'Что у вас на уме? Напишите здесь...',thoughtPublish:'✏️ Опубликовать',thoughtDraft:'Черновик',feedTitle:'Лента роста',feedSub:'Короткие кейсы, советы по карьере и разборы, чтобы прогревать интерес к продукту.',feedBadge1:'+ Практика',feedItem1Title:'Как найти 1‑го клиента за 7 дней',feedItem1Text:'Сценарий: профиль → 10 релевантных контактов → короткий оффер.',feedBadge2:'🔥 Кейс',feedItem2Title:'Почему визуальная воронка поднимает отклик',feedItem2Text:'Прогресс и награды повышают шанс, что человек завершит целевое действие.',mTitle:'Твои контакты',mEmpty:'Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.',back:'Вернуться к поиску',pfHint:'Фото меняется в редактировании',edit:'Редактировать профиль',chLang:'Сменить язык',themeDark:'Тёмная тема',themeLight:'Светлая тема',fName:'Имя',fCity:'Город',fRole:'Роль',fSkills:'Навыки (через запятую)',fBio:'О себе',fPhoto:'Фото (можно несколько)',choose:'Выбрать фото',none:'Не выбрано',save:'Сохранить',cancel:'Отмена',biz:'🚀 Услуги для бизнеса',issue:'💡 Сообщить о проблеме',bizTitle:'Бизнес-услуги Hamkor Top',bizSub:'Мы помогаем компаниям находить клиентов и автоматизировать процессы.',biz1:'Разработка сайтов и приложений',biz2:'CRM-интеграции и автоматизация',biz3:'Маркетинг и стратегия',biz4:'Поиск сотрудников под ключ',bizCTA:'Оставить заявку',bizSent:'Заявка отправлена! Мы свяжемся с вами.',issueTitle:'Сообщить о проблеме или идее',issueSub:'Мы платим за полезные идеи и найденные проблемы в Узбекистане.',issuePlaceholder:'Опишите проблему или идею...',issueContact:'Ваш Telegram или телефон',issueReward:'За accepted идеи платим до 50 000 сум',issueSent:'Спасибо! Если идею примут — мы свяжемся и выплатим вознаграждение.',btnPost:'📝 Создать пост',postTitle:'Мастерская постов',postWrite:'✍️ Сам напишу',postAI:'🤖 AI поможет',postPlaceholder:'О чём хотите рассказать?',postHint:'Нажмите «AI поможет» — ассистент напишет пост в вашем стиле на основе профиля.',postSend:'📤 Отправить в канал',postCopy:'📋 Копировать',zeroTitle:'Карточки на сегодня закончились',zeroSub:'Чтобы открыть новых кандидатов, сделай одно действие:',zeroA:'Обновить профиль',zeroB:'Пригласить друга',aiBio:'✨ AI улучшит описание',aiPost:'📝 Сгенерировать пост из опыта'},
+uz:{made:"O'zbekistonda yaratilgan",lang:'Tilni tanlang',langHint:"Keyin o'zgartirasiz.",go:'Davom etish',hero:'Karyera uchun AI hamkor',heroSub:"O'ngga — qiziq, chapga — o'tish.",spec:'Men IT mutaxassisman',emp:'Men ish beruvchiman',points:'Ball',lvl:'Daraja',days:'Kun',contacts:'Kontaktlar',hunt:'Kun progressi',boost:'+68% faollik',foundPrefix:'Moslar: ',task1:"Profilni to'ldirish",task2:'10 ta kartani ko\'rish',task3:"Do'st taklif qilish",getLink:'Havolani olish',refHint:'Bosing — havola nusxalanadi',linkCopied:'Havola nusxalandi',yes:'Qiziq',no:"O'tish",hint:'Yana N karta — yangi nomzod ochiladi',hintDone:'Bugungi ro\'yxat tugadi. Yangi nomzodlar uchun profilni yangilang yoki do\'st taklif qiling.',tabSearch:'Qidiruv',tabFeed:'Lenta',tabContacts:'Kontaktlar',tabProf:'Profil',chestBtn:'🎁 Kun sandig‘i',nextQuest:'Keyingi qadam: topshiriqni bajaring',chestOpen:'Mukofot aylantirilmoqda...',chestReady:'Sandıq bugun allaqachon ochilgan',chestBoost:'Keyingi swipe uchun x2!',lbBadge:'🏆 Liga',lbTitle:'Hafta reytingi',lbYou:'Siz',thoughtTitle:'✏️ Fikr qo‘shish',thoughtPh:'Nima o‘ylayapsiz? Shu yerga yozing...',thoughtPublish:'✏️ Joylash',thoughtDraft:'Qoralama',feedTitle:'O‘sish lentasi',feedSub:'Qisqa keyslаr va maslahatlar — mijozni qiziqtirish uchun.',feedBadge1:'+ Amaliyot',feedItem1Title:'7 kunda 1-mijozni topish',feedItem1Text:'Yo‘l: profil → 10 mos kontakt → qisqa taklif.',feedBadge2:'🔥 Keys',feedItem2Title:'Nega vizual voronka ishlaydi',feedItem2Text:'Progress va mukofot foydalanuvchini oxirigacha olib boradi.',mTitle:'Kontaktlaringiz',mEmpty:"Hozircha bo'sh.",back:"Qidiruvga qaytish",pfHint:"Rasmni tahrirda almashtirasiz",edit:"Profilni tahrirlash",chLang:"Tilni almashtirish",themeDark:'Tungi rejim',themeLight:'Yorug\' rejim',fName:'Ism',fCity:'Shahar',fRole:'Rol',fSkills:"Ko'nikmalar",fBio:"O'zingiz haqingizda",fPhoto:'Rasmlar (bir nechta)',choose:'Rasm tanlash',none:'Tanlanmagan',save:'Saqlash',cancel:'Bekor qilish',zeroTitle:'Bugun kartalar tugadi',zeroSub:'Yangi nomzodlar uchun bitta amal qiling:',zeroA:'Profilni yangilash',zeroB:'Do\'st taklif qilish',aiBio:'✨ AI tavsifni yaxshilaydi',aiPost:'📝 Tajribadan post yaratish',biz:'🚀 Biznes xizmatlar',issue:'💡 Muammo haqida xabar',bizTitle:'Biznes xizmatlari',bizSub:'Kompaniyalarga mijoz topishda yordam beramiz.',biz1:'Sayt va ilovalar',biz2:'CRM va avtomatlashtirish',biz3:'Marketing va strategiya',biz4:'Xodim topish',bizCTA:'Ariza qoldirish',bizSent:'Ariza qabul qilindi!',issueTitle:'Muammo yoki g\'oya',issueSub:'Foydali g\'oyalar uchun to\'lov qilamiz.',issueContact:'Telegram yoki telefon',issueReward:'50 000 so\'mgacha',issueSent:'Rahmat! Qabul qilinsa — bog\'lanamiz.'},
+en:{made:'created in Uzbekistan',lang:'Choose language',langHint:'You can change it later.',go:'Continue',hero:'Your AI partner for career',heroSub:'Right — interesting, left — pass.',spec:'I am an IT specialist',emp:'I am an employer',points:'Points',lvl:'Level',days:'Days',contacts:'Contacts',hunt:'Day progress',boost:'+68% activity',foundPrefix:'Suitable: ',task1:'Complete profile',task2:'View 10 cards',task3:'Invite a friend',getLink:'Get invite link',refHint:'Tap and the link will be copied',linkCopied:'Link copied',yes:'Interesting',no:'Pass',hint:'N more cards and a new candidate unlocks',hintDone:'No more cards today. Update profile or invite a friend to unlock new candidates.',tabSearch:'Search',tabFeed:'Feed',tabContacts:'Contacts',tabProf:'Profile',chestBtn:'🎁 Daily chest',nextQuest:'Next step: complete a task',chestOpen:'Rolling your reward...',chestReady:'Chest is already opened today',chestBoost:'x2 on your next swipe!',lbBadge:'🏆 League',lbTitle:'Weekly ranking',lbYou:'You',thoughtTitle:'✏️ Add thought',thoughtPh:'What is on your mind? Write here...',thoughtPublish:'✏️ Publish',thoughtDraft:'Draft',feedTitle:'Growth feed',feedSub:'Short cases and tips to warm up users and increase intent.',feedBadge1:'+ Practice',feedItem1Title:'How to get your first client in 7 days',feedItem1Text:'Flow: profile → 10 relevant contacts → short offer.',feedBadge2:'🔥 Case',feedItem2Title:'Why visual funnel improves response',feedItem2Text:'Progress + rewards increase completion of target actions.',mTitle:'Your contacts',mEmpty:'No contacts yet.',back:'Back to search',pfHint:'Change photo in profile edit',edit:'Edit profile',chLang:'Change language',themeDark:'Dark mode',themeLight:'Light mode',fName:'Name',fCity:'City',fRole:'Role',fSkills:'Skills',fBio:'About',fPhoto:'Photos (multiple)',choose:'Choose photos',none:'None selected',save:'Save',cancel:'Cancel',zeroTitle:'No more cards today',zeroSub:'Do one quick action to unlock more:',zeroA:'Update profile',zeroB:'Invite a friend',aiBio:'✨ AI improve description',aiPost:'📝 Generate post from experience',biz:'🚀 Business',issue:'💡 Report issue',bizTitle:'Business services',bizSub:'We help companies grow.',biz1:'Web & apps',biz2:'CRM & automation',biz3:'Marketing strategy',biz4:'Recruitment',bizCTA:'Submit',bizSent:'Request sent!',issueTitle:'Report an issue',issueSub:'We pay for useful ideas.',issueContact:'Telegram or phone',issueReward:'Up to 50 000 UZS',issueSent:'Thanks! Accepted ideas get paid.'}
+};
+var ST=null;
+var tgId='guest';
+(function(){try{if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initDataUnsafe&&window.Telegram.WebApp.initDataUnsafe.user&&window.Telegram.WebApp.initDataUnsafe.user.id)tgId=String(window.Telegram.WebApp.initDataUnsafe.user.id);}catch(e){}})();
+var KEY='hamkorTop:'+tgId;
+// --- Telegram Mini App init ---
+(function(){try{if(window.Telegram&&window.Telegram.WebApp){window.Telegram.WebApp.ready();window.Telegram.WebApp.expand();}}catch(e){}})();
+
+function pickLang(lang,btn){
+  ST.lang=lang;saveST();tr();
+  document.querySelectorAll('.lang-btn').forEach(function(x){x.classList.remove('active');});
+  btn.classList.add('active');
+}
+var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,streakLast:'',contacts:0,views:0,dailyBonus:false,chestDate:'',boost2x:0,thoughtDate:'',thoughtCount:0,interviewAnswers:[],name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',photos:[],photoIdx:0,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0,claim10:false,rewardProfile:false,rewardInvite:false,rewardBiz:false,rewardIssue:false,badges:[]};
+function loadST(){try{var r=localStorage.getItem(KEY);if(!r)return false;var d=JSON.parse(r);ST={};for(var k in defaultST)ST[k]=defaultST[k];for(var k in d)ST[k]=d[k];if(!Array.isArray(ST.photos))ST.photos=[];return true;}catch(e){return false;}}
+if(!loadST()){ST={};for(var k in defaultST)ST[k]=defaultST[k];}
+function tryRestore(){
+  var m=location.search.match(/[?&]load=([^&]+)/);
+  if(!m)return;
+  try{
+    var j=JSON.parse(atob(m[1].replace(/-/g,'+').replace(/_/g,'/')));
+    for(var k in j){if(defaultST.hasOwnProperty(k))ST[k]=j[k];}
+    ST.photos=[];saveST();renderProfile();
+    if(window.history&&window.history.replaceState){window.history.replaceState({},'',location.pathname+'?v=14');}
+  }catch(e){}
+}
+tryRestore();
+function saveST(){try{localStorage.setItem(KEY,JSON.stringify(ST));}catch(e){}}
+function saveToServer(){
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'saveProfile',name:ST.name,city:ST.city,role:ST.roleT,skills:ST.skills,bio:ST.bio,updatedAt:new Date().toISOString()}));}catch(e){}
+}
+function applyTheme(){document.body.classList.toggle('dark',ST.theme==='dark');}
+function tt(){return i18n[ST.lang]||i18n.ru;}
+function dayWord(n){
+  if(ST.lang==='ru'){
+    var m=n%10,h=n%100;
+    if(m===1&&h!==11)return 'день';
+    if(m>=2&&m<=4&&(h<12||h>14))return 'дня';
+    return 'дней';
+  }
+  if(ST.lang==='en') return n===1?'day':'days';
+  return 'kun';
+}
+function boostLabel(v){
+  if(ST.lang==='ru')return '+'+v+'% активность';
+  if(ST.lang==='en')return '+'+v+'% activity';
+  return '+'+v+'% faollik';
+}
+function randomInt(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+function todayKey(){var d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
+function randomBonusLabel(){if(ST.lang==='en')return 'Random bonus'; if(ST.lang==='uz')return 'Tasodifiy bonus'; return 'Случайный бонус';}
+function updateNextQuest(){
+  if(!refs.nextQuest)return;
+  var t=tt();
+  if(!ST.rewardProfile){refs.nextQuest.textContent=t.nextQuest+' → '+t.task1;return;}
+  if(ST.views<10){refs.nextQuest.textContent=t.nextQuest+' → '+t.task2+' ('+(10-ST.views)+')';return;}
+  if(!ST.inviteDone){refs.nextQuest.textContent=t.nextQuest+' → '+t.task3;return;}
+  refs.nextQuest.textContent=t.nextQuest+' → '+t.chestBtn;
+}
+function renderLeaderboard(){
+  if(!refs.lbPlace||!refs.lbScore)return;
+  var place=Math.max(1,120-Math.floor(ST.xp/8));
+  refs.lbPlace.textContent='#'+place;
+  refs.lbScore.textContent=ST.xp;
+}
+function openChest(){
+  var t=tt();
+  if(ST.chestDate===todayKey()){alert(t.chestReady);return;}
+  ST.chestDate=todayKey();
+  reward(0,t.chestOpen);
+  setTimeout(function(){
+    if(Math.random()<0.5){
+      var xp=randomInt(5,20);ST.xp+=xp;reward(xp,randomBonusLabel());
+    }else{
+      ST.boost2x=1;reward(0,t.chestBoost);
+    }
+    upd();saveST();
+  },700);
+}
+function updateStreak(){
+  var now=new Date(),today=todayKey();
+  if(ST.streakLast===today)return;
+  if(!ST.streakLast){ST.streak=1;ST.streakLast=today;saveST();return;}
+  var p=ST.streakLast.split('-');
+  var prev=new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2]));
+  var diff=Math.floor((new Date(now.getFullYear(),now.getMonth(),now.getDate())-prev)/(1000*60*60*24));
+  ST.streak=(diff===1)?(ST.streak+1):1;
+  ST.streakLast=today;saveST();
+}
+function renderStreak7(){
+  if(!refs.streak7)return;
+  var n=Math.max(0,Math.min(7,ST.streak||1));
+  var html='';
+  for(var i=1;i<=7;i++){html+='<div class="streak-day '+(i<=n?'on':'')+'">'+(i<=n?'🔥':'·')+'</div>';}
+  refs.streak7.innerHTML=html;
+}
+function maybeDropBadge(){
+  var pool=[{id:'spark',n:'Искра',e:'✨'},{id:'hunter',n:'Охотник',e:'🎯'},{id:'social',n:'Нетворкер',e:'🤝'}];
+  var own=ST.badges||[];
+  if(Math.random()>0.12)return;
+  var rest=pool.filter(function(b){return own.indexOf(b.id)===-1;});
+  if(!rest.length)return;
+  var b=rest[Math.floor(Math.random()*rest.length)];
+  own.push(b.id);ST.badges=own;saveST();
+  reward(0,b.e+' Редкий бейдж: '+b.n);
+}
+
+var ppl=[
+  {n:'Дилшод',r:'Senior Flutter Dev',c:'Tashkent',s:['Dart','Flutter','Firebase','REST API'],b:'5 лет опыта в mobile. Делал приложения для финтеха и e-com.',rare:true},
+  {n:'Malika',r:'UX/UI Designer',c:'Samarkand',s:['Figma','Research','Design System'],b:'Создаю интерфейсы, которые увеличивают удержание и конверсию.',rare:false},
+  {n:'Timur',r:'Python Backend Dev',c:'Tashkent',s:['Python','Django','AWS'],b:'Backend и архитектура для стартапов. 8 лет в разработке.',rare:true},
+  {n:'Nodira',r:'QA Automation',c:'Tashkent',s:['Selenium','Cypress','CI/CD'],b:'Автоматизирую тестирование чтобы баги не доходили до юзеров.',rare:false},
+  {n:'Alexey',r:'DevOps Engineer',c:'Almaty',s:['Kubernetes','Terraform','AWS'],b:'Строю надёжную инфраструктуру. 7 лет в DevOps.',rare:false}
+];
+
+function icon(){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>';}
+function el(id){return document.getElementById(id);}
+var refs={
+  xpV:el('xpV'),lvlV:el('lvlV'),strkV:el('strkV'),strkLabel:el('strkLabel'),streak7:el('streak7'),matchV:el('matchV'),xpFill:el('xpFill'),xpNote:el('xpNote'),
+  huntFill:el('huntFill'),huntNote:el('huntNote'),cardArea:el('cardArea'),hintText:el('hintText'),nextQuest:el('nextQuest'),chestBtn:el('chestBtn'),lbPlace:el('lbPlace'),lbScore:el('lbScore'),thoughtInput:el('thoughtInput'),thoughtPublish:el('thoughtPublish'),thoughtDraft:el('thoughtDraft'),
+  task1dot:el('task1dot'),task2dot:el('task2dot'),task3dot:el('task3dot'),
+  pfAv:el('pfAv'),pfName:el('pfName'),fileName:el('fileName'),fileAv:el('fileAv'),
+  fName:el('fName'),fCity:el('fCity'),fRole:el('fRole'),fSkills:el('fSkills'),fBio:el('fBio'),refNote:el('refNote'),bizMsg:el('bizMsg'),bizContact:el('bizContact'),
+  btnLang:el('btnLang'),btnSpec:el('btnSpec'),btnEmp:el('btnEmp'),btnYes:el('btnYes'),btnNo:el('btnNo'),
+  btnEdit:el('btnEdit'),btnLangCh:el('btnLangCh'),btnToMain:el('btnToMain'),btnTheme:el('btnTheme'),
+  btnSave:el('btnSave'),btnCancel:el('btnCancel'),refBtn:el('refBtn'),
+  photoPrev:el('photoPrev'),photoNext:el('photoNext')
+};
+
+function show(id,remember){
+  if(remember===undefined)remember=true;
+  screens.forEach(function(s){
+    var e=el(s);
+    if(e){e.classList.remove('active');e.style.display='none';}
+  });
+  var target=el(id);
+  if(target){
+    target.classList.add('active');
+    target.style.display='flex';
+  } else {
+    console.error('Screen not found:', id);
+  }
+
+  var nav=el('globalNav');
+  if(nav){
+    var hideNav=(id==='s-lang'||id==='s-welcome'||id==='s-edit'||id==='s-biz'||id==='s-issue'||id==='s-biz-next'||id==='s-interview');
+    nav.style.display=hideNav?'none':'flex';
+    document.querySelectorAll('#globalNav .nav-item').forEach(function(i){i.classList.remove('active');});
+    var m={ 's-main':'main','s-feed':'feed','s-matches':'matches','s-profile':'profile' };
+    var tab=m[id];
+    if(tab){
+      var a=document.querySelector('#globalNav .nav-item[data-tab="'+tab+'"]');
+      if(a)a.classList.add('active');
+    }
+  }
+
+  if(remember&&id!=='s-lang'){ST.lastScreen=id;saveST();}
+  if(id==='s-main')renderCard();
+  if(id==='s-profile')renderProfile();
+  if(id==='s-edit')fillForm();
+}
+var screens=['s-lang','s-welcome','s-main','s-feed','s-matches','s-profile','s-edit','s-biz','s-biz-next','s-issue','s-interview'];
+
+function tr(){var d=tt();document.querySelectorAll('[data-t]').forEach(function(e){var k=e.getAttribute('data-t');if(k==='boost'){e.textContent=boostLabel(calcBoost());return;}if(d[k])e.textContent=d[k];});if(refs.strkLabel)refs.strkLabel.textContent='🔥 '+dayWord(ST.streak||1);renderFoundText();renderHint();updateNextQuest();if(refs.refNote)refs.refNote.textContent=d.refHint;if(refs.btnTheme)refs.btnTheme.textContent=ST.theme==='dark'?d.themeLight:d.themeDark;if(refs.fileName&&(!refs.fileAv.files||refs.fileAv.files.length===0)&&ST.photos.length===0)refs.fileName.textContent=d.none;}
+function renderFoundText(){var d=tt();var f=Math.min(ST.views,5);refs.huntNote.innerHTML=d.foundPrefix+'<b>'+f+'</b> / 5';}
+function renderHint(){var d=tt();var left=Math.max(0,5-ST.views);refs.hintText.textContent=left===0?d.hintDone:d.hint.replace('N',left);}
+function upd(){
+  refs.xpV.textContent=ST.xp;refs.lvlV.textContent=ST.lvl;refs.strkV.textContent=ST.streak||1;refs.matchV.textContent=ST.contacts;
+  if(refs.strkLabel)refs.strkLabel.textContent='🔥 '+dayWord(ST.streak||1);
+  refs.xpFill.style.width=Math.min(100,(ST.xp%200)/200*100)+'%';refs.xpNote.textContent=(ST.xp%200)+' / 200';
+  var profileDone=!!ST.rewardProfile;
+  refs.task1dot.innerHTML=profileDone?'&#x2713;':'&#x25CB;';if(profileDone)refs.task1dot.classList.add('done');else refs.task1dot.classList.remove('done');
+  refs.task2dot.innerHTML=ST.views>=10?'&#x2713;':'&#x25CB;';if(ST.views>=10)refs.task2dot.classList.add('done');else refs.task2dot.classList.remove('done');
+  refs.task3dot.innerHTML=ST.inviteDone?'&#x2713;':'&#x25CB;';if(ST.inviteDone)refs.task3dot.classList.add('done');else refs.task3dot.classList.remove('done');
+  refs.huntFill.style.width=Math.min(100,(Math.max(ST.views,1)/5)*100)+'%';
+  renderFoundText();renderHint();updateNextQuest();renderLeaderboard();renderStreak7();
+}
+function renderCard(){
+  refs.cardArea.innerHTML='';
+  if(ST.cardIndex>=ppl.length){
+    var d=tt();
+    refs.cardArea.innerHTML='<div class="card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;color:var(--muted);text-align:center;gap:8px"><div style="font-weight:700;color:var(--ink)">'+d.zeroTitle+'</div><div style="font-size:12px">'+d.zeroSub+'</div><button id="zeroA" class="ref-btn">'+d.zeroA+'</button><button id="zeroB" class="ref-btn">'+d.zeroB+'</button></div>';
+    var a=el('zeroA');var b=el('zeroB');if(a)a.onclick=function(){show('s-edit');};if(b)b.onclick=copyInvite;return;
+  }
+  var p=ppl[ST.cardIndex];var sc=80+Math.floor(Math.random()*15);
+  refs.cardArea.innerHTML='<div class="card" id="liveCard">'+(p.rare?'<div class="rare-tag">&#x2726; РЕДКИЙ ПАРТНЁР</div>':'')+'<div class="card-head"><div class="card-glow"></div><div class="card-av">'+icon()+'</div></div><div class="card-body"><div class="card-name">'+p.n+'</div><div class="card-role">'+p.r+'</div><div class="card-city">'+p.c+'</div><div class="score"><div class="ring"><div class="ring-in">'+sc+'</div></div><div><div class="score-t1">Похожесть '+sc+'%</div><div class="score-t2">по навыкам и целям</div></div></div><div class="tags">'+p.s.map(function(s){return '<span class="tag">'+s+'</span>';}).join('')+'</div><div class="bio-text">'+p.b+'</div></div></div>';
+}
+function swipe(dir){
+  var card=el('liveCard');if(card){card.classList.add(dir==='yes'?'card-right':'card-left');}
+  setTimeout(function(){
+    var base=dir==='yes'?12:4;var bonus=base+randomInt(0,8);var label=dir==='yes'?'Интересно!':'Пропуск';
+    if(ST.boost2x>0){bonus*=2;ST.boost2x=0;label+=' x2';}
+    ST.views++;ST.xp+=bonus;
+    if(dir==='yes'){ST.contacts++;}
+    if(ST.views>=10&&!ST.claim10){ST.xp+=50;ST.claim10=true;reward(50,'10 карточек! 🎯');}
+    ST.cardIndex++;upd();renderCard();saveST();
+    reward(bonus,label);
+    maybeDropBadge();
+    checkDailyComplete();
+  },220);
+}
+function renderProfile(){
+  refs.pfName.textContent=ST.name;
+  if(ST.photos.length>0){var si=Math.max(0,Math.min(ST.photoIdx,ST.photos.length-1));ST.photoIdx=si;refs.pfAv.innerHTML='<img src="'+ST.photos[si]+'" alt="avatar"/>';}
+  else{refs.pfAv.innerHTML=icon();}
+}
+function fillForm(){
+  refs.fName.value=ST.name;refs.fCity.value=ST.city;refs.fRole.value=ST.roleT;refs.fSkills.value=ST.skills;refs.fBio.value=ST.bio;
+  refs.fileName.textContent=ST.photos.length?ST.photos.length+' фото':tt().none;
+  var ea=el('editAv');if(ea){if(ST.photos.length){ea.innerHTML='<img src="'+ST.photos[ST.photoIdx]+'" alt="avatar"/>';}else{ea.innerHTML=icon();}}
+}
+function saveProfile(){
+  ST.name=refs.fName.value.trim()||ST.name;ST.city=refs.fCity.value.trim()||ST.city;ST.roleT=refs.fRole.value.trim()||ST.roleT;
+  ST.skills=refs.fSkills.value.trim()||ST.skills;ST.bio=refs.fBio.value.trim()||ST.bio;
+  if(!ST.rewardProfile){ST.xp+=50;ST.rewardProfile=true;reward(50,'Профиль заполнен!');}
+  upd();saveST();show('s-profile');
+  saveToServer();
+  checkDailyComplete();
+}
+function copyInvite(){
+  var code=encodeURIComponent(ST.name||'user');var link='https://t.me/hamkor_top_bot?start=ref_'+code;
+  var text='Привет! Нашёл(а) Hamkor Top — платформу для поиска работы и партнёров в Узбекистане. Попробуй: '+link;
+  ST.inviteDone=true;
+  if(!ST.rewardInvite){ST.rewardInvite=true;ST.xp+=40;reward(40,'Приглашение отправлено!');}
+  upd();saveST();checkDailyComplete();
+  function done(){refs.refNote.textContent=tt().linkCopied;setTimeout(function(){refs.refNote.textContent=tt().refHint;},2500);}
+  // try native share sheet (Telegram contacts, phone book, etc.)
+  if(navigator.share){navigator.share({title:'Hamkor Top',text:text}).then(done).catch(function(){fallback();});}
+  else{fallback();}
+  function fallback(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done).catch(function(){prompt(tt().linkCopied,text);done();});}
+    else{prompt(tt().linkCopied,text);done();}
+  }
+}
+function nextPhoto(step){if(!ST.photos.length)return;ST.photoIdx=(ST.photoIdx+step+ST.photos.length)%ST.photos.length;renderProfile();saveST();}
+var touchX=0;
+refs.pfAv.addEventListener('touchstart',function(e){touchX=e.changedTouches[0].clientX;},{passive:true});
+refs.pfAv.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)<28)return;if(dx<0)nextPhoto(1);else nextPhoto(-1);},{passive:true});
+
+refs.btnYes.onclick=function(){swipe('yes');};refs.btnNo.onclick=function(){swipe('no');};
+refs.btnEdit.onclick=function(){show('s-edit');};
+refs.btnLangCh.onclick=function(){ST.returnScreen='s-profile';saveST();show('s-lang',false);};
+refs.btnToMain.onclick=function(){show('s-main');};
+refs.btnTheme.onclick=function(){ST.theme=ST.theme==='dark'?'light':'dark';applyTheme();tr();saveST();};
+refs.btnSave.onclick=saveProfile;refs.btnCancel.onclick=function(){show('s-profile');};
+refs.refBtn.onclick=copyInvite;if(refs.chestBtn)refs.chestBtn.onclick=openChest;
+refs.photoPrev.onclick=function(){nextPhoto(-1);};refs.photoNext.onclick=function(){nextPhoto(1);};
+el('btnBiz').onclick=function(){show('s-biz');};
+el('btnBizBack').onclick=function(){show('s-profile');};
+el('btnBizSend').onclick=function(){
+  var msg=refs.bizMsg.value.trim();var contact=refs.bizContact.value.trim();
+  if(!contact){alert('Введите Telegram или телефон');return;}
+  var data=JSON.stringify({action:'bizLead',name:ST.name,contact:contact,msg:msg,profile:ST});
+  try{window.Telegram.WebApp.sendData(data);}catch(e){}
+  if(!ST.rewardBiz){ST.rewardBiz=true;ST.xp+=30;reward(30,'Заявка отправлена!');upd();saveST();}
+  show('s-biz-next');
+};
+el('btnIssue').onclick=function(){show('s-issue');};
+el('btnIssueBack').onclick=function(){show('s-profile');};
+el('btnIssueSend').onclick=function(){if(!ST.rewardIssue){ST.rewardIssue=true;ST.xp+=20;reward(20,'Спасибо за идею!');upd();saveST();}alert(tt().issueSent);show('s-profile');};
+el('btnBizNextBack').onclick=function(){show('s-profile');};
+
+el('fabBtn').onclick=function(){var m=el('fabMenu');m.style.display=m.style.display==='none'?'block':'none';};
+var intQ=[
+  'Как бы вы объяснили свою последнюю мысль лучшему другу?',
+  'А как бы вы объяснили её начальнику?',
+  'Какие 3 слова вы используете чаще всего?',
+  'О чем вы пишете чаще всего?',
+  'Кто ваша идеальная аудитория?'
+];
+var intIdx=0;
+el('intNext').onclick=function(){
+  var ans=el('intAns').value.trim();
+  if(!ans){alert('Ответьте на вопрос!');return;}
+  ST.interviewAnswers.push(ans);
+  el('intAns').value='';
+  intIdx++;
+  if(intIdx<intQ.length){
+    el('intQuestion').textContent=intQ[intIdx];
+  }else{
+    alert('Интервью завершено! AI изучает ваш стиль...');
+    try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiInterview',answers:ST.interviewAnswers}));}catch(e){}
+    ST.interviewAnswers=[];show('s-profile');
+  }
+};
+el('plusAI').onclick=function(){show('s-interview');el('fabMenu').style.display='none';el('intQuestion').textContent=intQ[0];};
+if(el('btnPostBack'))el('btnPostBack').onclick=function(){show('s-profile');};
+if(el('postWrite'))el('postWrite').onclick=function(){
+  el('postHint').style.display='block';el('postText').focus();
+  el('postWrite').className='btn btn-primary';el('postAI').className='btn btn-secondary';
+};
+if(el('postAI'))el('postAI').onclick=function(){
+  var p='Напиши пост для Telegram на основе профиля. Имя: '+ST.name+'. Роль: '+ST.roleT+'. Навыки: '+ST.skills+'. О себе: '+ST.bio+'. Тёплый профессиональный тон, 3-4 абзаца, с призывом к нетворкингу.';
+  el('postText').value='✨ AI думает...';el('postHint').style.display='none';
+  el('postAI').className='btn btn-primary';el('postWrite').className='btn btn-secondary';
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiPost',prompt:p}));}
+  catch(e){el('postText').value='Скопируйте текст и отправьте боту: '+p;}
+};
+if(el('postCopy'))el('postCopy').onclick=function(){
+  var t=el('postText').value;
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){alert('Скопировано!');});}
+  else{prompt('Скопируйте:',t);}
+};
+if(el('postSend'))el('postSend').onclick=function(){
+  var t=el('postText').value;
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'postToChannel',text:t}));alert('Отправлено в канал!');}
+  catch(e){alert('Откройте через Telegram чтобы отправить в канал.');}
+};
+if(refs.thoughtDraft)refs.thoughtDraft.onclick=function(){
+  var t=(refs.thoughtInput.value||'').trim();if(!t)return;
+  localStorage.setItem(KEY+':draft',t);alert('Черновик сохранён');
+};
+if(refs.thoughtPublish)refs.thoughtPublish.onclick=function(){
+  var t=(refs.thoughtInput.value||'').trim();if(!t)return;
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'postThought',text:t,profile:{name:ST.name,role:ST.roleT}}));}catch(e){}
+  var tk=todayKey();if(ST.thoughtDate!==tk){ST.thoughtDate=tk;ST.thoughtCount=0;}
+  if(ST.thoughtCount<3){ST.thoughtCount++;var xp=randomInt(8,18);ST.xp+=xp;reward(xp,'Мысль опубликована!');upd();saveST();}
+  refs.thoughtInput.value='';
+};
+
+function calcBoost(){
+  var f=0,t=6;
+  if(ST.name&&ST.name!=='Севара')f++; if(ST.city&&ST.city!=='Tashkent')f++; if(ST.roleT&&ST.roleT!=='Product Owner')f++;
+  if(ST.skills&&ST.skills!=='Figma,Prototyping,Research')f++; if(ST.bio&&ST.bio!=='Основатель Hamkor Top')f++;
+  if(ST.photos.length)f++;
+  return Math.min(100,Math.round(f/t*100+68));
+}
+
+// --- Duolingo-style gamification ---
+function reward(xp,label){
+  var focus=document.createElement('div');focus.className='xp-focus';document.body.appendChild(focus);
+  var head=xp>0?('+'+xp+' ⚡'):'🎉';
+  var el=document.createElement('div');el.className='xp-popup';el.innerHTML=head+'<small>'+label+'</small>';
+  document.body.appendChild(el);
+  setTimeout(function(){el.remove();focus.remove();},1900);
+  if(navigator.vibrate)navigator.vibrate(30);
+}
+function confetti(){
+  var colors=['#4a90e2','#a3d9a5','#f59e0b','#ef4444','#8b5cf6','#06b6d4'];
+  var c=document.createElement('div');c.className='confetti-container';
+  for(var i=0;i<50;i++){
+    var p=document.createElement('div');p.className='confetti-piece';
+    p.style.left=Math.random()*100+'%';p.style.top=-20-Math.random()*100+'px';
+    p.style.background=colors[Math.floor(Math.random()*colors.length)];
+    p.style.animationDuration=(1.5+Math.random()*2)+'s';
+    p.style.animationDelay=Math.random()*0.5+'s';
+    p.style.borderRadius=Math.random()>.5?'50%':'2px';
+    c.appendChild(p);
+  }
+  document.body.appendChild(c);
+  setTimeout(function(){c.remove();},3000);
+}
+function checkDailyComplete(){
+  var allDone=(refs.task1dot.innerHTML.charCodeAt(0)===10003)&&
+    (refs.task2dot.innerHTML.charCodeAt(0)===10003)&&
+    (refs.task3dot.innerHTML.charCodeAt(0)===10003);
+  if(allDone&&!ST.dailyBonus){
+    ST.dailyBonus=true;ST.xp+=100;saveST();upd();
+    reward(100,'Бонус дня!');
+    setTimeout(confetti,500);
+  }
+}
+function fireStreak(){
+  var s=ST.streak||1;
+  return '<span class="streak-fire">🔥</span> '+s+' '+(s===1?'день':'дней');
+}
+el('aiBio').onclick=function(){
+  var p='Улучши описание профиля. Имя: '+ST.name+'. Роль: '+ST.roleT+'. Навыки: '+ST.skills+'. Текущее описание: '+(ST.bio||'нет')+'. Напиши улучшенную версию на русском, 2-3 предложения, деловым и тёплым тоном.';
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiBio',prompt:p}));refs.fBio.value='✨ AI думает...';}
+  catch(e){refs.fBio.value='Отправь "AI описание" в чат бота, я улучшу.';}
+};
+el('aiPost').onclick=function(){
+  var p='Сгенерируй пост для соцсетей на основе профиля. Имя: '+ST.name+'. Роль: '+ST.roleT+'. Навыки: '+ST.skills+'. Опыт: '+(ST.bio||'нет')+'. Напиши готовый пост для Telegram: 3-4 абзаца, тёплый профессиональный тон, с призывом к нетворкингу.';
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiPost',prompt:p}));alert('Запрос отправлен! AI-ассистент скоро ответит с готовым постом.');}
+  catch(e){prompt('Скопируй и отправь это в чат бота:',p);}
+};
+
+function compressPhoto(dataUrl,cb){
+  var img=new Image();img.onload=function(){
+    var max=400;var w=img.width,h=img.height;
+    if(w<=max&&h<=max){cb(dataUrl);return;}
+    var r=Math.min(max/w,max/h);var c=document.createElement('canvas');
+    c.width=Math.round(w*r);c.height=Math.round(h*r);
+    c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+    cb(c.toDataURL('image/jpeg',0.7));
+  };img.src=dataUrl;
+}
+refs.fileAv.addEventListener('change',function(e){
+  var files=[].slice.call(e.target.files||[]);if(!files.length){refs.fileName.textContent=tt().none;return;}
+  refs.fileName.textContent=files.length+' фото';
+  Promise.all(files.map(function(f){return new Promise(function(res){var r=new FileReader();r.onload=function(){compressPhoto(r.result,res);};r.readAsDataURL(f);});}))
+    .then(function(arr){ST.photos=ST.photos.concat(arr);ST.photoIdx=ST.photos.length-arr.length;renderProfile();saveST();refs.fileName.textContent=ST.photos.length+' фото';});
+});
+
+document.addEventListener('DOMContentLoaded',function(){
+updateStreak();
+applyTheme();tr();upd();renderProfile();renderStreak7();
+var d=localStorage.getItem(KEY+':draft');if(d&&refs.thoughtInput)refs.thoughtInput.value=d;
+
+// font size
+function setFS(s){ST.fs=s;document.body.style.setProperty('--fs',s);saveST();}
+el('fsS').onclick=function(){setFS(0.85);};el('fsM').onclick=function(){setFS(1);};el('fsL').onclick=function(){setFS(1.2);};
+if(ST.fs)document.body.style.setProperty('--fs',ST.fs);
+
+if(ST.role){show(ST.lastScreen&&ST.lastScreen!=='s-lang'?ST.lastScreen:'s-main',false);}else{show('s-lang',false);}
+});
+</script>
+</body>
+</html>
+
