@@ -8,12 +8,14 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO)
 
 BOT_TOKEN = "8877540443:AAEMfWYjusdNCaMMvQBVOJ_QHwaDoPOWSwY"
-WEBAPP_URL = "https://seva02091995.github.io/hamkor-top/?v=5"
+WEBAPP_URL = "https://seva02091995.github.io/hamkor-top/?v=23"
 OWNER_ID = 7802498650  # telegram id Севары для пересылки заявок
 DATA_DIR = Path(__file__).parent.parent / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 USERS_FILE = DATA_DIR / "users.json"
 LEADS_FILE = DATA_DIR / "leads.json"
+INTERVIEW_DRAFTS_FILE = DATA_DIR / "interview_drafts.json"
+TONE_PROFILES_FILE = DATA_DIR / "tone_profiles.json"
 
 def load_json(path, default=None):
     if default is None: default = {}
@@ -127,12 +129,60 @@ async def on_webapp_data(message: types.Message):
 
         await message.answer("✅ Заявка принята! Мы свяжемся с вами в ближайшее время.")
 
-    # --- AI-запросы ---
+    # --- Черновик интервью ---
+    elif action == "interviewDraftSave":
+        drafts = load_json(INTERVIEW_DRAFTS_FILE, {})
+        drafts[user_id] = {
+            "tg_id": user_id,
+            "username": username,
+            "draft": data.get("draft", {}),
+            "updated_at": data.get("updated_at", "")
+        }
+        save_json(INTERVIEW_DRAFTS_FILE, drafts)
+
+    elif action == "interviewDraftClear":
+        drafts = load_json(INTERVIEW_DRAFTS_FILE, {})
+        if user_id in drafts:
+            del drafts[user_id]
+            save_json(INTERVIEW_DRAFTS_FILE, drafts)
+
+    # --- Сохранение tone-профиля ---
+    elif action == "toneProfileSave":
+        profile = data.get("profile", {})
+        answers = data.get("answers", [])
+
+        tones = load_json(TONE_PROFILES_FILE, {})
+        tones[user_id] = {
+            "tg_id": user_id,
+            "username": username,
+            "profile": profile,
+            "answers": answers
+        }
+        save_json(TONE_PROFILES_FILE, tones)
+
+        users = load_json(USERS_FILE, {})
+        if user_id not in users:
+            users[user_id] = {"tg_id": user_id, "username": username}
+        users[user_id]["tone_profile"] = profile
+        save_json(USERS_FILE, users)
+
+        owner_msg = (
+            f"🎙️ <b>Tone Profile сохранён:</b> @{username}\n\n"
+            f"🧠 <b>Стиль:</b> {profile.get('main','Нейтральный')}\n"
+            f"🔑 <b>Ключи:</b> {', '.join(profile.get('keys', []))}\n"
+            f"👤 <b>ID:</b> {user_id}"
+        )
+        try:
+            await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
+        except Exception as e:
+            logging.error(f"Не удалось отправить tone profile: {e}")
+
+    # --- Legacy AI interview ---
     elif action == "aiInterview":
         answers = data.get("answers", [])
         owner_msg = (
             f"🎙️ <b>Результаты AI-интервью от @{username}:</b>\n\n"
-            f"1. {answers[0]}\n2. {answers[1]}\n3. {answers[2]}\n4. {answers[3]}\n5. {answers[4]}\n\n"
+            f"1. {answers[0] if len(answers)>0 else ''}\n2. {answers[1] if len(answers)>1 else ''}\n3. {answers[2] if len(answers)>2 else ''}\n4. {answers[3] if len(answers)>3 else ''}\n5. {answers[4] if len(answers)>4 else ''}\n\n"
             f"👤 <b>ID:</b> {user_id}"
         )
         try:
