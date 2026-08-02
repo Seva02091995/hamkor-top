@@ -216,22 +216,8 @@ body.dark .streak-day.on{color:#FBBF24}
       <button class="btn btn-secondary" id="thoughtDraft" data-t="thoughtDraft" style="max-width:none;flex:1;margin:0">Черновик</button>
     </div>
   </div>
-  <div style="width:100%;max-width:400px;display:flex;flex-direction:column;gap:10px">
-    <div class="card" style="position:relative;height:auto;padding:14px">
-      <div class="card-badge" data-t="feedBadge1">+ Практика</div>
-      <div style="font-weight:700;margin-bottom:6px" data-t="feedItem1Title">Как найти 1‑го клиента за 7 дней</div>
-      <div style="font-size:13px;color:var(--muted)" data-t="feedItem1Text">Пошаговый сценарий: профиль → 10 релевантных контактов → короткий оффер.</div>
-    </div>
-    <div class="card" style="position:relative;height:auto;padding:14px">
-      <div class="card-badge" data-t="feedBadge2">🔥 Кейс</div>
-      <div style="font-weight:700;margin-bottom:6px" data-t="feedItem2Title">Почему визуальная воронка поднимает отклик</div>
-      <div style="font-size:13px;color:var(--muted)" data-t="feedItem2Text">Когда человек видит прогресс и награды — он чаще завершает целевое действие.</div>
-    </div>
-    <div class="card" style="position:relative;height:auto;padding:14px">
-      <div class="card-badge" data-t="lbBadge">🏆 Лига</div>
-      <div style="font-weight:700;margin-bottom:6px" data-t="lbTitle">Рейтинг недели</div>
-      <div style="font-size:13px;color:var(--muted)"><span data-t="lbYou">Ты:</span> <b id="lbPlace">#24</b> · XP <b id="lbScore">250</b></div>
-    </div>
+  <div style="width:100%;max-width:400px;display:flex;flex-direction:column;gap:10px" id="feedCards">
+    <!-- feed cards rendered dynamically -->
   </div>
 </div>
 
@@ -420,10 +406,10 @@ function updateNextQuest(){
   refs.nextQuest.textContent=t.nextQuest+' → '+t.chestBtn;
 }
 function renderLeaderboard(){
-  if(!refs.lbPlace||!refs.lbScore)return;
+  var p=el('lbPlace');var s=el('lbScore');if(!p||!s)return;
   var place=Math.max(1,120-Math.floor(ST.xp/8));
-  refs.lbPlace.textContent='#'+place;
-  refs.lbScore.textContent=ST.xp;
+  p.textContent='#'+place;
+  s.textContent=ST.xp;
 }
 function openChest(){
   var t=tt();
@@ -520,12 +506,52 @@ function show(id,remember){
   if(id==='s-main')renderCard();
   if(id==='s-profile')renderProfile();
   if(id==='s-edit')fillForm();
+  if(id==='s-feed')renderFeed();
 }
 var screens=['s-lang','s-welcome','s-main','s-feed','s-matches','s-profile','s-edit','s-biz','s-biz-next','s-issue','s-interview'];
 
 function tr(){var d=tt();document.querySelectorAll('[data-t]').forEach(function(e){var k=e.getAttribute('data-t');if(k==='boost'){e.textContent=boostLabel(calcBoost());return;}if(d[k])e.textContent=d[k];});if(refs.strkLabel)refs.strkLabel.textContent='🔥 '+dayWord(ST.streak||1);renderFoundText();renderHint();updateNextQuest();if(refs.refNote)refs.refNote.textContent=d.refHint;if(refs.btnTheme)refs.btnTheme.textContent=ST.theme==='dark'?d.themeLight:d.themeDark;if(refs.fileName&&(!refs.fileAv.files||refs.fileAv.files.length===0)&&ST.photos.length===0)refs.fileName.textContent=d.none;}
 function renderFoundText(){var d=tt();var f=Math.min(ST.views,5);refs.huntNote.innerHTML=d.foundPrefix+'<b>'+f+'</b> / 5';}
 function renderHint(){var d=tt();var left=Math.max(0,5-ST.views);refs.hintText.textContent=left===0?d.hintDone:d.hint.replace('N',left);}
+
+var feedTips=[
+  {badge:'💡 Совет',t:{ru:'Как найти первого клиента за 7 дней',uz:'7 kunda birinchi mijozni topish',en:'How to find your first client in 7 days'},b:{ru:'Пошаговый план: профиль → 10 релевантных контактов → короткий оффер. Начните сегодня.',uz:'Bosqichma-bosqich: profil → 10 ta relevant kontakt → qisqa taklif. Bugun boshlang.',en:'Step by step: profile → 10 relevant contacts → short offer. Start today.'}},
+  {badge:'🔥 Кейс',t:{ru:'Почему визуальная воронка поднимает отклик',uz:'Nega vizual voronka javob darajasini oshiradi',en:'Why visual funnel boosts response rate'},b:{ru:'Прогресс-бар и награды повышают шанс, что пользователь завершит целевое действие на 40%.',uz:'Progress-bar va mukofotlar foydalanuvchining maqsadli harakatni 40% ko\'proq bajarishiga olib keladi.',en:'Progress bars and rewards increase the chance of completing a target action by 40%.'}},
+  {badge:'📊 Факт',t:{ru:'70% вакансий не публикуются',uz:'70% vakansiyalar e\'lon qilinmaydi',en:'70% of jobs are never posted'},b:{ru:'Большинство позиций закрываются через нетворкинг. 10 новых контактов в день — и вы в топе кандидатов.',uz:'Aksariyat pozitsiyalar networking orqali yopiladi. Kuniga 10 ta yangi kontakt — va siz eng yaxshi nomzodlar qatoridasiz.',en:'Most positions are filled through networking. 10 new contacts a day puts you at the top of the candidate pool.'}},
+  {badge:'🚀 Стратегия',t:{ru:'Правило 3-х сообщений',uz:'3 ta xabar qoidasi',en:'The 3-message rule'},b:{ru:'Первое — представление. Второе — ценность. Третье — призыв к действию. Работает в 3 раза лучше холодных рассылок.',uz:'Birinchi — tanishtirish. Ikkinchi — qiymat. Uchinchi — harakatga chaqiruv. Sovuq xabarlardan 3 barobar yaxshiroq ishlaydi.',en:'First — introduction. Second — value. Third — call to action. Works 3x better than cold outreach.'}},
+  {badge:'💼 Карьера',t:{ru:'Навык №1 для IT в 2026',uz:'2026-yilda IT uchun #1 malaka',en:'#1 skill for IT in 2026'},b:{ru:'AI-грамотность. Умение формулировать промпты и интегрировать AI-инструменты в рабочие процессы — must-have.',uz:'AI-savodxonlik. Promplar yozish va AI-vositalarni ish jarayonlarga integratsiya qilish — eng muhim malaka.',en:'AI literacy. Prompting skills and AI tool integration into workflows — a must-have skill.'}},
+  {badge:'🌐 Тренд',t:{ru:'Удалёнка в Узбекистане',uz:'O\'zbekistonda remote ish',en:'Remote work in Uzbekistan'},b:{ru:'Число удалённых вакансий для разработчиков из Узбекистана выросло на 65% за год. Самое время обновить профиль.',uz:'O\'zbekistonlik dasturchilar uchun remote vakansiyalar soni yil davomida 65% ga oshdi. Profilni yangilash vaqti keldi.',en:'Remote job openings for developers from Uzbekistan grew 65% this year. Time to update your profile.'}},
+  {badge:'🎯 Нетворкинг',t:{ru:'Одно касание — один контакт',uz:'Bir teginish — bir kontakt',en:'One swipe — one contact'},b:{ru:'Каждый свайп вправо в Hamkor Top создаёт возможность. Не стесняйтесь проявлять интерес.',uz:'Hamkor Top-da har bir o\'ngga swipe imkoniyat yaratadi. Qiziqish bildirishdan tortinmang.',en:'Every right swipe in Hamkor Top creates an opportunity. Don\'t hesitate to show interest.'}}
+];
+
+function renderFeed(){
+  var c=el('feedCards');if(!c)return;
+  var l=ST.lang||'ru';var html='';
+  var allTips=feedTips.slice();
+  
+  // try to load curated feed.json
+  try{
+    var xhr=new XMLHttpRequest();
+    xhr.open('GET','feed.json?v=1',false);
+    xhr.send();
+    if(xhr.status===200){
+      var curated=JSON.parse(xhr.responseText);
+      allTips=allTips.concat(curated);
+    }
+  }catch(e){}
+  
+  // shuffle
+  for(var i=allTips.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=allTips[i];allTips[i]=allTips[j];allTips[j]=tmp;}
+  var count=Math.min(5,allTips.length);
+  for(var i=0;i<count;i++){
+    var tip=allTips[i];
+    html+='<div class="card" style="position:relative;height:auto;padding:14px"><div class="card-badge">'+tip.badge+'</div><div style="font-weight:700;margin-bottom:6px">'+tip.t[l]+'</div><div style="font-size:13px;color:var(--muted)">'+tip.b[l]+'</div></div>';
+  }
+  // leaderboard
+  var place=Math.max(1,120-Math.floor(ST.xp/8));
+  html+='<div class="card" style="position:relative;height:auto;padding:14px"><div class="card-badge" data-t="lbBadge">🏆 Лига</div><div style="font-weight:700;margin-bottom:6px" data-t="lbTitle">Рейтинг недели</div><div style="font-size:13px;color:var(--muted)"><span data-t="lbYou">Ты:</span> <b id="lbPlace">#'+place+'</b> · XP <b id="lbScore">'+ST.xp+'</b></div></div>';
+  c.innerHTML=html;
+}
 function upd(){
   refs.xpV.textContent=ST.xp;refs.lvlV.textContent=ST.lvl;refs.strkV.textContent=ST.streak||1;refs.matchV.textContent=ST.contacts;
   if(refs.strkLabel)refs.strkLabel.textContent='🔥 '+dayWord(ST.streak||1);

@@ -1,0 +1,93 @@
+[
+  {
+    "badge": "🌐 Удалёнка",
+    "t": {
+      "ru": "Digital Nomad: визы в Центральной Азии",
+      "uz": "Digital Nomad: Markaziy Osiyoda vizalar",
+      "en": "Digital Nomad: visas in Central Asia"
+    },
+    "b": {
+      "ru": "Кыргызстан — до 10 лет для digital nomads. Казахстан — Neo Nomad Visa. Узбекистан вводит IT-визу. Идеально для удалёнщиков.",
+      "uz": "Qirg'iziston — digital nomadlar uchun 10 yilgacha. Qozog'iston — Neo Nomad Visa. O'zbekiston IT-viza joriy qilmoqda.",
+      "en": "Kyrgyzstan — up to 10 years for digital nomads. Kazakhstan — Neo Nomad Visa. Uzbekistan introduces IT visa."
+    }
+  },
+  {
+    "badge": "🤝 Нетворкинг",
+    "t": {
+      "ru": "70% вакансий закрываются по знакомству",
+      "uz": "70% vakansiyalar tanish orqali yopiladi",
+      "en": "70% of jobs are filled through networking"
+    },
+    "b": {
+      "ru": "Ходите на митапы: ITOSH, Tech Summit, ICT Week. 10 новых контактов в день меняют карьеру быстрее, чем 100 откликов на hh.uz.",
+      "uz": "Mitinglarga boring: ITOSH, Tech Summit, ICT Week. Kuniga 10 ta yangi kontakt — 100 ta hh.uz otklikidan tezroq karyerani o'zgartiradi.",
+      "en": "Attend meetups: ITOSH, Tech Summit, ICT Week. 10 new contacts a day change your career faster than 100 hh.uz applications."
+    }
+  },
+  {
+    "badge": "💰 Зарплаты",
+    "t": {
+      "ru": "Зарплаты IT в Узбекистане: реальные цифры",
+      "uz": "O'zbekistonda IT maoshlari: haqiqiy raqamlar",
+      "en": "IT salaries in Uzbekistan: real numbers"
+    },
+    "b": {
+      "ru": "ML-инженер: 15–40 млн сум. Data Scientist: 12–30 млн. DevOps: 14–30 млн. Рост реальных зарплат в 2026 — +9.5%.",
+      "uz": "ML-muhandis: 15–40 mln so'm. Data Scientist: 12–30 mln. DevOps: 14–30 mln. 2026-yilda real ish haqi +9.5% o'sdi.",
+      "en": "ML Engineer: 15–40M UZS. Data Scientist: 12–30M. DevOps: 14–30M. Real wage growth in 2026: +9.5%."
+    }
+  },
+  {
+    "badge": "🎯 Навыки",
+    "t": {
+      "ru": "Топ-3 навыка для IT-карьеры в 2026",
+      "uz": "2026-yilda IT-karyera uchun top-3 malaka",
+      "en": "Top 3 skills for IT career in 2026"
+    },
+    "b": {
+      "ru": "1. AI/ML (Prompt Engineering). 2. Облачные технологии (AWS/Azure). 3. Кибербезопасность. Работодатели смотрят на практику, а не на диплом.",
+      "uz": "1. AI/ML (Prompt Engineering). 2. Bulut texnologiyalari (AWS/Azure). 3. Kiberxavfsizlik. Ish beruvchilar diplomga emas, amaliyotga qaraydi.",
+      "en": "1. AI/ML (Prompt Engineering). 2. Cloud (AWS/Azure). 3. Cybersecurity. Employers value practice over diplomas."
+    }
+  },
+  {
+    "badge": "📈 Тренд",
+    "t": {
+      "ru": "IT-экспорт Узбекистана: курс на $1 млрд",
+      "uz": "O'zbekiston IT-eksporti: $1 mlrd ga yo'l",
+      "en": "Uzbekistan IT exports: heading to $1B"
+    },
+    "b": {
+      "ru": "К 2025 году страна планирует экспорт IT-услуг на $1 млрд. Резидентов IT Park — более 3200. Спрос на разработчиков растёт на 42% в год.",
+      "uz": "2025 yilga borib mamlakat IT-xizmatlar eksportini $1 mlrd ga yetkazishni rejalashtirmoqda. IT Park rezidentlari 3200 dan ortiq. Dasturchilarga talab yiliga 42% o'smoqda.",
+      "en": "By 2025, the country plans $1B in IT service exports. IT Park residents: 3200+. Developer demand grows 42% annually."
+    }
+  },
+  {
+    "badge": "📊 Аналитика",
+    "t": {
+      "ru": "Python, Flutter, AI — что учат в Узбекистане",
+      "uz": "Python, Flutter, AI — O'zbekistonda nima o'rganiladi",
+      "en": "Python, Flutter, AI — what Uzbekistan is learning"
+    },
+    "b": {
+      "ru": "Самые популярные курсы: Python (38%), Flutter (22%), AI/ML (18%). IT Park запустил «Один миллион программистов» — бесплатное обучение основам.",
+      "uz": "Eng mashhur kurslar: Python (38%), Flutter (22%), AI/ML (18%). IT Park «Bir million dasturchi» loyihasini boshladi — bepul asosiy ta'lim.",
+      "en": "Most popular courses: Python (38%), Flutter (22%), AI/ML (18%). IT Park launched 'One Million Programmers' — free basic training."
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "Как запустить стартап в Узбекистане",
+      "uz": "O'zbekistonda startapni qanday boshlash kerak",
+      "en": "How to launch a startup in Uzbekistan"
+    },
+    "b": {
+      "ru": "IT Park: инкубация, менторы, юрподдержка. 13 венчурных фондов, $145M капитала. Astana Hub, nFactorial — гранты и акселерация.",
+      "uz": "IT Park: inkubatsiya, mentorlar, yuridik yordam. 13 venchur fond, $145M kapital. Astana Hub, nFactorial — grant va akseleratsiya.",
+      "en": "IT Park: incubation, mentors, legal support. 13 VC funds, $145M capital. Astana Hub, nFactorial — grants and acceleration."
+    }
+  }
+]
