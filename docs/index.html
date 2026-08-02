@@ -147,6 +147,16 @@ body.dark .streak-day.on{color:#FBBF24}
 .file-hide{position:absolute;left:-9999px;opacity:0}
 .file-btn{display:inline-flex;align-items:center;padding:10px 14px;border:1px solid var(--line);background:var(--card);border-radius:10px;color:var(--ink);font-weight:600;cursor:pointer;font-size:13px}
 .file-name{font-size:11px;color:var(--muted)}
+
+/* interview ux */
+.int-wrap{width:100%;max-width:400px;min-height:calc(100dvh - 70px);display:flex;flex-direction:column}
+.int-bottom-actions{margin-top:auto;padding-top:16px;padding-bottom:calc(18px + env(safe-area-inset-bottom));width:100%;max-width:400px}
+.int-bottom-actions .btn{max-width:100%;min-height:48px}
+.int-input-wrap{width:100%;max-width:400px;position:relative}
+.int-textarea{min-height:96px;max-height:80vh;resize:none;overflow:auto;padding-right:52px;font-size:16px;line-height:1.4}
+.int-mic{position:absolute;right:8px;bottom:8px;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:20px}
+.int-mic.rec{background:var(--blue);color:#fff;border-color:var(--blue)}
+.rec-card{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -320,26 +330,40 @@ body.dark .streak-day.on{color:#FBBF24}
 </div>
 
 <div class="screen" id="s-interview-landing">
-  <button class="ref-btn" id="intCloseLanding" style="align-self:flex-end;margin-top:8px">✕</button>
-  <div class="hero-title" style="margin-top:8px">🎙️ Интервью со мной</div>
-  <div class="hero-sub">Ответьте на 5 вопросов, и AI определит ваш стиль общения. Это займёт 2 минуты. Мы используем стиль для постов и рекомендаций.</div>
-  <div style="width:88px;height:88px;border-radius:50%;display:grid;place-items:center;background:var(--card);border:1px solid var(--line);font-size:36px;margin:8px 0 16px">🎤</div>
-  <div id="intDraftHint" class="note" style="margin-bottom:10px;display:none"></div>
-  <button class="btn btn-primary" id="intStart">Начать интервью</button>
-  <button class="btn btn-secondary" id="intLater">Позже</button>
+  <div class="int-wrap">
+    <button class="ref-btn" id="intCloseLanding" style="align-self:flex-end">✕</button>
+    <div class="hero-title" style="margin-top:8px">🎙️ Интервью со мной</div>
+    <div class="hero-sub">Ответьте на 5 вопросов, и AI определит ваш стиль общения. Это займёт 2 минуты. Мы используем стиль для постов и рекомендаций.</div>
+    <div style="width:88px;height:88px;border-radius:50%;display:grid;place-items:center;background:var(--card);border:1px solid var(--line);font-size:36px;margin:8px 0 16px">🎤</div>
+    <div id="intDraftHint" class="note" style="margin-bottom:10px;display:none"></div>
+    <div class="int-bottom-actions">
+      <button class="btn btn-primary" id="intStart">Начать интервью</button>
+      <button class="btn btn-secondary" id="intLater">Позже</button>
+    </div>
+  </div>
 </div>
 
 <div class="screen" id="s-interview-q">
-  <div style="width:100%;max-width:400px;display:flex;justify-content:space-between;align-items:center;margin-top:8px">
-    <div id="intProgressText" class="note">Вопрос 1 из 5</div>
-    <button class="ref-btn" id="intExit">Выйти</button>
-  </div>
-  <div class="track" style="width:100%;max-width:400px;margin:8px 0 14px"><div class="fill" id="intProgress" style="width:20%"></div></div>
-  <div id="intQuestion" style="width:100%;max-width:400px;font-size:18px;line-height:1.4;font-weight:700;margin-bottom:10px">Вопрос</div>
-  <textarea class="textarea" id="intAns" placeholder="Напишите свой ответ..."></textarea>
-  <div style="width:100%;max-width:400px;display:flex;gap:8px;margin-top:10px">
-    <button class="btn btn-secondary" id="intBack" style="margin:0;flex:1">Назад</button>
-    <button class="btn btn-primary" id="intNext" style="margin:0;flex:1" disabled>Далее</button>
+  <div class="int-wrap">
+    <div style="width:100%;max-width:400px;display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+      <div id="intProgressText" class="note">Вопрос 1 из 5</div>
+      <button class="ref-btn" id="intExit">Выйти</button>
+    </div>
+    <div class="track" style="width:100%;max-width:400px;margin:8px 0 14px"><div class="fill" id="intProgress" style="width:20%"></div></div>
+    <div id="intQuestion" style="width:100%;max-width:400px;font-size:18px;line-height:1.4;font-weight:700;margin-bottom:10px">Вопрос</div>
+
+    <div class="int-input-wrap">
+      <textarea class="textarea int-textarea" id="intAns" placeholder="Напишите свой ответ..."></textarea>
+      <button class="int-mic" id="intMic" title="Голосовой ввод">🎤</button>
+    </div>
+    <div class="note" id="intExampleHint" style="width:100%;max-width:400px;margin-top:6px">Пример: «С вопроса» / «С факта» / «С истории»</div>
+
+    <div class="int-bottom-actions">
+      <div style="width:100%;max-width:400px;display:flex;gap:8px">
+        <button class="btn btn-secondary" id="intBack" style="margin:0;flex:1">Назад</button>
+        <button class="btn btn-primary" id="intNext" style="margin:0;flex:1" disabled>Далее</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -350,15 +374,22 @@ body.dark .streak-day.on{color:#FBBF24}
 </div>
 
 <div class="screen" id="s-interview-result">
-  <div class="hero-title" style="margin-top:20px">🎉 Ваш стиль определён!</div>
-  <div class="card" style="position:relative;height:auto;padding:14px;width:100%;max-width:400px">
-    <div class="card-badge">Tone of Voice</div>
-    <div id="toneMain" style="font-weight:700;font-size:18px;margin:8px 0">Деловой, экспертный</div>
-    <div id="toneKeys" style="font-size:13px;color:var(--muted);margin-bottom:10px">структурность · факты · ясность</div>
-    <div class="note" id="toneDesc">Ваш стиль — структурированный и фактологический.</div>
+  <div class="int-wrap">
+    <div class="hero-title" style="margin-top:20px">🎉 Ваш стиль определён!</div>
+    <div class="card" style="position:relative;height:auto;padding:14px;width:100%;max-width:400px">
+      <div class="card-badge">Tone of Voice</div>
+      <div id="toneMain" style="font-weight:700;font-size:18px;margin:8px 0">Деловой, экспертный</div>
+      <div id="toneKeys" style="font-size:13px;color:var(--muted);margin-bottom:10px">структурность · факты · ясность</div>
+      <div class="note" id="toneDesc">Ваш стиль — структурированный и фактологический.</div>
+    </div>
+
+    <div id="toneRecs" style="width:100%;max-width:400px;display:flex;flex-direction:column;gap:8px;margin-top:10px"></div>
+
+    <div class="int-bottom-actions" style="margin-top:50px">
+      <button class="btn btn-primary" id="intApply">Применить и закрыть</button>
+      <button class="btn btn-secondary" id="intRestart">Пройти заново</button>
+    </div>
   </div>
-  <button class="btn btn-primary" id="intApply">Применить и закрыть</button>
-  <button class="btn btn-secondary" id="intRestart">Пройти заново</button>
 </div>
 
 <div class="fab-menu" id="fabMenu" style="display:none;position:fixed;bottom:150px;right:20px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;z-index:210;box-shadow:0 10px 25px rgba(0,0,0,.2)">
@@ -392,7 +423,7 @@ function pickLang(lang,btn){
   document.querySelectorAll('.lang-btn').forEach(function(x){x.classList.remove('active');});
   btn.classList.add('active');
 }
-var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,streakLast:'',contacts:0,views:0,dailyBonus:false,chestDate:'',boost2x:0,thoughtDate:'',thoughtCount:0,interviewAnswers:[],interviewDraft:null,toneProfile:null,interviewDone:false,name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',photos:[],photoIdx:0,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0,claim10:false,rewardProfile:false,rewardInvite:false,rewardBiz:false,rewardIssue:false,badges:[]};
+var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,streakLast:'',contacts:0,views:0,dailyBonus:false,chestDate:'',boost2x:0,thoughtDate:'',thoughtCount:0,interviewAnswers:[],interviewDraft:null,toneProfile:null,interviewDone:false,interviewReturnScreen:'s-main',name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',photos:[],photoIdx:0,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0,claim10:false,rewardProfile:false,rewardInvite:false,rewardBiz:false,rewardIssue:false,badges:[]};
 function loadST(){try{var r=localStorage.getItem(KEY);if(!r)return false;var d=JSON.parse(r);ST={};for(var k in defaultST)ST[k]=defaultST[k];for(var k in d)ST[k]=d[k];if(!Array.isArray(ST.photos))ST.photos=[];return true;}catch(e){return false;}}
 if(!loadST()){ST={};for(var k in defaultST)ST[k]=defaultST[k];}
 function tryRestore(){
@@ -678,27 +709,32 @@ el('btnBizSend').onclick=function(){
 };
 el('btnIssue').onclick=function(){show('s-issue');};
 el('btnIssueBack').onclick=function(){show('s-profile');};
-el('btnIssueSend').onclick=function(){if(!ST.rewardIssue){ST.rewardIssue=true;ST.xp+=20;reward(20,'Спасибо за идею!');upd();saveST();}alert(tt().issueSent);show('s-profile');};
+el('btnIssueSend').onclick=function(){
+  var msg=(el('issueMsg').value||'').trim();
+  var contact=(el('issueContact').value||'').trim();
+  if(!msg){alert('Опишите проблему или идею');return;}
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'issue',msg:msg,contact:contact,name:ST.name,ts:new Date().toISOString()}));}catch(e){}
+  if(!ST.rewardIssue){ST.rewardIssue=true;ST.xp+=20;reward(20,'Спасибо за идею!');upd();saveST();}
+  alert(tt().issueSent);show('s-profile');
+};
 el('btnBizNextBack').onclick=function(){show('s-profile');};
 
 el('fabBtn').onclick=function(){var m=el('fabMenu');m.style.display=m.style.display==='none'?'block':'none';};
 var intQ=[
-  {q:'Как вы обычно начинаете свой пост или статью?',ph:'Например, с вопроса, с факта или с истории...'},
-  {q:'Какие слова или фразы вы часто используете в общении?',ph:'Например, "инновации", "стратегия", "давайте обсудим"...'},
-  {q:'О чём вы пишете чаще всего?',ph:'Например, о технологиях, управлении, дизайне...'},
-  {q:'Как бы вы описали себя в трёх словах?',ph:'Например, ответственный, креативный, целеустремлённый'},
-  {q:'Кто ваша целевая аудитория?',ph:'Например, IT-специалисты, предприниматели, студенты'}
+  {q:'Как вы обычно начинаете свой пост или статью?',ph:'Например: с вопроса, с факта или с истории.'},
+  {q:'Какие слова или фразы вы часто используете в общении?',ph:'Например: «инновации», «стратегия», «давайте обсудим».'},
+  {q:'О чём вы пишете чаще всего?',ph:'Например: о технологиях, управлении, дизайне.'},
+  {q:'Как бы вы описали себя в трёх словах?',ph:'Например: ответственный, креативный, целеустремлённый.'},
+  {q:'Кто ваша целевая аудитория?',ph:'Например: IT-специалисты, предприниматели, студенты.'}
 ];
 var intIdx=0;
+var interviewReturnScreen='s-main';
 var loadingMsgs=['Изучаем ваши слова...','Определяем тональность...','Собираем профиль стиля...'];
+var speechRec=null;
+var speechRecOn=false;
 
 function cloudGet(key, cb){
-  try{
-    if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.CloudStorage){
-      window.Telegram.WebApp.CloudStorage.getItem(key,function(err,val){cb((!err&&val)?val:null);});
-      return;
-    }
-  }catch(e){}
+  try{ if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.CloudStorage){ window.Telegram.WebApp.CloudStorage.getItem(key,function(err,val){cb((!err&&val)?val:null);}); return; } }catch(e){}
   cb(localStorage.getItem(key));
 }
 function cloudSet(key,val){
@@ -711,29 +747,39 @@ function cloudDel(key){
 }
 function draftKey(){return 'interview_draft_'+tgId;}
 function toneKey(){return 'tone_profile_'+tgId;}
-
+function autosizeInt(){
+  var t=el('intAns'); if(!t)return;
+  t.style.height='auto';
+  var max=Math.floor(window.innerHeight*0.8);
+  t.style.height=Math.min(max, Math.max(96,t.scrollHeight))+'px';
+}
+function goBackAfterInterview(){
+  var back=ST.interviewReturnScreen||interviewReturnScreen||'s-main';
+  if(['s-main','s-feed','s-matches','s-profile'].indexOf(back)===-1)back='s-main';
+  show(back,false);
+}
 function saveInterviewDraft(){
   var d={question_index:intIdx,answers:ST.interviewAnswers||[],started_at:(ST.interviewDraft&&ST.interviewDraft.started_at)||new Date().toISOString()};
-  ST.interviewDraft=d;saveST();
+  ST.interviewDraft=d; saveST();
   cloudSet(draftKey(),JSON.stringify(d));
-  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'interviewDraftSave',draft:d}));}catch(e){}
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'interviewDraftSave',draft:d,updated_at:new Date().toISOString()}));}catch(e){}
 }
 function clearInterviewDraft(){
-  ST.interviewDraft=null;ST.interviewAnswers=[];saveST();
+  ST.interviewDraft=null; ST.interviewAnswers=[]; saveST();
   cloudDel(draftKey());
   try{window.Telegram.WebApp.sendData(JSON.stringify({action:'interviewDraftClear'}));}catch(e){}
 }
 function showInterviewLanding(){
   intIdx=0;
   cloudGet(draftKey(),function(v){
-    var d=null;try{d=v?JSON.parse(v):null;}catch(e){}
+    var d=null; try{d=v?JSON.parse(v):null;}catch(e){}
     if(d&&Array.isArray(d.answers)&&d.answers.length){
-      ST.interviewDraft=d;ST.interviewAnswers=d.answers.slice();saveST();
+      ST.interviewDraft=d; ST.interviewAnswers=d.answers.slice(); saveST();
       el('intStart').textContent='Продолжить интервью';
       el('intDraftHint').style.display='block';
       el('intDraftHint').textContent='Вы ответили на '+(d.answers.length)+' из 5 вопросов';
     }else{
-      ST.interviewDraft=null;ST.interviewAnswers=[];saveST();
+      ST.interviewDraft=null; ST.interviewAnswers=[]; saveST();
       el('intStart').textContent='Начать интервью';
       el('intDraftHint').style.display='none';
     }
@@ -741,81 +787,118 @@ function showInterviewLanding(){
   });
 }
 function renderInterviewQ(){
-  var n=intIdx+1;var total=intQ.length;
+  var n=intIdx+1,total=intQ.length;
   el('intProgressText').textContent='Вопрос '+n+' из '+total;
   el('intProgress').style.width=(n/total*100)+'%';
   el('intQuestion').textContent=intQ[intIdx].q;
   el('intAns').placeholder=intQ[intIdx].ph;
+  el('intExampleHint').textContent='Подсказка: '+intQ[intIdx].ph;
   el('intAns').value=(ST.interviewAnswers[intIdx]||'');
   el('intNext').disabled=(el('intAns').value.trim().length<3);
   el('intBack').style.visibility=intIdx===0?'hidden':'visible';
+  autosizeInt();
 }
 function startInterview(){
   if(ST.interviewDraft&&Array.isArray(ST.interviewDraft.answers)){
     ST.interviewAnswers=ST.interviewDraft.answers.slice();
     intIdx=Math.min(ST.interviewDraft.question_index||0,intQ.length-1);
-  }else{ST.interviewAnswers=[];intIdx=0;saveInterviewDraft();}
-  show('s-interview-q',false);renderInterviewQ();
+  }else{ ST.interviewAnswers=[]; intIdx=0; saveInterviewDraft(); }
+  show('s-interview-q',false); renderInterviewQ();
 }
 function analyzeTone(answers){
   var text=(answers||[]).join(' ').toLowerCase();
-  var formal=(/(стратег|план|рынок|метрик|процесс|бизнес|анализ|целевая)/.test(text));
-  var creative=(/(идея|креатив|вдохнов|дизайн|история)/.test(text));
-  var friendly=(/(давайте|вместе|поддерж|друз|команда)/.test(text));
+  var formal=(/(стратег|план|рынок|метрик|процесс|бизнес|анализ|целев|результат|цифр)/.test(text));
+  var creative=(/(идея|креатив|вдохнов|дизайн|история|контент)/.test(text));
+  var friendly=(/(давайте|вместе|поддерж|друз|команда|поможем)/.test(text));
   var main='Нейтральный';
-  if(formal&&friendly)main='Деловой, дружелюбный';
-  else if(formal)main='Деловой, экспертный';
-  else if(creative)main='Творческий, образный';
-  else if(friendly)main='Тёплый, разговорный';
-  var keys=[];
+  if(formal&&friendly)main='Деловой, дружелюбный'; else if(formal)main='Деловой, экспертный'; else if(creative)main='Творческий, образный'; else if(friendly)main='Тёплый, разговорный';
   var words=text.replace(/[^\p{L}\s]/gu,' ').split(/\s+/).filter(function(w){return w.length>4;});
-  var map={};words.forEach(function(w){map[w]=(map[w]||0)+1;});
-  keys=Object.keys(map).sort(function(a,b){return map[b]-map[a];}).slice(0,5);
+  var map={}; words.forEach(function(w){map[w]=(map[w]||0)+1;});
+  var keys=Object.keys(map).sort(function(a,b){return map[b]-map[a];}).slice(0,5);
   if(!keys.length)keys=['структурность','ясность','практика'];
   var desc='Ваш стиль — '+main.toLowerCase()+'. Мы будем использовать его для постов и рекомендаций.';
   return {main:main,keys:keys,desc:desc,answers:answers,updated_at:new Date().toISOString()};
 }
+function buildRecommendations(profile,answers){
+  var text=(answers||[]).join(' ').toLowerCase();
+  var rec=[];
+  if(/it|разработ|frontend|backend|devops|ai/.test(text)) rec.push('💡 В ваших постах используйте больше технических терминов и короткие кейсы — это повышает доверие IT-аудитории.');
+  if(/креатив|истори|вдохнов/.test(text)) rec.push('💡 Ваш стиль идеален для сторителлинга: начинайте посты с личного опыта и конкретного результата.');
+  if(/маркет|продаж|клиент/.test(text)) rec.push('💡 Делайте акцент на цифрах и кейсах: что было → что сделали → какой результат получили.');
+  if(/аудитор|студент|предприним/.test(text)) rec.push('💡 Пишите один пост — одной аудитории. Это увеличивает отклик и сохранения.');
+  if(rec.length<3) rec.push('💡 Добавляйте в посты призыв к действию: вопрос, опрос или просьбу написать в личку.');
+  if(rec.length<4) rec.push('💡 Чередуйте форматы: 1 экспертный пост, 1 личная история, 1 мини-кейс.');
+  return rec.slice(0,4);
+}
+function renderToneRecs(profile){
+  var box=el('toneRecs'); if(!box)return;
+  var recs=buildRecommendations(profile,ST.interviewAnswers||[]);
+  box.innerHTML=recs.map(function(r){return '<div class="rec-card">'+r+'</div>';}).join('');
+}
 function finishInterview(){
   show('s-interview-loading',false);
-  var i=0;el('intLoadingText').textContent=loadingMsgs[0];
+  var i=0; el('intLoadingText').textContent=loadingMsgs[0];
   var tmr=setInterval(function(){i=(i+1)%loadingMsgs.length;el('intLoadingText').textContent=loadingMsgs[i];},900);
   setTimeout(function(){
     clearInterval(tmr);
     var profile=analyzeTone(ST.interviewAnswers||[]);
-    ST.toneProfile=profile;ST.interviewDone=true;saveST();
+    ST.toneProfile=profile; ST.interviewDone=true; saveST();
     cloudSet(toneKey(),JSON.stringify(profile));
     try{window.Telegram.WebApp.sendData(JSON.stringify({action:'toneProfileSave',profile:profile,answers:ST.interviewAnswers||[]}));}catch(e){}
     el('toneMain').textContent=profile.main;
     el('toneKeys').textContent=profile.keys.join(' · ');
     el('toneDesc').textContent=profile.desc;
+    renderToneRecs(profile);
     show('s-interview-result',false);
   },3200);
 }
+function initSpeech(){
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR) return null;
+  var r=new SR();
+  r.lang=(ST.lang==='uz'?'uz-UZ':(ST.lang==='en'?'en-US':'ru-RU'));
+  r.interimResults=false; r.maxAlternatives=1;
+  r.onstart=function(){speechRecOn=true;el('intMic').classList.add('rec');};
+  r.onend=function(){speechRecOn=false;el('intMic').classList.remove('rec');};
+  r.onerror=function(){speechRecOn=false;el('intMic').classList.remove('rec'); alert('Голосовой ввод временно недоступен, используйте текст.');};
+  r.onresult=function(ev){
+    var txt=(ev.results&&ev.results[0]&&ev.results[0][0]&&ev.results[0][0].transcript)||'';
+    var cur=el('intAns').value.trim();
+    el('intAns').value=(cur?cur+' ':'')+txt;
+    el('intNext').disabled=(el('intAns').value.trim().length<3);
+    autosizeInt();
+  };
+  return r;
+}
 
-el('plusAI').onclick=function(){showInterviewLanding();el('fabMenu').style.display='none';};
+el('plusAI').onclick=function(){
+  var current=document.querySelector('.screen.active');
+  ST.interviewReturnScreen=(current&&current.id)||'s-main'; saveST();
+  showInterviewLanding(); el('fabMenu').style.display='none';
+};
 el('intStart').onclick=function(){startInterview();};
-el('intLater').onclick=function(){show('s-profile');};
-el('intCloseLanding').onclick=function(){show('s-profile');};
-el('intAns').addEventListener('input',function(){el('intNext').disabled=(el('intAns').value.trim().length<3);});
-el('intBack').onclick=function(){if(intIdx===0)return;ST.interviewAnswers[intIdx]=(el('intAns').value||'').trim();intIdx--;renderInterviewQ();saveInterviewDraft();};
+el('intLater').onclick=function(){goBackAfterInterview();};
+el('intCloseLanding').onclick=function(){goBackAfterInterview();};
+el('intAns').addEventListener('input',function(){el('intNext').disabled=(el('intAns').value.trim().length<3); autosizeInt();});
+el('intBack').onclick=function(){ if(intIdx===0)return; ST.interviewAnswers[intIdx]=(el('intAns').value||'').trim(); intIdx--; renderInterviewQ(); saveInterviewDraft(); };
 el('intNext').onclick=function(){
-  var ans=(el('intAns').value||'').trim();
-  if(ans.length<3)return;
+  var ans=(el('intAns').value||'').trim(); if(ans.length<3)return;
   ST.interviewAnswers[intIdx]=ans;
-  if(intIdx<intQ.length-1){intIdx++;saveInterviewDraft();renderInterviewQ();}
-  else{saveInterviewDraft();finishInterview();}
+  if(intIdx<intQ.length-1){intIdx++; saveInterviewDraft(); renderInterviewQ();}
+  else{saveInterviewDraft(); finishInterview();}
 };
-el('intExit').onclick=function(){
-  if(confirm('Вы уверены, что хотите выйти? Ваши ответы будут сохранены как черновик.')){saveInterviewDraft();show('s-profile');}
-};
+el('intExit').onclick=function(){ if(confirm('Вы уверены, что хотите выйти? Ваши ответы будут сохранены как черновик. Вы сможете продолжить позже.')){ saveInterviewDraft(); goBackAfterInterview(); } };
 el('intApply').onclick=function(){
   clearInterviewDraft();
   if(!ST.badges.includes('style'))ST.badges.push('style');
-  ST.xp+=100;reward(100,'Стиль определён!');upd();saveST();
-  show('s-profile');
+  ST.xp+=100; reward(100,'Стиль определён!'); upd(); saveST();
+  goBackAfterInterview();
 };
-el('intRestart').onclick=function(){
-  if(confirm('Начать заново? Старый профиль будет заменён.')){clearInterviewDraft();ST.interviewAnswers=[];intIdx=0;startInterview();}
+el('intRestart').onclick=function(){ if(confirm('Начать заново? Старый профиль будет заменён.')){ clearInterviewDraft(); ST.interviewAnswers=[]; intIdx=0; startInterview(); } };
+el('intMic').onclick=function(){
+  if(!speechRec) speechRec=initSpeech();
+  if(!speechRec){ alert('Голосовой ввод временно недоступен, используйте текст.'); return; }
+  try{ if(speechRecOn){speechRec.stop();} else {speechRec.start();} }catch(e){ alert('Голосовой ввод временно недоступен, используйте текст.'); }
 };
 if(el('btnPostBack'))el('btnPostBack').onclick=function(){show('s-profile');};
 if(el('postWrite'))el('postWrite').onclick=function(){

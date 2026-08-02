@@ -13,7 +13,23 @@ OWNER_ID = 7802498650  # telegram id Севары для пересылки за
 DATA_DIR = Path(__file__).parent.parent / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 USERS_FILE = DATA_DIR / "users.json"
-LEADS_FILE = DATA_DIR / "leads.json"
+LEADS_HUB_FILE = DATA_DIR / "leads_hub.json"
+
+def add_to_crm(lead_type, user_id, username, data):
+    leads = load_json(LEADS_HUB_FILE, [])
+    new_lead = {
+        "id": len(leads) + 1,
+        "type": lead_type,
+        "tg_id": user_id,
+        "username": username,
+        "status": "new",
+        "data": data,
+        "created_at": data.get("ts", "")
+    }
+    leads.append(new_lead)
+    save_json(LEADS_HUB_FILE, leads)
+    return new_lead
+
 INTERVIEW_DRAFTS_FILE = DATA_DIR / "interview_drafts.json"
 TONE_PROFILES_FILE = DATA_DIR / "tone_profiles.json"
 
@@ -67,6 +83,22 @@ async def on_about(callback: types.CallbackQuery):
     )
     await callback.answer()
 
+async def on_crm_callback(callback: types.CallbackQuery):
+    if not callback.data.startswith("crm_status_"): return
+    parts = callback.data.split('_')
+    lead_id = int(parts[2])
+    new_status = parts[3]
+    
+    leads = load_json(LEADS_HUB_FILE, [])
+    for lead in leads:
+        if lead['id'] == lead_id:
+            lead['status'] = new_status
+            break
+    save_json(LEADS_HUB_FILE, leads)
+    
+    await callback.message.edit_text(callback.message.text + f"\n\n⚙️ <b>Статус:</b> {new_status}", parse_mode="HTML")
+    await callback.answer(f"Статус изменен на {new_status}")
+
 async def on_webapp_data(message: types.Message):
     """Принимает данные из Mini App (sendData)"""
     if not message.web_app_data:
@@ -99,35 +131,37 @@ async def on_webapp_data(message: types.Message):
         save_json(USERS_FILE, users)
         await message.answer("✅ Профиль сохранён!")
 
-    # --- B2B заявка ---
+    # --- B2B заявка (CRM) ---
     elif action == "bizLead":
-        lead = {
-            "tg_id": user_id,
-            "username": username,
-            "name": data.get("name", ""),
-            "contact": data.get("contact", ""),
-            "msg": data.get("msg", ""),
-            "profile": data.get("profile", {}),
-            "ts": data.get("ts", "")
-        }
-        leads = load_json(LEADS_FILE, [])
-        leads.append(lead)
-        save_json(LEADS_FILE, leads)
-
-        # Уведомление Севаре
+        lead = add_to_crm("biz", user_id, username, data)
+        kb = InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="✅ В работу", callback_data=f"crm_status_{lead['id']}_progress")],
+            [InlineKeyboardButton(text="🎯 Закрыть", callback_data=f"crm_status_{lead['id']}_done")]
+        ])
         owner_msg = (
-            f"📩 <b>Новая B2B-заявка!</b>\n\n"
-            f"👤 <b>Имя:</b> {lead['name']}\n"
-            f"📞 <b>Контакт:</b> {lead['contact']}\n"
-            f"📝 <b>Запрос:</b> {lead['msg']}\n"
-            f"🆔 <b>TG:</b> @{username} ({user_id})"
+            f"📩 <b>#CRM Заявка (Бизнес):</b> #{lead['id']}\n\n"
+            f"👤 {data.get('name')} (@{username})\n"
+            f"📞 {data.get('contact')}\n"
+            f"📝 {data.get('msg')}"
         )
-        try:
-            await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
-        except Exception as e:
-            logging.error(f"Не удалось отправить уведомление: {e}")
+        await message.bot.send_message(OWNER_ID, owner_msg, reply_markup=kb, parse_mode="HTML")
+        await message.answer("✅ Заявка принята!")
 
-        await message.answer("✅ Заявка принята! Мы свяжемся с вами в ближайшее время.")
+    # --- Проблема/Идея (CRM) ---
+    elif action == "issue":
+        lead = add_to_crm("issue", user_id, username, data)
+        kb = InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="✅ В работу", callback_data=f"crm_status_{lead['id']}_progress")],
+            [InlineKeyboardButton(text="🎯 Закрыть", callback_data=f"crm_status_{lead['id']}_done")]
+        ])
+        owner_msg = (
+            f"💡 <b>#CRM Заявка (Issue):</b> #{lead['id']}\n\n"
+            f"👤 @{username}\n"
+            f"📝 {data.get('msg')}\n"
+            f"📞 {data.get('contact')}"
+        )
+        await message.bot.send_message(OWNER_ID, owner_msg, reply_markup=kb, parse_mode="HTML")
+        await message.answer("✅ Спасибо, мы скоро ответим!")
 
     # --- Черновик интервью ---
     elif action == "interviewDraftSave":
@@ -206,6 +240,7 @@ async def main():
     dp = Dispatcher()
     dp.message.register(on_start, Command("start"))
     dp.callback_query.register(on_about, lambda c: c.data == "about")
+    dp.callback_query.register(on_crm_callback, lambda c: c.data.startswith("crm_status_"))
     dp.message.register(on_webapp_data, F.web_app_data)
     try:
         await bot.set_chat_menu_button(
