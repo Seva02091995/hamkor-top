@@ -118,10 +118,14 @@ body.dark .act-no{color:var(--muted)}
 .hint{text-align:center;font-size:11px;color:var(--muted);margin-top:8px}
 .hint b{color:#2DA66E}body.dark .hint b{color:var(--green)}
 /* bottom nav */
-.nav{width:100%;max-width:400px;display:flex;justify-content:space-around;background:var(--card);border-top:1px solid var(--line);padding:10px 6px;position:fixed;bottom:0;z-index:200;background:var(--card)}
-.nav-item{text-align:center;font-size:11px;color:var(--muted);cursor:pointer;padding:4px 10px;flex:1;pointer-events:auto}
-.nav-item.active{color:var(--blue);font-weight:600}
-.fab{position:fixed;bottom:80px;right:20px;width:56px;height:56px;background:var(--blue);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:28px;box-shadow:0 4px 15px rgba(74,144,226,.4);z-index:190;cursor:pointer}
+.nav{width:100%;max-width:400px;display:flex;justify-content:space-around;background:var(--card);border-top:1px solid var(--line);padding:8px 6px calc(8px + env(safe-area-inset-bottom));position:fixed;bottom:0;z-index:200}
+.nav-item{text-align:center;font-size:11px;color:var(--muted);cursor:pointer;padding:6px 8px;flex:1;pointer-events:auto;display:flex;align-items:center;justify-content:center}
+.nav-item.active{color:var(--blue);font-weight:700}
+.nav-plus{flex:0 0 64px;display:flex;align-items:center;justify-content:center}
+.nav-plus-btn{width:52px;height:52px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;font-size:34px;line-height:1;box-shadow:0 10px 20px rgba(74,144,226,.35);cursor:pointer;margin-top:-18px}
+.fab{position:fixed;bottom:88px;right:20px;width:56px;height:56px;background:var(--blue);color:#fff;border-radius:50%;display:grid;place-items:center;font-size:28px;box-shadow:0 4px 15px rgba(74,144,226,.4);z-index:190;cursor:pointer}
+.feed-write-fab{position:fixed;right:16px;bottom:92px;z-index:195;display:flex;align-items:center;gap:8px;padding:12px 14px;border:none;border-radius:999px;background:linear-gradient(135deg,var(--blue),#3B82F6);color:#fff;font-weight:700;font-size:15px;box-shadow:0 10px 24px rgba(59,130,246,.35);min-height:44px;cursor:pointer}
+.feed-write-fab .icon{font-size:18px;line-height:1}
 .streak7{width:100%;max-width:400px;display:flex;gap:6px;justify-content:center;margin:8px 0 10px}
 .streak-day{width:24px;height:24px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;font-size:12px;color:var(--muted);background:var(--card)}
 .streak-day.on{border-color:#F59E0B;background:rgba(245,158,11,.15);color:#B45309;font-weight:700}
@@ -219,14 +223,9 @@ body.dark .streak-day.on{color:#FBBF24}
 <div class="screen" id="s-feed">
   <div class="hero-title" style="margin-top:24px" data-t="feedTitle">Лента роста</div>
   <div class="hero-sub" data-t="feedSub">Короткие кейсы, советы по карьере и разборы, чтобы прогревать интерес к твоему продукту.</div>
-  <div class="card" style="position:relative;height:auto;padding:12px;width:100%;max-width:400px;margin-bottom:10px">
-    <div style="font-weight:700;margin-bottom:6px" data-t="thoughtTitle">✏️ Добавить мысль</div>
-    <textarea class="textarea" id="thoughtInput" data-t="thoughtPh" placeholder="Что у вас на уме? Напишите здесь..."></textarea>
-    <div style="display:flex;gap:8px;margin-top:8px">
-      <button class="btn btn-primary" id="thoughtPublish" data-t="thoughtPublish" style="max-width:none;flex:1;margin:0">✏️ Опубликовать</button>
-      <button class="btn btn-secondary" id="thoughtDraft" data-t="thoughtDraft" style="max-width:none;flex:1;margin:0">Черновик</button>
-    </div>
-  </div>
+  <button class="feed-write-fab" id="feedWriteFab" aria-label="Написать пост">
+    <span class="icon">✏️</span><span>Написать</span>
+  </button>
   <div style="width:100%;max-width:400px;display:flex;flex-direction:column;gap:10px" id="feedCards">
     <!-- feed cards rendered dynamically -->
   </div>
@@ -289,6 +288,23 @@ body.dark .streak-day.on{color:#FBBF24}
     </div>
     <button class="btn btn-primary" id="btnSave" data-t="save">Сохранить</button>
     <button class="btn btn-secondary" id="btnCancel" data-t="cancel">Отмена</button>
+  </div>
+</div>
+
+<div class="screen" id="s-post">
+  <div class="hero-title" style="margin-top:24px" data-t="postTitle">Мастерская постов</div>
+  <div class="hero-sub" data-t="postHint">Нажмите «AI поможет» — ассистент напишет пост в вашем стиле на основе профиля.</div>
+  <div class="form">
+    <div style="display:flex;gap:8px;margin-bottom:8px">
+      <button class="btn btn-primary" id="postWrite" data-t="postWrite" style="max-width:none;flex:1;margin:0">✍️ Сам напишу</button>
+      <button class="btn btn-secondary" id="postAI" data-t="postAI" style="max-width:none;flex:1;margin:0">🤖 AI поможет</button>
+    </div>
+    <textarea class="textarea" id="postText" data-t="postPlaceholder" placeholder="О чём хотите рассказать?" style="min-height:180px"></textarea>
+    <div style="display:flex;gap:8px;margin-top:10px">
+      <button class="btn btn-secondary" id="postCopy" data-t="postCopy" style="max-width:none;flex:1;margin:0">📋 Копировать</button>
+      <button class="btn btn-primary" id="postSend" data-t="postSend" style="max-width:none;flex:1;margin:0">📤 Отправить в канал</button>
+    </div>
+    <button class="btn btn-secondary" id="btnPostBack">← Назад</button>
   </div>
 </div>
 
@@ -393,14 +409,17 @@ body.dark .streak-day.on{color:#FBBF24}
 </div>
 
 <div class="fab-menu" id="fabMenu" style="display:none;position:fixed;bottom:150px;right:20px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;z-index:210;box-shadow:0 10px 25px rgba(0,0,0,.2)">
-  <div style="padding:10px" id="plusPhoto">📷 Фото</div>
-  <div style="padding:10px" id="plusFile">📎 Файл</div>
-  <div style="padding:10px" id="plusAI" style="color:var(--blue)">✨ AI-инструменты</div>
+  <div style="padding:10px;cursor:pointer" id="plusPost">✏️ Мастерская постов</div>
+  <div style="padding:10px;cursor:pointer" id="plusAI">🎙️ Интервью со мной</div>
+  <div style="padding:10px;cursor:pointer" id="plusImage">🖼 Создать изображение</div>
 </div>
 
 <div class="nav" id="globalNav">
     <div class="nav-item active" data-tab="main" data-t="tabSearch" onclick="show('s-main')">Поиск</div>
     <div class="nav-item" data-tab="feed" data-t="tabFeed" onclick="show('s-feed')">Лента</div>
+    <div class="nav-plus">
+      <button class="nav-plus-btn" id="navPlusBtn" aria-label="Открыть AI-инструменты">+</button>
+    </div>
     <div class="nav-item" data-tab="matches" data-t="tabContacts" onclick="show('s-matches')">Контакты</div>
     <div class="nav-item" data-tab="profile" data-t="tabProf" onclick="show('s-profile')">Профиль</div>
 </div>
@@ -555,7 +574,7 @@ function show(id,remember){
 
   var nav=el('globalNav');
   if(nav){
-    var hideNav=(id==='s-lang'||id==='s-welcome'||id==='s-edit'||id==='s-biz'||id==='s-issue'||id==='s-biz-next'||id==='s-interview-landing'||id==='s-interview-q'||id==='s-interview-loading'||id==='s-interview-result');
+    var hideNav=(id==='s-lang'||id==='s-welcome'||id==='s-edit'||id==='s-post'||id==='s-biz'||id==='s-issue'||id==='s-biz-next'||id==='s-interview-landing'||id==='s-interview-q'||id==='s-interview-loading'||id==='s-interview-result');
     nav.style.display=hideNav?'none':'flex';
     document.querySelectorAll('#globalNav .nav-item').forEach(function(i){i.classList.remove('active');});
     var m={ 's-main':'main','s-feed':'feed','s-matches':'matches','s-profile':'profile' };
@@ -572,7 +591,7 @@ function show(id,remember){
   if(id==='s-edit')fillForm();
   if(id==='s-feed')renderFeed();
 }
-var screens=['s-lang','s-welcome','s-main','s-feed','s-matches','s-profile','s-edit','s-biz','s-biz-next','s-issue','s-interview-landing','s-interview-q','s-interview-loading','s-interview-result'];
+var screens=['s-lang','s-welcome','s-main','s-feed','s-matches','s-profile','s-edit','s-post','s-biz','s-biz-next','s-issue','s-interview-landing','s-interview-q','s-interview-loading','s-interview-result'];
 
 function tr(){var d=tt();document.querySelectorAll('[data-t]').forEach(function(e){var k=e.getAttribute('data-t');if(k==='boost'){e.textContent=boostLabel(calcBoost());return;}if(d[k])e.textContent=d[k];});if(refs.strkLabel)refs.strkLabel.textContent='🔥 '+dayWord(ST.streak||1);renderFoundText();renderHint();updateNextQuest();if(refs.refNote)refs.refNote.textContent=d.refHint;if(refs.btnTheme)refs.btnTheme.textContent=ST.theme==='dark'?d.themeLight:d.themeDark;if(refs.fileName&&(!refs.fileAv.files||refs.fileAv.files.length===0)&&ST.photos.length===0)refs.fileName.textContent=d.none;}
 function renderFoundText(){var d=tt();var f=Math.min(ST.views,5);refs.huntNote.innerHTML=d.foundPrefix+'<b>'+f+'</b> / 5';}
@@ -719,7 +738,33 @@ el('btnIssueSend').onclick=function(){
 };
 el('btnBizNextBack').onclick=function(){show('s-profile');};
 
-el('fabBtn').onclick=function(){var m=el('fabMenu');m.style.display=m.style.display==='none'?'block':'none';};
+function openPostWorkshop(){
+  show('s-post',false);
+  if(el('postText')) setTimeout(function(){el('postText').focus();},120);
+}
+function toggleFabMenu(){
+  var m=el('fabMenu');
+  if(!m)return;
+  m.style.display=(m.style.display==='none'||m.style.display==='')?'block':'none';
+}
+function closeFabMenu(){
+  var m=el('fabMenu'); if(m)m.style.display='none';
+}
+if(el('fabBtn')) el('fabBtn').onclick=toggleFabMenu;
+if(el('navPlusBtn')) el('navPlusBtn').onclick=toggleFabMenu;
+if(el('feedWriteFab')) el('feedWriteFab').onclick=function(){openPostWorkshop();};
+if(el('btnPost')) el('btnPost').onclick=function(){openPostWorkshop();};
+if(el('plusPost')) el('plusPost').onclick=function(){closeFabMenu();openPostWorkshop();};
+if(el('plusImage')) el('plusImage').onclick=function(){
+  closeFabMenu();
+  alert('Скоро здесь будет генерация изображений. Пока используйте «Интервью со мной» и «Мастерскую постов».');
+};
+document.addEventListener('click',function(e){
+  var m=el('fabMenu');
+  if(!m||m.style.display!=='block')return;
+  if(e.target.closest('#fabMenu')||e.target.closest('#fabBtn')||e.target.closest('#navPlusBtn'))return;
+  m.style.display='none';
+});
 var intQ=[
   {q:'Как вы обычно начинаете свой пост или статью?',ph:'Например: с вопроса, с факта или с истории.'},
   {q:'Какие слова или фразы вы часто используете в общении?',ph:'Например: «инновации», «стратегия», «давайте обсудим».'},
