@@ -1,28 +1,28 @@
 [
   {
-    "badge": "🌐 Удалёнка",
+    "badge": "📱 Фриланс",
     "t": {
-      "ru": "Digital Nomad: визы в Центральной Азии",
-      "uz": "Digital Nomad: Markaziy Osiyoda vizalar",
-      "en": "Digital Nomad: visas in Central Asia"
+      "ru": "Где брать заказы фрилансеру из Узбекистана",
+      "uz": "O'zbekistonlik frilanser uchun buyurtmalar qayerdan olinadi",
+      "en": "Where to find freelance gigs from Uzbekistan"
     },
     "b": {
-      "ru": "Кыргызстан — до 10 лет для digital nomads. Казахстан — Neo Nomad Visa. Узбекистан вводит IT-визу. Идеально для удалёнщиков.",
-      "uz": "Qirg'iziston — digital nomadlar uchun 10 yilgacha. Qozog'iston — Neo Nomad Visa. O'zbekiston IT-viza joriy qilmoqda.",
-      "en": "Kyrgyzstan — up to 10 years for digital nomads. Kazakhstan — Neo Nomad Visa. Uzbekistan introduces IT visa."
+      "ru": "Локально: Myfreelance.uz, Mohirlar.uz. Глобально: Upwork, Kwork. Совет: начните с 3 маленьких проектов для портфолио, затем поднимайте ставку.",
+      "uz": "Mahalliy: Myfreelance.uz, Mohirlar.uz. Global: Upwork, Kwork. Maslahat: portfolio uchun 3 ta kichik loyihadan boshlang, keyin stavkani oshiring.",
+      "en": "Local: Myfreelance.uz, Mohirlar.uz. Global: Upwork, Kwork. Tip: start with 3 small projects for portfolio, then raise your rate."
     }
   },
   {
-    "badge": "🤝 Нетворкинг",
+    "badge": "📈 Тренд",
     "t": {
-      "ru": "70% вакансий закрываются по знакомству",
-      "uz": "70% vakansiyalar tanish orqali yopiladi",
-      "en": "70% of jobs are filled through networking"
+      "ru": "IT-экспорт Узбекистана: курс на $1 млрд",
+      "uz": "O'zbekiston IT-eksporti: $1 mlrd ga yo'l",
+      "en": "Uzbekistan IT exports: heading to $1B"
     },
     "b": {
-      "ru": "Ходите на митапы: ITOSH, Tech Summit, ICT Week. 10 новых контактов в день меняют карьеру быстрее, чем 100 откликов на hh.uz.",
-      "uz": "Mitinglarga boring: ITOSH, Tech Summit, ICT Week. Kuniga 10 ta yangi kontakt — 100 ta hh.uz otklikidan tezroq karyerani o'zgartiradi.",
-      "en": "Attend meetups: ITOSH, Tech Summit, ICT Week. 10 new contacts a day change your career faster than 100 hh.uz applications."
+      "ru": "К 2025 году страна планирует экспорт IT-услуг на $1 млрд. Резидентов IT Park — более 3200. Спрос на разработчиков растёт на 42% в год.",
+      "uz": "2025 yilga borib mamlakat IT-xizmatlar eksportini $1 mlrd ga yetkazishni rejalashtirmoqda. IT Park rezidentlari 3200 dan ortiq. Dasturchilarga talab yiliga 42% o'smoqda.",
+      "en": "By 2025, the country plans $1B in IT service exports. IT Park residents: 3200+. Developer demand grows 42% annually."
     }
   },
   {
@@ -52,29 +52,16 @@
     }
   },
   {
-    "badge": "📈 Тренд",
+    "badge": "🌐 Удалёнка",
     "t": {
-      "ru": "IT-экспорт Узбекистана: курс на $1 млрд",
-      "uz": "O'zbekiston IT-eksporti: $1 mlrd ga yo'l",
-      "en": "Uzbekistan IT exports: heading to $1B"
+      "ru": "Digital Nomad: визы в Центральной Азии",
+      "uz": "Digital Nomad: Markaziy Osiyoda vizalar",
+      "en": "Digital Nomad: visas in Central Asia"
     },
     "b": {
-      "ru": "К 2025 году страна планирует экспорт IT-услуг на $1 млрд. Резидентов IT Park — более 3200. Спрос на разработчиков растёт на 42% в год.",
-      "uz": "2025 yilga borib mamlakat IT-xizmatlar eksportini $1 mlrd ga yetkazishni rejalashtirmoqda. IT Park rezidentlari 3200 dan ortiq. Dasturchilarga talab yiliga 42% o'smoqda.",
-      "en": "By 2025, the country plans $1B in IT service exports. IT Park residents: 3200+. Developer demand grows 42% annually."
-    }
-  },
-  {
-    "badge": "📊 Аналитика",
-    "t": {
-      "ru": "Python, Flutter, AI — что учат в Узбекистане",
-      "uz": "Python, Flutter, AI — O'zbekistonda nima o'rganiladi",
-      "en": "Python, Flutter, AI — what Uzbekistan is learning"
-    },
-    "b": {
-      "ru": "Самые популярные курсы: Python (38%), Flutter (22%), AI/ML (18%). IT Park запустил «Один миллион программистов» — бесплатное обучение основам.",
-      "uz": "Eng mashhur kurslar: Python (38%), Flutter (22%), AI/ML (18%). IT Park «Bir million dasturchi» loyihasini boshladi — bepul asosiy ta'lim.",
-      "en": "Most popular courses: Python (38%), Flutter (22%), AI/ML (18%). IT Park launched 'One Million Programmers' — free basic training."
+      "ru": "Кыргызстан — до 10 лет для digital nomads. Казахстан — Neo Nomad Visa. Узбекистан вводит IT-визу. Идеально для удалёнщиков.",
+      "uz": "Qirg'iziston — digital nomadlar uchun 10 yilgacha. Qozog'iston — Neo Nomad Visa. O'zbekiston IT-viza joriy qilmoqda.",
+      "en": "Kyrgyzstan — up to 10 years for digital nomads. Kazakhstan — Neo Nomad Visa. Uzbekistan introduces IT visa."
     }
   },
   {
@@ -88,6 +75,19 @@
       "ru": "IT Park: инкубация, менторы, юрподдержка. 13 венчурных фондов, $145M капитала. Astana Hub, nFactorial — гранты и акселерация.",
       "uz": "IT Park: inkubatsiya, mentorlar, yuridik yordam. 13 venchur fond, $145M kapital. Astana Hub, nFactorial — grant va akseleratsiya.",
       "en": "IT Park: incubation, mentors, legal support. 13 VC funds, $145M capital. Astana Hub, nFactorial — grants and acceleration."
+    }
+  },
+  {
+    "badge": "📊 Аналитика",
+    "t": {
+      "ru": "Python, Flutter, AI — что учат в Узбекистане",
+      "uz": "Python, Flutter, AI — O'zbekistonda nima o'rganiladi",
+      "en": "Python, Flutter, AI — what Uzbekistan is learning"
+    },
+    "b": {
+      "ru": "Самые популярные курсы: Python (38%), Flutter (22%), AI/ML (18%). IT Park запустил «Один миллион программистов» — бесплатное обучение основам.",
+      "uz": "Eng mashhur kurslar: Python (38%), Flutter (22%), AI/ML (18%). IT Park «Bir million dasturchi» loyihasini boshladi — bepul asosiy ta'lim.",
+      "en": "Most popular courses: Python (38%), Flutter (22%), AI/ML (18%). IT Park launched 'One Million Programmers' — free basic training."
     }
   }
 ]
