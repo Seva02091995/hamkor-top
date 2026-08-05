@@ -161,6 +161,35 @@ body.dark .streak-day.on{color:#FBBF24}
 .int-mic{position:absolute;right:8px;bottom:8px;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:20px}
 .int-mic.rec{background:var(--blue);color:#fff;border-color:var(--blue)}
 .rec-card{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--muted)}
+
+.feed-meta{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:11px;color:var(--muted)}
+.feed-meta .mini-av{width:20px;height:20px;border-radius:50%;background:var(--card2);border:1px solid var(--line);display:grid;place-items:center;font-size:11px}
+.feed-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
+.feed-act{min-height:44px;border:1px solid var(--line);background:var(--card);border-radius:10px;color:var(--ink);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer}
+.feed-act.active{border-color:var(--blue);color:var(--blue)}
+.feed-more-wrap{display:flex;justify-content:flex-end;margin-top:6px}
+.feed-more{border:none;background:transparent;color:var(--muted);font-size:18px;cursor:pointer;padding:2px 6px}
+.reaction-picker{display:none;flex-wrap:wrap;gap:6px;margin-top:8px;padding:8px;border:1px solid var(--line);border-radius:10px;background:var(--card2)}
+.reaction-pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 10px;cursor:pointer}
+.modal{position:fixed;inset:0;background:rgba(12,19,28,.45);z-index:450;display:none;align-items:flex-end;justify-content:center;padding:0 10px}
+.modal-sheet{width:100%;max-width:420px;max-height:85dvh;background:var(--card);border-radius:16px 16px 0 0;border:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--line)}
+.modal-title{font-weight:700}
+.modal-close{border:none;background:transparent;font-size:20px;color:var(--muted);cursor:pointer}
+.comments-list{padding:10px 12px 6px;overflow:auto;display:flex;flex-direction:column;gap:8px}
+.c-item{border:1px solid var(--line);background:var(--card2);border-radius:10px;padding:8px 10px}
+.c-item.reply{margin-left:18px}
+.c-top{display:flex;justify-content:space-between;gap:8px;font-size:12px}
+.c-author{font-weight:700}
+.c-time{color:var(--muted);font-size:11px}
+.c-text{font-size:14px;line-height:1.35;margin-top:4px;white-space:pre-wrap}
+.c-reply{margin-top:6px;border:none;background:transparent;color:var(--blue);font-size:12px;cursor:pointer;padding:0}
+.comments-input{border-top:1px solid var(--line);padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:var(--card);display:flex;align-items:flex-end;gap:8px}
+.c-textarea{flex:1;min-height:40px;max-height:120px;resize:none;border:1px solid var(--line);border-radius:12px;padding:9px 10px;font-size:16px;background:var(--card2);color:var(--ink)}
+.c-send{min-height:44px;padding:0 14px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;font-weight:700;cursor:pointer}
+.sheet-actions{padding:12px;display:flex;flex-direction:column;gap:8px}
+.sheet-btn{min-height:46px;border:1px solid var(--line);border-radius:12px;background:var(--card2);color:var(--ink);font-size:15px;font-weight:700;cursor:pointer}
+.sheet-btn.primary{background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;border:none}
 </style>
 </head>
 <body>
@@ -424,6 +453,47 @@ body.dark .streak-day.on{color:#FBBF24}
     <div class="nav-item" data-tab="profile" data-t="tabProf" onclick="show('s-profile')">Профиль</div>
 </div>
 
+<div class="modal" id="commentsModal">
+  <div class="modal-sheet">
+    <div class="modal-head">
+      <div class="modal-title">💬 Комментарии</div>
+      <button class="modal-close" id="commentsClose">✕</button>
+    </div>
+    <div class="comments-list" id="commentsList"></div>
+    <div class="comments-input">
+      <textarea class="c-textarea" id="commentInput" placeholder="Написать комментарий..."></textarea>
+      <button class="c-send" id="commentSend">Отправить</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="repostModal">
+  <div class="modal-sheet" style="max-height:none">
+    <div class="modal-head">
+      <div class="modal-title">🔄 Репост</div>
+      <button class="modal-close" id="repostClose">✕</button>
+    </div>
+    <div class="sheet-actions">
+      <button class="sheet-btn primary" id="repostPlain">Репостнуть</button>
+      <button class="sheet-btn" id="repostWithThought">Репостнуть с мыслью</button>
+      <button class="sheet-btn" id="repostCancel">Отмена</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="moreModal">
+  <div class="modal-sheet" style="max-height:none">
+    <div class="modal-head">
+      <div class="modal-title">⋯ Ещё</div>
+      <button class="modal-close" id="moreClose">✕</button>
+    </div>
+    <div class="sheet-actions">
+      <button class="sheet-btn" id="markDislike">👎 Не интересно</button>
+      <button class="sheet-btn" id="moreCancel">Отмена</button>
+    </div>
+  </div>
+</div>
+
 <script>
 var i18n={
 ru:{made:'создано в Узбекистане',lang:'Выбери язык',langHint:'Можно сменить позже. Профессиональные термины остаются как есть.',go:'Продолжить',hero:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',spec:'Я IT-специалист',emp:'Я работодатель',points:'Очки',lvl:'Уровень',days:'Дней',contacts:'Контакты',hunt:'Прогресс дня',boost:'+68% активность',foundPrefix:'Подходящих: ',task1:'Заполнить профиль',task2:'Посмотреть 10 карточек',task3:'Пригласить друга',getLink:'Получить ссылку',refHint:'Нажмите — ссылка скопируется',linkCopied:'Ссылка скопирована',yes:'Интересно',no:'Мимо',hint:'Ещё N карточек — и откроется новый кандидат',hintDone:'Список на сегодня закончился. Обнови профиль или пригласи друга, чтобы открыть новых кандидатов.',tabSearch:'Поиск',tabFeed:'Лента',tabContacts:'Контакты',tabProf:'Профиль',chestBtn:'🎁 Сундук дня',nextQuest:'Следующий шаг: выполни задание',chestOpen:'Крутим награду...',chestReady:'Сундук уже открыт сегодня',chestBoost:'x2 на следующий свайп!',lbBadge:'🏆 Лига',lbTitle:'Рейтинг недели',lbYou:'Ты',thoughtTitle:'✏️ Добавить мысль',thoughtPh:'Что у вас на уме? Напишите здесь...',thoughtPublish:'✏️ Опубликовать',thoughtDraft:'Черновик',feedTitle:'Лента роста',feedSub:'Короткие кейсы, советы по карьере и разборы, чтобы прогревать интерес к продукту.',feedBadge1:'+ Практика',feedItem1Title:'Как найти 1‑го клиента за 7 дней',feedItem1Text:'Сценарий: профиль → 10 релевантных контактов → короткий оффер.',feedBadge2:'🔥 Кейс',feedItem2Title:'Почему визуальная воронка поднимает отклик',feedItem2Text:'Прогресс и награды повышают шанс, что человек завершит целевое действие.',mTitle:'Твои контакты',mEmpty:'Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.',back:'Вернуться к поиску',pfHint:'Фото меняется в редактировании',edit:'Редактировать профиль',chLang:'Сменить язык',themeDark:'Тёмная тема',themeLight:'Светлая тема',fName:'Имя',fCity:'Город',fRole:'Роль',fSkills:'Навыки (через запятую)',fBio:'О себе',fPhoto:'Фото (можно несколько)',choose:'Выбрать фото',none:'Не выбрано',save:'Сохранить',cancel:'Отмена',biz:'🚀 Услуги для бизнеса',issue:'💡 Сообщить о проблеме',bizTitle:'Бизнес-услуги Hamkor Top',bizSub:'Мы помогаем компаниям находить клиентов и автоматизировать процессы.',biz1:'Разработка сайтов и приложений',biz2:'CRM-интеграции и автоматизация',biz3:'Маркетинг и стратегия',biz4:'Поиск сотрудников под ключ',bizCTA:'Оставить заявку',bizSent:'Заявка отправлена! Мы свяжемся с вами.',issueTitle:'Сообщить о проблеме или идее',issueSub:'Мы платим за полезные идеи и найденные проблемы в Узбекистане.',issuePlaceholder:'Опишите проблему или идею...',issueContact:'Ваш Telegram или телефон',issueReward:'За accepted идеи платим до 50 000 сум',issueSent:'Спасибо! Если идею примут — мы свяжемся и выплатим вознаграждение.',btnPost:'📝 Создать пост',postTitle:'Мастерская постов',postWrite:'✍️ Сам напишу',postAI:'🤖 AI поможет',postPlaceholder:'О чём хотите рассказать?',postHint:'Нажмите «AI поможет» — ассистент напишет пост в вашем стиле на основе профиля.',postSend:'📤 Отправить в канал',postCopy:'📋 Копировать',zeroTitle:'Карточки на сегодня закончились',zeroSub:'Чтобы открыть новых кандидатов, сделай одно действие:',zeroA:'Обновить профиль',zeroB:'Пригласить друга',aiBio:'✨ AI улучшит описание',aiPost:'📝 Сгенерировать пост из опыта'},
@@ -607,33 +677,262 @@ var feedTips=[
   {badge:'🎯 Нетворкинг',t:{ru:'Одно касание — один контакт',uz:'Bir teginish — bir kontakt',en:'One swipe — one contact'},b:{ru:'Каждый свайп вправо в Hamkor Top создаёт возможность. Не стесняйтесь проявлять интерес.',uz:'Hamkor Top-da har bir o\'ngga swipe imkoniyat yaratadi. Qiziqish bildirishdan tortinmang.',en:'Every right swipe in Hamkor Top creates an opportunity. Don\'t hesitate to show interest.'}}
 ];
 
+var FEED_STATE_KEY=KEY+':feedSocial:v1';
+var feedState={posts:{}};
+var openPostId=null;
+var replyToId=null;
+var activeRepostPostId=null;
+var activeMorePostId=null;
+var reactionLongPressTimer=null;
+var longPressTriggered=false;
+
+function loadFeedState(){
+  try{var s=localStorage.getItem(FEED_STATE_KEY);if(s)feedState=JSON.parse(s)||{posts:{}};}catch(e){feedState={posts:{}};}
+  if(!feedState.posts)feedState.posts={};
+}
+function saveFeedState(){try{localStorage.setItem(FEED_STATE_KEY,JSON.stringify(feedState));}catch(e){}}
+function hashStr(str){var h=0;for(var i=0;i<str.length;i++){h=((h<<5)-h)+str.charCodeAt(i);h|=0;}return Math.abs(h);}
+function postId(tip){return 'p_'+hashStr((tip.badge||'')+'|'+(tip.t&&tip.t.ru||'')+'|'+(tip.b&&tip.b.ru||''));}
+function getPostState(pid){
+  if(!feedState.posts[pid]){
+    feedState.posts[pid]={
+      reactions:{'❤️':0,'🔥':0,'💡':0,'🙌':0,'🎯':0,'👏':0},
+      userReaction:null,
+      comments:[],
+      reposts:0,
+      shares:0,
+      dislikes:0,
+      disliked:false
+    };
+  }
+  return feedState.posts[pid];
+}
+function seededCount(pid,min,max,salt){var span=max-min+1;return min+((hashStr(pid+':'+salt))%span);}
+function fmtTime(iso){
+  try{var d=new Date(iso);if(isNaN(d))return 'только что';return d.toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});}catch(e){return 'только что';}
+}
+function ensureSocialProgress(){
+  if(!ST.social)ST.social={commentsGiven:0,repostsMade:0,weekly:{week:'',comments:0,rewarded:false}};
+  if(!ST.social.weekly)ST.social.weekly={week:'',comments:0,rewarded:false};
+  var w=new Date();
+  var weekKey=w.getFullYear()+'-W'+Math.ceil((((w - new Date(w.getFullYear(),0,1)) / 86400000) + new Date(w.getFullYear(),0,1).getDay()+1)/7);
+  if(ST.social.weekly.week!==weekKey){ST.social.weekly={week:weekKey,comments:0,rewarded:false};}
+}
+function awardCommentXp(){
+  ensureSocialProgress();
+  ST.xp+=10;
+  ST.social.commentsGiven=(ST.social.commentsGiven||0)+1;
+  ST.social.weekly.comments=(ST.social.weekly.comments||0)+1;
+  reward(10,'Комментарий отправлен');
+  if(ST.social.weekly.comments>=5 && !ST.social.weekly.rewarded){
+    ST.social.weekly.rewarded=true;
+    ST.xp+=50;
+    reward(50,'Еженедельный челлендж: сундук');
+  }
+  if(ST.social.commentsGiven>=50 && ST.badges.indexOf('active_commenter')===-1){
+    ST.badges.push('active_commenter');
+    reward(0,'Бейдж: Активный участник');
+  }
+  upd();saveST();
+}
+function awardRepostXp(){
+  ensureSocialProgress();
+  ST.xp+=15;
+  ST.social.repostsMade=(ST.social.repostsMade||0)+1;
+  reward(15,'Репост выполнен');
+  if(ST.social.repostsMade>=10 && ST.badges.indexOf('inspirer')===-1){
+    ST.badges.push('inspirer');
+    reward(0,'Бейдж: Вдохновитель');
+  }
+  upd();saveST();
+}
+function autosizeComment(){
+  var t=el('commentInput');if(!t)return;
+  t.style.height='auto';
+  t.style.height=Math.min(120,Math.max(40,t.scrollHeight))+'px';
+}
+function closeModal(id){var m=el(id);if(m)m.style.display='none';}
+function openModal(id){var m=el(id);if(m)m.style.display='flex';}
+
+function renderComments(postIdValue){
+  var list=el('commentsList'); if(!list)return;
+  var st=getPostState(postIdValue);
+  if(!st.comments.length){list.innerHTML='<div class="note" style="padding:8px 4px">Пока нет комментариев. Будь первым ✨</div>';return;}
+  var html='';
+  st.comments.forEach(function(c){
+    var isReply=!!c.parentId;
+    html+='<div class="c-item '+(isReply?'reply':'')+'">'
+      +'<div class="c-top"><span class="c-author">'+(c.author||'User')+'</span><span class="c-time">'+fmtTime(c.createdAt)+'</span></div>'
+      +'<div class="c-text">'+c.text.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</div>'
+      +(isReply?'':'<button class="c-reply" data-cid="'+c.id+'">Ответить</button>')
+      +'</div>';
+  });
+  list.innerHTML=html;
+  list.querySelectorAll('.c-reply').forEach(function(btn){
+    btn.onclick=function(){replyToId=btn.getAttribute('data-cid');el('commentInput').placeholder='Ответить на комментарий...';el('commentInput').focus();};
+  });
+}
+function openComments(postIdValue){
+  openPostId=postIdValue; replyToId=null;
+  el('commentInput').value='';
+  el('commentInput').placeholder='Написать комментарий...';
+  autosizeComment();
+  renderComments(postIdValue);
+  openModal('commentsModal');
+}
+function handleSendComment(){
+  if(!openPostId)return;
+  var t=(el('commentInput').value||'').trim();
+  if(!t)return;
+  var st=getPostState(openPostId);
+  var parent=null;
+  if(replyToId){
+    var p=st.comments.find(function(x){return x.id===replyToId;});
+    if(p&&p.parentId)parent=null; else parent=replyToId;
+  }
+  var c={id:'c_'+Date.now()+Math.floor(Math.random()*1000),author:ST.name||'Вы',text:t,parentId:parent,createdAt:new Date().toISOString()};
+  st.comments.push(c);
+  saveFeedState();
+  awardCommentXp();
+
+  // notify author + mentions via bot backend if available
+  var mentions=(t.match(/@([a-zA-Z0-9_]+)/g)||[]).map(function(x){return x.slice(1);});
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'postComment',postId:openPostId,text:t,mentions:mentions,parentId:parent}));}catch(e){}
+
+  replyToId=null;
+  el('commentInput').value='';
+  el('commentInput').placeholder='Написать комментарий...';
+  autosizeComment();
+  renderComments(openPostId);
+  renderFeed();
+}
+function toggleReaction(postIdValue,emoji){
+  var st=getPostState(postIdValue);
+  var prev=st.userReaction;
+  if(prev===emoji){
+    st.reactions[emoji]=Math.max(0,(st.reactions[emoji]||0)-1);
+    st.userReaction=null;
+  }else{
+    if(prev){st.reactions[prev]=Math.max(0,(st.reactions[prev]||0)-1);}
+    st.reactions[emoji]=(st.reactions[emoji]||0)+1;
+    st.userReaction=emoji;
+    ST.xp+=2; reward(2,'Реакция отправлена'); upd(); saveST();
+  }
+  saveFeedState();
+  renderFeed();
+}
+function openRepostSheet(postIdValue){activeRepostPostId=postIdValue;openModal('repostModal');}
+function doRepost(withThought){
+  if(!activeRepostPostId)return;
+  var st=getPostState(activeRepostPostId);
+  st.reposts=(st.reposts||0)+1;
+  saveFeedState();
+  awardRepostXp();
+  if(withThought){
+    closeModal('repostModal');
+    openPostWorkshop();
+    if(el('postText'))el('postText').value='Мой взгляд на пост из ленты:\n\n';
+  }else{
+    closeModal('repostModal');
+    alert('Репост добавлен в вашу ленту.');
+  }
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'repost',postId:activeRepostPostId,withThought:!!withThought}));}catch(e){}
+  renderFeed();
+}
+function sharePost(postIdValue,title){
+  var st=getPostState(postIdValue);
+  st.shares=(st.shares||0)+1; saveFeedState(); renderFeed();
+  var url='https://t.me/hamkor_top_bot';
+  var text='Hamkor Top: '+title;
+  if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.openTelegramLink){
+    var shareUrl='https://t.me/share/url?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text);
+    try{window.Telegram.WebApp.openTelegramLink(shareUrl);return;}catch(e){}
+  }
+  if(navigator.share){navigator.share({title:'Hamkor Top',text:text,url:url}).catch(function(){});}
+  else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text+' '+url);alert('Ссылка скопирована');}
+}
+function openMore(postIdValue){activeMorePostId=postIdValue;openModal('moreModal');}
+function markDislike(){
+  if(!activeMorePostId)return;
+  var st=getPostState(activeMorePostId);
+  st.disliked=!st.disliked;
+  if(st.disliked)st.dislikes=(st.dislikes||0)+1; else st.dislikes=Math.max(0,(st.dislikes||1)-1);
+  saveFeedState(); closeModal('moreModal'); renderFeed();
+  alert(st.disliked?'Пост скрыт из приоритета вашей ленты':'Пост возвращён в обычную ленту');
+}
+
 function renderFeed(){
   var c=el('feedCards');if(!c)return;
+  loadFeedState();
   var l=ST.lang||'ru';var html='';
   var allTips=feedTips.slice();
-  
-  // try to load curated feed.json
+
   try{
     var xhr=new XMLHttpRequest();
-    xhr.open('GET','feed.json?v=1',false);
+    xhr.open('GET','feed.json?v=2',false);
     xhr.send();
     if(xhr.status===200){
       var curated=JSON.parse(xhr.responseText);
       allTips=allTips.concat(curated);
     }
   }catch(e){}
-  
-  // shuffle
+
   for(var i=allTips.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=allTips[i];allTips[i]=allTips[j];allTips[j]=tmp;}
   var count=Math.min(5,allTips.length);
-  for(var i=0;i<count;i++){
-    var tip=allTips[i];
-    html+='<div class="card" style="position:relative;height:auto;padding:14px"><div class="card-badge">'+tip.badge+'</div><div style="font-weight:700;margin-bottom:6px">'+tip.t[l]+'</div><div style="font-size:13px;color:var(--muted)">'+tip.b[l]+'</div></div>';
+  for(var k=0;k<count;k++){
+    var tip=allTips[k];
+    var pid=postId(tip);
+    var pst=getPostState(pid);
+    var likesTotal=Object.values(pst.reactions).reduce(function(a,b){return a+b;},0) || seededCount(pid,3,19,'likes');
+    var commentsCount=(pst.comments&&pst.comments.length)||seededCount(pid,0,8,'comments');
+    var repostsCount=(pst.reposts||0)||seededCount(pid,0,6,'reposts');
+    var shareCount=(pst.shares||0);
+    var userReact=pst.userReaction||'';
+    var title=(tip.t&&tip.t[l])?tip.t[l]:(tip.t&&tip.t.ru?tip.t.ru:'');
+    var body=(tip.b&&tip.b[l])?tip.b[l]:(tip.b&&tip.b.ru?tip.b.ru:'');
+    html+='<div class="card" style="position:relative;height:auto;padding:14px" data-post-id="'+pid+'">'
+      +'<div class="card-badge">'+(tip.badge||'📰')+'</div>'
+      +'<div style="font-weight:700;margin-bottom:6px">'+title+'</div>'
+      +'<div style="font-size:13px;color:var(--muted)">'+body+'</div>'
+      +'<div class="feed-actions">'
+      +'<button class="feed-act '+(userReact?'active':'')+'" data-act="react" data-post="'+pid+'">'+(userReact||'❤️')+' '+likesTotal+'</button>'
+      +'<button class="feed-act" data-act="comment" data-post="'+pid+'">💬 '+commentsCount+'</button>'
+      +'<button class="feed-act" data-act="repost" data-post="'+pid+'">🔄 '+repostsCount+'</button>'
+      +'<button class="feed-act" data-act="share" data-post="'+pid+'" data-title="'+title.replace(/"/g,'&quot;')+'">📤'+(shareCount?(' '+shareCount):'')+'</button>'
+      +'</div>'
+      +'<div class="reaction-picker" id="rp_'+pid+'">'
+      +'<button class="reaction-pill" data-emoji="❤️" data-post="'+pid+'">❤️</button>'
+      +'<button class="reaction-pill" data-emoji="🔥" data-post="'+pid+'">🔥</button>'
+      +'<button class="reaction-pill" data-emoji="💡" data-post="'+pid+'">💡</button>'
+      +'<button class="reaction-pill" data-emoji="🙌" data-post="'+pid+'">🙌</button>'
+      +'<button class="reaction-pill" data-emoji="🎯" data-post="'+pid+'">🎯</button>'
+      +'<button class="reaction-pill" data-emoji="👏" data-post="'+pid+'">👏</button>'
+      +'</div>'
+      +'<div class="feed-more-wrap"><button class="feed-more" data-act="more" data-post="'+pid+'">⋯</button></div>'
+      +'<div class="feed-meta"><span class="mini-av">👤</span><span>'+(ST.name||'Автор')+'</span><span>•</span><span>'+fmtTime(new Date().toISOString())+'</span></div>'
+      +'</div>';
   }
-  // leaderboard
+
   var place=Math.max(1,120-Math.floor(ST.xp/8));
   html+='<div class="card" style="position:relative;height:auto;padding:14px"><div class="card-badge" data-t="lbBadge">🏆 Лига</div><div style="font-weight:700;margin-bottom:6px" data-t="lbTitle">Рейтинг недели</div><div style="font-size:13px;color:var(--muted)"><span data-t="lbYou">Ты:</span> <b id="lbPlace">#'+place+'</b> · XP <b id="lbScore">'+ST.xp+'</b></div></div>';
   c.innerHTML=html;
+
+  c.querySelectorAll('[data-act="comment"]').forEach(function(btn){btn.onclick=function(){openComments(btn.getAttribute('data-post'));};});
+  c.querySelectorAll('[data-act="repost"]').forEach(function(btn){btn.onclick=function(){openRepostSheet(btn.getAttribute('data-post'));};});
+  c.querySelectorAll('[data-act="share"]').forEach(function(btn){btn.onclick=function(){sharePost(btn.getAttribute('data-post'),btn.getAttribute('data-title')||'Hamkor Top');};});
+  c.querySelectorAll('[data-act="more"]').forEach(function(btn){btn.onclick=function(){openMore(btn.getAttribute('data-post'));};});
+  c.querySelectorAll('[data-act="react"]').forEach(function(btn){
+    var pid=btn.getAttribute('data-post');
+    btn.onclick=function(){
+      if(longPressTriggered){longPressTriggered=false;return;}
+      var st=getPostState(pid);
+      toggleReaction(pid,st.userReaction||'❤️');
+    };
+    btn.addEventListener('contextmenu',function(e){e.preventDefault();var rp=el('rp_'+pid);if(rp)rp.style.display=rp.style.display==='flex'?'none':'flex';});
+    btn.addEventListener('touchstart',function(){longPressTriggered=false;reactionLongPressTimer=setTimeout(function(){var rp=el('rp_'+pid);if(rp)rp.style.display='flex';longPressTriggered=true;},480);},{passive:true});
+    btn.addEventListener('touchend',function(){if(reactionLongPressTimer)clearTimeout(reactionLongPressTimer);},{passive:true});
+  });
+  c.querySelectorAll('.reaction-pill').forEach(function(btn){btn.onclick=function(){toggleReaction(btn.getAttribute('data-post'),btn.getAttribute('data-emoji')); var rp=el('rp_'+btn.getAttribute('data-post')); if(rp)rp.style.display='none';};});
 }
 function upd(){
   refs.xpV.textContent=ST.xp;refs.lvlV.textContent=ST.lvl;refs.strkV.textContent=ST.streak||1;refs.matchV.textContent=ST.contacts;
@@ -765,6 +1064,22 @@ document.addEventListener('click',function(e){
   if(e.target.closest('#fabMenu')||e.target.closest('#fabBtn')||e.target.closest('#navPlusBtn'))return;
   m.style.display='none';
 });
+
+if(el('commentsClose'))el('commentsClose').onclick=function(){closeModal('commentsModal');};
+if(el('commentSend'))el('commentSend').onclick=handleSendComment;
+if(el('commentInput'))el('commentInput').addEventListener('input',autosizeComment);
+if(el('repostClose'))el('repostClose').onclick=function(){closeModal('repostModal');};
+if(el('repostCancel'))el('repostCancel').onclick=function(){closeModal('repostModal');};
+if(el('repostPlain'))el('repostPlain').onclick=function(){doRepost(false);};
+if(el('repostWithThought'))el('repostWithThought').onclick=function(){doRepost(true);};
+if(el('moreClose'))el('moreClose').onclick=function(){closeModal('moreModal');};
+if(el('moreCancel'))el('moreCancel').onclick=function(){closeModal('moreModal');};
+if(el('markDislike'))el('markDislike').onclick=markDislike;
+['commentsModal','repostModal','moreModal'].forEach(function(mid){
+  var mm=el(mid);
+  if(mm)mm.addEventListener('click',function(ev){if(ev.target===mm)mm.style.display='none';});
+});
+
 var intQ=[
   {q:'Как вы обычно начинаете свой пост или статью?',ph:'Например: с вопроса, с факта или с истории.'},
   {q:'Какие слова или фразы вы часто используете в общении?',ph:'Например: «инновации», «стратегия», «давайте обсудим».'},
