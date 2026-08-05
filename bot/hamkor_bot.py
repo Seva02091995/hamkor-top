@@ -32,6 +32,8 @@ def add_to_crm(lead_type, user_id, username, data):
 
 INTERVIEW_DRAFTS_FILE = DATA_DIR / "interview_drafts.json"
 TONE_PROFILES_FILE = DATA_DIR / "tone_profiles.json"
+FEED_EVENTS_FILE = DATA_DIR / "feed_events.json"
+FEED_METRICS_FILE = DATA_DIR / "feed_metrics.json"
 
 def load_json(path, default=None):
     if default is None: default = {}
@@ -223,6 +225,118 @@ async def on_webapp_data(message: types.Message):
             await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
         except: pass
         await message.answer("✅ Интервью пройдено! Мы скоро вернёмся с результатами анализа стиля.")
+
+    # --- События ленты (A/B-метрики) ---
+    elif action == "feedEvent":
+        events = load_json(FEED_EVENTS_FILE, [])
+        events.append({
+            "tg_id": user_id,
+            "username": username,
+            "event": data.get("event", ""),
+            "postId": data.get("postId", ""),
+            "ab": data.get("ab", "A"),
+            "ts": data.get("ts", "")
+        })
+        save_json(FEED_EVENTS_FILE, events)
+
+        # Агрегация метрик
+        metrics = load_json(FEED_METRICS_FILE, {})
+        ab = data.get("ab", "A")
+        if ab not in metrics:
+            metrics[ab] = {"readMore": 0, "detailOpens": 0, "totalUsers": set(), "byEvent": {}}
+        ev = data.get("event", "")
+        if ev:
+            if ev not in metrics[ab].get("byEvent", {}):
+                metrics[ab].setdefault("byEvent", {})[ev] = 0
+            metrics[ab]["byEvent"][ev] += 1
+            if ev == "readMore":
+                metrics[ab]["readMore"] = metrics[ab].get("readMore", 0) + 1
+            elif ev == "detailOpen":
+                metrics[ab]["detailOpens"] = metrics[ab].get("detailOpens", 0) + 1
+        if isinstance(metrics[ab].get("totalUsers"), set):
+            metrics[ab]["totalUsers"].add(user_id)
+        else:
+            metrics[ab]["totalUsers"] = {user_id}
+        save_json(FEED_METRICS_FILE, metrics)
+
+    # --- AI-пост ---
+    elif action == "aiPost":
+        prompt = data.get("prompt", "")
+        owner_msg = f"🤖 <b>AI-пост от @{username}:</b>\n\n<code>{prompt[:300]}</code>"
+        try: await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
+        except: pass
+        await message.answer("🤖 Генерирую пост... \n\n_Пока AI анализирует твой профиль, попробуй «Интервью со мной» — мы определим твой стиль и все посты станут точнее._", parse_mode="Markdown")
+
+    # --- Публикация мысли в ленту ---
+    elif action == "postThought":
+        text = data.get("text", "")
+        lead = add_to_crm("postThought", user_id, username, data)
+        owner_msg = f"✏️ <b>Пост от @{username}:</b>\n\n{text[:500]}"
+        try: await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
+        except: pass
+        await message.answer("✅ Мысль опубликована!")
+
+    # --- Отправка поста в канал ---
+    elif action == "postToChannel":
+        text = data.get("text", "")
+        lead = add_to_crm("postToChannel", user_id, username, data)
+        owner_msg = f"📤 <b>Пост в канал от @{username}:</b>\n\n{text[:800]}"
+        try: await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
+        except: pass
+        await message.answer("✅ Отправлено в канал!")
+
+    # --- Комментарий ---
+    elif action == "postComment":
+        post_id = data.get("postId", "")
+        text = data.get("text", "")
+        mentions = data.get("mentions", [])
+        add_to_crm("comment", user_id, username, data)
+        owner_msg = f"💬 <b>Комментарий от @{username}:</b>\n\nПост: <code>{post_id}</code>\nТекст: {text[:300]}"
+        if mentions:
+            owner_msg += f"\nУпоминания: {', '.join(mentions[:5])}"
+        try: await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
+        except: pass
+
+    # --- Репост ---
+    elif action == "repost":
+        post_id = data.get("postId", "")
+        with_thought = data.get("withThought", False)
+        add_to_crm("repost", user_id, username, data)
+        owner_msg = f"🔄 <b>Репост от @{username}:</b> <code>{post_id}</code>" + (" (с мыслью)" if with_thought else "")
+        try: await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
+        except: pass
+
+    # --- Генерация изображения ---
+    elif action == "genImage":
+        prompt = data.get("prompt", "").strip()
+        if not prompt:
+            await message.answer("❌ Пустой запрос.")
+            return
+
+        await message.answer("🎨 Генерирую изображение... Подожди 10–20 секунд ⏳")
+
+        encoded_prompt = urllib.parse.quote(prompt)
+        image_url = f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=1024&height=1024&nologo=true"
+
+        try:
+            caption = f"🖼 <b>{prompt[:100]}</b>\n\n_Сгенерировано AI для @{username}_"
+            await message.bot.send_photo(
+                chat_id=message.chat.id,
+                photo=image_url,
+                caption=caption,
+                parse_mode="HTML"
+            )
+        except Exception as e:
+            logging.error(f"Image gen failed: {e}")
+            await message.answer(
+                "⚠️ Не удалось сгенерировать изображение.\n\n"
+                f"Попробуй другой запрос или открой ссылку вручную:\n{image_url}"
+            )
+
+        add_to_crm("genImage", user_id, username, data)
+        owner_msg = f"🖼 <b>Генерация от @{username}:</b> «{prompt[:120]}»"
+        try: await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
+        except: pass
 
     else:
         await message.answer("✅ Данные получены")
