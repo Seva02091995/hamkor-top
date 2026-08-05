@@ -192,8 +192,9 @@ body.dark .streak-day.on{color:#FBBF24}
 .sheet-btn.primary{background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;border:none}
 
 .feed-title{font-size:19px;font-weight:800;line-height:1.25;margin-bottom:8px;color:var(--ink)}
-.feed-snippet{font-size:14px;line-height:1.45;color:var(--muted);white-space:pre-wrap}
-.feed-readmore{display:inline-block;margin-top:6px;border:none;background:transparent;color:var(--blue);font-weight:700;font-size:14px;cursor:pointer;padding:0}
+.feed-snippet{font-size:14px;line-height:1.45;color:var(--muted);white-space:pre-wrap;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;min-height:calc(1.45em * var(--snippet-lines,4));-webkit-line-clamp:var(--snippet-lines,4)}
+.feed-readmore{display:inline-block;margin-top:6px;border:none;background:transparent;color:var(--blue);font-weight:700;font-size:14px;cursor:pointer;padding:0;text-decoration:none}
+.feed-readmore:hover{text-decoration:underline}
 .feed-media{margin-top:10px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--card2)}
 .feed-media img,.feed-media video{width:100%;display:block;max-height:320px;object-fit:cover}
 .detail-modal{align-items:flex-end}
@@ -743,15 +744,22 @@ function fmtTime(iso){
   try{var d=new Date(iso);if(isNaN(d))return 'только что';return d.toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});}catch(e){return 'только что';}
 }
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-function ensureFeedExp(){
-  if(!ST.feedExp){ST.feedExp={ab:(Math.random()<0.5?'A':'B'),readMore:0,detailOpens:0};saveST();}
+function getFeedPreviewConfig(){
+  var w=window.innerWidth||390, h=window.innerHeight||800;
+  if(w<=360 || h<=680) return {lines:3,charLimit:170,variant:'mobile-3'};   // iPhone SE class
+  if(w>=430 || h>=920) return {lines:5,charLimit:300,variant:'large-5'};    // Pro Max class
+  return {lines:4,charLimit:240,variant:'default-4'};                       // standard
 }
-function makeSnippet(text){
-  ensureFeedExp();
-  var limit=ST.feedExp.ab==='A'?210:240;
+function ensureFeedExp(){
+  var cfg=getFeedPreviewConfig();
+  if(!ST.feedExp){ST.feedExp={ab:cfg.variant,readMore:0,detailOpens:0};}
+  else{ST.feedExp.ab=cfg.variant;}
+  saveST();
+}
+function makeSnippet(text,charLimit){
   var t=String(text||'').trim();
-  if(t.length<=limit)return {text:t,truncated:false};
-  return {text:t.slice(0,limit).replace(/\s+\S*$/,'')+'…',truncated:true};
+  if(t.length<=charLimit)return {text:t,truncated:false};
+  return {text:t.slice(0,charLimit).replace(/\s+\S*$/,'')+'…',truncated:true};
 }
 function trackFeedEvent(kind,pid){
   ensureFeedExp();
@@ -893,6 +901,7 @@ function renderFeed(){
   var c=el('feedCards');if(!c)return;
   loadFeedState(); ensureFeedExp(); feedLookup={};
   var l=ST.lang||'ru', html='', allTips=feedTips.slice();
+  var previewCfg=getFeedPreviewConfig();
   try{var xhr=new XMLHttpRequest();xhr.open('GET','feed.json?v=3',false);xhr.send();if(xhr.status===200){allTips=allTips.concat(JSON.parse(xhr.responseText));}}catch(e){}
 
   for(var i=allTips.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=allTips[i];allTips[i]=allTips[j];allTips[j]=tmp;}
@@ -903,14 +912,14 @@ function renderFeed(){
     var body=(tip.b&&tip.b[l])?tip.b[l]:(tip.b&&tip.b.ru?tip.b.ru:'');
     var media=tip.media||tip.image||tip.video||'';
     feedLookup[pid]={title:title,body:body,media:media,badge:(tip.badge||'📰'),author:(tip.author||'Hamkor Top'),ts:new Date().toISOString()};
-    var sn=makeSnippet(body);
+    var sn=makeSnippet(body,previewCfg.charLimit);
     var mediaHtml='';
     if(media){mediaHtml=/\.(mp4|webm|ogg)$/i.test(media)?'<div class="feed-media"><video controls src="'+esc(media)+'"></video></div>':'<div class="feed-media"><img src="'+esc(media)+'" alt="media"/></div>';}
     html+='<div class="card" style="position:relative;height:auto;padding:14px" data-post-id="'+pid+'">'
       +'<div class="card-badge">'+esc(tip.badge||'📰')+'</div>'
       +'<div class="feed-title">'+esc(title)+'</div>'
-      +'<div class="feed-snippet feed-open" data-act="openDetail" data-post="'+pid+'">'+esc(sn.text)+'</div>'
-      +'<button class="feed-readmore" data-act="readMore" data-post="'+pid+'">'+(sn.truncated?'Читать далее':'Показать полностью')+'</button>'
+      +'<div class="feed-snippet feed-open" style="--snippet-lines:'+previewCfg.lines+'" data-act="openDetail" data-post="'+pid+'">'+esc(sn.text)+'</div>'
+      +(sn.truncated?('<button class="feed-readmore" data-act="readMore" data-post="'+pid+'">Читать далее</button>'):'')
       +mediaHtml
       +'<div class="feed-actions" id="fa_'+pid+'"></div>'
       +'<div class="reaction-picker" id="rp_'+pid+'">'
