@@ -1,36 +1,282 @@
+#!/usr/bin/env python3
 """
-feed_curator.py — AI-powered feed curator for Hamkor Top
-Run daily to refresh docs/feed.json with curated career/IT content.
-Uses a simple rotation of pre-written cards; can be extended with real AI API calls.
+Zero-cost feed curator for Hamkor Top.
+
+Pipeline:
+1) Collect fresh items from Google News RSS (no API key required)
+2) Enrich each item via Gemini Free Tier when GEMINI_API_KEY is set
+3) Fallback to local heuristic summary when AI is unavailable
+4) Save final cards to docs/feed.json
+
+No Aizor tokens are used.
 """
+
+from __future__ import annotations
+
 import json
-import random
 import os
+import random
+import re
+import sys
+import urllib.parse
+import urllib.request
+import xml.etree.ElementTree as ET
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
+from html import unescape
+from pathlib import Path
+from typing import Dict, List, Optional
 
-FEED_PATH = os.path.join(os.path.dirname(__file__), '..', 'docs', 'feed.json')
+BASE_DIR = Path(__file__).resolve().parents[1]
+FEED_PATH = BASE_DIR / "docs" / "feed.json"
 
-CURATED_CARDS = [
-    {"badge":"📈 Тренд","t":{"ru":"IT-экспорт Узбекистана: курс на $1 млрд","uz":"O'zbekiston IT-eksporti: $1 mlrd ga yo'l","en":"Uzbekistan IT exports: heading to $1B"},"b":{"ru":"К 2025 году страна планирует экспорт IT-услуг на $1 млрд. Резидентов IT Park — более 3200. Спрос на разработчиков растёт на 42% в год.","uz":"2025 yilga borib mamlakat IT-xizmatlar eksportini $1 mlrd ga yetkazishni rejalashtirmoqda. IT Park rezidentlari 3200 dan ortiq. Dasturchilarga talab yiliga 42% o'smoqda.","en":"By 2025, the country plans $1B in IT service exports. IT Park residents: 3200+. Developer demand grows 42% annually."}},
-    {"badge":"💰 Зарплаты","t":{"ru":"Зарплаты IT в Узбекистане: реальные цифры","uz":"O'zbekistonda IT maoshlari: haqiqiy raqamlar","en":"IT salaries in Uzbekistan: real numbers"},"b":{"ru":"ML-инженер: 15–40 млн сум. Data Scientist: 12–30 млн. DevOps: 14–30 млн. Рост реальных зарплат в 2026 — +9.5%.","uz":"ML-muhandis: 15–40 mln so'm. Data Scientist: 12–30 mln. DevOps: 14–30 mln. 2026-yilda real ish haqi +9.5% o'sdi.","en":"ML Engineer: 15–40M UZS. Data Scientist: 12–30M. DevOps: 14–30M. Real wage growth in 2026: +9.5%."}},
-    {"badge":"🌐 Удалёнка","t":{"ru":"Digital Nomad: визы в Центральной Азии","uz":"Digital Nomad: Markaziy Osiyoda vizalar","en":"Digital Nomad: visas in Central Asia"},"b":{"ru":"Кыргызстан — до 10 лет для digital nomads. Казахстан — Neo Nomad Visa. Узбекистан вводит IT-визу. Идеально для удалёнщиков.","uz":"Qirg'iziston — digital nomadlar uchun 10 yilgacha. Qozog'iston — Neo Nomad Visa. O'zbekiston IT-viza joriy qilmoqda.","en":"Kyrgyzstan — up to 10 years for digital nomads. Kazakhstan — Neo Nomad Visa. Uzbekistan introduces IT visa."}},
-    {"badge":"🚀 Стартапы","t":{"ru":"Как запустить стартап в Узбекистане","uz":"O'zbekistonda startapni qanday boshlash kerak","en":"How to launch a startup in Uzbekistan"},"b":{"ru":"IT Park: инкубация, менторы, юрподдержка. 13 венчурных фондов, $145M капитала. Astana Hub, nFactorial — гранты и акселерация.","uz":"IT Park: inkubatsiya, mentorlar, yuridik yordam. 13 venchur fond, $145M kapital. Astana Hub, nFactorial — grant va akseleratsiya.","en":"IT Park: incubation, mentors, legal support. 13 VC funds, $145M capital. Astana Hub, nFactorial — grants and acceleration."}},
-    {"badge":"🎯 Навыки","t":{"ru":"Топ-3 навыка для IT-карьеры в 2026","uz":"2026-yilda IT-karyera uchun top-3 malaka","en":"Top 3 skills for IT career in 2026"},"b":{"ru":"1. AI/ML (Prompt Engineering). 2. Облачные технологии (AWS/Azure). 3. Кибербезопасность. Работодатели смотрят на практику, а не на диплом.","uz":"1. AI/ML (Prompt Engineering). 2. Bulut texnologiyalari (AWS/Azure). 3. Kiberxavfsizlik. Ish beruvchilar diplomga emas, amaliyotga qaraydi.","en":"1. AI/ML (Prompt Engineering). 2. Cloud (AWS/Azure). 3. Cybersecurity. Employers value practice over diplomas."}},
-    {"badge":"🤝 Нетворкинг","t":{"ru":"70% вакансий закрываются по знакомству","uz":"70% vakansiyalar tanish orqali yopiladi","en":"70% of jobs are filled through networking"},"b":{"ru":"Ходите на митапы: ITOSH, Tech Summit, ICT Week. 10 новых контактов в день меняют карьеру быстрее, чем 100 откликов на hh.uz.","uz":"Mitinglarga boring: ITOSH, Tech Summit, ICT Week. Kuniga 10 ta yangi kontakt — 100 ta hh.uz otklikidan tezroq karyerani o'zgartiradi.","en":"Attend meetups: ITOSH, Tech Summit, ICT Week. 10 new contacts a day change your career faster than 100 hh.uz applications."}},
-    {"badge":"📱 Фриланс","t":{"ru":"Где брать заказы фрилансеру из Узбекистана","uz":"O'zbekistonlik frilanser uchun buyurtmalar qayerdan olinadi","en":"Where to find freelance gigs from Uzbekistan"},"b":{"ru":"Локально: Myfreelance.uz, Mohirlar.uz. Глобально: Upwork, Kwork. Совет: начните с 3 маленьких проектов для портфолио, затем поднимайте ставку.","uz":"Mahalliy: Myfreelance.uz, Mohirlar.uz. Global: Upwork, Kwork. Maslahat: portfolio uchun 3 ta kichik loyihadan boshlang, keyin stavkani oshiring.","en":"Local: Myfreelance.uz, Mohirlar.uz. Global: Upwork, Kwork. Tip: start with 3 small projects for portfolio, then raise your rate."}},
-    {"badge":"📊 Аналитика","t":{"ru":"Python, Flutter, AI — что учат в Узбекистане","uz":"Python, Flutter, AI — O'zbekistonda nima o'rganiladi","en":"Python, Flutter, AI — what Uzbekistan is learning"},"b":{"ru":"Самые популярные курсы: Python (38%), Flutter (22%), AI/ML (18%). IT Park запустил «Один миллион программистов» — бесплатное обучение основам.","uz":"Eng mashhur kurslar: Python (38%), Flutter (22%), AI/ML (18%). IT Park «Bir million dasturchi» loyihasini boshladi — bepul asosiy ta'lim.","en":"Most popular courses: Python (38%), Flutter (22%), AI/ML (18%). IT Park launched 'One Million Programmers' — free basic training."}},
-    {"badge":"🏆 Конкурс","t":{"ru":"IT Job Fair 2026: найдите работу мечты","uz":"IT Job Fair 2026: orzuingizdagi ishni toping","en":"IT Job Fair 2026: find your dream job"},"b":{"ru":"Ведущие компании Узбекистана проведут ярмарку вакансий. Готовьте резюме и портфолио. Лучшие кандидаты получают оффер на месте.","uz":"O'zbekistonning yetakchi kompaniyalari vakansiya yarmarkasini o'tkazadi. Rezyume va portfolio tayyorlang. Eng yaxshi nomzodlar joyida offer oladi.","en":"Leading Uzbek companies will hold a job fair. Prepare your CV and portfolio. Top candidates get offers on the spot."}},
+FEED_SIZE = int(os.getenv("FEED_SIZE", "7"))
+RSS_LANG = os.getenv("RSS_LANG", "ru")
+RSS_REGION = os.getenv("RSS_REGION", "UZ")
+
+RSS_QUERIES = [
+    "IT стартапы карьера AI Узбекистан",
+    "remote work career development engineering",
+    "product management startups Central Asia",
 ]
 
-def refresh_feed():
-    """Refresh feed.json with a shuffled selection of cards."""
-    cards = CURATED_CARDS.copy()
-    random.shuffle(cards)
-    selected = cards[:7]  # 7 cards per day
-    
-    with open(FEED_PATH, 'w', encoding='utf-8') as f:
-        json.dump(selected, f, ensure_ascii=False, indent=2)
-    
-    print(f"Feed refreshed: {len(selected)} cards written to {FEED_PATH}")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
+GEMINI_URL = (
+    "https://generativelanguage.googleapis.com/v1beta/models/"
+    f"{GEMINI_MODEL}:generateContent"
+)
 
-if __name__ == '__main__':
-    refresh_feed()
+USER_AGENT = "HamkorTopFeedBot/1.0 (+https://github.com/Seva02091995/hamkor-top)"
+
+BADGE_RULES = [
+    ("🤖 AI", ["ai", "ml", "machine learning", "llm", "генератив", "искусственный интеллект"]),
+    ("🚀 Стартапы", ["startup", "funding", "venture", "seed", "series", "стартап", "инвести"]),
+    ("💼 Карьера", ["career", "job", "hiring", "cv", "resume", "ваканс", "карьер", "собесед"]),
+    ("🌍 Удалёнка", ["remote", "distributed", "freelance", "digital nomad", "удал", "фриланс"]),
+    ("📈 Тренд", ["trend", "growth", "рынок", "report", "analytics", "аналит"]),
+]
+
+
+def log(msg: str) -> None:
+    print(msg, flush=True)
+
+
+def strip_html(text: str) -> str:
+    if not text:
+        return ""
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = unescape(text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def parse_pub_date(raw: str) -> datetime:
+    try:
+        dt = parsedate_to_datetime(raw)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt
+    except Exception:
+        return datetime.now(tz=timezone.utc)
+
+
+def google_news_rss_url(query: str) -> str:
+    q = urllib.parse.quote_plus(query)
+    return (
+        "https://news.google.com/rss/search"
+        f"?q={q}&hl={RSS_LANG}&gl={RSS_REGION}&ceid={RSS_REGION}:{RSS_LANG}"
+    )
+
+
+def fetch_url(url: str, timeout: int = 20) -> str:
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return resp.read().decode("utf-8", errors="ignore")
+
+
+def fetch_rss_items(url: str) -> List[Dict]:
+    xml_text = fetch_url(url)
+    root = ET.fromstring(xml_text)
+    out: List[Dict] = []
+
+    for item in root.findall("./channel/item"):
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        desc_raw = item.findtext("description") or ""
+        desc = strip_html(desc_raw)
+        pub_raw = item.findtext("pubDate") or ""
+        pub_dt = parse_pub_date(pub_raw)
+
+        if not title or not link:
+            continue
+
+        out.append(
+            {
+                "title": title,
+                "link": link,
+                "snippet": desc,
+                "published": pub_dt.isoformat(),
+                "published_ts": pub_dt.timestamp(),
+            }
+        )
+
+    return out
+
+
+def dedupe_items(items: List[Dict]) -> List[Dict]:
+    seen = set()
+    result = []
+    for it in sorted(items, key=lambda x: x.get("published_ts", 0), reverse=True):
+        key = (it.get("link") or "").strip().lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append(it)
+    return result
+
+
+def pick_badge(text: str) -> str:
+    low = text.lower()
+    for badge, keywords in BADGE_RULES:
+        if any(k in low for k in keywords):
+            return badge
+    return "📰 Новости"
+
+
+def fallback_card(item: Dict) -> Dict:
+    title = item["title"].strip()
+    snippet = (item.get("snippet") or "").strip()
+    short = snippet[:180].rstrip(" .")
+    if short:
+        ru = f"{short}. Подробнее: {item['link']}"
+    else:
+        ru = f"Свежая публикация по теме карьеры и технологий. Подробнее: {item['link']}"
+
+    badge = pick_badge(f"{title} {snippet}")
+
+    return {
+        "badge": badge,
+        "t": {
+            "ru": title,
+            "uz": title,
+            "en": title,
+        },
+        "b": {
+            "ru": ru,
+            "uz": ru,
+            "en": ru,
+        },
+    }
+
+
+def call_gemini(item: Dict) -> Optional[Dict]:
+    if not GEMINI_API_KEY:
+        return None
+
+    prompt = (
+        "Ты редактор короткой ленты Hamkor Top для аудитории 16-45 лет. "
+        "Верни СТРОГО JSON без markdown и без пояснений. Формат:\n"
+        "{\n"
+        "  \"badge\": \"эмодзи+категория\",\n"
+        "  \"t\": {\"ru\":\"...\",\"uz\":\"...\",\"en\":\"...\"},\n"
+        "  \"b\": {\"ru\":\"1-2 предложения\",\"uz\":\"1-2 gap\",\"en\":\"1-2 sentences\"}\n"
+        "}\n"
+        "Требования: простой язык, полезность для карьеры/технологий/стартапов, "
+        "без кликбейта, максимум 220 символов в каждом описании.\n\n"
+        f"Заголовок: {item['title']}\n"
+        f"Сниппет: {item.get('snippet','')}\n"
+        f"Ссылка: {item['link']}"
+    )
+
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "temperature": 0.5,
+            "maxOutputTokens": 350,
+            "responseMimeType": "application/json",
+        },
+    }
+
+    url = f"{GEMINI_URL}?key={urllib.parse.quote(GEMINI_API_KEY)}"
+    data = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        url,
+        method="POST",
+        data=data,
+        headers={"Content-Type": "application/json", "User-Agent": USER_AGENT},
+    )
+
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            body = resp.read().decode("utf-8", errors="ignore")
+        obj = json.loads(body)
+        text = obj["candidates"][0]["content"]["parts"][0]["text"]
+        card = json.loads(text)
+
+        if not isinstance(card, dict):
+            return None
+        if "badge" not in card or "t" not in card or "b" not in card:
+            return None
+
+        card.setdefault("t", {})
+        card.setdefault("b", {})
+        for lang in ("ru", "uz", "en"):
+            card["t"].setdefault(lang, item["title"])
+            card["b"].setdefault(lang, fallback_card(item)["b"]["ru"])
+
+        return card
+    except Exception as e:
+        log(f"[WARN] Gemini fallback for '{item['title'][:60]}...': {e}")
+        return None
+
+
+def build_cards(items: List[Dict]) -> List[Dict]:
+    cards: List[Dict] = []
+    ai_count = 0
+
+    for item in items:
+        card = call_gemini(item)
+        if card is None:
+            card = fallback_card(item)
+        else:
+            ai_count += 1
+        cards.append(card)
+
+    random.shuffle(cards)
+    cards = cards[:FEED_SIZE]
+    log(f"Cards prepared: total={len(cards)}, ai={ai_count}, fallback={len(cards)-ai_count}")
+    return cards
+
+
+def main() -> int:
+    all_items: List[Dict] = []
+
+    for q in RSS_QUERIES:
+        url = google_news_rss_url(q)
+        try:
+            batch = fetch_rss_items(url)
+            log(f"RSS '{q}': fetched {len(batch)}")
+            all_items.extend(batch)
+        except Exception as e:
+            log(f"[WARN] RSS failed for '{q}': {e}")
+
+    unique_items = dedupe_items(all_items)
+    if not unique_items:
+        raise RuntimeError("No RSS items fetched from sources")
+
+    selected = unique_items[: max(FEED_SIZE * 3, FEED_SIZE)]
+    cards = build_cards(selected)
+
+    FEED_PATH.parent.mkdir(parents=True, exist_ok=True)
+    FEED_PATH.write_text(json.dumps(cards, ensure_ascii=False, indent=2), encoding="utf-8")
+    log(f"Feed refreshed: {len(cards)} cards written to {FEED_PATH}")
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        raise SystemExit(main())
+    except Exception as exc:
+        log(f"[ERROR] feed refresh failed: {exc}")
+        raise
