@@ -190,6 +190,18 @@ body.dark .streak-day.on{color:#FBBF24}
 .sheet-actions{padding:12px;display:flex;flex-direction:column;gap:8px}
 .sheet-btn{min-height:46px;border:1px solid var(--line);border-radius:12px;background:var(--card2);color:var(--ink);font-size:15px;font-weight:700;cursor:pointer}
 .sheet-btn.primary{background:linear-gradient(135deg,var(--blue),var(--green));color:#fff;border:none}
+
+.feed-title{font-size:19px;font-weight:800;line-height:1.25;margin-bottom:8px;color:var(--ink)}
+.feed-snippet{font-size:14px;line-height:1.45;color:var(--muted);white-space:pre-wrap}
+.feed-readmore{display:inline-block;margin-top:6px;border:none;background:transparent;color:var(--blue);font-weight:700;font-size:14px;cursor:pointer;padding:0}
+.feed-media{margin-top:10px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--card2)}
+.feed-media img,.feed-media video{width:100%;display:block;max-height:320px;object-fit:cover}
+.detail-modal{align-items:flex-end}
+.detail-sheet{width:100%;height:100dvh;background:var(--bg);display:flex;flex-direction:column}
+.detail-head{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line);background:var(--card)}
+.detail-close{border:none;background:transparent;color:var(--muted);font-size:24px;cursor:pointer}
+.detail-body{flex:1;overflow:auto;padding:14px 14px 110px}
+.detail-actions{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:420px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--line);z-index:460}
 </style>
 </head>
 <body>
@@ -505,6 +517,19 @@ body.dark .streak-day.on{color:#FBBF24}
   </div>
 </div>
 
+<div class="modal detail-modal" id="detailModal">
+  <div class="detail-sheet" id="detailSheet">
+    <div class="detail-head">
+      <div class="modal-title">📖 Полная публикация</div>
+      <button class="detail-close" id="detailClose">✕</button>
+    </div>
+    <div class="detail-body" id="detailBody"></div>
+    <div class="detail-actions">
+      <div class="feed-actions" id="detailActions"></div>
+    </div>
+  </div>
+</div>
+
 <script>
 var i18n={
 ru:{made:'создано в Узбекистане',lang:'Выбери язык',langHint:'Можно сменить позже. Профессиональные термины остаются как есть.',go:'Продолжить',hero:'Твой AI-партнёр для карьеры',heroSub:'Смахни вправо — интересно, влево — мимо. Находи работу, сотрудников, нетворкинг.',spec:'Я IT-специалист',emp:'Я работодатель',points:'Очки',lvl:'Уровень',days:'Дней',contacts:'Контакты',hunt:'Прогресс дня',boost:'+68% активность',foundPrefix:'Подходящих: ',task1:'Заполнить профиль',task2:'Посмотреть 10 карточек',task3:'Пригласить друга',getLink:'Получить ссылку',refHint:'Нажмите — ссылка скопируется',linkCopied:'Ссылка скопирована',yes:'Интересно',no:'Мимо',hint:'Ещё N карточек — и откроется новый кандидат',hintDone:'Список на сегодня закончился. Обнови профиль или пригласи друга, чтобы открыть новых кандидатов.',tabSearch:'Поиск',tabFeed:'Лента',tabContacts:'Контакты',tabProf:'Профиль',chestBtn:'🎁 Сундук дня',nextQuest:'Следующий шаг: выполни задание',chestOpen:'Крутим награду...',chestReady:'Сундук уже открыт сегодня',chestBoost:'x2 на следующий свайп!',lbBadge:'🏆 Лига',lbTitle:'Рейтинг недели',lbYou:'Ты',thoughtTitle:'✏️ Добавить мысль',thoughtPh:'Что у вас на уме? Напишите здесь...',thoughtPublish:'✏️ Опубликовать',thoughtDraft:'Черновик',feedTitle:'Лента роста',feedSub:'Короткие кейсы, советы по карьере и разборы, чтобы прогревать интерес к продукту.',feedBadge1:'+ Практика',feedItem1Title:'Как найти 1‑го клиента за 7 дней',feedItem1Text:'Сценарий: профиль → 10 релевантных контактов → короткий оффер.',feedBadge2:'🔥 Кейс',feedItem2Title:'Почему визуальная воронка поднимает отклик',feedItem2Text:'Прогресс и награды повышают шанс, что человек завершит целевое действие.',mTitle:'Твои контакты',mEmpty:'Пока пусто. Нажимай «Интересно» чтобы открыть новые контакты.',back:'Вернуться к поиску',pfHint:'Фото меняется в редактировании',edit:'Редактировать профиль',chLang:'Сменить язык',themeDark:'Тёмная тема',themeLight:'Светлая тема',fName:'Имя',fCity:'Город',fRole:'Роль',fSkills:'Навыки (через запятую)',fBio:'О себе',fPhoto:'Фото (можно несколько)',choose:'Выбрать фото',none:'Не выбрано',save:'Сохранить',cancel:'Отмена',biz:'🚀 Услуги для бизнеса',issue:'💡 Сообщить о проблеме',bizTitle:'Бизнес-услуги Hamkor Top',bizSub:'Мы помогаем компаниям находить клиентов и автоматизировать процессы.',biz1:'Разработка сайтов и приложений',biz2:'CRM-интеграции и автоматизация',biz3:'Маркетинг и стратегия',biz4:'Поиск сотрудников под ключ',bizCTA:'Оставить заявку',bizSent:'Заявка отправлена! Мы свяжемся с вами.',issueTitle:'Сообщить о проблеме или идее',issueSub:'Мы платим за полезные идеи и найденные проблемы в Узбекистане.',issuePlaceholder:'Опишите проблему или идею...',issueContact:'Ваш Telegram или телефон',issueReward:'За accepted идеи платим до 50 000 сум',issueSent:'Спасибо! Если идею примут — мы свяжемся и выплатим вознаграждение.',btnPost:'📝 Создать пост',postTitle:'Мастерская постов',postWrite:'✍️ Сам напишу',postAI:'🤖 AI поможет',postPlaceholder:'О чём хотите рассказать?',postHint:'Нажмите «AI поможет» — ассистент напишет пост в вашем стиле на основе профиля.',postSend:'📤 Отправить в канал',postCopy:'📋 Копировать',zeroTitle:'Карточки на сегодня закончились',zeroSub:'Чтобы открыть новых кандидатов, сделай одно действие:',zeroA:'Обновить профиль',zeroB:'Пригласить друга',aiBio:'✨ AI улучшит описание',aiPost:'📝 Сгенерировать пост из опыта'},
@@ -690,12 +715,15 @@ var feedTips=[
 
 var FEED_STATE_KEY=KEY+':feedSocial:v1';
 var feedState={posts:{}};
+var feedLookup={};
 var openPostId=null;
 var replyToId=null;
 var activeRepostPostId=null;
 var activeMorePostId=null;
+var activeDetailPostId=null;
 var reactionLongPressTimer=null;
 var longPressTriggered=false;
+var detailTouchStartY=0;
 
 function loadFeedState(){
   try{var s=localStorage.getItem(FEED_STATE_KEY);if(s)feedState=JSON.parse(s)||{posts:{}};}catch(e){feedState={posts:{}};}
@@ -706,21 +734,31 @@ function hashStr(str){var h=0;for(var i=0;i<str.length;i++){h=((h<<5)-h)+str.cha
 function postId(tip){return 'p_'+hashStr((tip.badge||'')+'|'+(tip.t&&tip.t.ru||'')+'|'+(tip.b&&tip.b.ru||''));}
 function getPostState(pid){
   if(!feedState.posts[pid]){
-    feedState.posts[pid]={
-      reactions:{'❤️':0,'🔥':0,'💡':0,'🙌':0,'🎯':0,'👏':0},
-      userReaction:null,
-      comments:[],
-      reposts:0,
-      shares:0,
-      dislikes:0,
-      disliked:false
-    };
+    feedState.posts[pid]={reactions:{'❤️':0,'🔥':0,'💡':0,'🙌':0,'🎯':0,'👏':0},userReaction:null,comments:[],reposts:0,shares:0,dislikes:0,disliked:false};
   }
   return feedState.posts[pid];
 }
 function seededCount(pid,min,max,salt){var span=max-min+1;return min+((hashStr(pid+':'+salt))%span);}
 function fmtTime(iso){
   try{var d=new Date(iso);if(isNaN(d))return 'только что';return d.toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});}catch(e){return 'только что';}
+}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function ensureFeedExp(){
+  if(!ST.feedExp){ST.feedExp={ab:(Math.random()<0.5?'A':'B'),readMore:0,detailOpens:0};saveST();}
+}
+function makeSnippet(text){
+  ensureFeedExp();
+  var limit=ST.feedExp.ab==='A'?210:240;
+  var t=String(text||'').trim();
+  if(t.length<=limit)return {text:t,truncated:false};
+  return {text:t.slice(0,limit).replace(/\s+\S*$/,'')+'…',truncated:true};
+}
+function trackFeedEvent(kind,pid){
+  ensureFeedExp();
+  if(kind==='readMore')ST.feedExp.readMore=(ST.feedExp.readMore||0)+1;
+  if(kind==='detailOpen')ST.feedExp.detailOpens=(ST.feedExp.detailOpens||0)+1;
+  saveST();
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'feedEvent',event:kind,postId:pid,ab:ST.feedExp.ab,ts:new Date().toISOString()}));}catch(e){}
 }
 function ensureSocialProgress(){
   if(!ST.social)ST.social={commentsGiven:0,repostsMade:0,weekly:{week:'',comments:0,rewarded:false}};
@@ -730,40 +768,54 @@ function ensureSocialProgress(){
   if(ST.social.weekly.week!==weekKey){ST.social.weekly={week:weekKey,comments:0,rewarded:false};}
 }
 function awardCommentXp(){
-  ensureSocialProgress();
-  ST.xp+=10;
+  ensureSocialProgress(); ST.xp+=10;
   ST.social.commentsGiven=(ST.social.commentsGiven||0)+1;
   ST.social.weekly.comments=(ST.social.weekly.comments||0)+1;
   reward(10,'Комментарий отправлен');
-  if(ST.social.weekly.comments>=5 && !ST.social.weekly.rewarded){
-    ST.social.weekly.rewarded=true;
-    ST.xp+=50;
-    reward(50,'Еженедельный челлендж: сундук');
-  }
-  if(ST.social.commentsGiven>=50 && ST.badges.indexOf('active_commenter')===-1){
-    ST.badges.push('active_commenter');
-    reward(0,'Бейдж: Активный участник');
-  }
+  if(ST.social.weekly.comments>=5 && !ST.social.weekly.rewarded){ST.social.weekly.rewarded=true;ST.xp+=50;reward(50,'Еженедельный челлендж: сундук');}
+  if(ST.social.commentsGiven>=50 && ST.badges.indexOf('active_commenter')===-1){ST.badges.push('active_commenter');reward(0,'Бейдж: Активный участник');}
   upd();saveST();
 }
 function awardRepostXp(){
-  ensureSocialProgress();
-  ST.xp+=15;
+  ensureSocialProgress(); ST.xp+=15;
   ST.social.repostsMade=(ST.social.repostsMade||0)+1;
   reward(15,'Репост выполнен');
-  if(ST.social.repostsMade>=10 && ST.badges.indexOf('inspirer')===-1){
-    ST.badges.push('inspirer');
-    reward(0,'Бейдж: Вдохновитель');
-  }
+  if(ST.social.repostsMade>=10 && ST.badges.indexOf('inspirer')===-1){ST.badges.push('inspirer');reward(0,'Бейдж: Вдохновитель');}
   upd();saveST();
 }
-function autosizeComment(){
-  var t=el('commentInput');if(!t)return;
-  t.style.height='auto';
-  t.style.height=Math.min(120,Math.max(40,t.scrollHeight))+'px';
-}
+function autosizeComment(){var t=el('commentInput');if(!t)return;t.style.height='auto';t.style.height=Math.min(120,Math.max(40,t.scrollHeight))+'px';}
 function closeModal(id){var m=el(id);if(m)m.style.display='none';}
 function openModal(id){var m=el(id);if(m)m.style.display='flex';}
+
+function renderActionButtons(pid,targetId,title){
+  var pst=getPostState(pid);
+  var likesTotal=Object.values(pst.reactions).reduce(function(a,b){return a+b;},0) || seededCount(pid,3,19,'likes');
+  var commentsCount=(pst.comments&&pst.comments.length)||seededCount(pid,0,8,'comments');
+  var repostsCount=(pst.reposts||0)||seededCount(pid,0,6,'reposts');
+  var shareCount=(pst.shares||0);
+  var userReact=pst.userReaction||'';
+  var html=''
+    +'<button class="feed-act '+(userReact?'active':'')+'" data-act="react" data-post="'+pid+'">'+(userReact||'❤️')+' '+likesTotal+'</button>'
+    +'<button class="feed-act" data-act="comment" data-post="'+pid+'">💬 '+commentsCount+'</button>'
+    +'<button class="feed-act" data-act="repost" data-post="'+pid+'">🔄 '+repostsCount+'</button>'
+    +'<button class="feed-act" data-act="share" data-post="'+pid+'" data-title="'+esc(title)+'">📤'+(shareCount?(' '+shareCount):'')+'</button>';
+  el(targetId).innerHTML=html;
+  bindActionHandlers(el(targetId));
+}
+
+function openDetail(postIdValue){
+  var item=feedLookup[postIdValue]; if(!item)return;
+  activeDetailPostId=postIdValue;
+  trackFeedEvent('detailOpen',postIdValue);
+  var mediaHtml='';
+  if(item.media){
+    if(/\.(mp4|webm|ogg)$/i.test(item.media))mediaHtml='<div class="feed-media"><video controls src="'+esc(item.media)+'"></video></div>';
+    else mediaHtml='<div class="feed-media"><img src="'+esc(item.media)+'" alt="media"/></div>';
+  }
+  el('detailBody').innerHTML='<div class="feed-title">'+esc(item.title)+'</div>'+mediaHtml+'<div class="feed-snippet" style="font-size:16px;color:var(--ink);margin-top:12px">'+esc(item.body)+'</div><div class="feed-meta"><span class="mini-av">👤</span><span>'+esc(item.author||'Автор')+'</span><span>•</span><span>'+fmtTime(item.ts||new Date().toISOString())+'</span></div>';
+  renderActionButtons(postIdValue,'detailActions',item.title);
+  openModal('detailModal');
+}
 
 function renderComments(postIdValue){
   var list=el('commentsList'); if(!list)return;
@@ -772,145 +824,95 @@ function renderComments(postIdValue){
   var html='';
   st.comments.forEach(function(c){
     var isReply=!!c.parentId;
-    html+='<div class="c-item '+(isReply?'reply':'')+'">'
-      +'<div class="c-top"><span class="c-author">'+(c.author||'User')+'</span><span class="c-time">'+fmtTime(c.createdAt)+'</span></div>'
-      +'<div class="c-text">'+c.text.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</div>'
-      +(isReply?'':'<button class="c-reply" data-cid="'+c.id+'">Ответить</button>')
-      +'</div>';
+    html+='<div class="c-item '+(isReply?'reply':'')+'"><div class="c-top"><span class="c-author">'+esc(c.author||'User')+'</span><span class="c-time">'+fmtTime(c.createdAt)+'</span></div><div class="c-text">'+esc(c.text)+'</div>'+(isReply?'':'<button class="c-reply" data-cid="'+c.id+'">Ответить</button>')+'</div>';
   });
   list.innerHTML=html;
-  list.querySelectorAll('.c-reply').forEach(function(btn){
-    btn.onclick=function(){replyToId=btn.getAttribute('data-cid');el('commentInput').placeholder='Ответить на комментарий...';el('commentInput').focus();};
-  });
+  list.querySelectorAll('.c-reply').forEach(function(btn){btn.onclick=function(){replyToId=btn.getAttribute('data-cid');el('commentInput').placeholder='Ответить на комментарий...';el('commentInput').focus();};});
 }
 function openComments(postIdValue){
   openPostId=postIdValue; replyToId=null;
-  el('commentInput').value='';
-  el('commentInput').placeholder='Написать комментарий...';
-  autosizeComment();
-  renderComments(postIdValue);
-  openModal('commentsModal');
+  el('commentInput').value=''; el('commentInput').placeholder='Написать комментарий...'; autosizeComment();
+  renderComments(postIdValue); openModal('commentsModal');
 }
 function handleSendComment(){
   if(!openPostId)return;
-  var t=(el('commentInput').value||'').trim();
-  if(!t)return;
+  var t=(el('commentInput').value||'').trim(); if(!t)return;
   var st=getPostState(openPostId);
   var parent=null;
-  if(replyToId){
-    var p=st.comments.find(function(x){return x.id===replyToId;});
-    if(p&&p.parentId)parent=null; else parent=replyToId;
-  }
-  var c={id:'c_'+Date.now()+Math.floor(Math.random()*1000),author:ST.name||'Вы',text:t,parentId:parent,createdAt:new Date().toISOString()};
-  st.comments.push(c);
-  saveFeedState();
-  awardCommentXp();
-
-  // notify author + mentions via bot backend if available
+  if(replyToId){var p=st.comments.find(function(x){return x.id===replyToId;}); if(!(p&&p.parentId))parent=replyToId;}
+  st.comments.push({id:'c_'+Date.now()+Math.floor(Math.random()*1000),author:ST.name||'Вы',text:t,parentId:parent,createdAt:new Date().toISOString()});
+  saveFeedState(); awardCommentXp();
   var mentions=(t.match(/@([a-zA-Z0-9_]+)/g)||[]).map(function(x){return x.slice(1);});
   try{window.Telegram.WebApp.sendData(JSON.stringify({action:'postComment',postId:openPostId,text:t,mentions:mentions,parentId:parent}));}catch(e){}
-
-  replyToId=null;
-  el('commentInput').value='';
-  el('commentInput').placeholder='Написать комментарий...';
-  autosizeComment();
-  renderComments(openPostId);
-  renderFeed();
+  replyToId=null; el('commentInput').value=''; el('commentInput').placeholder='Написать комментарий...'; autosizeComment();
+  renderComments(openPostId); renderFeed(); if(activeDetailPostId===openPostId)renderActionButtons(openPostId,'detailActions',(feedLookup[openPostId]||{}).title||'');
 }
 function toggleReaction(postIdValue,emoji){
-  var st=getPostState(postIdValue);
-  var prev=st.userReaction;
-  if(prev===emoji){
-    st.reactions[emoji]=Math.max(0,(st.reactions[emoji]||0)-1);
-    st.userReaction=null;
-  }else{
-    if(prev){st.reactions[prev]=Math.max(0,(st.reactions[prev]||0)-1);}
-    st.reactions[emoji]=(st.reactions[emoji]||0)+1;
-    st.userReaction=emoji;
-    ST.xp+=2; reward(2,'Реакция отправлена'); upd(); saveST();
-  }
-  saveFeedState();
-  renderFeed();
+  var st=getPostState(postIdValue), prev=st.userReaction;
+  if(prev===emoji){st.reactions[emoji]=Math.max(0,(st.reactions[emoji]||0)-1);st.userReaction=null;}
+  else{if(prev){st.reactions[prev]=Math.max(0,(st.reactions[prev]||0)-1);}st.reactions[emoji]=(st.reactions[emoji]||0)+1;st.userReaction=emoji;ST.xp+=2;reward(2,'Реакция отправлена');upd();saveST();}
+  saveFeedState(); renderFeed(); if(activeDetailPostId===postIdValue)renderActionButtons(postIdValue,'detailActions',(feedLookup[postIdValue]||{}).title||'');
 }
 function openRepostSheet(postIdValue){activeRepostPostId=postIdValue;openModal('repostModal');}
 function doRepost(withThought){
   if(!activeRepostPostId)return;
-  var st=getPostState(activeRepostPostId);
-  st.reposts=(st.reposts||0)+1;
-  saveFeedState();
-  awardRepostXp();
-  if(withThought){
-    closeModal('repostModal');
-    openPostWorkshop();
-    if(el('postText'))el('postText').value='Мой взгляд на пост из ленты:\n\n';
-  }else{
-    closeModal('repostModal');
-    alert('Репост добавлен в вашу ленту.');
-  }
+  var st=getPostState(activeRepostPostId); st.reposts=(st.reposts||0)+1; saveFeedState(); awardRepostXp();
+  if(withThought){closeModal('repostModal');openPostWorkshop();if(el('postText'))el('postText').value='Мой взгляд на пост из ленты:\n\n';}
+  else{closeModal('repostModal');alert('Репост добавлен в вашу ленту.');}
   try{window.Telegram.WebApp.sendData(JSON.stringify({action:'repost',postId:activeRepostPostId,withThought:!!withThought}));}catch(e){}
-  renderFeed();
+  renderFeed(); if(activeDetailPostId===activeRepostPostId)renderActionButtons(activeRepostPostId,'detailActions',(feedLookup[activeRepostPostId]||{}).title||'');
 }
 function sharePost(postIdValue,title){
-  var st=getPostState(postIdValue);
-  st.shares=(st.shares||0)+1; saveFeedState(); renderFeed();
-  var url='https://t.me/hamkor_top_bot';
-  var text='Hamkor Top: '+title;
-  if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.openTelegramLink){
-    var shareUrl='https://t.me/share/url?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text);
-    try{window.Telegram.WebApp.openTelegramLink(shareUrl);return;}catch(e){}
-  }
-  if(navigator.share){navigator.share({title:'Hamkor Top',text:text,url:url}).catch(function(){});}
-  else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text+' '+url);alert('Ссылка скопирована');}
+  var st=getPostState(postIdValue); st.shares=(st.shares||0)+1; saveFeedState(); renderFeed();
+  var url='https://t.me/hamkor_top_bot'; var text='Hamkor Top: '+title;
+  if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.openTelegramLink){var shareUrl='https://t.me/share/url?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text); try{window.Telegram.WebApp.openTelegramLink(shareUrl);return;}catch(e){}}
+  if(navigator.share){navigator.share({title:'Hamkor Top',text:text,url:url}).catch(function(){});} else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text+' '+url);alert('Ссылка скопирована');}
 }
 function openMore(postIdValue){activeMorePostId=postIdValue;openModal('moreModal');}
 function markDislike(){
   if(!activeMorePostId)return;
-  var st=getPostState(activeMorePostId);
-  st.disliked=!st.disliked;
-  if(st.disliked)st.dislikes=(st.dislikes||0)+1; else st.dislikes=Math.max(0,(st.dislikes||1)-1);
-  saveFeedState(); closeModal('moreModal'); renderFeed();
-  alert(st.disliked?'Пост скрыт из приоритета вашей ленты':'Пост возвращён в обычную ленту');
+  var st=getPostState(activeMorePostId); st.disliked=!st.disliked; if(st.disliked)st.dislikes=(st.dislikes||0)+1; else st.dislikes=Math.max(0,(st.dislikes||1)-1);
+  saveFeedState(); closeModal('moreModal'); renderFeed(); alert(st.disliked?'Пост скрыт из приоритета вашей ленты':'Пост возвращён в обычную ленту');
+}
+
+function bindActionHandlers(root){
+  root.querySelectorAll('[data-act="comment"]').forEach(function(btn){btn.onclick=function(){openComments(btn.getAttribute('data-post'));};});
+  root.querySelectorAll('[data-act="repost"]').forEach(function(btn){btn.onclick=function(){openRepostSheet(btn.getAttribute('data-post'));};});
+  root.querySelectorAll('[data-act="share"]').forEach(function(btn){btn.onclick=function(){sharePost(btn.getAttribute('data-post'),btn.getAttribute('data-title')||'Hamkor Top');};});
+  root.querySelectorAll('[data-act="more"]').forEach(function(btn){btn.onclick=function(){openMore(btn.getAttribute('data-post'));};});
+  root.querySelectorAll('[data-act="react"]').forEach(function(btn){
+    var pid=btn.getAttribute('data-post');
+    btn.onclick=function(){if(longPressTriggered){longPressTriggered=false;return;}var st=getPostState(pid);toggleReaction(pid,st.userReaction||'❤️');};
+    btn.addEventListener('contextmenu',function(e){e.preventDefault();var rp=el('rp_'+pid);if(rp)rp.style.display=rp.style.display==='flex'?'none':'flex';});
+    btn.addEventListener('touchstart',function(){longPressTriggered=false;reactionLongPressTimer=setTimeout(function(){var rp=el('rp_'+pid);if(rp)rp.style.display='flex';longPressTriggered=true;},480);},{passive:true});
+    btn.addEventListener('touchend',function(){if(reactionLongPressTimer)clearTimeout(reactionLongPressTimer);},{passive:true});
+  });
 }
 
 function renderFeed(){
   var c=el('feedCards');if(!c)return;
-  loadFeedState();
-  var l=ST.lang||'ru';var html='';
-  var allTips=feedTips.slice();
-
-  try{
-    var xhr=new XMLHttpRequest();
-    xhr.open('GET','feed.json?v=2',false);
-    xhr.send();
-    if(xhr.status===200){
-      var curated=JSON.parse(xhr.responseText);
-      allTips=allTips.concat(curated);
-    }
-  }catch(e){}
+  loadFeedState(); ensureFeedExp(); feedLookup={};
+  var l=ST.lang||'ru', html='', allTips=feedTips.slice();
+  try{var xhr=new XMLHttpRequest();xhr.open('GET','feed.json?v=3',false);xhr.send();if(xhr.status===200){allTips=allTips.concat(JSON.parse(xhr.responseText));}}catch(e){}
 
   for(var i=allTips.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var tmp=allTips[i];allTips[i]=allTips[j];allTips[j]=tmp;}
   var count=Math.min(5,allTips.length);
   for(var k=0;k<count;k++){
-    var tip=allTips[k];
-    var pid=postId(tip);
-    var pst=getPostState(pid);
-    var likesTotal=Object.values(pst.reactions).reduce(function(a,b){return a+b;},0) || seededCount(pid,3,19,'likes');
-    var commentsCount=(pst.comments&&pst.comments.length)||seededCount(pid,0,8,'comments');
-    var repostsCount=(pst.reposts||0)||seededCount(pid,0,6,'reposts');
-    var shareCount=(pst.shares||0);
-    var userReact=pst.userReaction||'';
+    var tip=allTips[k], pid=postId(tip), pst=getPostState(pid);
     var title=(tip.t&&tip.t[l])?tip.t[l]:(tip.t&&tip.t.ru?tip.t.ru:'');
     var body=(tip.b&&tip.b[l])?tip.b[l]:(tip.b&&tip.b.ru?tip.b.ru:'');
+    var media=tip.media||tip.image||tip.video||'';
+    feedLookup[pid]={title:title,body:body,media:media,badge:(tip.badge||'📰'),author:(tip.author||'Hamkor Top'),ts:new Date().toISOString()};
+    var sn=makeSnippet(body);
+    var mediaHtml='';
+    if(media){mediaHtml=/\.(mp4|webm|ogg)$/i.test(media)?'<div class="feed-media"><video controls src="'+esc(media)+'"></video></div>':'<div class="feed-media"><img src="'+esc(media)+'" alt="media"/></div>';}
     html+='<div class="card" style="position:relative;height:auto;padding:14px" data-post-id="'+pid+'">'
-      +'<div class="card-badge">'+(tip.badge||'📰')+'</div>'
-      +'<div style="font-weight:700;margin-bottom:6px">'+title+'</div>'
-      +'<div style="font-size:13px;color:var(--muted)">'+body+'</div>'
-      +'<div class="feed-actions">'
-      +'<button class="feed-act '+(userReact?'active':'')+'" data-act="react" data-post="'+pid+'">'+(userReact||'❤️')+' '+likesTotal+'</button>'
-      +'<button class="feed-act" data-act="comment" data-post="'+pid+'">💬 '+commentsCount+'</button>'
-      +'<button class="feed-act" data-act="repost" data-post="'+pid+'">🔄 '+repostsCount+'</button>'
-      +'<button class="feed-act" data-act="share" data-post="'+pid+'" data-title="'+title.replace(/"/g,'&quot;')+'">📤'+(shareCount?(' '+shareCount):'')+'</button>'
-      +'</div>'
+      +'<div class="card-badge">'+esc(tip.badge||'📰')+'</div>'
+      +'<div class="feed-title">'+esc(title)+'</div>'
+      +'<div class="feed-snippet feed-open" data-act="openDetail" data-post="'+pid+'">'+esc(sn.text)+'</div>'
+      +'<button class="feed-readmore" data-act="readMore" data-post="'+pid+'">'+(sn.truncated?'Читать далее':'Показать полностью')+'</button>'
+      +mediaHtml
+      +'<div class="feed-actions" id="fa_'+pid+'"></div>'
       +'<div class="reaction-picker" id="rp_'+pid+'">'
       +'<button class="reaction-pill" data-emoji="❤️" data-post="'+pid+'">❤️</button>'
       +'<button class="reaction-pill" data-emoji="🔥" data-post="'+pid+'">🔥</button>'
@@ -920,7 +922,7 @@ function renderFeed(){
       +'<button class="reaction-pill" data-emoji="👏" data-post="'+pid+'">👏</button>'
       +'</div>'
       +'<div class="feed-more-wrap"><button class="feed-more" data-act="more" data-post="'+pid+'">⋯</button></div>'
-      +'<div class="feed-meta"><span class="mini-av">👤</span><span>'+(ST.name||'Автор')+'</span><span>•</span><span>'+fmtTime(new Date().toISOString())+'</span></div>'
+      +'<div class="feed-meta"><span class="mini-av">👤</span><span>'+esc(ST.name||'Автор')+'</span><span>•</span><span>'+fmtTime(new Date().toISOString())+'</span></div>'
       +'</div>';
   }
 
@@ -928,21 +930,11 @@ function renderFeed(){
   html+='<div class="card" style="position:relative;height:auto;padding:14px"><div class="card-badge" data-t="lbBadge">🏆 Лига</div><div style="font-weight:700;margin-bottom:6px" data-t="lbTitle">Рейтинг недели</div><div style="font-size:13px;color:var(--muted)"><span data-t="lbYou">Ты:</span> <b id="lbPlace">#'+place+'</b> · XP <b id="lbScore">'+ST.xp+'</b></div></div>';
   c.innerHTML=html;
 
-  c.querySelectorAll('[data-act="comment"]').forEach(function(btn){btn.onclick=function(){openComments(btn.getAttribute('data-post'));};});
-  c.querySelectorAll('[data-act="repost"]').forEach(function(btn){btn.onclick=function(){openRepostSheet(btn.getAttribute('data-post'));};});
-  c.querySelectorAll('[data-act="share"]').forEach(function(btn){btn.onclick=function(){sharePost(btn.getAttribute('data-post'),btn.getAttribute('data-title')||'Hamkor Top');};});
-  c.querySelectorAll('[data-act="more"]').forEach(function(btn){btn.onclick=function(){openMore(btn.getAttribute('data-post'));};});
-  c.querySelectorAll('[data-act="react"]').forEach(function(btn){
-    var pid=btn.getAttribute('data-post');
-    btn.onclick=function(){
-      if(longPressTriggered){longPressTriggered=false;return;}
-      var st=getPostState(pid);
-      toggleReaction(pid,st.userReaction||'❤️');
-    };
-    btn.addEventListener('contextmenu',function(e){e.preventDefault();var rp=el('rp_'+pid);if(rp)rp.style.display=rp.style.display==='flex'?'none':'flex';});
-    btn.addEventListener('touchstart',function(){longPressTriggered=false;reactionLongPressTimer=setTimeout(function(){var rp=el('rp_'+pid);if(rp)rp.style.display='flex';longPressTriggered=true;},480);},{passive:true});
-    btn.addEventListener('touchend',function(){if(reactionLongPressTimer)clearTimeout(reactionLongPressTimer);},{passive:true});
-  });
+  Object.keys(feedLookup).forEach(function(pid){renderActionButtons(pid,'fa_'+pid,feedLookup[pid].title);});
+  bindActionHandlers(c);
+
+  c.querySelectorAll('[data-act="openDetail"]').forEach(function(elm){elm.onclick=function(){openDetail(elm.getAttribute('data-post'));};});
+  c.querySelectorAll('[data-act="readMore"]').forEach(function(btn){btn.onclick=function(e){e.stopPropagation();var pid=btn.getAttribute('data-post');trackFeedEvent('readMore',pid);openDetail(pid);};});
   c.querySelectorAll('.reaction-pill').forEach(function(btn){btn.onclick=function(){toggleReaction(btn.getAttribute('data-post'),btn.getAttribute('data-emoji')); var rp=el('rp_'+btn.getAttribute('data-post')); if(rp)rp.style.display='none';};});
 }
 function upd(){
@@ -1095,9 +1087,15 @@ if(el('repostWithThought'))el('repostWithThought').onclick=function(){doRepost(t
 if(el('moreClose'))el('moreClose').onclick=function(){closeModal('moreModal');};
 if(el('moreCancel'))el('moreCancel').onclick=function(){closeModal('moreModal');};
 if(el('markDislike'))el('markDislike').onclick=markDislike;
-['commentsModal','repostModal','moreModal'].forEach(function(mid){
+if(el('detailClose'))el('detailClose').onclick=function(){closeModal('detailModal');};
+if(el('detailModal'))el('detailModal').addEventListener('touchstart',function(ev){detailTouchStartY=(ev.touches&&ev.touches[0]?ev.touches[0].clientY:0);},{passive:true});
+if(el('detailModal'))el('detailModal').addEventListener('touchend',function(ev){
+  var y=(ev.changedTouches&&ev.changedTouches[0]?ev.changedTouches[0].clientY:0);
+  if(y-detailTouchStartY>90)closeModal('detailModal');
+},{passive:true});
+['commentsModal','repostModal','moreModal','detailModal'].forEach(function(mid){
   var mm=el(mid);
-  if(mm)mm.addEventListener('click',function(ev){if(ev.target===mm)mm.style.display='none';});
+  if(mm&&mid!=='detailModal')mm.addEventListener('click',function(ev){if(ev.target===mm)mm.style.display='none';});
 });
 
 var intQ=[
