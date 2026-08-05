@@ -337,6 +337,17 @@ body.dark .streak-day.on{color:#FBBF24}
   </div>
 </div>
 
+<div class="screen" id="s-gen-image">
+  <div class="hero-title" style="margin-top:24px">🖼 Генерация изображения</div>
+  <div class="hero-sub">Опишите, что нужно нарисовать, и AI создаст картинку в стиле Hamkor.</div>
+  <div class="form">
+    <textarea class="textarea" id="genPrompt" placeholder="Например: футуристичный офис в Ташкенте..." style="min-height:100px"></textarea>
+    <button class="btn btn-primary" id="btnGen" style="margin-top:10px">Сгенерировать</button>
+    <div id="genResult" style="margin-top:16px;text-align:center"></div>
+    <button class="btn btn-secondary" id="btnGenBack">← Назад</button>
+  </div>
+</div>
+
 <div class="screen" id="s-biz">
   <div class="hero-title" style="margin-top:24px" data-t="bizTitle">Бизнес-услуги Hamkor Top</div>
   <div class="hero-sub" data-t="bizSub">Мы помогаем компаниям находить клиентов и автоматизировать процессы.</div>
@@ -644,7 +655,7 @@ function show(id,remember){
 
   var nav=el('globalNav');
   if(nav){
-    var hideNav=(id==='s-lang'||id==='s-welcome'||id==='s-edit'||id==='s-post'||id==='s-biz'||id==='s-issue'||id==='s-biz-next'||id==='s-interview-landing'||id==='s-interview-q'||id==='s-interview-loading'||id==='s-interview-result');
+    var hideNav=(id==='s-lang'||id==='s-welcome'||id==='s-edit'||id==='s-post'||id==='s-gen-image'||id==='s-biz'||id==='s-issue'||id==='s-biz-next'||id==='s-interview-landing'||id==='s-interview-q'||id==='s-interview-loading'||id==='s-interview-result');
     nav.style.display=hideNav?'none':'flex';
     document.querySelectorAll('#globalNav .nav-item').forEach(function(i){i.classList.remove('active');});
     var m={ 's-main':'main','s-feed':'feed','s-matches':'matches','s-profile':'profile' };
@@ -661,7 +672,7 @@ function show(id,remember){
   if(id==='s-edit')fillForm();
   if(id==='s-feed')renderFeed();
 }
-var screens=['s-lang','s-welcome','s-main','s-feed','s-matches','s-profile','s-edit','s-post','s-biz','s-biz-next','s-issue','s-interview-landing','s-interview-q','s-interview-loading','s-interview-result'];
+var screens=['s-lang','s-welcome','s-main','s-feed','s-matches','s-profile','s-edit','s-post','s-gen-image','s-biz','s-biz-next','s-issue','s-interview-landing','s-interview-q','s-interview-loading','s-interview-result'];
 
 function tr(){var d=tt();document.querySelectorAll('[data-t]').forEach(function(e){var k=e.getAttribute('data-t');if(k==='boost'){e.textContent=boostLabel(calcBoost());return;}if(d[k])e.textContent=d[k];});if(refs.strkLabel)refs.strkLabel.textContent='🔥 '+dayWord(ST.streak||1);renderFoundText();renderHint();updateNextQuest();if(refs.refNote)refs.refNote.textContent=d.refHint;if(refs.btnTheme)refs.btnTheme.textContent=ST.theme==='dark'?d.themeLight:d.themeDark;if(refs.fileName&&(!refs.fileAv.files||refs.fileAv.files.length===0)&&ST.photos.length===0)refs.fileName.textContent=d.none;}
 function renderFoundText(){var d=tt();var f=Math.min(ST.views,5);refs.huntNote.innerHTML=d.foundPrefix+'<b>'+f+'</b> / 5';}
@@ -1055,8 +1066,17 @@ if(el('feedWriteFab')) el('feedWriteFab').onclick=function(){openPostWorkshop();
 if(el('btnPost')) el('btnPost').onclick=function(){openPostWorkshop();};
 if(el('plusPost')) el('plusPost').onclick=function(){closeFabMenu();openPostWorkshop();};
 if(el('plusImage')) el('plusImage').onclick=function(){
-  closeFabMenu();
-  alert('Скоро здесь будет генерация изображений. Пока используйте «Интервью со мной» и «Мастерскую постов».');
+  closeFabMenu(); show('s-gen-image',false);
+};
+el('btnGenBack').onclick=function(){show('s-main');};
+el('btnGen').onclick=function(){
+  var p=el('genPrompt').value.trim();
+  if(!p){alert('Введите описание!');return;}
+  el('genResult').innerHTML='⏳ Генерирую...';
+  try{
+    window.Telegram.WebApp.sendData(JSON.stringify({action:'genImage',prompt:p}));
+    el('genResult').innerHTML='🎨 Запрос отправлен в обработку. Результат придёт в чат бота.';
+  }catch(e){el('genResult').innerHTML='Ошибка отправки.';}
 };
 document.addEventListener('click',function(e){
   var m=el('fabMenu');
