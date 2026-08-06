@@ -369,19 +369,44 @@ body.dark .streak-day.on{color:#FBBF24}
 </div>
 
 <div class="screen" id="s-post">
-  <div class="hero-title" style="margin-top:24px" data-t="postTitle">Мастерская постов</div>
-  <div class="hero-sub" data-t="postHint">Нажмите «AI поможет» — ассистент напишет пост в вашем стиле на основе профиля.</div>
-  <div class="form">
-    <div style="display:flex;gap:8px;margin-bottom:8px">
-      <button class="btn btn-primary" id="postWrite" data-t="postWrite" style="max-width:none;flex:1;margin:0">✍️ Сам напишу</button>
-      <button class="btn btn-secondary" id="postAI" data-t="postAI" style="max-width:none;flex:1;margin:0">🤖 AI поможет</button>
+  <div class="post-toolbar">
+    <button class="btn-post-back" id="btnPostBack" aria-label="Назад" style="width:44px;height:44px;font-size:20px;display:flex;align-items:center;justify-content:center;border:none;background:var(--bg-secondary,#f0f0f0);border-radius:12px;cursor:pointer;flex-shrink:0">←</button>
+    <span class="post-title" style="font-size:17px;font-weight:700;color:var(--text,#111);text-align:center;flex:1">Мастерская постов</span>
+    <span style="width:44px;flex-shrink:0"></span>
+  </div>
+  <div style="flex:1;overflow-y:auto;padding:0 16px">
+    <div style="font-size:16px;font-weight:700;margin:16px 0 10px;color:var(--text,#222)">О чём хотите написать?</div>
+    
+    <div style="display:flex;gap:12px;margin-bottom:12px">
+      <button class="btn btn-primary post-mode-btn" id="postWrite" style="flex:1;min-height:44px;margin:0">✍️ Сам напишу</button>
+      <button class="btn btn-secondary post-mode-btn" id="postAI" style="flex:1;min-height:44px;margin:0">🤖 AI поможет</button>
     </div>
-    <textarea class="textarea" id="postText" data-t="postPlaceholder" placeholder="О чём хотите рассказать?" style="min-height:180px"></textarea>
-    <div style="display:flex;gap:8px;margin-top:10px">
-      <button class="btn btn-secondary" id="postCopy" data-t="postCopy" style="max-width:none;flex:1;margin:0">📋 Копировать</button>
-      <button class="btn btn-primary" id="postSend" data-t="postSend" style="max-width:none;flex:1;margin:0">📤 Отправить в канал</button>
+
+    <textarea class="textarea" id="postText" placeholder="Например: как найти первого клиента, тренды IT в 2026, личный опыт в стартапе..." style="min-height:220px;width:100%;box-sizing:border-box"></textarea>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:6px;margin-bottom:6px">
+      <span id="postCharCount" style="font-size:12px;color:var(--text-secondary,#888)">0 / 5000</span>
+      <button id="postClear" style="font-size:13px;color:var(--text-secondary,#888);background:none;border:none;cursor:pointer;padding:4px 8px">🗑 Очистить</button>
     </div>
-    <button class="btn btn-secondary" id="btnPostBack">← Назад</button>
+
+    <div id="postAiStatus" style="display:none;padding:10px 12px;background:var(--bg-secondary,#f5f5f5);border-radius:10px;margin-bottom:8px;font-size:14px;color:var(--text,#444)">
+      <span id="postAiStep">⏳ Анализируем вашу тему...</span>
+    </div>
+    <div id="postAiError" style="display:none;padding:10px 12px;background:#fff0f0;border-radius:10px;margin-bottom:8px;font-size:14px;color:#c00">
+      <span id="postAiErrorText"></span>
+      <button id="postAiRetry" style="margin-left:8px;font-size:13px;background:#c00;color:#fff;border:none;border-radius:6px;padding:4px 12px;cursor:pointer">Попробовать снова</button>
+    </div>
+
+    <div id="postAttachBlock" style="display:none;margin-bottom:8px;position:relative">
+      <img id="postAttachPreview" src="" alt="изображение" style="max-width:100%;max-height:200px;border-radius:12px"/>
+      <button id="postAttachRemove" style="position:absolute;top:6px;right:6px;width:28px;height:28px;border-radius:50%;background:rgba(0,0,0,0.55);color:#fff;border:none;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center">✕</button>
+    </div>
+  </div>
+
+  <div class="post-actions" style="display:flex;gap:12px;padding:12px 16px 16px;border-top:1px solid var(--border,#e0e0e0);background:var(--bg,#fff)">
+    <button class="btn btn-secondary" id="postAttachBtn" style="flex:1;min-height:44px;margin:0">🖼 Изобр.</button>
+    <button class="btn btn-secondary" id="postCopy" style="flex:1;min-height:44px;margin:0">📋 Копировать</button>
+    <button class="btn btn-primary" id="btnPublish" style="flex:1;min-height:44px;margin:0">📤 Опубликовать</button>
   </div>
 </div>
 
@@ -656,7 +681,7 @@ function pickLang(lang,btn){
   document.querySelectorAll('.lang-btn').forEach(function(x){x.classList.remove('active');});
   btn.classList.add('active');
 }
-var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,streakLast:'',contacts:0,views:0,dailyBonus:false,chestDate:'',boost2x:0,thoughtDate:'',thoughtCount:0,interviewAnswers:[],interviewDraft:null,toneProfile:null,interviewDone:false,interviewReturnScreen:'s-main',name:'',surname:'',title:'',company:'',skills:'',bio:'',tgUsername:'',tgPhoto:'',photos:[],photoIdx:0,profileOnboarded:false,profileImported:false,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0,claim10:false,rewardProfile:false,rewardInvite:false,rewardBiz:false,rewardIssue:false,badges:[]};
+var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,streakLast:'',contacts:0,views:0,dailyBonus:false,chestDate:'',boost2x:0,thoughtDate:'',thoughtCount:0,interviewAnswers:[],interviewDraft:null,toneProfile:null,interviewDone:false,interviewReturnScreen:'s-main',name:'',surname:'',title:'',company:'',skills:'',bio:'',tgUsername:'',tgPhoto:'',photos:[],photoIdx:0,profileOnboarded:false,profileImported:false,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0,claim10:false,rewardProfile:false,rewardInvite:false,rewardBiz:false,rewardIssue:false,badges:[],_aiPost:''};
 function loadST(){try{var r=localStorage.getItem(KEY);if(!r)return false;var d=JSON.parse(r);ST={};for(var k in defaultST)ST[k]=defaultST[k];for(var k in d)ST[k]=d[k];if(!Array.isArray(ST.photos))ST.photos=[];return true;}catch(e){return false;}}
 if(!loadST()){ST={};for(var k in defaultST)ST[k]=defaultST[k];}
 function tryRestore(){
@@ -1237,7 +1262,18 @@ el('btnBizNextBack').onclick=function(){show('s-profile');};
 
 function openPostWorkshop(){
   show('s-post',false);
-  if(el('postText')) setTimeout(function(){el('postText').focus();},120);
+  resetPostMode('write');
+  if(el('postText')){
+    setTimeout(function(){el('postText').focus();},120);
+    // Авто-заполнение из AI-генерации (пришло через load= из бота)
+    if(ST._aiPost&&!el('postText').value.trim()){
+      el('postText').value=ST._aiPost;
+      ST._aiPost=''; saveST();
+    }
+    updateCharCount();
+  }
+  loadDraftFromCloud();
+  startDraftTimer();
 }
 function toggleFabMenu(){
   var m=el('fabMenu');
@@ -1612,28 +1648,258 @@ el('intMic').onclick=function(){
   if(!speechRec){ alert('Голосовой ввод временно недоступен, используйте текст.'); return; }
   try{ if(speechRecOn){speechRec.stop();} else {speechRec.start();} }catch(e){ alert('Голосовой ввод временно недоступен, используйте текст.'); }
 };
-if(el('btnPostBack'))el('btnPostBack').onclick=function(){show('s-profile');};
+// ═══ МАСТЕРСКАЯ ПОСТОВ: состояние ═══
+var postMode='write'; // 'write' | 'ai'
+var postGenTimer=null;
+var postDraftTimer=null;
+var postAttachedImage='';
+var POST_CHAR_LIMIT=5000;
+
+function resetPostMode(mode){
+  postMode=mode;
+  var w=el('postWrite'), a=el('postAI');
+  if(!w||!a)return;
+  if(mode==='write'){
+    w.className='btn btn-primary post-mode-btn'; w.style.flex='1'; w.style.minHeight='44px'; w.style.margin='0';
+    a.className='btn btn-secondary post-mode-btn'; a.style.flex='1'; a.style.minHeight='44px'; a.style.margin='0';
+  }else{
+    a.className='btn btn-primary post-mode-btn'; a.style.flex='1'; a.style.minHeight='44px'; a.style.margin='0';
+    w.className='btn btn-secondary post-mode-btn'; w.style.flex='1'; w.style.minHeight='44px'; w.style.margin='0';
+  }
+}
+
+function updateCharCount(){
+  var t=el('postText'); var c=el('postCharCount');
+  if(!t||!c)return;
+  var len=(t.value||'').length;
+  c.textContent=len+' / '+POST_CHAR_LIMIT;
+  c.style.color=len>POST_CHAR_LIMIT?'#c00':'var(--text-secondary,#888)';
+}
+
+function cancelPostGen(){
+  if(postGenTimer){clearInterval(postGenTimer);postGenTimer=null;}
+  var s=el('postAiStatus'); if(s)s.style.display='none';
+  var e=el('postAiError'); if(e)e.style.display='none';
+}
+
+function publishPost(){
+  var t=(el('postText')?el('postText').value:'').trim();
+  if(!t){alert('Напишите текст перед публикацией.');return;}
+  if(t.length>POST_CHAR_LIMIT){alert('Текст слишком длинный. Сократите до '+POST_CHAR_LIMIT+' символов.');return;}
+
+  // Сохраняем в localStorage как локальный пост
+  var post={
+    id:'p'+Date.now(),
+    text:t,
+    image:postAttachedImage||'',
+    author:ST.name||tgUser.first_name||'Пользователь',
+    authorRole:ST.title||'',
+    ts:new Date().toISOString(),
+    userId:tgId
+  };
+
+  // Добавляем в feedSocial если есть
+  if(typeof feedState!=='undefined'&&feedState&&feedState.posts){
+    feedState.posts.unshift(post);
+    if(feedState.posts.length>50)feedState.posts.length=50;
+    saveFeedState();
+  }
+
+  // Сохраняем в CloudStorage если доступен
+  try{
+    var key='post_'+post.id;
+    if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.CloudStorage){
+      window.Telegram.WebApp.CloudStorage.setItem(key,JSON.stringify(post));
+    }
+  }catch(e){}
+
+  // Отправляем в бота
+  try{
+    window.Telegram.WebApp.sendData(JSON.stringify({
+      action:'publishPost',
+      text:t,
+      image:postAttachedImage||'',
+      postId:post.id,
+      ts:post.ts
+    }));
+  }catch(e){}
+
+  // Очищаем и переходим в ленту
+  el('postText').value='';
+  postAttachedImage='';
+  updateCharCount();
+  hideAttachPreview();
+  cancelPostGen();
+  clearDraftTimer();
+
+  try{window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');}catch(e){}
+  alert('✅ Пост опубликован в ленте');
+  show('s-feed',false);
+  setTimeout(function(){if(typeof renderFeed==='function')renderFeed();},200);
+}
+
+function hideAttachPreview(){
+  var bl=el('postAttachBlock'); if(bl)bl.style.display='none';
+  var pr=el('postAttachPreview'); if(pr)pr.src='';
+}
+
+function clearDraftTimer(){
+  if(postDraftTimer){clearInterval(postDraftTimer);postDraftTimer=null;}
+}
+
+function saveDraftToCloud(){
+  var t=(el('postText')?el('postText').value:'').trim();
+  if(!t)return;
+  try{
+    if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.CloudStorage){
+      window.Telegram.WebApp.CloudStorage.setItem(KEY+':postDraft',JSON.stringify({text:t,image:postAttachedImage,ts:Date.now()}));
+    }
+  }catch(e){}
+}
+
+if(el('btnPostBack'))el('btnPostBack').onclick=function(){
+  var t=(el('postText')?el('postText').value:'').trim();
+  if(t&&!postAttachedImage&&postMode==='write'){
+    if(!confirm('У вас есть несохранённый пост. Выйти без сохранения?'))return;
+  }
+  cancelPostGen();clearDraftTimer();
+  // Возвращаемся на главный экран (там fab-меню «Создать»)
+  show('s-main',false);
+};
+
 if(el('postWrite'))el('postWrite').onclick=function(){
-  el('postHint').style.display='block';el('postText').focus();
-  el('postWrite').className='btn btn-primary';el('postAI').className='btn btn-secondary';
+  cancelPostGen();
+  resetPostMode('write');
+  el('postText').focus();
 };
+
 if(el('postAI'))el('postAI').onclick=function(){
-  var p='Напиши пост для Telegram на основе профиля. Имя: '+(ST.name||'')+'. Должность: '+(ST.title||'')+'. Навыки: '+(ST.skills||'')+'. О себе: '+(ST.bio||'')+'. Тёплый профессиональный тон, 3-4 абзаца, с призывом к нетворкингу.';
-  el('postText').value='✨ AI думает...';el('postHint').style.display='none';
-  el('postAI').className='btn btn-primary';el('postWrite').className='btn btn-secondary';
-  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiPost',prompt:p}));}
-  catch(e){el('postText').value='Скопируйте текст и отправьте боту: '+p;}
+  var input=(el('postText')?el('postText').value:'').trim();
+  if(!input){alert('Напишите тему поста перед генерацией.');el('postText').focus();return;}
+  if(input.length<5){alert('Тема слишком короткая. Напишите чуть подробнее.');el('postText').focus();return;}
+
+  cancelPostGen();
+  resetPostMode('ai');
+
+  // Прогресс-статусы
+  var steps=['⏳ Анализируем вашу тему...','🔍 Подбираем стиль...','✍️ Генерируем текст...'];
+  var stepIdx=0;
+  var statusEl=el('postAiStatus');
+  var stepEl=el('postAiStep');
+  var errEl=el('postAiError');
+  if(errEl)errEl.style.display='none';
+  if(statusEl)statusEl.style.display='block';
+  if(stepEl)stepEl.textContent=steps[0];
+
+  postGenTimer=setInterval(function(){
+    stepIdx++;
+    if(stepIdx>=steps.length)stepIdx=steps.length-1;
+    if(stepEl)stepEl.textContent=steps[stepIdx];
+  },2200);
+
+  // Генерация через бота (Gemini)
+  var prompt='Сгенерируй пост для профессиональной ленты. Тема: '+input+
+    '. Профиль: '+(ST.title||'')+', '+(ST.company||'')+', навыки: '+(ST.skills||'')+
+    '. Тёплый профессиональный тон, 3-4 абзаца, с пользой для читателя.';
+  try{
+    window.Telegram.WebApp.sendData(JSON.stringify({action:'aiPost',prompt:prompt,input:input}));
+  }catch(e){
+    showPostGenError('Не удалось отправить запрос. Проверьте подключение.');
+    return;
+  }
+
+  // Таймаут 12 секунд
+  var timeoutId=setTimeout(function(){
+    showPostGenError('Превышено время ожидания. Попробуйте снова.');
+  },12000);
+
+  // Сохраняем ID таймаута для очистки
+  if(statusEl)statusEl.dataset.timeoutId=timeoutId;
 };
+
+function showPostGenError(msg){
+  cancelPostGen();
+  var s=el('postAiStatus'); if(s){s.style.display='none';clearTimeout(parseInt(s.dataset.timeoutId||'0'));}
+  var e=el('postAiError'); var t=el('postAiErrorText');
+  if(e)e.style.display='block';
+  if(t)t.textContent='❌ '+msg;
+  if(el('postAiRetry'))el('postAiRetry').onclick=function(){
+    if(el('postAI'))el('postAI').click();
+  };
+}
+
+// Обработчик ответа от бота — вызывается извне когда приходит результат
+function onAiPostResult(text){
+  cancelPostGen();
+  var s=el('postAiStatus'); if(s)s.style.display='none';
+  var e=el('postAiError'); if(e)e.style.display='none';
+  if(el('postText')){
+    el('postText').value=text;
+    updateCharCount();
+    alert('✨ Пост сгенерирован. Вы можете отредактировать его перед публикацией.');
+  }
+}
+
 if(el('postCopy'))el('postCopy').onclick=function(){
-  var t=el('postText').value;
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){alert('Скопировано!');});}
-  else{prompt('Скопируйте:',t);}
+  var t=el('postText')?el('postText').value:'';
+  if(!t.trim()){alert('Нечего копировать.');return;}
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(function(){alert('📋 Скопировано!');});
+  }else{
+    try{var ta=el('postText');ta.select();ta.setSelectionRange(0,99999);document.execCommand('copy');alert('📋 Скопировано!');}catch(ex){prompt('Скопируйте:',t);}
+  }
 };
-if(el('postSend'))el('postSend').onclick=function(){
-  var t=el('postText').value;
-  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'postToChannel',text:t}));alert('Отправлено в канал!');}
-  catch(e){alert('Откройте через Telegram чтобы отправить в канал.');}
+
+if(el('btnPublish'))el('btnPublish').onclick=publishPost;
+
+// Счётчик символов на вводе
+if(el('postText'))el('postText').addEventListener('input',updateCharCount);
+
+if(el('postClear'))el('postClear').onclick=function(){
+  var t=el('postText'); if(!t||!t.value.trim())return;
+  if(!confirm('Очистить поле ввода?'))return;
+  t.value=''; updateCharCount(); hideAttachPreview(); postAttachedImage=''; clearDraftTimer();
 };
+
+if(el('postAttachBtn'))el('postAttachBtn').onclick=function(){
+  alert('📎 Отправьте изображение в чат бота с подписью «для поста», и оно появится здесь.');
+  // В будущем — file picker через Telegram Mini App API
+};
+
+if(el('postAttachRemove'))el('postAttachRemove').onclick=function(){
+  hideAttachPreview(); postAttachedImage='';
+};
+
+// Автосохранение черновика каждые 30 секунд
+function startDraftTimer(){
+  clearDraftTimer();
+  postDraftTimer=setInterval(saveDraftToCloud,30000);
+}
+
+// Загрузка черновика при открытии
+function loadDraftFromCloud(){
+  try{
+    if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.CloudStorage){
+      window.Telegram.WebApp.CloudStorage.getItem(KEY+':postDraft',function(err,val){
+        if(err||!val)return;
+        try{
+          var d=JSON.parse(val);
+          if(Date.now()-d.ts<86400000){ // не старше суток
+            if(el('postText')&&!el('postText').value.trim())el('postText').value=d.text||'';
+            if(d.image){postAttachedImage=d.image;showAttachPreview(d.image);}
+            updateCharCount();
+          }
+        }catch(e){}
+      });
+    }
+  }catch(e){}
+}
+
+function showAttachPreview(url){
+  var bl=el('postAttachBlock'); var pr=el('postAttachPreview');
+  if(bl)bl.style.display='block';
+  if(pr)pr.src=url;
+}
 if(refs.thoughtDraft)refs.thoughtDraft.onclick=function(){
   var t=(refs.thoughtInput.value||'').trim();if(!t)return;
   localStorage.setItem(KEY+':draft',t);alert('Черновик сохранён');

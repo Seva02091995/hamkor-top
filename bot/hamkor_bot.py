@@ -338,13 +338,89 @@ async def on_webapp_data(message: types.Message):
         metrics[ab]["usersCount"] = len(users_arr)
         save_json(FEED_METRICS_FILE, metrics)
 
-    # --- AI-пост ---
+    # --- AI-пост (Gemini генерация) ---
     elif action == "aiPost":
         prompt = data.get("prompt", "")
-        owner_msg = f"🤖 <b>AI-пост от @{username}:</b>\n\n<code>{prompt[:300]}</code>"
+        user_input = data.get("input", "")[:500]
+
+        gemini_key = os.environ.get("GEMINI_API_KEY", "")
+        generated = ""
+
+        if gemini_key:
+            full_prompt = (
+                "Ты — профессиональный копирайтер. Напиши пост для деловой соцсети на русском языке. "
+                f"Контекст: {prompt}. "
+                "Требования: тёплый профессиональный тон, 3-4 абзаца, польза для читателя, "
+                "призыв к обсуждению в конце. Только текст поста, без заголовков и мета-комментариев."
+            )
+            try:
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
+                body = {"contents":[{"parts":[{"text":full_prompt}]}]}
+                req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type":"application/json"})
+                resp = urllib.request.urlopen(req, timeout=12)
+                result = json.loads(resp.read())
+                generated = result["candidates"][0]["content"]["parts"][0]["text"].strip()
+            except Exception as e:
+                logging.error(f"Gemini aiPost failed: {e}")
+
+        # Fallback если Gemini не сработал
+        if not generated:
+            generated = (
+                f"Тема: {user_input}\n\n"
+                f"Я, как {data.get('title','специалист')}, хочу поделиться мыслями на эту тему. "
+                f"Это важный вопрос для профессионального сообщества. "
+                f"Буду рад(а) услышать ваше мнение в комментариях!\n\n"
+                f"#карьера #нетворкинг #HamkorTop"
+            )
+
+        # Сохраняем в профиль для авто-заполнения в Mini App
+        users = load_json(USERS_FILE)
+        users[user_id] = users.get(user_id, {})
+        users[user_id]["tg_id"] = user_id
+        users[user_id]["_ai_post"] = generated
+        save_json(USERS_FILE, users)
+
+        # Отправляем текст в чат
+        await message.answer(
+            f"✨ <b>Пост сгенерирован:</b>\n\n{generated[:1500]}",
+            parse_mode="HTML"
+        )
+
+        # Кнопка открытия Mini App с авто-заполнением
+        prof = json.dumps(users[user_id], ensure_ascii=False)
+        encoded = base64.urlsafe_b64encode(prof.encode('utf-8')).decode('utf-8')
+        app_url = f"https://seva02091995.github.io/hamkor-top/?v=33&load={encoded}"
+        kb = InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="✍️ Открыть Мастерскую — текст уже там", web_app=WebAppInfo(url=app_url))]
+        ])
+        await message.answer("👆 Нажми кнопку — текст появится в Мастерской постов.", reply_markup=kb)
+
+        add_to_crm("aiPost", user_id, username, {"input": user_input, "length": len(generated)})
+
+    # --- Публикация поста в ленту ---
+    elif action == "publishPost":
+        text = data.get("text", "")
+        post_id = data.get("postId", "")
+        image = data.get("image", "")
+
+        # Сохраняем в posts.json
+        posts = load_json(DATA_DIR / "posts.json", [])
+        posts.insert(0, {
+            "id": post_id,
+            "tg_id": user_id,
+            "username": username,
+            "text": text[:5000],
+            "image": image,
+            "ts": data.get("ts", "")
+        })
+        if len(posts) > 200: posts = posts[:200]
+        save_json(DATA_DIR / "posts.json", posts)
+
+        add_to_crm("publishPost", user_id, username, {"postId": post_id, "len": len(text)})
+
+        owner_msg = f"📤 <b>Пост опубликован @{username}:</b>\n\n{text[:500]}"
         try: await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
         except: pass
-        await message.answer("🤖 Генерирую пост... \n\n_Пока AI анализирует твой профиль, попробуй «Интервью со мной» — мы определим твой стиль и все посты станут точнее._", parse_mode="Markdown")
 
     # --- Публикация мысли в ленту ---
     elif action == "postThought":
@@ -354,15 +430,6 @@ async def on_webapp_data(message: types.Message):
         try: await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
         except: pass
         await message.answer("✅ Мысль опубликована!")
-
-    # --- Отправка поста в канал ---
-    elif action == "postToChannel":
-        text = data.get("text", "")
-        lead = add_to_crm("postToChannel", user_id, username, data)
-        owner_msg = f"📤 <b>Пост в канал от @{username}:</b>\n\n{text[:800]}"
-        try: await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
-        except: pass
-        await message.answer("✅ Отправлено в канал!")
 
     # --- Комментарий ---
     elif action == "postComment":
