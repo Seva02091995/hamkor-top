@@ -302,55 +302,69 @@ body.dark .streak-day.on{color:#FBBF24}
 
 <div class="screen" id="s-profile">
   <div class="pf-wrap">
-    <div class="pf-top">
-      <div class="pf-av" id="pfAv"></div>
-      <div class="photo-nav">
-        <button class="photo-btn" id="photoPrev">&lt;</button>
-        <button class="photo-btn" id="photoNext">&gt;</button>
+    <div class="hero-title" style="margin-top:20px">👤 Мой профиль</div>
+    <div class="card" style="position:relative;height:auto;padding:14px;width:100%;max-width:400px">
+      <div id="profileEmptyState" style="display:none">
+        <div style="font-weight:700;font-size:18px;margin-bottom:6px">Заполните профиль — и люди смогут найти вас для работы и партнёрства</div>
+        <div class="note" style="margin-bottom:10px">Это займёт 2 минуты. Мы можем подтянуть имя и фото из Telegram.</div>
       </div>
-      <div class="pf-name" id="pfName">Севара</div>
-      <div class="pf-level">Yangi &middot; Level 1</div>
-      <div class="pf-note" data-t="pfHint">Фото меняется в редактировании</div>
+      <div class="pf-top" style="margin-top:6px">
+        <div class="pf-av" id="pfAv"></div>
+        <div class="photo-nav">
+          <button class="photo-btn" id="photoPrev">&lt;</button>
+          <button class="photo-btn" id="photoNext">&gt;</button>
+        </div>
+        <div class="pf-name" id="pfName">Профиль</div>
+        <div class="pf-level" id="pfRoleLine">Добавьте должность</div>
+        <div class="pf-note" id="pfTgLine">Telegram: —</div>
+      </div>
+      <div id="profileProgressWrap" style="margin-top:10px">
+        <div class="track"><div class="fill" id="profileProgressBar" style="width:0%"></div></div>
+        <div class="note" id="profileProgressText" style="margin-top:6px">Профиль заполнен на 0%</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+        <button class="btn btn-primary" id="btnEdit" style="max-width:100%;min-height:44px">Редактировать профиль</button>
+        <button class="btn btn-secondary" id="btnImportTg" style="max-width:100%;min-height:44px">📥 Загрузить фото из Telegram</button>
+        <button class="btn btn-secondary" id="btnAiAvatar" style="max-width:100%;min-height:44px">✨ Создать AI-аватар</button>
+        <button class="btn btn-secondary" id="btnAiBio" style="max-width:100%;min-height:44px">✨ Улучшить описание с AI</button>
+      </div>
     </div>
-    <div class="form">
-      <button class="btn btn-primary" id="btnEdit" data-t="edit">Редактировать профиль</button>
+
+    <div class="form" style="margin-top:10px">
       <button class="btn btn-secondary" id="btnLangCh" data-t="chLang">Сменить язык</button>
       <button class="btn btn-secondary" id="btnTheme" data-t="theme">Тёмная тема</button>
       <button class="btn btn-secondary" id="btnBiz" data-t="biz">🚀 Услуги для бизнеса</button>
       <button class="btn btn-secondary" id="btnIssue" data-t="issue">💡 Сообщить о проблеме</button>
       <button class="btn btn-secondary" id="btnPost" data-t="btnPost">📝 Создать пост</button>
-      <div style="display:flex;gap:8px;justify-content:center;margin-top:4px">
-        <button class="ref-btn" id="fsS" style="font-size:11px">A</button>
-        <button class="ref-btn" id="fsM" style="font-size:14px;font-weight:700">A</button>
-        <button class="ref-btn" id="fsL" style="font-size:17px;font-weight:700">A</button>
-      </div>
     </div>
   </div>
 </div>
 
 <div class="screen" id="s-edit">
-  <div class="hero-title" style="margin-top:24px" data-t="edit">Редактировать профиль</div>
+  <div class="hero-title" style="margin-top:24px">Редактировать профиль</div>
   <div style="display:flex;justify-content:center;margin-bottom:14px">
     <div class="pf-av" id="editAv" style="width:72px;height:72px"></div>
   </div>
   <div class="form">
-    <div class="fg"><label data-t="fName">Имя</label><input class="input" id="fName"/></div>
-    <div class="fg"><label data-t="fCity">Город</label><input class="input" id="fCity"/></div>
-    <div class="fg"><label data-t="fRole">Роль</label><input class="input" id="fRole"/></div>
-    <div class="fg"><label data-t="fSkills">Навыки (через запятую)</label><input class="input" id="fSkills"/></div>
-    <div class="fg"><label data-t="fBio">О себе</label><textarea class="textarea" id="fBio"></textarea></div>
-    <div class="fg"><label data-t="fBio">О себе</label><textarea class="textarea" id="fBio"></textarea></div>
-    <div class="fg"><button class="ref-btn" id="aiBio" data-t="aiBio">✨ AI улучшит описание</button></div>
-    <div class="fg"><button class="ref-btn" id="aiPost" data-t="aiPost">📝 Сгенерировать пост из опыта</button></div>
-    <div class="fg"><label data-t="fPhoto">Фото (можно несколько)</label>
+    <div class="fg"><label>Имя</label><input class="input" id="fName" placeholder="Например: Алина"/></div>
+    <div class="fg"><label>Фамилия</label><input class="input" id="fSurname" placeholder="Например: Каримова"/></div>
+    <div class="fg"><label>Должность</label><input class="input" id="fRole" placeholder="Например: Product Manager"/></div>
+    <div class="fg"><label>Компания</label><input class="input" id="fCompany" placeholder="Например: Hamkor Tech"/></div>
+    <div class="fg"><label>О себе</label><textarea class="textarea" id="fBio" placeholder="2–3 предложения о вашем опыте и целях"></textarea></div>
+    <div class="fg"><label>Навыки/теги</label><input class="input" id="fSkills" placeholder="Например: Python, UX, CRM"/></div>
+    <div class="fg"><label>Telegram</label><input class="input" id="fTelegram" readonly/></div>
+
+    <div class="fg"><button class="ref-btn" id="aiBio" style="min-height:44px;width:100%">✨ Улучшить описание с AI</button></div>
+    <div class="fg"><button class="ref-btn" id="aiPost" style="min-height:44px;width:100%">📝 Сгенерировать пост из опыта</button></div>
+    <div class="fg"><label>Фото (можно несколько)</label>
       <div class="upload">
         <input type="file" accept="image/*" class="file-hide" id="fileAv" multiple/>
-        <label for="fileAv" class="file-btn" data-t="choose">Выбрать фото</label>
-        <span class="file-name" id="fileName" data-t="none">Не выбрано</span>
+        <label for="fileAv" class="file-btn">Выбрать фото</label>
+        <span class="file-name" id="fileName">Не выбрано</span>
       </div>
     </div>
-    <button class="btn btn-primary" id="btnSave" data-t="save">Сохранить</button>
-    <button class="btn btn-secondary" id="btnCancel" data-t="cancel">Отмена</button>
+    <button class="btn btn-primary" id="btnSave" style="min-height:44px">Сохранить изменения</button>
+    <button class="btn btn-secondary" id="btnCancel" style="min-height:44px">Отмена</button>
   </div>
 </div>
 
@@ -616,7 +630,23 @@ en:{made:'created in Uzbekistan',lang:'Choose language',langHint:'You can change
 };
 var ST=null;
 var tgId='guest';
-(function(){try{if(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initDataUnsafe&&window.Telegram.WebApp.initDataUnsafe.user&&window.Telegram.WebApp.initDataUnsafe.user.id)tgId=String(window.Telegram.WebApp.initDataUnsafe.user.id);}catch(e){}})();
+var tgUser={id:'guest',username:'',first_name:'',last_name:'',photo_url:'',language_code:'ru'};
+(function(){
+  try{
+    var u=window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initDataUnsafe&&window.Telegram.WebApp.initDataUnsafe.user;
+    if(u&&u.id){
+      tgId=String(u.id);
+      tgUser={
+        id:String(u.id),
+        username:u.username||'',
+        first_name:u.first_name||'',
+        last_name:u.last_name||'',
+        photo_url:u.photo_url||'',
+        language_code:u.language_code||'ru'
+      };
+    }
+  }catch(e){}
+})();
 var KEY='hamkorTop:'+tgId;
 // --- Telegram Mini App init ---
 (function(){try{if(window.Telegram&&window.Telegram.WebApp){window.Telegram.WebApp.ready();window.Telegram.WebApp.expand();}}catch(e){}})();
@@ -626,7 +656,7 @@ function pickLang(lang,btn){
   document.querySelectorAll('.lang-btn').forEach(function(x){x.classList.remove('active');});
   btn.classList.add('active');
 }
-var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,streakLast:'',contacts:0,views:0,dailyBonus:false,chestDate:'',boost2x:0,thoughtDate:'',thoughtCount:0,interviewAnswers:[],interviewDraft:null,toneProfile:null,interviewDone:false,interviewReturnScreen:'s-main',name:'Севара',city:'Tashkent',roleT:'Product Owner',skills:'Figma,Prototyping,Research',bio:'Основатель Hamkor Top',photos:[],photoIdx:0,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0,claim10:false,rewardProfile:false,rewardInvite:false,rewardBiz:false,rewardIssue:false,badges:[]};
+var defaultST={lang:'ru',role:'',xp:250,lvl:2,streak:1,streakLast:'',contacts:0,views:0,dailyBonus:false,chestDate:'',boost2x:0,thoughtDate:'',thoughtCount:0,interviewAnswers:[],interviewDraft:null,toneProfile:null,interviewDone:false,interviewReturnScreen:'s-main',name:'',surname:'',title:'',company:'',skills:'',bio:'',tgUsername:'',tgPhoto:'',photos:[],photoIdx:0,profileOnboarded:false,profileImported:false,inviteDone:false,lastScreen:'s-lang',returnScreen:'s-welcome',theme:'light',cardIndex:0,claim10:false,rewardProfile:false,rewardInvite:false,rewardBiz:false,rewardIssue:false,badges:[]};
 function loadST(){try{var r=localStorage.getItem(KEY);if(!r)return false;var d=JSON.parse(r);ST={};for(var k in defaultST)ST[k]=defaultST[k];for(var k in d)ST[k]=d[k];if(!Array.isArray(ST.photos))ST.photos=[];return true;}catch(e){return false;}}
 if(!loadST()){ST={};for(var k in defaultST)ST[k]=defaultST[k];}
 function tryRestore(){
@@ -642,7 +672,7 @@ function tryRestore(){
 tryRestore();
 function saveST(){try{localStorage.setItem(KEY,JSON.stringify(ST));}catch(e){}}
 function saveToServer(){
-  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'saveProfile',name:ST.name,city:ST.city,role:ST.roleT,skills:ST.skills,bio:ST.bio,updatedAt:new Date().toISOString()}));}catch(e){}
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'saveProfile',name:ST.name,surname:ST.surname,title:ST.title,company:ST.company,skills:ST.skills,bio:ST.bio,tgUsername:ST.tgUsername,updatedAt:new Date().toISOString()}));}catch(e){}
 }
 function applyTheme(){document.body.classList.toggle('dark',ST.theme==='dark');}
 function tt(){return i18n[ST.lang]||i18n.ru;}
@@ -735,7 +765,9 @@ var refs={
   huntFill:el('huntFill'),huntNote:el('huntNote'),cardArea:el('cardArea'),hintText:el('hintText'),nextQuest:el('nextQuest'),chestBtn:el('chestBtn'),lbPlace:el('lbPlace'),lbScore:el('lbScore'),thoughtInput:el('thoughtInput'),thoughtPublish:el('thoughtPublish'),thoughtDraft:el('thoughtDraft'),
   task1dot:el('task1dot'),task2dot:el('task2dot'),task3dot:el('task3dot'),
   pfAv:el('pfAv'),pfName:el('pfName'),fileName:el('fileName'),fileAv:el('fileAv'),
-  fName:el('fName'),fCity:el('fCity'),fRole:el('fRole'),fSkills:el('fSkills'),fBio:el('fBio'),refNote:el('refNote'),bizMsg:el('bizMsg'),bizContact:el('bizContact'),
+  profileEmptyState:el('profileEmptyState'),pfRoleLine:el('pfRoleLine'),pfTgLine:el('pfTgLine'),profileProgressBar:el('profileProgressBar'),profileProgressText:el('profileProgressText'),profileProgressWrap:el('profileProgressWrap'),
+  btnImportTg:el('btnImportTg'),btnAiAvatar:el('btnAiAvatar'),btnAiBio:el('btnAiBio'),
+  fName:el('fName'),fSurname:el('fSurname'),fRole:el('fRole'),fCompany:el('fCompany'),fSkills:el('fSkills'),fBio:el('fBio'),fTelegram:el('fTelegram'),refNote:el('refNote'),bizMsg:el('bizMsg'),bizContact:el('bizContact'),
   btnLang:el('btnLang'),btnSpec:el('btnSpec'),btnEmp:el('btnEmp'),btnYes:el('btnYes'),btnNo:el('btnNo'),
   btnEdit:el('btnEdit'),btnLangCh:el('btnLangCh'),btnToMain:el('btnToMain'),btnTheme:el('btnTheme'),
   btnSave:el('btnSave'),btnCancel:el('btnCancel'),refBtn:el('refBtn'),
@@ -771,7 +803,7 @@ function show(id,remember){
 
   if(remember&&id!=='s-lang'){ST.lastScreen=id;saveST();}
   if(id==='s-main')renderCard();
-  if(id==='s-profile')renderProfile();
+  if(id==='s-profile'){renderProfile();runProfileOnboarding();}
   if(id==='s-edit')fillForm();
   if(id==='s-feed')renderFeed();
 }
@@ -1058,20 +1090,54 @@ function swipe(dir){
     checkDailyComplete();
   },220);
 }
+function profileCompletion(){
+  var score=0;
+  if((ST.photos||[]).length||ST.tgPhoto)score+=20;
+  if((ST.name||'').trim())score+=15;
+  if((ST.title||'').trim())score+=20;
+  if((ST.company||'').trim())score+=10;
+  if((ST.bio||'').trim())score+=20;
+  if((ST.skills||'').trim())score+=15;
+  return Math.min(100,score);
+}
 function renderProfile(){
-  refs.pfName.textContent=ST.name;
-  if(ST.photos.length>0){var si=Math.max(0,Math.min(ST.photoIdx,ST.photos.length-1));ST.photoIdx=si;refs.pfAv.innerHTML='<img src="'+ST.photos[si]+'" alt="avatar"/>';}
+  var fullName=((ST.name||'')+' '+(ST.surname||'')).trim();
+  refs.pfName.textContent=fullName||'Незаполненный профиль';
+  refs.pfRoleLine.textContent=(ST.title||'Добавьте должность')+((ST.company||'')?(' в '+ST.company):'');
+  var shownTg=ST.tgUsername||tgUser.username||'';
+  refs.pfTgLine.textContent='Telegram: '+(shownTg?('@'+shownTg):'не указан');
+
+  var p=profileCompletion();
+  refs.profileProgressBar.style.width=p+'%';
+  refs.profileProgressText.textContent='Профиль заполнен на '+p+'%';
+  refs.profileEmptyState.style.display=p===0?'block':'none';
+  refs.profileProgressWrap.style.display=p>=100?'none':'block';
+
+  var allPhotos=(ST.photos||[]).slice();
+  if(ST.tgPhoto && allPhotos.indexOf(ST.tgPhoto)===-1)allPhotos.unshift(ST.tgPhoto);
+  if(allPhotos.length>0){var si=Math.max(0,Math.min(ST.photoIdx,allPhotos.length-1));ST.photoIdx=si;refs.pfAv.innerHTML='<img src="'+allPhotos[si]+'" alt="avatar"/>';}
   else{refs.pfAv.innerHTML=icon();}
 }
 function fillForm(){
-  refs.fName.value=ST.name;refs.fCity.value=ST.city;refs.fRole.value=ST.roleT;refs.fSkills.value=ST.skills;refs.fBio.value=ST.bio;
-  refs.fileName.textContent=ST.photos.length?ST.photos.length+' фото':tt().none;
-  var ea=el('editAv');if(ea){if(ST.photos.length){ea.innerHTML='<img src="'+ST.photos[ST.photoIdx]+'" alt="avatar"/>';}else{ea.innerHTML=icon();}}
+  refs.fName.value=ST.name||'';
+  refs.fSurname.value=ST.surname||'';
+  refs.fRole.value=ST.title||'';
+  refs.fCompany.value=ST.company||'';
+  refs.fSkills.value=ST.skills||'';
+  refs.fBio.value=ST.bio||'';
+  var shownTg=ST.tgUsername||tgUser.username||'';
+  refs.fTelegram.value=shownTg?('@'+shownTg):'—';
+  refs.fileName.textContent=(ST.photos&&ST.photos.length)?ST.photos.length+' фото':'Не выбрано';
+  var ea=el('editAv');if(ea){if(ST.photos&&ST.photos.length){ea.innerHTML='<img src="'+ST.photos[Math.max(0,Math.min(ST.photoIdx,ST.photos.length-1))]+'" alt="avatar"/>';}else if(ST.tgPhoto){ea.innerHTML='<img src="'+ST.tgPhoto+'" alt="avatar"/>';}else{ea.innerHTML=icon();}}
 }
 function saveProfile(){
-  ST.name=refs.fName.value.trim()||ST.name;ST.city=refs.fCity.value.trim()||ST.city;ST.roleT=refs.fRole.value.trim()||ST.roleT;
-  ST.skills=refs.fSkills.value.trim()||ST.skills;ST.bio=refs.fBio.value.trim()||ST.bio;
-  if(!ST.rewardProfile){ST.xp+=50;ST.rewardProfile=true;reward(50,'Профиль заполнен!');}
+  ST.name=(refs.fName.value||'').trim();
+  ST.surname=(refs.fSurname.value||'').trim();
+  ST.title=(refs.fRole.value||'').trim();
+  ST.company=(refs.fCompany.value||'').trim();
+  ST.skills=(refs.fSkills.value||'').trim();
+  ST.bio=(refs.fBio.value||'').trim();
+  if(!ST.rewardProfile && profileCompletion()>=60){ST.xp+=50;ST.rewardProfile=true;reward(50,'Профиль заполнен!');}
   upd();saveST();show('s-profile');
   saveToServer();
   checkDailyComplete();
@@ -1096,12 +1162,50 @@ var touchX=0;
 refs.pfAv.addEventListener('touchstart',function(e){touchX=e.changedTouches[0].clientX;},{passive:true});
 refs.pfAv.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)<28)return;if(dx<0)nextPhoto(1);else nextPhoto(-1);},{passive:true});
 
+function importFromTelegram(force){
+  var hasData=!!(tgUser.first_name||tgUser.username||tgUser.photo_url);
+  if(!hasData){alert('Данные Telegram не найдены. Заполните профиль вручную.');return;}
+  if(!force){
+    var ok=confirm('Мы нашли ваши данные из Telegram: имя и фото. Использовать их в профиле?');
+    if(!ok)return;
+  }
+  if(!ST.name)ST.name=tgUser.first_name||'';
+  if(!ST.surname)ST.surname=tgUser.last_name||'';
+  ST.tgUsername=tgUser.username||ST.tgUsername||'';
+  if(tgUser.photo_url){ST.tgPhoto=tgUser.photo_url;if(!ST.photos||!ST.photos.length)ST.photos=[tgUser.photo_url];}
+  ST.profileImported=true;
+  saveST();renderProfile();
+}
+function runProfileOnboarding(){
+  if(ST.profileOnboarded)return;
+  ST.profileOnboarded=true; saveST();
+  setTimeout(function(){
+    alert('Добро пожаловать в Hamkor Top! Заполните профиль — это займет 2 минуты.');
+    importFromTelegram(false);
+  },200);
+}
+
 refs.btnYes.onclick=function(){swipe('yes');};refs.btnNo.onclick=function(){swipe('no');};
 refs.btnEdit.onclick=function(){show('s-edit');};
 refs.btnLangCh.onclick=function(){ST.returnScreen='s-profile';saveST();show('s-lang',false);};
 refs.btnToMain.onclick=function(){show('s-main');};
 refs.btnTheme.onclick=function(){ST.theme=ST.theme==='dark'?'light':'dark';applyTheme();tr();saveST();};
-refs.btnSave.onclick=saveProfile;refs.btnCancel.onclick=function(){show('s-profile');};
+refs.btnSave.onclick=saveProfile;
+refs.btnCancel.onclick=function(){
+  var dirty=(refs.fName.value.trim()!==(ST.name||'')||refs.fSurname.value.trim()!==(ST.surname||'')||refs.fRole.value.trim()!==(ST.title||'')||refs.fCompany.value.trim()!==(ST.company||'')||refs.fSkills.value.trim()!==(ST.skills||'')||refs.fBio.value.trim()!==(ST.bio||''));
+  if(dirty && !confirm('У вас есть несохранённые изменения. Выйти без сохранения?'))return;
+  show('s-profile');
+};
+if(refs.btnImportTg)refs.btnImportTg.onclick=function(){importFromTelegram(false);};
+if(refs.btnAiAvatar)refs.btnAiAvatar.onclick=function(){
+  var style=prompt('Выберите стиль аватара: business / creative / neutral','business')||'business';
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiAvatar',style:style,photo:ST.photos&&ST.photos[0]?ST.photos[0]:(ST.tgPhoto||'')}));}catch(e){}
+  alert('Запрос на AI-аватар отправлен. Варианты придут в чат бота.');
+};
+if(refs.btnAiBio)refs.btnAiBio.onclick=function(){
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiBioImprove',bio:ST.bio||'',title:ST.title||'',skills:ST.skills||''}));}catch(e){}
+  alert('AI готовит варианты описания. Проверь чат бота.');
+};
 refs.refBtn.onclick=copyInvite;if(refs.chestBtn)refs.chestBtn.onclick=openChest;
 refs.photoPrev.onclick=function(){nextPhoto(-1);};refs.photoNext.onclick=function(){nextPhoto(1);};
 el('btnBiz').onclick=function(){show('s-biz');};
@@ -1509,7 +1613,7 @@ if(el('postWrite'))el('postWrite').onclick=function(){
   el('postWrite').className='btn btn-primary';el('postAI').className='btn btn-secondary';
 };
 if(el('postAI'))el('postAI').onclick=function(){
-  var p='Напиши пост для Telegram на основе профиля. Имя: '+ST.name+'. Роль: '+ST.roleT+'. Навыки: '+ST.skills+'. О себе: '+ST.bio+'. Тёплый профессиональный тон, 3-4 абзаца, с призывом к нетворкингу.';
+  var p='Напиши пост для Telegram на основе профиля. Имя: '+(ST.name||'')+'. Должность: '+(ST.title||'')+'. Навыки: '+(ST.skills||'')+'. О себе: '+(ST.bio||'')+'. Тёплый профессиональный тон, 3-4 абзаца, с призывом к нетворкингу.';
   el('postText').value='✨ AI думает...';el('postHint').style.display='none';
   el('postAI').className='btn btn-primary';el('postWrite').className='btn btn-secondary';
   try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiPost',prompt:p}));}
@@ -1531,7 +1635,7 @@ if(refs.thoughtDraft)refs.thoughtDraft.onclick=function(){
 };
 if(refs.thoughtPublish)refs.thoughtPublish.onclick=function(){
   var t=(refs.thoughtInput.value||'').trim();if(!t)return;
-  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'postThought',text:t,profile:{name:ST.name,role:ST.roleT}}));}catch(e){}
+  try{window.Telegram.WebApp.sendData(JSON.stringify({action:'postThought',text:t,profile:{name:ST.name,title:ST.title}}));}catch(e){}
   var tk=todayKey();if(ST.thoughtDate!==tk){ST.thoughtDate=tk;ST.thoughtCount=0;}
   if(ST.thoughtCount<3){ST.thoughtCount++;var xp=randomInt(8,18);ST.xp+=xp;reward(xp,'Мысль опубликована!');upd();saveST();}
   refs.thoughtInput.value='';
@@ -1539,9 +1643,12 @@ if(refs.thoughtPublish)refs.thoughtPublish.onclick=function(){
 
 function calcBoost(){
   var f=0,t=6;
-  if(ST.name&&ST.name!=='Севара')f++; if(ST.city&&ST.city!=='Tashkent')f++; if(ST.roleT&&ST.roleT!=='Product Owner')f++;
-  if(ST.skills&&ST.skills!=='Figma,Prototyping,Research')f++; if(ST.bio&&ST.bio!=='Основатель Hamkor Top')f++;
-  if(ST.photos.length)f++;
+  if((ST.name||'').trim())f++;
+  if((ST.title||'').trim())f++;
+  if((ST.company||'').trim())f++;
+  if((ST.skills||'').trim())f++;
+  if((ST.bio||'').trim())f++;
+  if((ST.photos&&ST.photos.length)||ST.tgPhoto)f++;
   return Math.min(100,Math.round(f/t*100+68));
 }
 
@@ -1584,12 +1691,12 @@ function fireStreak(){
   return '<span class="streak-fire">🔥</span> '+s+' '+(s===1?'день':'дней');
 }
 el('aiBio').onclick=function(){
-  var p='Улучши описание профиля. Имя: '+ST.name+'. Роль: '+ST.roleT+'. Навыки: '+ST.skills+'. Текущее описание: '+(ST.bio||'нет')+'. Напиши улучшенную версию на русском, 2-3 предложения, деловым и тёплым тоном.';
+  var p='Улучши описание профиля. Имя: '+(ST.name||'')+'. Должность: '+(ST.title||'')+'. Навыки: '+(ST.skills||'')+'. Текущее описание: '+(ST.bio||'нет')+'. Напиши улучшенную версию на русском, 2-3 предложения, деловым и тёплым тоном.';
   try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiBio',prompt:p}));refs.fBio.value='✨ AI думает...';}
   catch(e){refs.fBio.value='Отправь "AI описание" в чат бота, я улучшу.';}
 };
 el('aiPost').onclick=function(){
-  var p='Сгенерируй пост для соцсетей на основе профиля. Имя: '+ST.name+'. Роль: '+ST.roleT+'. Навыки: '+ST.skills+'. Опыт: '+(ST.bio||'нет')+'. Напиши готовый пост для Telegram: 3-4 абзаца, тёплый профессиональный тон, с призывом к нетворкингу.';
+  var p='Сгенерируй пост для соцсетей на основе профиля. Имя: '+(ST.name||'')+'. Должность: '+(ST.title||'')+'. Навыки: '+(ST.skills||'')+'. Опыт: '+(ST.bio||'нет')+'. Напиши готовый пост для Telegram: 3-4 абзаца, тёплый профессиональный тон, с призывом к нетворкингу.';
   try{window.Telegram.WebApp.sendData(JSON.stringify({action:'aiPost',prompt:p}));alert('Запрос отправлен! AI-ассистент скоро ответит с готовым постом.');}
   catch(e){prompt('Скопируй и отправь это в чат бота:',p);}
 };
@@ -1618,7 +1725,9 @@ var d=localStorage.getItem(KEY+':draft');if(d&&refs.thoughtInput)refs.thoughtInp
 
 // font size
 function setFS(s){ST.fs=s;document.body.style.setProperty('--fs',s);saveST();}
-el('fsS').onclick=function(){setFS(0.85);};el('fsM').onclick=function(){setFS(1);};el('fsL').onclick=function(){setFS(1.2);};
+if(el('fsS'))el('fsS').onclick=function(){setFS(0.85);};
+if(el('fsM'))el('fsM').onclick=function(){setFS(1);};
+if(el('fsL'))el('fsL').onclick=function(){setFS(1.2);};
 if(ST.fs)document.body.style.setProperty('--fs',ST.fs);
 
 if(ST.role){show(ST.lastScreen&&ST.lastScreen!=='s-lang'?ST.lastScreen:'s-main',false);}else{show('s-lang',false);}

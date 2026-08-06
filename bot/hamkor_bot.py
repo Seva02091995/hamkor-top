@@ -124,10 +124,12 @@ async def on_webapp_data(message: types.Message):
             "tg_id": user_id,
             "username": username,
             "name": data.get("name", ""),
-            "city": data.get("city", ""),
-            "role": data.get("role", ""),
+            "surname": data.get("surname", ""),
+            "title": data.get("title", ""),
+            "company": data.get("company", ""),
             "skills": data.get("skills", ""),
             "bio": data.get("bio", ""),
+            "tg_username": data.get("tgUsername", ""),
             "updated_at": data.get("updatedAt", "")
         }
         save_json(USERS_FILE, users)
@@ -243,7 +245,7 @@ async def on_webapp_data(message: types.Message):
         metrics = load_json(FEED_METRICS_FILE, {})
         ab = data.get("ab", "A")
         if ab not in metrics:
-            metrics[ab] = {"readMore": 0, "detailOpens": 0, "totalUsers": set(), "byEvent": {}}
+            metrics[ab] = {"readMore": 0, "detailOpens": 0, "totalUsers": [], "byEvent": {}}
         ev = data.get("event", "")
         if ev:
             if ev not in metrics[ab].get("byEvent", {}):
@@ -253,10 +255,11 @@ async def on_webapp_data(message: types.Message):
                 metrics[ab]["readMore"] = metrics[ab].get("readMore", 0) + 1
             elif ev == "detailOpen":
                 metrics[ab]["detailOpens"] = metrics[ab].get("detailOpens", 0) + 1
-        if isinstance(metrics[ab].get("totalUsers"), set):
-            metrics[ab]["totalUsers"].add(user_id)
-        else:
-            metrics[ab]["totalUsers"] = {user_id}
+        users_arr = metrics[ab].get("totalUsers", [])
+        if user_id not in users_arr:
+            users_arr.append(user_id)
+        metrics[ab]["totalUsers"] = users_arr
+        metrics[ab]["usersCount"] = len(users_arr)
         save_json(FEED_METRICS_FILE, metrics)
 
     # --- AI-пост ---
@@ -337,6 +340,38 @@ async def on_webapp_data(message: types.Message):
         owner_msg = f"🖼 <b>Генерация от @{username}:</b> «{prompt[:120]}»"
         try: await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
         except: pass
+
+    # --- AI-аватар ---
+    elif action == "aiAvatar":
+        style = data.get("style", "business")
+        src_photo = data.get("photo", "")
+        add_to_crm("aiAvatar", user_id, username, data)
+        owner_msg = (
+            f"✨ <b>Запрос AI-аватара от @{username}</b>\n"
+            f"Стиль: <b>{style}</b>\n"
+            f"Фото: {('есть' if src_photo else 'нет')}"
+        )
+        try:
+            await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
+        except: pass
+        await message.answer("✨ Принято! Подготовлю варианты аватара и отправлю сюда.")
+
+    # --- AI-улучшение описания ---
+    elif action == "aiBioImprove":
+        bio = data.get("bio", "")
+        title = data.get("title", "")
+        skills = data.get("skills", "")
+        add_to_crm("aiBioImprove", user_id, username, data)
+        owner_msg = (
+            f"✨ <b>Запрос улучшения bio от @{username}</b>\n\n"
+            f"Должность: {title}\n"
+            f"Навыки: {skills}\n"
+            f"Текущее описание: {bio[:300]}"
+        )
+        try:
+            await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
+        except: pass
+        await message.answer("✨ Готово! Сейчас отправлю 2–3 улучшенных варианта описания в чат.")
 
     else:
         await message.answer("✅ Данные получены")
