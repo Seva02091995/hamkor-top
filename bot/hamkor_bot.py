@@ -101,6 +101,44 @@ async def on_crm_callback(callback: types.CallbackQuery):
     await callback.message.edit_text(callback.message.text + f"\n\n⚙️ <b>Статус:</b> {new_status}", parse_mode="HTML")
     await callback.answer(f"Статус изменен на {new_status}")
 
+async def on_avatar_pick(callback: types.CallbackQuery):
+    """Выбор AI-аватара: avatar_pick_<index>_<user_id>"""
+    parts = callback.data.split('_')
+    idx = int(parts[2])
+    uid = parts[3]
+
+    users = load_json(USERS_FILE)
+    user = users.get(uid, {})
+    candidates = user.get("ai_avatar_candidates", [])
+
+    if idx < 0 or idx >= len(candidates):
+        await callback.answer("❌ Вариант не найден")
+        return
+
+    picked_url = candidates[idx]
+    user["avatar_url"] = picked_url
+    user.pop("ai_avatar_candidates", None)
+    save_json(USERS_FILE, users)
+
+    # Убираем кнопки, показываем выбор
+    await callback.message.edit_text(
+        callback.message.text + f"\n\n✅ Выбран вариант {idx+1}",
+        parse_mode="HTML"
+    )
+
+    # Кнопка открытия Mini App с аватаром в URL
+    encoded = urllib.parse.quote(picked_url)
+    app_url = f"https://seva02091995.github.io/hamkor-top/?v=32&photo={encoded}"
+    kb = InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="🚀 Открыть Hamkor Top с новым аватаром", web_app=WebAppInfo(url=app_url))]
+    ])
+    await callback.message.answer(
+        "✨ <b>Аватар установлен!</b>\n\nНажми кнопку ниже чтобы увидеть его в профиле 👇",
+        reply_markup=kb,
+        parse_mode="HTML"
+    )
+    await callback.answer(f"Выбран вариант {idx+1}")
+
 async def on_webapp_data(message: types.Message):
     """Принимает данные из Mini App (sendData)"""
     if not message.web_app_data:
@@ -346,15 +384,48 @@ async def on_webapp_data(message: types.Message):
         style = data.get("style", "business")
         src_photo = data.get("photo", "")
         add_to_crm("aiAvatar", user_id, username, data)
-        owner_msg = (
-            f"✨ <b>Запрос AI-аватара от @{username}</b>\n"
-            f"Стиль: <b>{style}</b>\n"
-            f"Фото: {('есть' if src_photo else 'нет')}"
-        )
+
+        # Три варианта промптов под разные стили
+        base = f"professional profile picture, headshot, centered, good lighting, {style} style, circular crop ready, no text no watermark"
+        variants = [
+            f"clean corporate headshot, white background, {base}",
+            f"modern creative portrait, gradient background, {base}",
+            f"casual confident look, natural light, {base}"
+        ]
+
         try:
-            await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
-        except: pass
-        await message.answer("✨ Принято! Подготовлю варианты аватара и отправлю сюда.")
+            # Генерируем и сохраняем URL'ы кандидатов
+            urls = []
+            for i, v in enumerate(variants):
+                enc = urllib.parse.quote(v)
+                urls.append(f"https://image.pollinations.ai/prompt/{enc}?width=512&height=512&nologo=true")
+
+            users = load_json(USERS_FILE)
+            users[user_id] = users.get(user_id, {})
+            users[user_id]["tg_id"] = user_id
+            users[user_id]["ai_avatar_candidates"] = urls
+            save_json(USERS_FILE, users)
+
+            # Отправляем альбом из 3 фото
+            media = []
+            for i, url in enumerate(urls):
+                cap = f"Вариант {i+1}" if i == 0 else f"Вариант {i+1}"
+                media.append(types.InputMediaPhoto(media=url, caption=cap if i == 0 else None))
+            await message.bot.send_media_group(message.chat.id, media)
+
+            # Inline-кнопки выбора
+            kb = InlineKeyboardMarkup(inline_keyboard=[
+                [
+                    InlineKeyboardButton(text="1️⃣ Вариант 1", callback_data=f"avatar_pick_0_{user_id}"),
+                    InlineKeyboardButton(text="2️⃣ Вариант 2", callback_data=f"avatar_pick_1_{user_id}"),
+                    InlineKeyboardButton(text="3️⃣ Вариант 3", callback_data=f"avatar_pick_2_{user_id}")
+                ]
+            ])
+            await message.answer("👆 Выбери вариант аватара — он сразу появится в твоём профиле:", reply_markup=kb)
+
+        except Exception as e:
+            logging.error(f"AI avatar gen failed: {e}")
+            await message.answer("⚠️ Не удалось сгенерировать аватары. Попробуй позже.")
 
     # --- AI-улучшение описания ---
     elif action == "aiBioImprove":
@@ -390,6 +461,7 @@ async def main():
     dp.message.register(on_start, Command("start"))
     dp.callback_query.register(on_about, lambda c: c.data == "about")
     dp.callback_query.register(on_crm_callback, lambda c: c.data.startswith("crm_status_"))
+    dp.callback_query.register(on_avatar_pick, lambda c: c.data.startswith("avatar_pick_"))
     dp.message.register(on_webapp_data, F.web_app_data)
     try:
         await bot.set_chat_menu_button(
