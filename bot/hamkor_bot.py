@@ -139,6 +139,44 @@ async def on_avatar_pick(callback: types.CallbackQuery):
     )
     await callback.answer(f"Выбран вариант {idx+1}")
 
+async def on_bio_pick(callback: types.CallbackQuery):
+    """Выбор AI-описания: bio_pick_<index>_<user_id>"""
+    parts = callback.data.split('_')
+    idx = int(parts[2])
+    uid = parts[3]
+
+    users = load_json(USERS_FILE)
+    user = users.get(uid, {})
+    candidates = user.get("ai_bio_candidates", [])
+
+    if idx < 0 or idx >= len(candidates):
+        await callback.answer("❌ Вариант не найден")
+        return
+
+    picked = candidates[idx]
+    user["bio"] = picked
+    user.pop("ai_bio_candidates", None)
+    save_json(USERS_FILE, users)
+
+    # Кодируем профиль в URL чтобы Mini App подхватил
+    prof = json.dumps(user, ensure_ascii=False)
+    encoded = base64.urlsafe_b64encode(prof.encode('utf-8')).decode('utf-8')
+    app_url = f"https://seva02091995.github.io/hamkor-top/?v=32&load={encoded}"
+
+    await callback.message.edit_text(
+        callback.message.text + f"\n✅ <b>Выбран вариант {idx+1}</b>",
+        parse_mode="HTML"
+    )
+    kb = InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="🚀 Открыть Hamkor Top с новым описанием", web_app=WebAppInfo(url=app_url))]
+    ])
+    await callback.message.answer(
+        "✨ <b>Описание обновлено!</b>\n\nНажми кнопку ниже — профиль сразу откроется с новым текстом 👇",
+        reply_markup=kb,
+        parse_mode="HTML"
+    )
+    await callback.answer(f"Выбран вариант {idx+1}")
+
 async def on_webapp_data(message: types.Message):
     """Принимает данные из Mini App (sendData)"""
     if not message.web_app_data:
@@ -433,16 +471,63 @@ async def on_webapp_data(message: types.Message):
         title = data.get("title", "")
         skills = data.get("skills", "")
         add_to_crm("aiBioImprove", user_id, username, data)
-        owner_msg = (
-            f"✨ <b>Запрос улучшения bio от @{username}</b>\n\n"
-            f"Должность: {title}\n"
-            f"Навыки: {skills}\n"
-            f"Текущее описание: {bio[:300]}"
-        )
-        try:
-            await message.bot.send_message(OWNER_ID, owner_msg, parse_mode="HTML")
-        except: pass
-        await message.answer("✨ Готово! Сейчас отправлю 2–3 улучшенных варианта описания в чат.")
+
+        gemini_key = os.environ.get("GEMINI_API_KEY", "")
+        variants = []
+
+        if gemini_key:
+            # --- Gemini Free Tier ---
+            prompt = (
+                "Ты — карьерный коуч. Улучши описание профиля пользователя. "
+                f"Должность: {title or 'не указана'}. "
+                f"Навыки: {skills or 'не указаны'}. "
+                f"Текущее описание: {bio or 'отсутствует'}. "
+                "Дай ровно 3 варианта улучшенного описания на русском языке. "
+                "Каждый вариант — 2-3 предложения, тёплый профессиональный тон. "
+                "Формат ответа строго: три абзаца, разделённых символами '---'."
+            )
+            try:
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={gemini_key}"
+                body = {"contents":[{"parts":[{"text":prompt}]}]}
+                req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type":"application/json"})
+                resp = urllib.request.urlopen(req, timeout=25)
+                result = json.loads(resp.read())
+                text = result["candidates"][0]["content"]["parts"][0]["text"]
+                variants = [v.strip() for v in text.split("---") if v.strip()][:3]
+            except Exception as e:
+                logging.error(f"Gemini bio failed: {e}")
+
+        # Fallback — шаблонные варианты
+        if len(variants) < 3:
+            t = title or "специалист"
+            s = skills or "профессиональные навыки"
+            b = bio or ""
+            variants = [
+                f"{t} с опытом в {s}. {b} Открыт(а) к новым возможностям и сотрудничеству в Узбекистане и за его пределами.".strip(". ")+".",
+                f"Профессионал в области {s}. {b} Помогаю компаниям расти через эффективные решения и современный подход.".strip(". ")+".",
+                f"Специализируюсь на {s}. {b} Ценю осмысленную работу и долгосрочное партнёрство. Ищу команду, с которой можно создавать ценность.".strip(". ")+"."
+            ]
+
+        # Сохраняем кандидатов
+        users = load_json(USERS_FILE)
+        users[user_id] = users.get(user_id, {})
+        users[user_id]["tg_id"] = user_id
+        users[user_id]["ai_bio_candidates"] = variants
+        save_json(USERS_FILE, users)
+
+        # Отправляем варианты
+        text_msg = "✨ <b>Улучшенные варианты описания:</b>\n\n"
+        for i, v in enumerate(variants):
+            text_msg += f"<b>Вариант {i+1}:</b>\n{v}\n\n"
+
+        kb = InlineKeyboardMarkup(inline_keyboard=[
+            [
+                InlineKeyboardButton(text="1️⃣ Вариант 1", callback_data=f"bio_pick_0_{user_id}"),
+                InlineKeyboardButton(text="2️⃣ Вариант 2", callback_data=f"bio_pick_1_{user_id}"),
+                InlineKeyboardButton(text="3️⃣ Вариант 3", callback_data=f"bio_pick_2_{user_id}")
+            ]
+        ])
+        await message.answer(text_msg, reply_markup=kb, parse_mode="HTML")
 
     else:
         await message.answer("✅ Данные получены")
@@ -462,6 +547,7 @@ async def main():
     dp.callback_query.register(on_about, lambda c: c.data == "about")
     dp.callback_query.register(on_crm_callback, lambda c: c.data.startswith("crm_status_"))
     dp.callback_query.register(on_avatar_pick, lambda c: c.data.startswith("avatar_pick_"))
+    dp.callback_query.register(on_bio_pick, lambda c: c.data.startswith("bio_pick_"))
     dp.message.register(on_webapp_data, F.web_app_data)
     try:
         await bot.set_chat_menu_button(
