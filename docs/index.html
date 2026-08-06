@@ -162,6 +162,27 @@ body.dark .streak-day.on{color:#FBBF24}
 .int-mic.rec{background:var(--blue);color:#fff;border-color:var(--blue)}
 .rec-card{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13px;color:var(--muted)}
 
+/* image studio */
+.gen-wrap{width:100%;max-width:400px;min-height:calc(100dvh - 72px);display:flex;flex-direction:column}
+.gen-step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:10px}
+.gen-step h4{font-size:18px;line-height:1.25;margin-bottom:8px}
+.gen-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.gen-opt{min-height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card2);font-size:14px;padding:10px;cursor:pointer;text-align:left}
+.gen-opt.active{border-color:var(--blue);box-shadow:0 0 0 2px rgba(74,144,226,.16)}
+.gen-help{font-size:13px;color:var(--muted);margin-bottom:8px}
+.gen-prompt-wrap{position:relative}
+.gen-prompt{min-height:110px;max-height:40vh;resize:none;padding-right:50px;font-size:16px;line-height:1.4}
+.gen-mic{position:absolute;right:8px;bottom:8px;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:20px}
+.gen-mic.rec{background:var(--blue);color:#fff;border-color:var(--blue)}
+.gen-examples{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.gen-ex{border:1px dashed var(--line);background:var(--card2);border-radius:10px;padding:8px 10px;font-size:13px;cursor:pointer}
+.gen-actions{margin-top:auto;padding-top:8px;padding-bottom:calc(16px + env(safe-area-inset-bottom));position:sticky;bottom:0;background:linear-gradient(180deg,transparent,var(--bg) 20%)}
+.gen-progress{font-size:13px;color:var(--muted);margin-top:8px;min-height:18px}
+.gen-preview{margin-top:10px;border:1px solid var(--line);background:var(--card2);border-radius:12px;overflow:hidden;text-align:center}
+.gen-preview img{width:100%;display:block}
+.gen-result-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.gen-result-actions .btn{flex:1;min-width:120px;margin:0;min-height:44px}
+
 .feed-meta{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:11px;color:var(--muted)}
 .feed-meta .mini-av{width:20px;height:20px;border-radius:50%;background:var(--card2);border:1px solid var(--line);display:grid;place-items:center;font-size:11px}
 .feed-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
@@ -351,12 +372,68 @@ body.dark .streak-day.on{color:#FBBF24}
 </div>
 
 <div class="screen" id="s-gen-image">
-  <div class="hero-title" style="margin-top:24px">🖼 Генерация изображения</div>
-  <div class="hero-sub">Опишите, что нужно нарисовать, и AI создаст картинку в стиле Hamkor.</div>
-  <div class="form">
-    <textarea class="textarea" id="genPrompt" placeholder="Например: футуристичный офис в Ташкенте..." style="min-height:100px"></textarea>
-    <button class="btn btn-primary" id="btnGen" style="margin-top:10px">Сгенерировать</button>
-    <div id="genResult" style="margin-top:16px;text-align:center"></div>
+  <div class="gen-wrap">
+    <div class="hero-title" style="margin-top:16px;font-size:20px">🖼 Генерация изображения</div>
+    <div class="hero-sub">Опишите, что хотите создать, или выберите готовые настройки — AI сделает всё за вас.</div>
+
+    <div class="gen-step" id="genGuide">
+      <div class="gen-help"><b>Как создать изображение за 3 шага:</b><br>1) Выберите тип контента → 2) Опишите словами → 3) Настройте стиль и нажмите «Сгенерировать».</div>
+    </div>
+
+    <div class="gen-step">
+      <h4>1. 📝 Что создаём?</h4>
+      <div class="gen-grid" id="genTypeGrid">
+        <button class="gen-opt active" data-type="illustration">🖼 Иллюстрация</button>
+        <button class="gen-opt" data-type="infographic">📊 Инфографика</button>
+        <button class="gen-opt" data-type="text">🔤 Текстовая графика</button>
+        <button class="gen-opt" data-type="logo">⭐ Логотип/бренд</button>
+      </div>
+    </div>
+
+    <div class="gen-step">
+      <h4>2. ✍️ Опишите словами</h4>
+      <div class="gen-prompt-wrap">
+        <textarea class="textarea gen-prompt" id="genPrompt" placeholder="Опишите, что вы хотите увидеть..."></textarea>
+        <button class="gen-mic" id="genMic" title="Голосовой ввод">🎤</button>
+      </div>
+      <div class="gen-examples" id="genExamples"></div>
+    </div>
+
+    <div class="gen-step">
+      <h4>3. 🎛️ Настройки</h4>
+      <div class="gen-help">Формат картинки</div>
+      <div class="gen-grid" id="genAspectGrid">
+        <button class="gen-opt active" data-aspect="1:1">Квадрат 1:1</button>
+        <button class="gen-opt" data-aspect="9:16">Вертикальный 9:16</button>
+        <button class="gen-opt" data-aspect="16:9">Горизонтальный 16:9</button>
+        <button class="gen-opt" data-aspect="4:3">Прямоугольник 4:3</button>
+      </div>
+      <div class="gen-help" style="margin-top:10px">Стиль</div>
+      <div class="gen-grid" id="genStyleGrid">
+        <button class="gen-opt active" data-style="realistic">Реалистичный</button>
+        <button class="gen-opt" data-style="anime">Аниме</button>
+        <button class="gen-opt" data-style="illustration">Иллюстрация</button>
+        <button class="gen-opt" data-style="minimal">Минимализм</button>
+      </div>
+      <div class="gen-help" style="margin-top:10px">Настроение</div>
+      <div class="gen-grid" id="genMoodGrid">
+        <button class="gen-opt active" data-mood="bright">Яркое</button>
+        <button class="gen-opt" data-mood="warm">Тёплое</button>
+        <button class="gen-opt" data-mood="cold">Холодное</button>
+        <button class="gen-opt" data-mood="dramatic">Драматичное</button>
+      </div>
+    </div>
+
+    <div class="gen-step">
+      <h4>4. 🚀 Сгенерировать</h4>
+      <div class="note" id="genFreeCounter">Осталось 15 бесплатных генераций</div>
+      <div class="gen-actions">
+        <button class="btn btn-primary" id="btnGen" style="max-width:100%;min-height:48px">✨ Сгенерировать</button>
+        <div class="gen-progress" id="genProgress"></div>
+      </div>
+      <div id="genResult"></div>
+    </div>
+
     <button class="btn btn-secondary" id="btnGenBack">← Назад</button>
   </div>
 </div>
@@ -1066,19 +1143,158 @@ if(el('navPlusBtn')) el('navPlusBtn').onclick=toggleFabMenu;
 if(el('feedWriteFab')) el('feedWriteFab').onclick=function(){openPostWorkshop();};
 if(el('btnPost')) el('btnPost').onclick=function(){openPostWorkshop();};
 if(el('plusPost')) el('plusPost').onclick=function(){closeFabMenu();openPostWorkshop();};
+var genST={type:'illustration',aspect:'1:1',style:'realistic',mood:'bright',freeLeft:15,lastImageUrl:'',lastPrompt:'',returnScreen:'s-main'};
+var genExamples={
+  illustration:[
+    'Современный офис в Ташкенте, команда разработчиков за работой, мягкий свет',
+    'Стартап-команда за мозговым штурмом, стеклянная переговорная',
+    'Город будущего в Узбекистане, технологичный пейзаж'
+  ],
+  infographic:[
+    'Инфографика: зарплаты IT в Узбекистане по ролям и динамика 2024-2026',
+    'Этапы создания стартапа: идея, MVP, тест, масштабирование',
+    'Рост пользователей Hamkor Top по кварталам'
+  ],
+  text:[
+    'Текст на изображении: «Ваша мысль — ваш бренд», чистый фон',
+    'Текст: «Будущее начинается сегодня», стильный постер',
+    'Текст: «Сделано в Узбекистане», современная типографика'
+  ],
+  logo:[
+    'Логотип для IT-бренда Hamkor, символ сети и роста, минимализм',
+    'Знаковый логотип стартапа в синих и зелёных тонах',
+    'Комбинированный логотип для личного бренда продукт-менеджера'
+  ]
+};
+var genPlaceholders={
+  illustration:'Опишите, что вы хотите увидеть... Например: футуристичный офис в Ташкенте, команда разработчиков за работой',
+  infographic:'Введите данные для инфографики... Например: рост IT-рынка Узбекистана 2024–2026',
+  text:'Напишите текст для картинки... Например: «Инновации начинаются здесь»',
+  logo:'Опишите идею логотипа... Например: символ роста и доверия для tech-бренда'
+};
+var genSpeech=null, genSpeechOn=false;
+
+function genHistoryKey(){return 'gen_history_'+tgId;}
+function autosizeGen(){
+  var t=el('genPrompt');if(!t)return;
+  t.style.height='auto';
+  t.style.height=Math.min(Math.floor(window.innerHeight*0.4),Math.max(110,t.scrollHeight))+'px';
+}
+function initGenSpeech(){
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR)return null;
+  var r=new SR();
+  r.lang=(ST.lang==='uz'?'uz-UZ':(ST.lang==='en'?'en-US':'ru-RU'));
+  r.interimResults=false;r.maxAlternatives=1;
+  r.onstart=function(){genSpeechOn=true;el('genMic').classList.add('rec');};
+  r.onend=function(){genSpeechOn=false;el('genMic').classList.remove('rec');};
+  r.onerror=function(){genSpeechOn=false;el('genMic').classList.remove('rec');alert('Голосовой ввод временно недоступен.');};
+  r.onresult=function(ev){
+    var txt=(ev.results&&ev.results[0]&&ev.results[0][0]&&ev.results[0][0].transcript)||'';
+    var cur=(el('genPrompt').value||'').trim();
+    el('genPrompt').value=(cur?cur+' ':'')+txt; autosizeGen();
+  };
+  return r;
+}
+function setActiveByData(containerId,attr,val){
+  var root=el(containerId); if(!root)return;
+  root.querySelectorAll('.gen-opt').forEach(function(b){b.classList.toggle('active',b.getAttribute(attr)===val);});
+}
+function renderGenExamples(){
+  var arr=genExamples[genST.type]||[];
+  el('genExamples').innerHTML=arr.map(function(x){return '<button class="gen-ex" type="button">'+x+'</button>';}).join('');
+  el('genExamples').querySelectorAll('.gen-ex').forEach(function(btn){btn.onclick=function(){el('genPrompt').value=btn.textContent;autosizeGen();};});
+}
+function updateGenType(type){
+  genST.type=type;
+  setActiveByData('genTypeGrid','data-type',type);
+  el('genPrompt').placeholder=genPlaceholders[type]||genPlaceholders.illustration;
+  renderGenExamples();
+}
+function parseAspect(aspect){
+  if(aspect==='9:16')return {w:768,h:1365};
+  if(aspect==='16:9')return {w:1365,h:768};
+  if(aspect==='4:3')return {w:1200,h:900};
+  return {w:1024,h:1024};
+}
+function buildFinalPrompt(base){
+  return base+'; Тип: '+genST.type+'; Стиль: '+genST.style+'; Настроение: '+genST.mood+'; Формат: '+genST.aspect+'; Качество: высокое';
+}
+function setGenProgress(msg){el('genProgress').textContent=msg||'';}
+function saveGenHistory(item){
+  cloudGet(genHistoryKey(),function(v){
+    var arr=[]; try{arr=v?JSON.parse(v):[];}catch(e){}
+    arr.unshift(item); if(arr.length>25)arr=arr.slice(0,25);
+    cloudSet(genHistoryKey(),JSON.stringify(arr));
+  });
+}
+function renderGenResult(url,prompt){
+  genST.lastImageUrl=url; genST.lastPrompt=prompt;
+  el('genResult').innerHTML=''
+    +'<div class="gen-preview"><img src="'+url+'" alt="generated"/></div>'
+    +'<div class="gen-result-actions">'
+    +'<button class="btn btn-primary" id="genInsertPost">Вставить в пост</button>'
+    +'<button class="btn btn-secondary" id="genDownload">Скачать</button>'
+    +'<button class="btn btn-secondary" id="genRegenerate">Сгенерировать ещё</button>'
+    +'</div>';
+  el('genInsertPost').onclick=function(){
+    openPostWorkshop();
+    if(el('postText'))el('postText').value=(el('postText').value?el('postText').value+'\n\n':'')+'🖼 Визуал: '+url+'\n'+prompt;
+  };
+  el('genDownload').onclick=function(){window.open(url,'_blank');};
+  el('genRegenerate').onclick=function(){el('btnGen').click();};
+}
+function runGen(){
+  var p=(el('genPrompt').value||'').trim();
+  if(!p){alert('Опишите, что хотите создать.');return;}
+  if(genST.freeLeft<=0){alert('Лимит бесплатных генераций исчерпан.');return;}
+  var finalPrompt=buildFinalPrompt(p);
+  var sz=parseAspect(genST.aspect);
+  var encoded=encodeURIComponent(finalPrompt);
+  var imgUrl='https://image.pollinations.ai/prompt/'+encoded+'?width='+sz.w+'&height='+sz.h+'&nologo=true';
+  setGenProgress('Анализируем запрос...');
+  el('genResult').innerHTML='';
+  setTimeout(function(){setGenProgress('Создаём изображение...');},700);
+  setTimeout(function(){setGenProgress('Почти готово...');},1800);
+
+  var testImg=new Image();
+  testImg.onload=function(){
+    setGenProgress('Готово ✅');
+    genST.freeLeft=Math.max(0,genST.freeLeft-1);
+    el('genFreeCounter').textContent='Осталось '+genST.freeLeft+' бесплатных генераций';
+    renderGenResult(imgUrl,p);
+    saveGenHistory({url:imgUrl,prompt:p,type:genST.type,style:genST.style,mood:genST.mood,aspect:genST.aspect,ts:new Date().toISOString()});
+    try{window.Telegram.WebApp.sendData(JSON.stringify({action:'genImage',prompt:p,type:genST.type,style:genST.style,mood:genST.mood,aspect:genST.aspect,url:imgUrl,ts:new Date().toISOString()}));}catch(e){}
+  };
+  testImg.onerror=function(){setGenProgress('Не удалось сгенерировать. Попробуйте другой запрос.');};
+  testImg.src=imgUrl;
+}
+
 if(el('plusImage')) el('plusImage').onclick=function(){
-  closeFabMenu(); show('s-gen-image',false);
+  closeFabMenu();
+  var current=document.querySelector('.screen.active');
+  genST.returnScreen=(current&&current.id)||'s-main';
+  show('s-gen-image',false);
+  updateGenType(genST.type);
+  setActiveByData('genAspectGrid','data-aspect',genST.aspect);
+  setActiveByData('genStyleGrid','data-style',genST.style);
+  setActiveByData('genMoodGrid','data-mood',genST.mood);
+  el('genFreeCounter').textContent='Осталось '+genST.freeLeft+' бесплатных генераций';
+  setGenProgress('');
 };
-el('btnGenBack').onclick=function(){show('s-main');};
-el('btnGen').onclick=function(){
-  var p=el('genPrompt').value.trim();
-  if(!p){alert('Введите описание!');return;}
-  el('genResult').innerHTML='⏳ Генерирую...';
-  try{
-    window.Telegram.WebApp.sendData(JSON.stringify({action:'genImage',prompt:p}));
-    el('genResult').innerHTML='🎨 Запрос отправлен в обработку. Результат придёт в чат бота.';
-  }catch(e){el('genResult').innerHTML='Ошибка отправки.';}
+el('btnGenBack').onclick=function(){show(genST.returnScreen||'s-main',false);};
+el('btnGen').onclick=runGen;
+el('genPrompt').addEventListener('input',autosizeGen);
+el('genMic').onclick=function(){
+  if(!genSpeech)genSpeech=initGenSpeech();
+  if(!genSpeech){alert('Голосовой ввод временно недоступен.');return;}
+  try{ if(genSpeechOn){genSpeech.stop();} else {genSpeech.start();} }catch(e){alert('Голосовой ввод временно недоступен.');}
 };
+el('genTypeGrid').querySelectorAll('.gen-opt').forEach(function(b){b.onclick=function(){updateGenType(b.getAttribute('data-type'));};});
+el('genAspectGrid').querySelectorAll('.gen-opt').forEach(function(b){b.onclick=function(){genST.aspect=b.getAttribute('data-aspect');setActiveByData('genAspectGrid','data-aspect',genST.aspect);};});
+el('genStyleGrid').querySelectorAll('.gen-opt').forEach(function(b){b.onclick=function(){genST.style=b.getAttribute('data-style');setActiveByData('genStyleGrid','data-style',genST.style);};});
+el('genMoodGrid').querySelectorAll('.gen-opt').forEach(function(b){b.onclick=function(){genST.mood=b.getAttribute('data-mood');setActiveByData('genMoodGrid','data-mood',genST.mood);};});
+updateGenType(genST.type);
 document.addEventListener('click',function(e){
   var m=el('fabMenu');
   if(!m||m.style.display!=='block')return;
