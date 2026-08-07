@@ -1,15 +1,28 @@
 [
   {
-    "badge": "📰 Новости",
+    "badge": "🤖 AI",
     "t": {
-      "ru": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz",
-      "uz": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz",
-      "en": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz"
+      "ru": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz",
+      "uz": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz",
+      "en": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz"
     },
     "b": {
-      "ru": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5",
-      "uz": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5",
-      "en": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5"
+      "ru": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5",
+      "uz": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5",
+      "en": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте - Хабр",
+      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте - Хабр",
+      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте - Хабр"
+    },
+    "b": {
+      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5",
+      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5",
+      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5"
     }
   },
   {
@@ -28,14 +41,40 @@
   {
     "badge": "🚀 Стартапы",
     "t": {
-      "ru": "Самые известные стартапы Узбекистана, признанные во всём мире - UZ24",
-      "uz": "Самые известные стартапы Узбекистана, признанные во всём мире - UZ24",
-      "en": "Самые известные стартапы Узбекистана, признанные во всём мире - UZ24"
+      "ru": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
+      "uz": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
+      "en": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz"
     },
     "b": {
-      "ru": "Самые известные стартапы Узбекистана, признанные во всём мире UZ24. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE0yOVl4MUwtZE9GNDhqTE5OcUU0NFhldUVNSVdyU2RUX3E3MDBzM0pTeDdKQ1Zha1FKMjQ2OWkxdFBlMUVxa1R1d29xNlNHUjFTRU4yWVJMeGVIZw?oc=5",
-      "uz": "Самые известные стартапы Узбекистана, признанные во всём мире UZ24. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE0yOVl4MUwtZE9GNDhqTE5OcUU0NFhldUVNSVdyU2RUX3E3MDBzM0pTeDdKQ1Zha1FKMjQ2OWkxdFBlMUVxa1R1d29xNlNHUjFTRU4yWVJMeGVIZw?oc=5",
-      "en": "Самые известные стартапы Узбекистана, признанные во всём мире UZ24. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE0yOVl4MUwtZE9GNDhqTE5OcUU0NFhldUVNSVdyU2RUX3E3MDBzM0pTeDdKQ1Zha1FKMjQ2OWkxdFBlMUVxa1R1d29xNlNHUjFTRU4yWVJMeGVIZw?oc=5"
+      "ru": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
+      "uz": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
+      "en": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5"
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане - repost.uz",
+      "uz": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане - repost.uz",
+      "en": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане - repost.uz"
+    },
+    "b": {
+      "ru": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане repost.uz. Подробнее: https://news.google.com/rss/articles/CBMidEFVX3lxTFBWUEVySXpZenRRVDhnajJ1am4wemt1alFPR0lfcFplRTNVZlpXYTFFUTZuTVJoem8xZVR2SjQtZEtsM1FkUDZ3WE9PY0ZoZlA5MkxzNksxLW1odkktY2pqVWJndVMySlVvQ1A2ZGpKUFNjMHlx?oc=5",
+      "uz": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане repost.uz. Подробнее: https://news.google.com/rss/articles/CBMidEFVX3lxTFBWUEVySXpZenRRVDhnajJ1am4wemt1alFPR0lfcFplRTNVZlpXYTFFUTZuTVJoem8xZVR2SjQtZEtsM1FkUDZ3WE9PY0ZoZlA5MkxzNksxLW1odkktY2pqVWJndVMySlVvQ1A2ZGpKUFNjMHlx?oc=5",
+      "en": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане repost.uz. Подробнее: https://news.google.com/rss/articles/CBMidEFVX3lxTFBWUEVySXpZenRRVDhnajJ1am4wemt1alFPR0lfcFplRTNVZlpXYTFFUTZuTVJoem8xZVR2SjQtZEtsM1FkUDZ3WE9PY0ZoZlA5MkxzNksxLW1odkktY2pqVWJndVMySlVvQ1A2ZGpKUFNjMHlx?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Один день с Отабеком Насировым - Газета.uz",
+      "uz": "Один день с Отабеком Насировым - Газета.uz",
+      "en": "Один день с Отабеком Насировым - Газета.uz"
+    },
+    "b": {
+      "ru": "Один день с Отабеком Насировым Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE1ESFFUcnFNX1dROE4xa0xHRUpDZEh5TEhUcXVkeWZ4SUxndjZVY0Z3eXZ2M0hiVW9pZldlUThSMVExM0VqN3FmbGRweWpRb0Qwcjln?oc=5",
+      "uz": "Один день с Отабеком Насировым Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE1ESFFUcnFNX1dROE4xa0xHRUpDZEh5TEhUcXVkeWZ4SUxndjZVY0Z3eXZ2M0hiVW9pZldlUThSMVExM0VqN3FmbGRweWpRb0Qwcjln?oc=5",
+      "en": "Один день с Отабеком Насировым Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE1ESFFUcnFNX1dROE4xa0xHRUpDZEh5TEhUcXVkeWZ4SUxndjZVY0Z3eXZ2M0hiVW9pZldlUThSMVExM0VqN3FmbGRweWpRb0Qwcjln?oc=5"
     }
   },
   {
@@ -49,45 +88,6 @@
       "ru": "IT-афиша мая: главные события в мире и Центральной Евразии the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNDhVTXlGNUdhWE9OTXB0TnkzcC0za1Y1eUpkOHJFTGV6dGE5a0xOZWxIWkthcXYwc2RaQkY2cWh4eXp6VHM5S0FqZnVhVGxscGhZU1VLTjh0QUpHRDlBenBHcjdoRlB3OWlZRlpPaHl5RzlOZGF0R2poaXZ0ZUktbkZWUE16bnd0?oc=5",
       "uz": "IT-афиша мая: главные события в мире и Центральной Евразии the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNDhVTXlGNUdhWE9OTXB0TnkzcC0za1Y1eUpkOHJFTGV6dGE5a0xOZWxIWkthcXYwc2RaQkY2cWh4eXp6VHM5S0FqZnVhVGxscGhZU1VLTjh0QUpHRDlBenBHcjdoRlB3OWlZRlpPaHl5RzlOZGF0R2poaXZ0ZUktbkZWUE16bnd0?oc=5",
       "en": "IT-афиша мая: главные события в мире и Центральной Евразии the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNDhVTXlGNUdhWE9OTXB0TnkzcC0za1Y1eUpkOHJFTGV6dGE5a0xOZWxIWkthcXYwc2RaQkY2cWh4eXp6VHM5S0FqZnVhVGxscGhZU1VLTjh0QUpHRDlBenBHcjdoRlB3OWlZRlpPaHl5RzlOZGF0R2poaXZ0ZUktbkZWUE16bnd0?oc=5"
-    }
-  },
-  {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
-      "uz": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
-      "en": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz"
-    },
-    "b": {
-      "ru": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
-      "uz": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
-      "en": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами - the-tech.kz",
-      "uz": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами - the-tech.kz",
-      "en": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами - the-tech.kz"
-    },
-    "b": {
-      "ru": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMimAFBVV95cUxNd2g0SWJhOFlRQjg4X1pVV29lbnlhaUR5UE40ajZuN1dRVm9hYTk5UUhSd2duaE9DbTM0VWFvcXJnRkIyaHprMURuM2ZlRlNZaEtwV3NiUS00V3FQRzZNakJ6VUg2Q3JLOE00QlUtT1dGZXQ5cHpxT0dBQjYxQUF6QTBWbkx0UkR4ekZuWThHaC12VUJ6eWNRYg?oc=5",
-      "uz": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMimAFBVV95cUxNd2g0SWJhOFlRQjg4X1pVV29lbnlhaUR5UE40ajZuN1dRVm9hYTk5UUhSd2duaE9DbTM0VWFvcXJnRkIyaHprMURuM2ZlRlNZaEtwV3NiUS00V3FQRzZNakJ6VUg2Q3JLOE00QlUtT1dGZXQ5cHpxT0dBQjYxQUF6QTBWbkx0UkR4ekZuWThHaC12VUJ6eWNRYg?oc=5",
-      "en": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMimAFBVV95cUxNd2g0SWJhOFlRQjg4X1pVV29lbnlhaUR5UE40ajZuN1dRVm9hYTk5UUhSd2duaE9DbTM0VWFvcXJnRkIyaHprMURuM2ZlRlNZaEtwV3NiUS00V3FQRzZNakJ6VUg2Q3JLOE00QlUtT1dGZXQ5cHpxT0dBQjYxQUF6QTBWbkx0UkR4ekZuWThHaC12VUJ6eWNRYg?oc=5"
-    }
-  },
-  {
-    "badge": "💼 Карьера",
-    "t": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz"
-    },
-    "b": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5"
     }
   }
 ]
