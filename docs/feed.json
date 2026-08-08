@@ -13,42 +13,16 @@
     }
   },
   {
-    "badge": "🚀 Стартапы",
+    "badge": "📰 Новости",
     "t": {
-      "ru": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
-      "uz": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
-      "en": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz"
+      "ru": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz",
+      "uz": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz",
+      "en": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz"
     },
     "b": {
-      "ru": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
-      "uz": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
-      "en": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5"
-    }
-  },
-  {
-    "badge": "💼 Карьера",
-    "t": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz"
-    },
-    "b": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "Самые известные стартапы Узбекистана, признанные во всём мире - UZ24",
-      "uz": "Самые известные стартапы Узбекистана, признанные во всём мире - UZ24",
-      "en": "Самые известные стартапы Узбекистана, признанные во всём мире - UZ24"
-    },
-    "b": {
-      "ru": "Самые известные стартапы Узбекистана, признанные во всём мире UZ24. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE0yOVl4MUwtZE9GNDhqTE5OcUU0NFhldUVNSVdyU2RUX3E3MDBzM0pTeDdKQ1Zha1FKMjQ2OWkxdFBlMUVxa1R1d29xNlNHUjFTRU4yWVJMeGVIZw?oc=5",
-      "uz": "Самые известные стартапы Узбекистана, признанные во всём мире UZ24. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE0yOVl4MUwtZE9GNDhqTE5OcUU0NFhldUVNSVdyU2RUX3E3MDBzM0pTeDdKQ1Zha1FKMjQ2OWkxdFBlMUVxa1R1d29xNlNHUjFTRU4yWVJMeGVIZw?oc=5",
-      "en": "Самые известные стартапы Узбекистана, признанные во всём мире UZ24. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE0yOVl4MUwtZE9GNDhqTE5OcUU0NFhldUVNSVdyU2RUX3E3MDBzM0pTeDdKQ1Zha1FKMjQ2OWkxdFBlMUVxa1R1d29xNlNHUjFTRU4yWVJMeGVIZw?oc=5"
+      "ru": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5",
+      "uz": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5",
+      "en": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5"
     }
   },
   {
@@ -65,29 +39,55 @@
     }
   },
   {
-    "badge": "🤖 AI",
+    "badge": "📰 Новости",
     "t": {
-      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
-      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
-      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz"
+      "ru": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 - PLUSworld",
+      "uz": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 - PLUSworld",
+      "en": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 - PLUSworld"
     },
     "b": {
-      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
-      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
-      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5"
+      "ru": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 PLUSworld. Подробнее: https://news.google.com/rss/articles/CBMiTEFVX3lxTE9qeFJiVkM2cmtOOWpKSlZINmVmUVQ0UV90VzgteEdFRGp1aHhkeFJvdXYtdXpkTWhDMnpTREo2SXNZXzlERF8xa0p0S0c?oc=5",
+      "uz": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 PLUSworld. Подробнее: https://news.google.com/rss/articles/CBMiTEFVX3lxTE9qeFJiVkM2cmtOOWpKSlZINmVmUVQ0UV90VzgteEdFRGp1aHhkeFJvdXYtdXpkTWhDMnpTREo2SXNZXzlERF8xa0p0S0c?oc=5",
+      "en": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 PLUSworld. Подробнее: https://news.google.com/rss/articles/CBMiTEFVX3lxTE9qeFJiVkM2cmtOOWpKSlZINmVmUVQ0UV90VzgteEdFRGp1aHhkeFJvdXYtdXpkTWhDMnpTREo2SXNZXzlERF8xa0p0S0c?oc=5"
     }
   },
   {
     "badge": "📰 Новости",
     "t": {
-      "ru": "Один день с Отабеком Насировым - Газета.uz",
-      "uz": "Один день с Отабеком Насировым - Газета.uz",
-      "en": "Один день с Отабеком Насировым - Газета.uz"
+      "ru": "Узбекистанец прошел в Y Combinator - digitalbusiness.kz",
+      "uz": "Узбекистанец прошел в Y Combinator - digitalbusiness.kz",
+      "en": "Узбекистанец прошел в Y Combinator - digitalbusiness.kz"
     },
     "b": {
-      "ru": "Один день с Отабеком Насировым Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE1ESFFUcnFNX1dROE4xa0xHRUpDZEh5TEhUcXVkeWZ4SUxndjZVY0Z3eXZ2M0hiVW9pZldlUThSMVExM0VqN3FmbGRweWpRb0Qwcjln?oc=5",
-      "uz": "Один день с Отабеком Насировым Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE1ESFFUcnFNX1dROE4xa0xHRUpDZEh5TEhUcXVkeWZ4SUxndjZVY0Z3eXZ2M0hiVW9pZldlUThSMVExM0VqN3FmbGRweWpRb0Qwcjln?oc=5",
-      "en": "Один день с Отабеком Насировым Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE1ESFFUcnFNX1dROE4xa0xHRUpDZEh5TEhUcXVkeWZ4SUxndjZVY0Z3eXZ2M0hiVW9pZldlUThSMVExM0VqN3FmbGRweWpRb0Qwcjln?oc=5"
+      "ru": "Узбекистанец прошел в Y Combinator digitalbusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
+      "uz": "Узбекистанец прошел в Y Combinator digitalbusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
+      "en": "Узбекистанец прошел в Y Combinator digitalbusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz",
+      "uz": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz",
+      "en": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz"
+    },
+    "b": {
+      "ru": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5",
+      "uz": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5",
+      "en": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5"
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz",
+      "uz": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz",
+      "en": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz"
+    },
+    "b": {
+      "ru": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5",
+      "uz": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5",
+      "en": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5"
     }
   }
 ]
