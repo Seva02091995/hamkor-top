@@ -1,28 +1,41 @@
 [
   {
-    "badge": "📰 Новости",
+    "badge": "🤖 AI",
     "t": {
-      "ru": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
-      "uz": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
-      "en": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz"
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz"
     },
     "b": {
-      "ru": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
-      "uz": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
-      "en": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5"
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5"
+    }
+  },
+  {
+    "badge": "💼 Карьера",
+    "t": {
+      "ru": "Женщины в IT: главные карьерные возможности в июле 2026 года - the-tech.kz",
+      "uz": "Женщины в IT: главные карьерные возможности в июле 2026 года - the-tech.kz",
+      "en": "Женщины в IT: главные карьерные возможности в июле 2026 года - the-tech.kz"
+    },
+    "b": {
+      "ru": "Женщины в IT: главные карьерные возможности в июле 2026 года the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMijAFBVV95cUxOdlZscFd6ZmFaeGh4MHFqSWloZ1JERW9YSDZhM19iTlkzTVlCbXYxY0pZOWVFZ2NyM1BOZ2FZd2ZrVHhqYnNxSG85Q2hXYVJ2MjN0VzNlZHhxWWliTjMtTU9xSS1QOXJ4dUg2dEZuTWhPUk1wdmVGNXJYalVRM3lwNWoyZUQycFJJU0xZTw?oc=5",
+      "uz": "Женщины в IT: главные карьерные возможности в июле 2026 года the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMijAFBVV95cUxOdlZscFd6ZmFaeGh4MHFqSWloZ1JERW9YSDZhM19iTlkzTVlCbXYxY0pZOWVFZ2NyM1BOZ2FZd2ZrVHhqYnNxSG85Q2hXYVJ2MjN0VzNlZHhxWWliTjMtTU9xSS1QOXJ4dUg2dEZuTWhPUk1wdmVGNXJYalVRM3lwNWoyZUQycFJJU0xZTw?oc=5",
+      "en": "Женщины в IT: главные карьерные возможности в июле 2026 года the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMijAFBVV95cUxOdlZscFd6ZmFaeGh4MHFqSWloZ1JERW9YSDZhM19iTlkzTVlCbXYxY0pZOWVFZ2NyM1BOZ2FZd2ZrVHhqYnNxSG85Q2hXYVJ2MjN0VzNlZHhxWWliTjMtTU9xSS1QOXJ4dUg2dEZuTWhPUk1wdmVGNXJYalVRM3lwNWoyZUQycFJJU0xZTw?oc=5"
     }
   },
   {
     "badge": "📰 Новости",
     "t": {
-      "ru": "IT-афиша мая: главные события в мире и Центральной Евразии - the-tech.kz",
-      "uz": "IT-афиша мая: главные события в мире и Центральной Евразии - the-tech.kz",
-      "en": "IT-афиша мая: главные события в мире и Центральной Евразии - the-tech.kz"
+      "ru": "IT Community Roadshow в Фергане - Spot.uz",
+      "uz": "IT Community Roadshow в Фергане - Spot.uz",
+      "en": "IT Community Roadshow в Фергане - Spot.uz"
     },
     "b": {
-      "ru": "IT-афиша мая: главные события в мире и Центральной Евразии the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNDhVTXlGNUdhWE9OTXB0TnkzcC0za1Y1eUpkOHJFTGV6dGE5a0xOZWxIWkthcXYwc2RaQkY2cWh4eXp6VHM5S0FqZnVhVGxscGhZU1VLTjh0QUpHRDlBenBHcjdoRlB3OWlZRlpPaHl5RzlOZGF0R2poaXZ0ZUktbkZWUE16bnd0?oc=5",
-      "uz": "IT-афиша мая: главные события в мире и Центральной Евразии the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNDhVTXlGNUdhWE9OTXB0TnkzcC0za1Y1eUpkOHJFTGV6dGE5a0xOZWxIWkthcXYwc2RaQkY2cWh4eXp6VHM5S0FqZnVhVGxscGhZU1VLTjh0QUpHRDlBenBHcjdoRlB3OWlZRlpPaHl5RzlOZGF0R2poaXZ0ZUktbkZWUE16bnd0?oc=5",
-      "en": "IT-афиша мая: главные события в мире и Центральной Евразии the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNDhVTXlGNUdhWE9OTXB0TnkzcC0za1Y1eUpkOHJFTGV6dGE5a0xOZWxIWkthcXYwc2RaQkY2cWh4eXp6VHM5S0FqZnVhVGxscGhZU1VLTjh0QUpHRDlBenBHcjdoRlB3OWlZRlpPaHl5RzlOZGF0R2poaXZ0ZUktbkZWUE16bnd0?oc=5"
+      "ru": "IT Community Roadshow в Фергане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wWHZSdjhaWVUtQzlVRkNEazlwdUtXR1NnYy11NzNaenlBZktmcEZTY2hUZ2lmazB1NzFXV3BISEpWamZmYjd0WXIzbHR2Uk82UjR6YVNCNnJLdw?oc=5",
+      "uz": "IT Community Roadshow в Фергане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wWHZSdjhaWVUtQzlVRkNEazlwdUtXR1NnYy11NzNaenlBZktmcEZTY2hUZ2lmazB1NzFXV3BISEpWamZmYjd0WXIzbHR2Uk82UjR6YVNCNnJLdw?oc=5",
+      "en": "IT Community Roadshow в Фергане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wWHZSdjhaWVUtQzlVRkNEazlwdUtXR1NnYy11NzNaenlBZktmcEZTY2hUZ2lmazB1NzFXV3BISEpWamZmYjd0WXIzbHR2Uk82UjR6YVNCNnJLdw?oc=5"
     }
   },
   {
@@ -39,16 +52,16 @@
     }
   },
   {
-    "badge": "🤖 AI",
+    "badge": "📰 Новости",
     "t": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz"
+      "ru": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz",
+      "uz": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz",
+      "en": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz"
     },
     "b": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5"
+      "ru": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5",
+      "uz": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5",
+      "en": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5"
     }
   },
   {
@@ -65,29 +78,16 @@
     }
   },
   {
-    "badge": "📰 Новости",
+    "badge": "🤖 AI",
     "t": {
-      "ru": "IT-афиша недели, 25-31 мая: Cursor Hackathon, Pizza Pitch и прямые эфиры от The Tech - the-tech.kz",
-      "uz": "IT-афиша недели, 25-31 мая: Cursor Hackathon, Pizza Pitch и прямые эфиры от The Tech - the-tech.kz",
-      "en": "IT-афиша недели, 25-31 мая: Cursor Hackathon, Pizza Pitch и прямые эфиры от The Tech - the-tech.kz"
+      "ru": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz",
+      "uz": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz",
+      "en": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz"
     },
     "b": {
-      "ru": "IT-афиша недели, 25-31 мая: Cursor Hackathon, Pizza Pitch и прямые эфиры от The Tech the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiqAFBVV95cUxPalpKMEhDSExXbHdOaWN3Z01kQWY3clRRVkdHZnNpcUdqa1NIU0RjLUttMTg2S0pBTVFlcW1JT21mZ3prSjdLbzNPRnE2SGFoc1JhT2tldDZEUVFNOWFCekthN0I5NWpaNjdvcjhvT2cteUxjVEVlZXJadmcwVlNMMXRSUC1rYmhxVTBDR1Z6Mnl2dkhqZjVJRVFSMWFodWhmZzJtbWQ4Szc?oc=5",
-      "uz": "IT-афиша недели, 25-31 мая: Cursor Hackathon, Pizza Pitch и прямые эфиры от The Tech the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiqAFBVV95cUxPalpKMEhDSExXbHdOaWN3Z01kQWY3clRRVkdHZnNpcUdqa1NIU0RjLUttMTg2S0pBTVFlcW1JT21mZ3prSjdLbzNPRnE2SGFoc1JhT2tldDZEUVFNOWFCekthN0I5NWpaNjdvcjhvT2cteUxjVEVlZXJadmcwVlNMMXRSUC1rYmhxVTBDR1Z6Mnl2dkhqZjVJRVFSMWFodWhmZzJtbWQ4Szc?oc=5",
-      "en": "IT-афиша недели, 25-31 мая: Cursor Hackathon, Pizza Pitch и прямые эфиры от The Tech the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiqAFBVV95cUxPalpKMEhDSExXbHdOaWN3Z01kQWY3clRRVkdHZnNpcUdqa1NIU0RjLUttMTg2S0pBTVFlcW1JT21mZ3prSjdLbzNPRnE2SGFoc1JhT2tldDZEUVFNOWFCekthN0I5NWpaNjdvcjhvT2cteUxjVEVlZXJadmcwVlNMMXRSUC1rYmhxVTBDR1Z6Mnl2dkhqZjVJRVFSMWFodWhmZzJtbWQ4Szc?oc=5"
-    }
-  },
-  {
-    "badge": "💼 Карьера",
-    "t": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz"
-    },
-    "b": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5"
+      "ru": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5",
+      "uz": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5",
+      "en": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5"
     }
   }
 ]
