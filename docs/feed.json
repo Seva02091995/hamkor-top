@@ -1,5 +1,31 @@
 [
   {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "Возможность на 6 млн долларов: масштабный конкурс для стартапов... - Zamin.uz",
+      "uz": "Возможность на 6 млн долларов: масштабный конкурс для стартапов... - Zamin.uz",
+      "en": "Возможность на 6 млн долларов: масштабный конкурс для стартапов... - Zamin.uz"
+    },
+    "b": {
+      "ru": "Возможность на 6 млн долларов: масштабный конкурс для стартапов... Zamin.uz. Подробнее: https://news.google.com/rss/articles/CBMirAFBVV95cUxPcndIblQxSnZHbDNLQlZQRFVVZ2xhNlRQbXZ4N0ZaZUlybkRPSzlicmloOHN5RUg4Q0luVFQ1NWs1dEhlNlRQd0NuZzJ2NmR5b3NXT2w0dXRKa2ExSnhSVmpGbjZVV0c0SjhYSFNtNlptdkxPWmdWcGh6VEpKT0lDNmNMaGlzY2VIVHhTbmFzaVdSVEd3aDdRaV92ZUlTemx5d0pmRURHd0h4bFlY?oc=5",
+      "uz": "Возможность на 6 млн долларов: масштабный конкурс для стартапов... Zamin.uz. Подробнее: https://news.google.com/rss/articles/CBMirAFBVV95cUxPcndIblQxSnZHbDNLQlZQRFVVZ2xhNlRQbXZ4N0ZaZUlybkRPSzlicmloOHN5RUg4Q0luVFQ1NWs1dEhlNlRQd0NuZzJ2NmR5b3NXT2w0dXRKa2ExSnhSVmpGbjZVV0c0SjhYSFNtNlptdkxPWmdWcGh6VEpKT0lDNmNMaGlzY2VIVHhTbmFzaVdSVEd3aDdRaV92ZUlTemx5d0pmRURHd0h4bFlY?oc=5",
+      "en": "Возможность на 6 млн долларов: масштабный конкурс для стартапов... Zamin.uz. Подробнее: https://news.google.com/rss/articles/CBMirAFBVV95cUxPcndIblQxSnZHbDNLQlZQRFVVZ2xhNlRQbXZ4N0ZaZUlybkRPSzlicmloOHN5RUg4Q0luVFQ1NWs1dEhlNlRQd0NuZzJ2NmR5b3NXT2w0dXRKa2ExSnhSVmpGbjZVV0c0SjhYSFNtNlptdkxPWmdWcGh6VEpKT0lDNmNMaGlzY2VIVHhTbmFzaVdSVEd3aDdRaV92ZUlTemx5d0pmRURHd0h4bFlY?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 - PLUSworld",
+      "uz": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 - PLUSworld",
+      "en": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 - PLUSworld"
+    },
+    "b": {
+      "ru": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 PLUSworld. Подробнее: https://news.google.com/rss/articles/CBMiTEFVX3lxTE9qeFJiVkM2cmtOOWpKSlZINmVmUVQ0UV90VzgteEdFRGp1aHhkeFJvdXYtdXpkTWhDMnpTREo2SXNZXzlERF8xa0p0S0c?oc=5",
+      "uz": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 PLUSworld. Подробнее: https://news.google.com/rss/articles/CBMiTEFVX3lxTE9qeFJiVkM2cmtOOWpKSlZINmVmUVQ0UV90VzgteEdFRGp1aHhkeFJvdXYtdXpkTWhDMnpTREo2SXNZXzlERF8xa0p0S0c?oc=5",
+      "en": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 PLUSworld. Подробнее: https://news.google.com/rss/articles/CBMiTEFVX3lxTE9qeFJiVkM2cmtOOWpKSlZINmVmUVQ0UV90VzgteEdFRGp1aHhkeFJvdXYtdXpkTWhDMnpTREo2SXNZXzlERF8xa0p0S0c?oc=5"
+    }
+  },
+  {
     "badge": "🤖 AI",
     "t": {
       "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
@@ -15,27 +41,14 @@
   {
     "badge": "📰 Новости",
     "t": {
-      "ru": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz",
-      "uz": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz",
-      "en": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz"
+      "ru": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz",
+      "uz": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz",
+      "en": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz"
     },
     "b": {
-      "ru": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5",
-      "uz": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5",
-      "en": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
-      "uz": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
-      "en": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz"
-    },
-    "b": {
-      "ru": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
-      "uz": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
-      "en": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5"
+      "ru": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5",
+      "uz": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5",
+      "en": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5"
     }
   },
   {
@@ -52,29 +65,16 @@
     }
   },
   {
-    "badge": "💼 Карьера",
+    "badge": "📰 Новости",
     "t": {
-      "ru": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж - Nuz.uz",
-      "uz": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж - Nuz.uz",
-      "en": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж - Nuz.uz"
+      "ru": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz",
+      "uz": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz",
+      "en": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects - Kun.uz"
     },
     "b": {
-      "ru": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж Nuz.uz. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWFMwdUlnUk91NnF3Y0dhMEtBNFVNcE1Sb1pqdVZpamNraDkzOXZlSm9lWUtBMjJKcEg0ajR0ZTV3bG9nbXo1ckdFV2tmcVFfNmdjS1RqN21DT1BoY0pKTERneTYzOUNCb0EyLVJmcWlIWGgwd0xQbW9tRURGRmlxMVlLR0xuUk9zbEg2X0JIdGVkUDBRaGhfR3NMTDJSZjdnUHpyVXc3NXRzeXBuNFhnV1Y0ZFZqSUhadXNQbUV4LVc4Nzg?oc=5",
-      "uz": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж Nuz.uz. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWFMwdUlnUk91NnF3Y0dhMEtBNFVNcE1Sb1pqdVZpamNraDkzOXZlSm9lWUtBMjJKcEg0ajR0ZTV3bG9nbXo1ckdFV2tmcVFfNmdjS1RqN21DT1BoY0pKTERneTYzOUNCb0EyLVJmcWlIWGgwd0xQbW9tRURGRmlxMVlLR0xuUk9zbEg2X0JIdGVkUDBRaGhfR3NMTDJSZjdnUHpyVXc3NXRzeXBuNFhnV1Y0ZFZqSUhadXNQbUV4LVc4Nzg?oc=5",
-      "en": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж Nuz.uz. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWFMwdUlnUk91NnF3Y0dhMEtBNFVNcE1Sb1pqdVZpamNraDkzOXZlSm9lWUtBMjJKcEg0ajR0ZTV3bG9nbXo1ckdFV2tmcVFfNmdjS1RqN21DT1BoY0pKTERneTYzOUNCb0EyLVJmcWlIWGgwd0xQbW9tRURGRmlxMVlLR0xuUk9zbEg2X0JIdGVkUDBRaGhfR3NMTDJSZjdnUHpyVXc3NXRzeXBuNFhnV1Y0ZFZqSUhadXNQbUV4LVc4Nzg?oc=5"
-    }
-  },
-  {
-    "badge": "💼 Карьера",
-    "t": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz"
-    },
-    "b": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5"
+      "ru": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5",
+      "uz": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5",
+      "en": "Uzbekistan targets $4.2 billion critical minerals boost with 120 major projects Kun.uz. Подробнее: https://news.google.com/rss/articles/CBMiugFBVV95cUxOTkJWSlozTGZmUERIaktSVEhKakRWUDhNNDR5MGZwLThNcGh0VTM0ZjI3VDJ3Q0FuQWxoU1NSdlBsMkhPUzlSWnVKRHF2TzdGN0hBV3AyTjNTSUk5QnJfcUJlMjc5Wm9wYzJJU0RKb0U5REtyaVB3clNyLXJ1MEV0UG1iWEZqVEFfMEdydVhCZFJ0cnhlRzk2Y2Z2cjBxWmdrRjBXVVRPZ1BSWGpfc21TMnFzSmlvSWtlVUE?oc=5"
     }
   },
   {
