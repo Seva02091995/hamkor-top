@@ -1,67 +1,15 @@
 [
   {
-    "badge": "📰 Новости",
+    "badge": "🤖 AI",
     "t": {
-      "ru": "IT Community Roadshow в Фергане - Spot.uz",
-      "uz": "IT Community Roadshow в Фергане - Spot.uz",
-      "en": "IT Community Roadshow в Фергане - Spot.uz"
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz"
     },
     "b": {
-      "ru": "IT Community Roadshow в Фергане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wWHZSdjhaWVUtQzlVRkNEazlwdUtXR1NnYy11NzNaenlBZktmcEZTY2hUZ2lmazB1NzFXV3BISEpWamZmYjd0WXIzbHR2Uk82UjR6YVNCNnJLdw?oc=5",
-      "uz": "IT Community Roadshow в Фергане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wWHZSdjhaWVUtQzlVRkNEazlwdUtXR1NnYy11NzNaenlBZktmcEZTY2hUZ2lmazB1NzFXV3BISEpWamZmYjd0WXIzbHR2Uk82UjR6YVNCNnJLdw?oc=5",
-      "en": "IT Community Roadshow в Фергане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wWHZSdjhaWVUtQzlVRkNEazlwdUtXR1NnYy11NzNaenlBZktmcEZTY2hUZ2lmazB1NzFXV3BISEpWamZmYjd0WXIzbHR2Uk82UjR6YVNCNnJLdw?oc=5"
-    }
-  },
-  {
-    "badge": "💼 Карьера",
-    "t": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz"
-    },
-    "b": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz",
-      "uz": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz",
-      "en": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz"
-    },
-    "b": {
-      "ru": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5",
-      "uz": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5",
-      "en": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz",
-      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz",
-      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz"
-    },
-    "b": {
-      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
-      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
-      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5"
-    }
-  },
-  {
-    "badge": "💼 Карьера",
-    "t": {
-      "ru": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж - Nuz.uz",
-      "uz": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж - Nuz.uz",
-      "en": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж - Nuz.uz"
-    },
-    "b": {
-      "ru": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж Nuz.uz. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWFMwdUlnUk91NnF3Y0dhMEtBNFVNcE1Sb1pqdVZpamNraDkzOXZlSm9lWUtBMjJKcEg0ajR0ZTV3bG9nbXo1ckdFV2tmcVFfNmdjS1RqN21DT1BoY0pKTERneTYzOUNCb0EyLVJmcWlIWGgwd0xQbW9tRURGRmlxMVlLR0xuUk9zbEg2X0JIdGVkUDBRaGhfR3NMTDJSZjdnUHpyVXc3NXRzeXBuNFhnV1Y0ZFZqSUhadXNQbUV4LVc4Nzg?oc=5",
-      "uz": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж Nuz.uz. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWFMwdUlnUk91NnF3Y0dhMEtBNFVNcE1Sb1pqdVZpamNraDkzOXZlSm9lWUtBMjJKcEg0ajR0ZTV3bG9nbXo1ckdFV2tmcVFfNmdjS1RqN21DT1BoY0pKTERneTYzOUNCb0EyLVJmcWlIWGgwd0xQbW9tRURGRmlxMVlLR0xuUk9zbEg2X0JIdGVkUDBRaGhfR3NMTDJSZjdnUHpyVXc3NXRzeXBuNFhnV1Y0ZFZqSUhadXNQbUV4LVc4Nzg?oc=5",
-      "en": "«ИИ Практикум» в Ташкенте: более 500 молодых людей освоили нейросети для карьеры и учебы | Репортаж Nuz.uz. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWFMwdUlnUk91NnF3Y0dhMEtBNFVNcE1Sb1pqdVZpamNraDkzOXZlSm9lWUtBMjJKcEg0ajR0ZTV3bG9nbXo1ckdFV2tmcVFfNmdjS1RqN21DT1BoY0pKTERneTYzOUNCb0EyLVJmcWlIWGgwd0xQbW9tRURGRmlxMVlLR0xuUk9zbEg2X0JIdGVkUDBRaGhfR3NMTDJSZjdnUHpyVXc3NXRzeXBuNFhnV1Y0ZFZqSUhadXNQbUV4LVc4Nzg?oc=5"
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5"
     }
   },
   {
@@ -80,14 +28,66 @@
   {
     "badge": "📰 Новости",
     "t": {
-      "ru": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
-      "uz": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
-      "en": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz"
+      "ru": "Сооснователь Choco получил больше $1 млн за свою долю и вложил их в 15 ИТ-проектов - DigitalBusiness.kz",
+      "uz": "Сооснователь Choco получил больше $1 млн за свою долю и вложил их в 15 ИТ-проектов - DigitalBusiness.kz",
+      "en": "Сооснователь Choco получил больше $1 млн за свою долю и вложил их в 15 ИТ-проектов - DigitalBusiness.kz"
     },
     "b": {
-      "ru": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
-      "uz": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
-      "en": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5"
+      "ru": "Сооснователь Choco получил больше $1 млн за свою долю и вложил их в 15 ИТ-проектов DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxOQjhRVFlDSzM4Wk9JUXNGZXBOanB3SGg3QVpEamQwR2tEWVJvSW53RDZvVW5QdGNoQnpEYzQyMnNubThMakxYNlAwZ01FOGVLaUl0YUpZNFpUYWVJazlncTNVSkp5XzU5UFdKa3ZiM2ljb2lLeW9xUVlwTC1rb3Axb0FrbTZCb293aUJHUV91V0hUMU5NclN4MzBVT1N0TUlqa3ljLW9HNV9DdzRRRFhoVjNMc2ZUX1BFWEJOTll6MDbSAcYBQVVfeXFMTXJhU1BlZ3pDeXZOQmg4VlF0RUprZmpic2dvcVpyNGZ0eWVXWTBLR0pLb2hlbXEzU3gxcmlnYzVQS01BTXRQdnI3QTZUU21wWVpUcnZocDFCNmhfNEdOZzhOSVdrUUJsTVVfMHV3cEJmRmF4bVFzLW1OWlF2eFpPOTFrOEtpRmJobVVPSEZaTWlmcWJsWXVNWl9qUmRmWk1lc0g1SXdYSEdSTEhOZ2x0TkhETTVQOV93eFM2OThzLXRtVjVXWUtR?oc=5",
+      "uz": "Сооснователь Choco получил больше $1 млн за свою долю и вложил их в 15 ИТ-проектов DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxOQjhRVFlDSzM4Wk9JUXNGZXBOanB3SGg3QVpEamQwR2tEWVJvSW53RDZvVW5QdGNoQnpEYzQyMnNubThMakxYNlAwZ01FOGVLaUl0YUpZNFpUYWVJazlncTNVSkp5XzU5UFdKa3ZiM2ljb2lLeW9xUVlwTC1rb3Axb0FrbTZCb293aUJHUV91V0hUMU5NclN4MzBVT1N0TUlqa3ljLW9HNV9DdzRRRFhoVjNMc2ZUX1BFWEJOTll6MDbSAcYBQVVfeXFMTXJhU1BlZ3pDeXZOQmg4VlF0RUprZmpic2dvcVpyNGZ0eWVXWTBLR0pLb2hlbXEzU3gxcmlnYzVQS01BTXRQdnI3QTZUU21wWVpUcnZocDFCNmhfNEdOZzhOSVdrUUJsTVVfMHV3cEJmRmF4bVFzLW1OWlF2eFpPOTFrOEtpRmJobVVPSEZaTWlmcWJsWXVNWl9qUmRmWk1lc0g1SXdYSEdSTEhOZ2x0TkhETTVQOV93eFM2OThzLXRtVjVXWUtR?oc=5",
+      "en": "Сооснователь Choco получил больше $1 млн за свою долю и вложил их в 15 ИТ-проектов DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxOQjhRVFlDSzM4Wk9JUXNGZXBOanB3SGg3QVpEamQwR2tEWVJvSW53RDZvVW5QdGNoQnpEYzQyMnNubThMakxYNlAwZ01FOGVLaUl0YUpZNFpUYWVJazlncTNVSkp5XzU5UFdKa3ZiM2ljb2lLeW9xUVlwTC1rb3Axb0FrbTZCb293aUJHUV91V0hUMU5NclN4MzBVT1N0TUlqa3ljLW9HNV9DdzRRRFhoVjNMc2ZUX1BFWEJOTll6MDbSAcYBQVVfeXFMTXJhU1BlZ3pDeXZOQmg4VlF0RUprZmpic2dvcVpyNGZ0eWVXWTBLR0pLb2hlbXEzU3gxcmlnYzVQS01BTXRQdnI3QTZUU21wWVpUcnZocDFCNmhfNEdOZzhOSVdrUUJsTVVfMHV3cEJmRmF4bVFzLW1OWlF2eFpPOTFrOEtpRmJobVVPSEZaTWlmcWJsWXVNWl9qUmRmWk1lc0g1SXdYSEdSTEhOZ2x0TkhETTVQOV93eFM2OThzLXRtVjVXWUtR?oc=5"
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
+      "uz": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
+      "en": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz"
+    },
+    "b": {
+      "ru": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
+      "uz": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
+      "en": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "IT Community Roadshow в Фергане - Spot.uz",
+      "uz": "IT Community Roadshow в Фергане - Spot.uz",
+      "en": "IT Community Roadshow в Фергане - Spot.uz"
+    },
+    "b": {
+      "ru": "IT Community Roadshow в Фергане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wWHZSdjhaWVUtQzlVRkNEazlwdUtXR1NnYy11NzNaenlBZktmcEZTY2hUZ2lmazB1NzFXV3BISEpWamZmYjd0WXIzbHR2Uk82UjR6YVNCNnJLdw?oc=5",
+      "uz": "IT Community Roadshow в Фергане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wWHZSdjhaWVUtQzlVRkNEazlwdUtXR1NnYy11NzNaenlBZktmcEZTY2hUZ2lmazB1NzFXV3BISEpWamZmYjd0WXIzbHR2Uk82UjR6YVNCNnJLdw?oc=5",
+      "en": "IT Community Roadshow в Фергане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wWHZSdjhaWVUtQzlVRkNEazlwdUtXR1NnYy11NzNaenlBZktmcEZTY2hUZ2lmazB1NzFXV3BISEpWamZmYjd0WXIzbHR2Uk82UjR6YVNCNnJLdw?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Встреча для женщин в сфере технологий в IT Park - Spot.uz",
+      "uz": "Встреча для женщин в сфере технологий в IT Park - Spot.uz",
+      "en": "Встреча для женщин в сфере технологий в IT Park - Spot.uz"
+    },
+    "b": {
+      "ru": "Встреча для женщин в сфере технологий в IT Park Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTFBGZ3U0WHQxbTFUVVNwSGZWeFBMb0kwNDNad0Y2MHBRRDJpWmpKdUNQc1JSV191b2tfRHpRYzBoZ0pBSHRRRFc1NW95Tm9QTnhQb0J0WjA1aG5GdzF3OGFz?oc=5",
+      "uz": "Встреча для женщин в сфере технологий в IT Park Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTFBGZ3U0WHQxbTFUVVNwSGZWeFBMb0kwNDNad0Y2MHBRRDJpWmpKdUNQc1JSV191b2tfRHpRYzBoZ0pBSHRRRFc1NW95Tm9QTnhQb0J0WjA1aG5GdzF3OGFz?oc=5",
+      "en": "Встреча для женщин в сфере технологий в IT Park Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTFBGZ3U0WHQxbTFUVVNwSGZWeFBMb0kwNDNad0Y2MHBRRDJpWmpKdUNQc1JSV191b2tfRHpRYzBoZ0pBSHRRRFc1NW95Tm9QTnhQb0J0WjA1aG5GdzF3OGFz?oc=5"
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами - the-tech.kz",
+      "uz": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами - the-tech.kz",
+      "en": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами - the-tech.kz"
+    },
+    "b": {
+      "ru": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMimAFBVV95cUxNd2g0SWJhOFlRQjg4X1pVV29lbnlhaUR5UE40ajZuN1dRVm9hYTk5UUhSd2duaE9DbTM0VWFvcXJnRkIyaHprMURuM2ZlRlNZaEtwV3NiUS00V3FQRzZNakJ6VUg2Q3JLOE00QlUtT1dGZXQ5cHpxT0dBQjYxQUF6QTBWbkx0UkR4ekZuWThHaC12VUJ6eWNRYg?oc=5",
+      "uz": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMimAFBVV95cUxNd2g0SWJhOFlRQjg4X1pVV29lbnlhaUR5UE40ajZuN1dRVm9hYTk5UUhSd2duaE9DbTM0VWFvcXJnRkIyaHprMURuM2ZlRlNZaEtwV3NiUS00V3FQRzZNakJ6VUg2Q3JLOE00QlUtT1dGZXQ5cHpxT0dBQjYxQUF6QTBWbkx0UkR4ekZuWThHaC12VUJ6eWNRYg?oc=5",
+      "en": "WomenInTech. Как девушки из Узбекистана строят карьеру в IT и управляют стартапами the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMimAFBVV95cUxNd2g0SWJhOFlRQjg4X1pVV29lbnlhaUR5UE40ajZuN1dRVm9hYTk5UUhSd2duaE9DbTM0VWFvcXJnRkIyaHprMURuM2ZlRlNZaEtwV3NiUS00V3FQRzZNakJ6VUg2Q3JLOE00QlUtT1dGZXQ5cHpxT0dBQjYxQUF6QTBWbkx0UkR4ekZuWThHaC12VUJ6eWNRYg?oc=5"
     }
   }
 ]
