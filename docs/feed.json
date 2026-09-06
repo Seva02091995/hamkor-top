@@ -1,83 +1,5 @@
 [
   {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz",
-      "uz": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz",
-      "en": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz"
-    },
-    "b": {
-      "ru": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5",
-      "uz": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5",
-      "en": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5"
-    }
-  },
-  {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана - Газета.uz",
-      "uz": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана - Газета.uz",
-      "en": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана - Газета.uz"
-    },
-    "b": {
-      "ru": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiUEFVX3lxTFAxSThnVjZhZVE3ZnRYN3ZFLTVZVm9kNllnLVNPM2dOb3ZGbDJtaVR2WmJJbGt2bGs2cktmV0lhdnJ6UmIzeXJCMjhBeGxIVkNP?oc=5",
-      "uz": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiUEFVX3lxTFAxSThnVjZhZVE3ZnRYN3ZFLTVZVm9kNllnLVNPM2dOb3ZGbDJtaVR2WmJJbGt2bGs2cktmV0lhdnJ6UmIzeXJCMjhBeGxIVkNP?oc=5",
-      "en": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiUEFVX3lxTFAxSThnVjZhZVE3ZnRYN3ZFLTVZVm9kNllnLVNPM2dOb3ZGbDJtaVR2WmJJbGt2bGs2cktmV0lhdnJ6UmIzeXJCMjhBeGxIVkNP?oc=5"
-    }
-  },
-  {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Главные новости венчурного рынка Центральной Азии — май 2026 - the-tech.kz",
-      "uz": "Главные новости венчурного рынка Центральной Азии — май 2026 - the-tech.kz",
-      "en": "Главные новости венчурного рынка Центральной Азии — май 2026 - the-tech.kz"
-    },
-    "b": {
-      "ru": "Главные новости венчурного рынка Центральной Азии — май 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihwFBVV95cUxNdGdXZVhWUE5sVlFuS3B4bVdWbE9KZTZCU0hhbXlWMGh1S3RkeGo1ZERkbXpLSXRna2hfTGVoZk52THQ4RUVhUmRqdmpOMFJXc1ZqTjhDYzdtTmtJdHN6SDN4SVFNbkxXTFZCbGhva1k0VTBjR1QxVTRNNklMX1loc1RFYVRlV28?oc=5",
-      "uz": "Главные новости венчурного рынка Центральной Азии — май 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihwFBVV95cUxNdGdXZVhWUE5sVlFuS3B4bVdWbE9KZTZCU0hhbXlWMGh1S3RkeGo1ZERkbXpLSXRna2hfTGVoZk52THQ4RUVhUmRqdmpOMFJXc1ZqTjhDYzdtTmtJdHN6SDN4SVFNbkxXTFZCbGhva1k0VTBjR1QxVTRNNklMX1loc1RFYVRlV28?oc=5",
-      "en": "Главные новости венчурного рынка Центральной Азии — май 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihwFBVV95cUxNdGdXZVhWUE5sVlFuS3B4bVdWbE9KZTZCU0hhbXlWMGh1S3RkeGo1ZERkbXpLSXRna2hfTGVoZk52THQ4RUVhUmRqdmpOMFJXc1ZqTjhDYzdtTmtJdHN6SDN4SVFNbkxXTFZCbGhva1k0VTBjR1QxVTRNNklMX1loc1RFYVRlV28?oc=5"
-    }
-  },
-  {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
-      "uz": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
-      "en": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz"
-    },
-    "b": {
-      "ru": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
-      "uz": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
-      "en": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5"
-    }
-  },
-  {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Кто из Центральной Азии прошел в Y Combinator в 2026 году - the-tech.kz",
-      "uz": "Кто из Центральной Азии прошел в Y Combinator в 2026 году - the-tech.kz",
-      "en": "Кто из Центральной Азии прошел в Y Combinator в 2026 году - the-tech.kz"
-    },
-    "b": {
-      "ru": "Кто из Центральной Азии прошел в Y Combinator в 2026 году the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihgFBVV95cUxQa1RnRVRKWThMX1p3VjUzVlRTQlB5amdBa0Q2c3pIM1ZnVHRIN3lsLXp2bllKVTJYTVNzUzBKVW9NOW12TjVlSl9aRmU0TjI5TmVXNjRvb3NubGtyRnhrc3V1RElHcnZQSkwxZXhhMHBJVjItcjhsa0NmR1k0Sm9PTnVBRmUwZw?oc=5",
-      "uz": "Кто из Центральной Азии прошел в Y Combinator в 2026 году the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihgFBVV95cUxQa1RnRVRKWThMX1p3VjUzVlRTQlB5amdBa0Q2c3pIM1ZnVHRIN3lsLXp2bllKVTJYTVNzUzBKVW9NOW12TjVlSl9aRmU0TjI5TmVXNjRvb3NubGtyRnhrc3V1RElHcnZQSkwxZXhhMHBJVjItcjhsa0NmR1k0Sm9PTnVBRmUwZw?oc=5",
-      "en": "Кто из Центральной Азии прошел в Y Combinator в 2026 году the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihgFBVV95cUxQa1RnRVRKWThMX1p3VjUzVlRTQlB5amdBa0Q2c3pIM1ZnVHRIN3lsLXp2bllKVTJYTVNzUzBKVW9NOW12TjVlSl9aRmU0TjI5TmVXNjRvb3NubGtyRnhrc3V1RElHcnZQSkwxZXhhMHBJVjItcjhsa0NmR1k0Sm9PTnVBRmUwZw?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz",
-      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz",
-      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz"
-    },
-    "b": {
-      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
-      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
-      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5"
-    }
-  },
-  {
     "badge": "📰 Новости",
     "t": {
       "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте - Хабр",
@@ -88,6 +10,84 @@
       "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5",
       "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5",
       "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Встреча для женщин в сфере технологий в IT Park - Spot.uz",
+      "uz": "Встреча для женщин в сфере технологий в IT Park - Spot.uz",
+      "en": "Встреча для женщин в сфере технологий в IT Park - Spot.uz"
+    },
+    "b": {
+      "ru": "Встреча для женщин в сфере технологий в IT Park Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTFBGZ3U0WHQxbTFUVVNwSGZWeFBMb0kwNDNad0Y2MHBRRDJpWmpKdUNQc1JSV191b2tfRHpRYzBoZ0pBSHRRRFc1NW95Tm9QTnhQb0J0WjA1aG5GdzF3OGFz?oc=5",
+      "uz": "Встреча для женщин в сфере технологий в IT Park Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTFBGZ3U0WHQxbTFUVVNwSGZWeFBMb0kwNDNad0Y2MHBRRDJpWmpKdUNQc1JSV191b2tfRHpRYzBoZ0pBSHRRRFc1NW95Tm9QTnhQb0J0WjA1aG5GdzF3OGFz?oc=5",
+      "en": "Встреча для женщин в сфере технологий в IT Park Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTFBGZ3U0WHQxbTFUVVNwSGZWeFBMb0kwNDNad0Y2MHBRRDJpWmpKdUNQc1JSV191b2tfRHpRYzBoZ0pBSHRRRFc1NW95Tm9QTnhQb0J0WjA1aG5GdzF3OGFz?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
+      "uz": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
+      "en": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz"
+    },
+    "b": {
+      "ru": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
+      "uz": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
+      "en": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "Казахстанский стартап Higgsfield AI взял премию AI Breakthrough - the-tech.kz",
+      "uz": "Казахстанский стартап Higgsfield AI взял премию AI Breakthrough - the-tech.kz",
+      "en": "Казахстанский стартап Higgsfield AI взял премию AI Breakthrough - the-tech.kz"
+    },
+    "b": {
+      "ru": "Казахстанский стартап Higgsfield AI взял премию AI Breakthrough the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMijwFBVV95cUxOcS1WSGtfdHBndnZYQ2FYbTFlaUZUWllTWEZpTkFMMWYwYlFwTWFMNEF6S1dwcWNXY0lPamxTTmY0SUF5TjRZSGJGWk83MENMVlY5c0tvc29SOTF1UU5QNm05SDdOZ1g1UF80ZEEzUE16LVJ5dk9yaTlJeUxhVzF3Qmg1T3lJU1FLMEZMR19RZw?oc=5",
+      "uz": "Казахстанский стартап Higgsfield AI взял премию AI Breakthrough the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMijwFBVV95cUxOcS1WSGtfdHBndnZYQ2FYbTFlaUZUWllTWEZpTkFMMWYwYlFwTWFMNEF6S1dwcWNXY0lPamxTTmY0SUF5TjRZSGJGWk83MENMVlY5c0tvc29SOTF1UU5QNm05SDdOZ1g1UF80ZEEzUE16LVJ5dk9yaTlJeUxhVzF3Qmg1T3lJU1FLMEZMR19RZw?oc=5",
+      "en": "Казахстанский стартап Higgsfield AI взял премию AI Breakthrough the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMijwFBVV95cUxOcS1WSGtfdHBndnZYQ2FYbTFlaUZUWllTWEZpTkFMMWYwYlFwTWFMNEF6S1dwcWNXY0lPamxTTmY0SUF5TjRZSGJGWk83MENMVlY5c0tvc29SOTF1UU5QNm05SDdOZ1g1UF80ZEEzUE16LVJ5dk9yaTlJeUxhVzF3Qmg1T3lJU1FLMEZMR19RZw?oc=5"
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING - the-tech.kz",
+      "uz": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING - the-tech.kz",
+      "en": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING - the-tech.kz"
+    },
+    "b": {
+      "ru": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMivgFBVV95cUxPRzYwSkV1TGczcW4tNFh2SjhmZHpFcy1lRnJsZmpiUy1VMk5YZ0VsaXRETEhTNUpGU05nejBnVEoxM2Q4OHBLaERGWksxX2NEaHJ2cHdXamFUbzJJZWF2cUY4a3pQWmQtQnAxMHBZTXkxUFprZ3pJazdVdmNqNU11RWtqdWdrMGp3VWFuNlJiMDNtdVJpOEtxOEViUGM3bFBndXdIbjc1N0lYOUU2VXBCOWhqSmloV3JqY0lQalJR?oc=5",
+      "uz": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMivgFBVV95cUxPRzYwSkV1TGczcW4tNFh2SjhmZHpFcy1lRnJsZmpiUy1VMk5YZ0VsaXRETEhTNUpGU05nejBnVEoxM2Q4OHBLaERGWksxX2NEaHJ2cHdXamFUbzJJZWF2cUY4a3pQWmQtQnAxMHBZTXkxUFprZ3pJazdVdmNqNU11RWtqdWdrMGp3VWFuNlJiMDNtdVJpOEtxOEViUGM3bFBndXdIbjc1N0lYOUU2VXBCOWhqSmloV3JqY0lQalJR?oc=5",
+      "en": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMivgFBVV95cUxPRzYwSkV1TGczcW4tNFh2SjhmZHpFcy1lRnJsZmpiUy1VMk5YZ0VsaXRETEhTNUpGU05nejBnVEoxM2Q4OHBLaERGWksxX2NEaHJ2cHdXamFUbzJJZWF2cUY4a3pQWmQtQnAxMHBZTXkxUFprZ3pJazdVdmNqNU11RWtqdWdrMGp3VWFuNlJiMDNtdVJpOEtxOEViUGM3bFBndXdIbjc1N0lYOUU2VXBCOWhqSmloV3JqY0lQalJR?oc=5"
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
+      "uz": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
+      "en": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz"
+    },
+    "b": {
+      "ru": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
+      "uz": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
+      "en": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5"
+    }
+  },
+  {
+    "badge": "💼 Карьера",
+    "t": {
+      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
+      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz",
+      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - the-tech.kz"
+    },
+    "b": {
+      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
+      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
+      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5"
     }
   }
 ]
