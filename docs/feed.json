@@ -2,27 +2,79 @@
   {
     "badge": "📰 Новости",
     "t": {
-      "ru": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news",
-      "uz": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news",
-      "en": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news"
+      "ru": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
+      "uz": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
+      "en": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz"
     },
     "b": {
-      "ru": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5",
-      "uz": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5",
-      "en": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5"
+      "ru": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
+      "uz": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
+      "en": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 - PLUSworld",
+      "uz": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 - PLUSworld",
+      "en": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 - PLUSworld"
+    },
+    "b": {
+      "ru": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 PLUSworld. Подробнее: https://news.google.com/rss/articles/CBMiTEFVX3lxTE9qeFJiVkM2cmtOOWpKSlZINmVmUVQ0UV90VzgteEdFRGp1aHhkeFJvdXYtdXpkTWhDMnpTREo2SXNZXzlERF8xa0p0S0c?oc=5",
+      "uz": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 PLUSworld. Подробнее: https://news.google.com/rss/articles/CBMiTEFVX3lxTE9qeFJiVkM2cmtOOWpKSlZINmVmUVQ0UV90VzgteEdFRGp1aHhkeFJvdXYtdXpkTWhDMnpTREo2SXNZXzlERF8xa0p0S0c?oc=5",
+      "en": "Использование ИИ на госуровне, в бизнесе, технологиях и финансах. Новые перспективы рассмотрели на Digital Uzbekistan 2026 PLUSworld. Подробнее: https://news.google.com/rss/articles/CBMiTEFVX3lxTE9qeFJiVkM2cmtOOWpKSlZINmVmUVQ0UV90VzgteEdFRGp1aHhkeFJvdXYtdXpkTWhDMnpTREo2SXNZXzlERF8xa0p0S0c?oc=5"
     }
   },
   {
     "badge": "🤖 AI",
     "t": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz"
+      "ru": "Фаундеры Nedvizhka.kz, Helio AI и Clockster рассказали, что нужно знать перед выходом на рынок Узбекистана - the-tech.kz",
+      "uz": "Фаундеры Nedvizhka.kz, Helio AI и Clockster рассказали, что нужно знать перед выходом на рынок Узбекистана - the-tech.kz",
+      "en": "Фаундеры Nedvizhka.kz, Helio AI и Clockster рассказали, что нужно знать перед выходом на рынок Узбекистана - the-tech.kz"
     },
     "b": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5"
+      "ru": "Фаундеры Nedvizhka.kz, Helio AI и Clockster рассказали, что нужно знать перед выходом на рынок Узбекистана the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMixAFBVV95cUxPLTRXeVE4bEUtYkx2YlBwaWxhNndaZkp1emJTaWRTaGJoSGpFOWpvVTg1dkFOMnVudGxEWS1hZ29SNjhBekM4MXRxQ2JkcjE5aVN0cVE4U3RlbjJNaUpmVjRrOXFIM2pVd1dhemcxQUlhUEF6VTZYeTZnOEIweDdodnBnNnR2bU5OdVpsQllKLVl3NnRJNVFuSDFGYWhoZW4tQW1aVWJKYmx3eks5N0R5TFZsVGxwLUVLOUFGZ3pWTm5md0pR?oc=5",
+      "uz": "Фаундеры Nedvizhka.kz, Helio AI и Clockster рассказали, что нужно знать перед выходом на рынок Узбекистана the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMixAFBVV95cUxPLTRXeVE4bEUtYkx2YlBwaWxhNndaZkp1emJTaWRTaGJoSGpFOWpvVTg1dkFOMnVudGxEWS1hZ29SNjhBekM4MXRxQ2JkcjE5aVN0cVE4U3RlbjJNaUpmVjRrOXFIM2pVd1dhemcxQUlhUEF6VTZYeTZnOEIweDdodnBnNnR2bU5OdVpsQllKLVl3NnRJNVFuSDFGYWhoZW4tQW1aVWJKYmx3eks5N0R5TFZsVGxwLUVLOUFGZ3pWTm5md0pR?oc=5",
+      "en": "Фаундеры Nedvizhka.kz, Helio AI и Clockster рассказали, что нужно знать перед выходом на рынок Узбекистана the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMixAFBVV95cUxPLTRXeVE4bEUtYkx2YlBwaWxhNndaZkp1emJTaWRTaGJoSGpFOWpvVTg1dkFOMnVudGxEWS1hZ29SNjhBekM4MXRxQ2JkcjE5aVN0cVE4U3RlbjJNaUpmVjRrOXFIM2pVd1dhemcxQUlhUEF6VTZYeTZnOEIweDdodnBnNnR2bU5OdVpsQllKLVl3NnRJNVFuSDFGYWhoZW4tQW1aVWJKYmx3eks5N0R5TFZsVGxwLUVLOUFGZ3pWTm5md0pR?oc=5"
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане - repost.uz",
+      "uz": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане - repost.uz",
+      "en": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане - repost.uz"
+    },
+    "b": {
+      "ru": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане repost.uz. Подробнее: https://news.google.com/rss/articles/CBMidEFVX3lxTFBWUEVySXpZenRRVDhnajJ1am4wemt1alFPR0lfcFplRTNVZlpXYTFFUTZuTVJoem8xZVR2SjQtZEtsM1FkUDZ3WE9PY0ZoZlA5MkxzNksxLW1odkktY2pqVWJndVMySlVvQ1A2ZGpKUFNjMHlx?oc=5",
+      "uz": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане repost.uz. Подробнее: https://news.google.com/rss/articles/CBMidEFVX3lxTFBWUEVySXpZenRRVDhnajJ1am4wemt1alFPR0lfcFplRTNVZlpXYTFFUTZuTVJoem8xZVR2SjQtZEtsM1FkUDZ3WE9PY0ZoZlA5MkxzNksxLW1odkktY2pqVWJndVMySlVvQ1A2ZGpKUFNjMHlx?oc=5",
+      "en": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане repost.uz. Подробнее: https://news.google.com/rss/articles/CBMidEFVX3lxTFBWUEVySXpZenRRVDhnajJ1am4wemt1alFPR0lfcFplRTNVZlpXYTFFUTZuTVJoem8xZVR2SjQtZEtsM1FkUDZ3WE9PY0ZoZlA5MkxzNksxLW1odkktY2pqVWJndVMySlVvQ1A2ZGpKUFNjMHlx?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Главные новости венчурного рынка Центральной Азии — май 2026 - the-tech.kz",
+      "uz": "Главные новости венчурного рынка Центральной Азии — май 2026 - the-tech.kz",
+      "en": "Главные новости венчурного рынка Центральной Азии — май 2026 - the-tech.kz"
+    },
+    "b": {
+      "ru": "Главные новости венчурного рынка Центральной Азии — май 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihwFBVV95cUxNdGdXZVhWUE5sVlFuS3B4bVdWbE9KZTZCU0hhbXlWMGh1S3RkeGo1ZERkbXpLSXRna2hfTGVoZk52THQ4RUVhUmRqdmpOMFJXc1ZqTjhDYzdtTmtJdHN6SDN4SVFNbkxXTFZCbGhva1k0VTBjR1QxVTRNNklMX1loc1RFYVRlV28?oc=5",
+      "uz": "Главные новости венчурного рынка Центральной Азии — май 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihwFBVV95cUxNdGdXZVhWUE5sVlFuS3B4bVdWbE9KZTZCU0hhbXlWMGh1S3RkeGo1ZERkbXpLSXRna2hfTGVoZk52THQ4RUVhUmRqdmpOMFJXc1ZqTjhDYzdtTmtJdHN6SDN4SVFNbkxXTFZCbGhva1k0VTBjR1QxVTRNNklMX1loc1RFYVRlV28?oc=5",
+      "en": "Главные новости венчурного рынка Центральной Азии — май 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihwFBVV95cUxNdGdXZVhWUE5sVlFuS3B4bVdWbE9KZTZCU0hhbXlWMGh1S3RkeGo1ZERkbXpLSXRna2hfTGVoZk52THQ4RUVhUmRqdmpOMFJXc1ZqTjhDYzdtTmtJdHN6SDN4SVFNbkxXTFZCbGhva1k0VTBjR1QxVTRNNklMX1loc1RFYVRlV28?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz"
+    },
+    "b": {
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5"
     }
   },
   {
@@ -36,58 +88,6 @@
       "ru": "Kazakhstan and Hong Kong Expand Economic Partnership: 4 Intergovernmental Memorandums and 42 Commercial Agreements Signed Inbusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMi5AFBVV95cUxNLXNqUDkwM2xsZFA1Yl9vRC1kWlVZRHJqMVRKV2Y1cTFHUjJlQWtUUWJjR3JzOHhUV0c2OGtuaDJjbDY3b3Y0alJ2VVpORGk2cW1vSHdrNkxVQTRqRlNpYjJXeHYxcTdDUlhMbF9wUkt0MDJCRXRmUjFQTVlIclVYMmMyNzZOVTJialZuSVE4X1BENFZJcXRTZGlPWnREU3B0T0hfSjkxSHFWSnhtaG85N2VrZHV0XzZkSFUzcF9JVEtkVGxzOXNfc0tQMzBkZkYydjJnMk9obkFVRnMzOUNpdEVzZFo?oc=5",
       "uz": "Kazakhstan and Hong Kong Expand Economic Partnership: 4 Intergovernmental Memorandums and 42 Commercial Agreements Signed Inbusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMi5AFBVV95cUxNLXNqUDkwM2xsZFA1Yl9vRC1kWlVZRHJqMVRKV2Y1cTFHUjJlQWtUUWJjR3JzOHhUV0c2OGtuaDJjbDY3b3Y0alJ2VVpORGk2cW1vSHdrNkxVQTRqRlNpYjJXeHYxcTdDUlhMbF9wUkt0MDJCRXRmUjFQTVlIclVYMmMyNzZOVTJialZuSVE4X1BENFZJcXRTZGlPWnREU3B0T0hfSjkxSHFWSnhtaG85N2VrZHV0XzZkSFUzcF9JVEtkVGxzOXNfc0tQMzBkZkYydjJnMk9obkFVRnMzOUNpdEVzZFo?oc=5",
       "en": "Kazakhstan and Hong Kong Expand Economic Partnership: 4 Intergovernmental Memorandums and 42 Commercial Agreements Signed Inbusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMi5AFBVV95cUxNLXNqUDkwM2xsZFA1Yl9vRC1kWlVZRHJqMVRKV2Y1cTFHUjJlQWtUUWJjR3JzOHhUV0c2OGtuaDJjbDY3b3Y0alJ2VVpORGk2cW1vSHdrNkxVQTRqRlNpYjJXeHYxcTdDUlhMbF9wUkt0MDJCRXRmUjFQTVlIclVYMmMyNzZOVTJialZuSVE4X1BENFZJcXRTZGlPWnREU3B0T0hfSjkxSHFWSnhtaG85N2VrZHV0XzZkSFUzcF9JVEtkVGxzOXNfc0tQMzBkZkYydjJnMk9obkFVRnMzOUNpdEVzZFo?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается - Afisha.uz",
-      "uz": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается - Afisha.uz",
-      "en": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается - Afisha.uz"
-    },
-    "b": {
-      "ru": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается Afisha.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTE1fSmtWdDlZQ095U2xEZFF1c1BoODBUTG9yRFJoRHFfVG1MdWh1V0JyOGlYNnllcFRjNllJX1dJdm1GMWQ5UzBmcGlabWZUZFJNV3FYeW1DZDdwOTkyYkU0?oc=5",
-      "uz": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается Afisha.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTE1fSmtWdDlZQ095U2xEZFF1c1BoODBUTG9yRFJoRHFfVG1MdWh1V0JyOGlYNnllcFRjNllJX1dJdm1GMWQ5UzBmcGlabWZUZFJNV3FYeW1DZDdwOTkyYkU0?oc=5",
-      "en": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается Afisha.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTE1fSmtWdDlZQ095U2xEZFF1c1BoODBUTG9yRFJoRHFfVG1MdWh1V0JyOGlYNnllcFRjNllJX1dJdm1GMWQ5UzBmcGlabWZUZFJNV3FYeW1DZDdwOTkyYkU0?oc=5"
-    }
-  },
-  {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans - Ifimes",
-      "uz": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans - Ifimes",
-      "en": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans - Ifimes"
-    },
-    "b": {
-      "ru": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans Ifimes. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxORllmYzdpM250QkFTek1CS3NJa25Xa0FrcmVNSnRKUHlwWVptTVZSZXJ2MmYwX2Utc0lBVmY5bUpwY2ttQTAxUmZjamVGOWx0RkhZeUZ3SE9jZlRCZUt0NFAwZkFQUjV2cklVUkloekx5aW50VGFkdWc1YkxsMnlBTC1WSjRjMl9CQkJkTktZRVJIZHljQk9LeWUtdU41dDM0X3pmQkJpU3ZnTkJqUVdfcWhZRnluakRQeUhRU1dJZng?oc=5",
-      "uz": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans Ifimes. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxORllmYzdpM250QkFTek1CS3NJa25Xa0FrcmVNSnRKUHlwWVptTVZSZXJ2MmYwX2Utc0lBVmY5bUpwY2ttQTAxUmZjamVGOWx0RkhZeUZ3SE9jZlRCZUt0NFAwZkFQUjV2cklVUkloekx5aW50VGFkdWc1YkxsMnlBTC1WSjRjMl9CQkJkTktZRVJIZHljQk9LeWUtdU41dDM0X3pmQkJpU3ZnTkJqUVdfcWhZRnluakRQeUhRU1dJZng?oc=5",
-      "en": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans Ifimes. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxORllmYzdpM250QkFTek1CS3NJa25Xa0FrcmVNSnRKUHlwWVptTVZSZXJ2MmYwX2Utc0lBVmY5bUpwY2ttQTAxUmZjamVGOWx0RkhZeUZ3SE9jZlRCZUt0NFAwZkFQUjV2cklVUkloekx5aW50VGFkdWc1YkxsMnlBTC1WSjRjMl9CQkJkTktZRVJIZHljQk9LeWUtdU41dDM0X3pmQkJpU3ZnTkJqUVdfcWhZRnluakRQeUhRU1dJZng?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz",
-      "uz": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz",
-      "en": "Лучшие ИИ-стартапы поборются за президентский грант - Norma.uz"
-    },
-    "b": {
-      "ru": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5",
-      "uz": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5",
-      "en": "Лучшие ИИ-стартапы поборются за президентский грант Norma.uz. Подробнее: https://news.google.com/rss/articles/CBMiogFBVV95cUxOSmVZUWE5NFlJSURCZlA3QUNZQmE4cWg4SEVoM1l5OU5WSG5veG9pdnZWWGVST3NKbkc1d3N1VkRVQVNKNEY2T1JWcDNHaHNwcXF6a2JyX3RVQzE4dWhhTVJEdTR4NVJIVEl1WklONUFKMUZxcWh0Z3JVWjI0ZzZzU05XX1JoRmRNeUx6WWVCSjNaRnhfdlNtNjh5T2x5R3NlWWc?oc=5"
-    }
-  },
-  {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
-      "uz": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
-      "en": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz"
-    },
-    "b": {
-      "ru": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
-      "uz": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
-      "en": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5"
     }
   }
 ]
