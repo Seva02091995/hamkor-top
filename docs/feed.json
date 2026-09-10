@@ -1,41 +1,15 @@
 [
   {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте - Хабр",
-      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте - Хабр",
-      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте - Хабр"
-    },
-    "b": {
-      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5",
-      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5",
-      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5"
-    }
-  },
-  {
     "badge": "🤖 AI",
     "t": {
-      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
-      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
-      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz"
+      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
+      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
+      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz"
     },
     "b": {
-      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
-      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
-      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5"
-    }
-  },
-  {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "IBM и ABRTECH: как бизнесу Узбекистана подготовиться к эпохе AI и новых киберугроз - Spot.uz",
-      "uz": "IBM и ABRTECH: как бизнесу Узбекистана подготовиться к эпохе AI и новых киберугроз - Spot.uz",
-      "en": "IBM и ABRTECH: как бизнесу Узбекистана подготовиться к эпохе AI и новых киберугроз - Spot.uz"
-    },
-    "b": {
-      "ru": "IBM и ABRTECH: как бизнесу Узбекистана подготовиться к эпохе AI и новых киберугроз Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE5VN2NhVFFuMXhZYTVQeVhEa2FFVmsxUjQzSTlXbTlha0NKN2dLM19sckdsejVpSHZ4YXFsQXozRnhJM1NfOFo5aHBCemw0MjZGX3AxYw?oc=5",
-      "uz": "IBM и ABRTECH: как бизнесу Узбекистана подготовиться к эпохе AI и новых киберугроз Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE5VN2NhVFFuMXhZYTVQeVhEa2FFVmsxUjQzSTlXbTlha0NKN2dLM19sckdsejVpSHZ4YXFsQXozRnhJM1NfOFo5aHBCemw0MjZGX3AxYw?oc=5",
-      "en": "IBM и ABRTECH: как бизнесу Узбекистана подготовиться к эпохе AI и новых киберугроз Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE5VN2NhVFFuMXhZYTVQeVhEa2FFVmsxUjQzSTlXbTlha0NKN2dLM19sckdsejVpSHZ4YXFsQXozRnhJM1NfOFo5aHBCemw0MjZGX3AxYw?oc=5"
+      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
+      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
+      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5"
     }
   },
   {
@@ -65,29 +39,55 @@
     }
   },
   {
-    "badge": "📰 Новости",
+    "badge": "🚀 Стартапы",
     "t": {
-      "ru": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
-      "uz": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
-      "en": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz"
+      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz",
+      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz",
+      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz"
     },
     "b": {
-      "ru": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
-      "uz": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
-      "en": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5"
+      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
+      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
+      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5"
     }
   },
   {
     "badge": "📰 Новости",
     "t": {
-      "ru": "Кто из Центральной Азии прошел в Y Combinator в 2026 году - the-tech.kz",
-      "uz": "Кто из Центральной Азии прошел в Y Combinator в 2026 году - the-tech.kz",
-      "en": "Кто из Центральной Азии прошел в Y Combinator в 2026 году - the-tech.kz"
+      "ru": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news",
+      "uz": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news",
+      "en": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news"
     },
     "b": {
-      "ru": "Кто из Центральной Азии прошел в Y Combinator в 2026 году the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihgFBVV95cUxQa1RnRVRKWThMX1p3VjUzVlRTQlB5amdBa0Q2c3pIM1ZnVHRIN3lsLXp2bllKVTJYTVNzUzBKVW9NOW12TjVlSl9aRmU0TjI5TmVXNjRvb3NubGtyRnhrc3V1RElHcnZQSkwxZXhhMHBJVjItcjhsa0NmR1k0Sm9PTnVBRmUwZw?oc=5",
-      "uz": "Кто из Центральной Азии прошел в Y Combinator в 2026 году the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihgFBVV95cUxQa1RnRVRKWThMX1p3VjUzVlRTQlB5amdBa0Q2c3pIM1ZnVHRIN3lsLXp2bllKVTJYTVNzUzBKVW9NOW12TjVlSl9aRmU0TjI5TmVXNjRvb3NubGtyRnhrc3V1RElHcnZQSkwxZXhhMHBJVjItcjhsa0NmR1k0Sm9PTnVBRmUwZw?oc=5",
-      "en": "Кто из Центральной Азии прошел в Y Combinator в 2026 году the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMihgFBVV95cUxQa1RnRVRKWThMX1p3VjUzVlRTQlB5amdBa0Q2c3pIM1ZnVHRIN3lsLXp2bllKVTJYTVNzUzBKVW9NOW12TjVlSl9aRmU0TjI5TmVXNjRvb3NubGtyRnhrc3V1RElHcnZQSkwxZXhhMHBJVjItcjhsa0NmR1k0Sm9PTnVBRmUwZw?oc=5"
+      "ru": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5",
+      "uz": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5",
+      "en": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Kyrgyzstan plans to establish international logistics center Sary-Tash - 24.KG",
+      "uz": "Kyrgyzstan plans to establish international logistics center Sary-Tash - 24.KG",
+      "en": "Kyrgyzstan plans to establish international logistics center Sary-Tash - 24.KG"
+    },
+    "b": {
+      "ru": "Kyrgyzstan plans to establish international logistics center Sary-Tash 24.KG. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNNIBpwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNA?oc=5",
+      "uz": "Kyrgyzstan plans to establish international logistics center Sary-Tash 24.KG. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNNIBpwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNA?oc=5",
+      "en": "Kyrgyzstan plans to establish international logistics center Sary-Tash 24.KG. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNNIBpwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNA?oc=5"
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING - the-tech.kz",
+      "uz": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING - the-tech.kz",
+      "en": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING - the-tech.kz"
+    },
+    "b": {
+      "ru": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMivgFBVV95cUxPRzYwSkV1TGczcW4tNFh2SjhmZHpFcy1lRnJsZmpiUy1VMk5YZ0VsaXRETEhTNUpGU05nejBnVEoxM2Q4OHBLaERGWksxX2NEaHJ2cHdXamFUbzJJZWF2cUY4a3pQWmQtQnAxMHBZTXkxUFprZ3pJazdVdmNqNU11RWtqdWdrMGp3VWFuNlJiMDNtdVJpOEtxOEViUGM3bFBndXdIbjc1N0lYOUU2VXBCOWhqSmloV3JqY0lQalJR?oc=5",
+      "uz": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMivgFBVV95cUxPRzYwSkV1TGczcW4tNFh2SjhmZHpFcy1lRnJsZmpiUy1VMk5YZ0VsaXRETEhTNUpGU05nejBnVEoxM2Q4OHBLaERGWksxX2NEaHJ2cHdXamFUbzJJZWF2cUY4a3pQWmQtQnAxMHBZTXkxUFprZ3pJazdVdmNqNU11RWtqdWdrMGp3VWFuNlJiMDNtdVJpOEtxOEViUGM3bFBndXdIbjc1N0lYOUU2VXBCOWhqSmloV3JqY0lQalJR?oc=5",
+      "en": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMivgFBVV95cUxPRzYwSkV1TGczcW4tNFh2SjhmZHpFcy1lRnJsZmpiUy1VMk5YZ0VsaXRETEhTNUpGU05nejBnVEoxM2Q4OHBLaERGWksxX2NEaHJ2cHdXamFUbzJJZWF2cUY4a3pQWmQtQnAxMHBZTXkxUFprZ3pJazdVdmNqNU11RWtqdWdrMGp3VWFuNlJiMDNtdVJpOEtxOEViUGM3bFBndXdIbjc1N0lYOUU2VXBCOWhqSmloV3JqY0lQalJR?oc=5"
     }
   }
 ]
