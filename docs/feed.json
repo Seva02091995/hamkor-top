@@ -1,67 +1,28 @@
 [
   {
-    "badge": "🚀 Стартапы",
+    "badge": "📰 Новости",
     "t": {
-      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - gazeta.uz",
-      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - gazeta.uz",
-      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - gazeta.uz"
+      "ru": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
+      "uz": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
+      "en": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz"
     },
     "b": {
-      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана gazeta.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
-      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана gazeta.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
-      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана gazeta.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING - the-tech.kz",
-      "uz": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING - the-tech.kz",
-      "en": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING - the-tech.kz"
-    },
-    "b": {
-      "ru": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMivgFBVV95cUxPRzYwSkV1TGczcW4tNFh2SjhmZHpFcy1lRnJsZmpiUy1VMk5YZ0VsaXRETEhTNUpGU05nejBnVEoxM2Q4OHBLaERGWksxX2NEaHJ2cHdXamFUbzJJZWF2cUY4a3pQWmQtQnAxMHBZTXkxUFprZ3pJazdVdmNqNU11RWtqdWdrMGp3VWFuNlJiMDNtdVJpOEtxOEViUGM3bFBndXdIbjc1N0lYOUU2VXBCOWhqSmloV3JqY0lQalJR?oc=5",
-      "uz": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMivgFBVV95cUxPRzYwSkV1TGczcW4tNFh2SjhmZHpFcy1lRnJsZmpiUy1VMk5YZ0VsaXRETEhTNUpGU05nejBnVEoxM2Q4OHBLaERGWksxX2NEaHJ2cHdXamFUbzJJZWF2cUY4a3pQWmQtQnAxMHBZTXkxUFprZ3pJazdVdmNqNU11RWtqdWdrMGp3VWFuNlJiMDNtdVJpOEtxOEViUGM3bFBndXdIbjc1N0lYOUU2VXBCOWhqSmloV3JqY0lQalJR?oc=5",
-      "en": "Как предпринимательница из Казахстана создала EdTech-стартап в Каракалпакстане. История ORDO HOLDING the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMivgFBVV95cUxPRzYwSkV1TGczcW4tNFh2SjhmZHpFcy1lRnJsZmpiUy1VMk5YZ0VsaXRETEhTNUpGU05nejBnVEoxM2Q4OHBLaERGWksxX2NEaHJ2cHdXamFUbzJJZWF2cUY4a3pQWmQtQnAxMHBZTXkxUFprZ3pJazdVdmNqNU11RWtqdWdrMGp3VWFuNlJiMDNtdVJpOEtxOEViUGM3bFBndXdIbjc1N0lYOUU2VXBCOWhqSmloV3JqY0lQalJR?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
-      "uz": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
-      "en": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz"
-    },
-    "b": {
-      "ru": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
-      "uz": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
-      "en": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5"
-    }
-  },
-  {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - gazeta.uz",
-      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - gazeta.uz",
-      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - gazeta.uz"
-    },
-    "b": {
-      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане gazeta.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
-      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане gazeta.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
-      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане gazeta.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5"
+      "ru": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
+      "uz": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
+      "en": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5"
     }
   },
   {
     "badge": "📰 Новости",
     "t": {
-      "ru": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news",
-      "uz": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news",
-      "en": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news"
+      "ru": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - thecode.media",
+      "uz": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - thecode.media",
+      "en": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - thecode.media"
     },
     "b": {
-      "ru": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5",
-      "uz": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5",
-      "en": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5"
+      "ru": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году thecode.media. Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
+      "uz": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году thecode.media. Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
+      "en": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году thecode.media. Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5"
     }
   },
   {
@@ -78,16 +39,55 @@
     }
   },
   {
-    "badge": "📰 Новости",
+    "badge": "🚀 Стартапы",
     "t": {
-      "ru": "Kyrgyzstan plans to establish international logistics center Sary-Tash - 24.KG",
-      "uz": "Kyrgyzstan plans to establish international logistics center Sary-Tash - 24.KG",
-      "en": "Kyrgyzstan plans to establish international logistics center Sary-Tash - 24.KG"
+      "ru": "Главная стартап-неделя осени: что пройдет в рамках ICT Week 2026 - weproject",
+      "uz": "Главная стартап-неделя осени: что пройдет в рамках ICT Week 2026 - weproject",
+      "en": "Главная стартап-неделя осени: что пройдет в рамках ICT Week 2026 - weproject"
     },
     "b": {
-      "ru": "Kyrgyzstan plans to establish international logistics center Sary-Tash 24.KG. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNNIBpwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNA?oc=5",
-      "uz": "Kyrgyzstan plans to establish international logistics center Sary-Tash 24.KG. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNNIBpwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNA?oc=5",
-      "en": "Kyrgyzstan plans to establish international logistics center Sary-Tash 24.KG. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNNIBpwFBVV95cUxPb0h3cDVhVXpkYUdrX25iWnFnT2ZZSXdHR2RyRFhvUkFjMVhUd3laZkZsNHBRR0JaNjMwbDZEdHBEOE1udGFzallwRWJhc2FaVDAyeWprYjc2bW5FR1ZTRDNPdlhPZVQycS1tWkppa3hjX25xTzRpTWNObFVtN0lIc3RyTWFvYlRpXzJaUVlVS3JuTjBwWHhWeFljck5SQjg3WHhmYnhQNA?oc=5"
+      "ru": "Главная стартап-неделя осени: что пройдет в рамках ICT Week 2026 weproject. Подробнее: https://news.google.com/rss/articles/CBMirAFBVV95cUxOTjJiTkZOTnJpaVA3SzgwWVNncXZIYXozMVdMcm5OSmJmZG14ZmZVQnJISEVyOEdNX2xScWRfQmRYbnpVVDQ4U3BPMktUVUxROFlOOHNMR2ZFUkhLNkkxYzBOeGlOdHRaRHZhY09LWWtPOWNIbVZOd2t4bTgwTFhMQUF1MEs5QkxZR2g1SEl0a1dGZzJKVVIzVEJ4QXlSU21YRUFFTlFsX0oyZFVS0gG0AUFVX3lxTFBtWXZWZURLclNqa05jUzZ2TEdqUXVGaEh0YjBicUZpM3BxdUtjWnNlV09aal9uNzlSWUFUSUNRVFdZQ0tWZ09iT2hUbGNHTjg2OW1qNU15SEI2bTJtYnNxTDhEME9QOWFKXzUzYWVHcWRFaEFueHRBLXlnSmQybnkxNlp3VHlVcDR0bDBZYWVhV05IaTBtakcxeHdOeFFEN3JlRTdla2c2MW04eS1FNE5YZmxYRg?oc=5",
+      "uz": "Главная стартап-неделя осени: что пройдет в рамках ICT Week 2026 weproject. Подробнее: https://news.google.com/rss/articles/CBMirAFBVV95cUxOTjJiTkZOTnJpaVA3SzgwWVNncXZIYXozMVdMcm5OSmJmZG14ZmZVQnJISEVyOEdNX2xScWRfQmRYbnpVVDQ4U3BPMktUVUxROFlOOHNMR2ZFUkhLNkkxYzBOeGlOdHRaRHZhY09LWWtPOWNIbVZOd2t4bTgwTFhMQUF1MEs5QkxZR2g1SEl0a1dGZzJKVVIzVEJ4QXlSU21YRUFFTlFsX0oyZFVS0gG0AUFVX3lxTFBtWXZWZURLclNqa05jUzZ2TEdqUXVGaEh0YjBicUZpM3BxdUtjWnNlV09aal9uNzlSWUFUSUNRVFdZQ0tWZ09iT2hUbGNHTjg2OW1qNU15SEI2bTJtYnNxTDhEME9QOWFKXzUzYWVHcWRFaEFueHRBLXlnSmQybnkxNlp3VHlVcDR0bDBZYWVhV05IaTBtakcxeHdOeFFEN3JlRTdla2c2MW04eS1FNE5YZmxYRg?oc=5",
+      "en": "Главная стартап-неделя осени: что пройдет в рамках ICT Week 2026 weproject. Подробнее: https://news.google.com/rss/articles/CBMirAFBVV95cUxOTjJiTkZOTnJpaVA3SzgwWVNncXZIYXozMVdMcm5OSmJmZG14ZmZVQnJISEVyOEdNX2xScWRfQmRYbnpVVDQ4U3BPMktUVUxROFlOOHNMR2ZFUkhLNkkxYzBOeGlOdHRaRHZhY09LWWtPOWNIbVZOd2t4bTgwTFhMQUF1MEs5QkxZR2g1SEl0a1dGZzJKVVIzVEJ4QXlSU21YRUFFTlFsX0oyZFVS0gG0AUFVX3lxTFBtWXZWZURLclNqa05jUzZ2TEdqUXVGaEh0YjBicUZpM3BxdUtjWnNlV09aal9uNzlSWUFUSUNRVFdZQ0tWZ09iT2hUbGNHTjg2OW1qNU15SEI2bTJtYnNxTDhEME9QOWFKXzUzYWVHcWRFaEFueHRBLXlnSmQybnkxNlp3VHlVcDR0bDBZYWVhV05IaTBtakcxeHdOeFFEN3JlRTdla2c2MW04eS1FNE5YZmxYRg?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news",
+      "uz": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news",
+      "en": "Turkmen university participates in European project on digitalization in Central Asia - Arzuw news"
+    },
+    "b": {
+      "ru": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5",
+      "uz": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5",
+      "en": "Turkmen university participates in European project on digitalization in Central Asia Arzuw news. Подробнее: https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUkYyT3hfY0lfdE5iYy1DaUkwUTVGWGFrLVE5Q3lNM0drdGI0dDVnM25wbjNKMHJfZ0FaTVY2NlR1Q3oyNjVwRzJlWVQwd3VNVm9tUGtJWG1hLUNqRmo0OFkzMEt5T3BvUmJ5ZU95SkZ5azRfVGtsbmZDeDlSVmlWZ1ViZ1V4ODQ2RkxlZ04xSl8wSUl2MmVHQ2JrR3dIV0ZiWXlDelEzaDVGR0k?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана - Газета.uz",
+      "uz": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана - Газета.uz",
+      "en": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана - Газета.uz"
+    },
+    "b": {
+      "ru": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiUEFVX3lxTFAxSThnVjZhZVE3ZnRYN3ZFLTVZVm9kNllnLVNPM2dOb3ZGbDJtaVR2WmJJbGt2bGs2cktmV0lhdnJ6UmIzeXJCMjhBeGxIVkNP?oc=5",
+      "uz": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiUEFVX3lxTFAxSThnVjZhZVE3ZnRYN3ZFLTVZVm9kNllnLVNPM2dOb3ZGbDJtaVR2WmJJbGt2bGs2cktmV0lhdnJ6UmIzeXJCMjhBeGxIVkNP?oc=5",
+      "en": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiUEFVX3lxTFAxSThnVjZhZVE3ZnRYN3ZFLTVZVm9kNllnLVNPM2dOb3ZGbDJtaVR2WmJJbGt2bGs2cktmV0lhdnJ6UmIzeXJCMjhBeGxIVkNP?oc=5"
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
+      "uz": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
+      "en": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz"
+    },
+    "b": {
+      "ru": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
+      "uz": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
+      "en": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5"
     }
   }
 ]
