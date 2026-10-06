@@ -1,54 +1,15 @@
 [
   {
-    "badge": "📰 Новости",
+    "badge": "🚀 Стартапы",
     "t": {
-      "ru": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
-      "uz": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
-      "en": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz"
+      "ru": "В Казахстане создадут фонд на $50 миллионов для инвестиций в ИИ и креативные индустрии - the-tech.kz",
+      "uz": "В Казахстане создадут фонд на $50 миллионов для инвестиций в ИИ и креативные индустрии - the-tech.kz",
+      "en": "В Казахстане создадут фонд на $50 миллионов для инвестиций в ИИ и креативные индустрии - the-tech.kz"
     },
     "b": {
-      "ru": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
-      "uz": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
-      "en": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5"
-    }
-  },
-  {
-    "badge": "💼 Карьера",
-    "t": {
-      "ru": "WomenInTech. Истории успешных женщин из Таджикистана и Узбекистана, которые строят карьеру в IT - the-tech.kz",
-      "uz": "WomenInTech. Истории успешных женщин из Таджикистана и Узбекистана, которые строят карьеру в IT - the-tech.kz",
-      "en": "WomenInTech. Истории успешных женщин из Таджикистана и Узбекистана, которые строят карьеру в IT - the-tech.kz"
-    },
-    "b": {
-      "ru": "WomenInTech. Истории успешных женщин из Таджикистана и Узбекистана, которые строят карьеру в IT the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRXVJZkZiaWhnTUtTYTVaZWZXbWdkdzFDN0dqV0xmOGxhMFJqcWQ3MHFMa0pWMmcyVVRqemFKNFh0VWlPUGRwM2dwTThCMEF5NURvTGVmbXdYdnpDanZPdG1LckJ1RTRxQldpUGE3cTVOODR4a01udFJrN3Z2Y2xJZGJ0bGV5U2JQM244Zks1WEhCLWUyYjFTeTdWRTlNMXNDbnNWbU1WSUtjbG1lTmduWHd2VUFyZ01rc0tz?oc=5",
-      "uz": "WomenInTech. Истории успешных женщин из Таджикистана и Узбекистана, которые строят карьеру в IT the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRXVJZkZiaWhnTUtTYTVaZWZXbWdkdzFDN0dqV0xmOGxhMFJqcWQ3MHFMa0pWMmcyVVRqemFKNFh0VWlPUGRwM2dwTThCMEF5NURvTGVmbXdYdnpDanZPdG1LckJ1RTRxQldpUGE3cTVOODR4a01udFJrN3Z2Y2xJZGJ0bGV5U2JQM244Zks1WEhCLWUyYjFTeTdWRTlNMXNDbnNWbU1WSUtjbG1lTmduWHd2VUFyZ01rc0tz?oc=5",
-      "en": "WomenInTech. Истории успешных женщин из Таджикистана и Узбекистана, которые строят карьеру в IT the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRXVJZkZiaWhnTUtTYTVaZWZXbWdkdzFDN0dqV0xmOGxhMFJqcWQ3MHFMa0pWMmcyVVRqemFKNFh0VWlPUGRwM2dwTThCMEF5NURvTGVmbXdYdnpDanZPdG1LckJ1RTRxQldpUGE3cTVOODR4a01udFJrN3Z2Y2xJZGJ0bGV5U2JQM244Zks1WEhCLWUyYjFTeTdWRTlNMXNDbnNWbU1WSUtjbG1lTmduWHd2VUFyZ01rc0tz?oc=5"
-    }
-  },
-  {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "IT Community Roadshow в Бухаре - Spot.uz",
-      "uz": "IT Community Roadshow в Бухаре - Spot.uz",
-      "en": "IT Community Roadshow в Бухаре - Spot.uz"
-    },
-    "b": {
-      "ru": "IT Community Roadshow в Бухаре Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiZEFVX3lxTE9ENmRfZVZGMjh4TWxlR2VJdXBudGhrdUdOXzFfdnczT0RId2J5RDhnb3Vzd09qRnotSE9hN0wwT1otcDJMdmJraGppTHdtS2NtU2VhWnBadzlMZmI0TC1hTGd6RkE?oc=5",
-      "uz": "IT Community Roadshow в Бухаре Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiZEFVX3lxTE9ENmRfZVZGMjh4TWxlR2VJdXBudGhrdUdOXzFfdnczT0RId2J5RDhnb3Vzd09qRnotSE9hN0wwT1otcDJMdmJraGppTHdtS2NtU2VhWnBadzlMZmI0TC1hTGd6RkE?oc=5",
-      "en": "IT Community Roadshow в Бухаре Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiZEFVX3lxTE9ENmRfZVZGMjh4TWxlR2VJdXBudGhrdUdOXzFfdnczT0RId2J5RDhnb3Vzd09qRnotSE9hN0wwT1otcDJMdmJraGppTHdtS2NtU2VhWnBadzlMZmI0TC1hTGd6RkE?oc=5"
-    }
-  },
-  {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping - Mastercard",
-      "uz": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping - Mastercard",
-      "en": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping - Mastercard"
-    },
-    "b": {
-      "ru": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping Mastercard. Подробнее: https://news.google.com/rss/articles/CBMingFBVV95cUxQdlRTZUJaVmZqaC1oYmg0N3dDdE5WRXFnRGs4d2dRdlRYTFZRakV2c2tvYXM5aFFKMXVNRGozUnZaZFZWQzBVbVZBNUlLTXVtZG5HX3g2X0NTa0wyT2lNTkxDdi1KeTBtdER4M2VaOVBDQWtWUTJld2lwU3AwdE9xVW1PNWkxakxVeEVNNXJFdERuTkZOSG5JM01Mc0Y2Zw?oc=5",
-      "uz": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping Mastercard. Подробнее: https://news.google.com/rss/articles/CBMingFBVV95cUxQdlRTZUJaVmZqaC1oYmg0N3dDdE5WRXFnRGs4d2dRdlRYTFZRakV2c2tvYXM5aFFKMXVNRGozUnZaZFZWQzBVbVZBNUlLTXVtZG5HX3g2X0NTa0wyT2lNTkxDdi1KeTBtdER4M2VaOVBDQWtWUTJld2lwU3AwdE9xVW1PNWkxakxVeEVNNXJFdERuTkZOSG5JM01Mc0Y2Zw?oc=5",
-      "en": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping Mastercard. Подробнее: https://news.google.com/rss/articles/CBMingFBVV95cUxQdlRTZUJaVmZqaC1oYmg0N3dDdE5WRXFnRGs4d2dRdlRYTFZRakV2c2tvYXM5aFFKMXVNRGozUnZaZFZWQzBVbVZBNUlLTXVtZG5HX3g2X0NTa0wyT2lNTkxDdi1KeTBtdER4M2VaOVBDQWtWUTJld2lwU3AwdE9xVW1PNWkxakxVeEVNNXJFdERuTkZOSG5JM01Mc0Y2Zw?oc=5"
+      "ru": "В Казахстане создадут фонд на $50 миллионов для инвестиций в ИИ и креативные индустрии the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMirAFBVV95cUxPMm5PeGtlMFI4RzB4SEY4NUU0c2tkd3lOc0ZZZWZxakxVMFpqUHVSX0xiZVRKN2txSHMyczEtODFzMlAxVTJUcllSMkxIT3ZvbDRER1hkUWJRdEI2MEk4bVpIdERweE05dkZncDBwSFJEUjhBTlR5Tjl4NW5fNlNPMDVaZi1JRXUwYk1NQmt3M090OUgzZERzVGdWOTJfaGFfQjBIZUY5WDl2QmJj?oc=5",
+      "uz": "В Казахстане создадут фонд на $50 миллионов для инвестиций в ИИ и креативные индустрии the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMirAFBVV95cUxPMm5PeGtlMFI4RzB4SEY4NUU0c2tkd3lOc0ZZZWZxakxVMFpqUHVSX0xiZVRKN2txSHMyczEtODFzMlAxVTJUcllSMkxIT3ZvbDRER1hkUWJRdEI2MEk4bVpIdERweE05dkZncDBwSFJEUjhBTlR5Tjl4NW5fNlNPMDVaZi1JRXUwYk1NQmt3M090OUgzZERzVGdWOTJfaGFfQjBIZUY5WDl2QmJj?oc=5",
+      "en": "В Казахстане создадут фонд на $50 миллионов для инвестиций в ИИ и креативные индустрии the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMirAFBVV95cUxPMm5PeGtlMFI4RzB4SEY4NUU0c2tkd3lOc0ZZZWZxakxVMFpqUHVSX0xiZVRKN2txSHMyczEtODFzMlAxVTJUcllSMkxIT3ZvbDRER1hkUWJRdEI2MEk4bVpIdERweE05dkZncDBwSFJEUjhBTlR5Tjl4NW5fNlNPMDVaZi1JRXUwYk1NQmt3M090OUgzZERzVGdWOTJfaGFfQjBIZUY5WDl2QmJj?oc=5"
     }
   },
   {
@@ -65,29 +26,68 @@
     }
   },
   {
-    "badge": "🤖 AI",
+    "badge": "📰 Новости",
     "t": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz"
+      "ru": "Kazakhstan and Hong Kong Expand Economic Partnership: 4 Intergovernmental Memorandums and 42 Commercial Agreements Signed - Inbusiness.kz",
+      "uz": "Kazakhstan and Hong Kong Expand Economic Partnership: 4 Intergovernmental Memorandums and 42 Commercial Agreements Signed - Inbusiness.kz",
+      "en": "Kazakhstan and Hong Kong Expand Economic Partnership: 4 Intergovernmental Memorandums and 42 Commercial Agreements Signed - Inbusiness.kz"
     },
     "b": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5"
+      "ru": "Kazakhstan and Hong Kong Expand Economic Partnership: 4 Intergovernmental Memorandums and 42 Commercial Agreements Signed Inbusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMi5AFBVV95cUxNLXNqUDkwM2xsZFA1Yl9vRC1kWlVZRHJqMVRKV2Y1cTFHUjJlQWtUUWJjR3JzOHhUV0c2OGtuaDJjbDY3b3Y0alJ2VVpORGk2cW1vSHdrNkxVQTRqRlNpYjJXeHYxcTdDUlhMbF9wUkt0MDJCRXRmUjFQTVlIclVYMmMyNzZOVTJialZuSVE4X1BENFZJcXRTZGlPWnREU3B0T0hfSjkxSHFWSnhtaG85N2VrZHV0XzZkSFUzcF9JVEtkVGxzOXNfc0tQMzBkZkYydjJnMk9obkFVRnMzOUNpdEVzZFo?oc=5",
+      "uz": "Kazakhstan and Hong Kong Expand Economic Partnership: 4 Intergovernmental Memorandums and 42 Commercial Agreements Signed Inbusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMi5AFBVV95cUxNLXNqUDkwM2xsZFA1Yl9vRC1kWlVZRHJqMVRKV2Y1cTFHUjJlQWtUUWJjR3JzOHhUV0c2OGtuaDJjbDY3b3Y0alJ2VVpORGk2cW1vSHdrNkxVQTRqRlNpYjJXeHYxcTdDUlhMbF9wUkt0MDJCRXRmUjFQTVlIclVYMmMyNzZOVTJialZuSVE4X1BENFZJcXRTZGlPWnREU3B0T0hfSjkxSHFWSnhtaG85N2VrZHV0XzZkSFUzcF9JVEtkVGxzOXNfc0tQMzBkZkYydjJnMk9obkFVRnMzOUNpdEVzZFo?oc=5",
+      "en": "Kazakhstan and Hong Kong Expand Economic Partnership: 4 Intergovernmental Memorandums and 42 Commercial Agreements Signed Inbusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMi5AFBVV95cUxNLXNqUDkwM2xsZFA1Yl9vRC1kWlVZRHJqMVRKV2Y1cTFHUjJlQWtUUWJjR3JzOHhUV0c2OGtuaDJjbDY3b3Y0alJ2VVpORGk2cW1vSHdrNkxVQTRqRlNpYjJXeHYxcTdDUlhMbF9wUkt0MDJCRXRmUjFQTVlIclVYMmMyNzZOVTJialZuSVE4X1BENFZJcXRTZGlPWnREU3B0T0hfSjkxSHFWSnhtaG85N2VrZHV0XzZkSFUzcF9JVEtkVGxzOXNfc0tQMzBkZkYydjJnMk9obkFVRnMzOUNpdEVzZFo?oc=5"
     }
   },
   {
     "badge": "📰 Новости",
     "t": {
-      "ru": "IT Community Roadshow в Навои - Spot.uz",
-      "uz": "IT Community Roadshow в Навои - Spot.uz",
-      "en": "IT Community Roadshow в Навои - Spot.uz"
+      "ru": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
+      "uz": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
+      "en": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz"
     },
     "b": {
-      "ru": "IT Community Roadshow в Навои Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiYkFVX3lxTFBFaFE0MnFndXJsVm1iRDV6WWZ4NjQyeVI3eFVZZW1ON0FqWm5pWWx3MTE3c1JIXzlwRDhNN2syOWpHN2hwbFZUdk5qM3l2SmdVTVVkN1JyODJvTEE2UjNZOXdB?oc=5",
-      "uz": "IT Community Roadshow в Навои Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiYkFVX3lxTFBFaFE0MnFndXJsVm1iRDV6WWZ4NjQyeVI3eFVZZW1ON0FqWm5pWWx3MTE3c1JIXzlwRDhNN2syOWpHN2hwbFZUdk5qM3l2SmdVTVVkN1JyODJvTEE2UjNZOXdB?oc=5",
-      "en": "IT Community Roadshow в Навои Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiYkFVX3lxTFBFaFE0MnFndXJsVm1iRDV6WWZ4NjQyeVI3eFVZZW1ON0FqWm5pWWx3MTE3c1JIXzlwRDhNN2syOWpHN2hwbFZUdk5qM3l2SmdVTVVkN1JyODJvTEE2UjNZOXdB?oc=5"
+      "ru": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
+      "uz": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
+      "en": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz"
+    },
+    "b": {
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код",
+      "uz": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код",
+      "en": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код"
+    },
+    "b": {
+      "ru": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код. Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
+      "uz": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код. Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
+      "en": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код. Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping - Mastercard",
+      "uz": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping - Mastercard",
+      "en": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping - Mastercard"
+    },
+    "b": {
+      "ru": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping Mastercard. Подробнее: https://news.google.com/rss/articles/CBMingFBVV95cUxQdlRTZUJaVmZqaC1oYmg0N3dDdE5WRXFnRGs4d2dRdlRYTFZRakV2c2tvYXM5aFFKMXVNRGozUnZaZFZWQzBVbVZBNUlLTXVtZG5HX3g2X0NTa0wyT2lNTkxDdi1KeTBtdER4M2VaOVBDQWtWUTJld2lwU3AwdE9xVW1PNWkxakxVeEVNNXJFdERuTkZOSG5JM01Mc0Y2Zw?oc=5",
+      "uz": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping Mastercard. Подробнее: https://news.google.com/rss/articles/CBMingFBVV95cUxQdlRTZUJaVmZqaC1oYmg0N3dDdE5WRXFnRGs4d2dRdlRYTFZRakV2c2tvYXM5aFFKMXVNRGozUnZaZFZWQzBVbVZBNUlLTXVtZG5HX3g2X0NTa0wyT2lNTkxDdi1KeTBtdER4M2VaOVBDQWtWUTJld2lwU3AwdE9xVW1PNWkxakxVeEVNNXJFdERuTkZOSG5JM01Mc0Y2Zw?oc=5",
+      "en": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping Mastercard. Подробнее: https://news.google.com/rss/articles/CBMingFBVV95cUxQdlRTZUJaVmZqaC1oYmg0N3dDdE5WRXFnRGs4d2dRdlRYTFZRakV2c2tvYXM5aFFKMXVNRGozUnZaZFZWQzBVbVZBNUlLTXVtZG5HX3g2X0NTa0wyT2lNTkxDdi1KeTBtdER4M2VaOVBDQWtWUTJld2lwU3AwdE9xVW1PNWkxakxVeEVNNXJFdERuTkZOSG5JM01Mc0Y2Zw?oc=5"
     }
   }
 ]
