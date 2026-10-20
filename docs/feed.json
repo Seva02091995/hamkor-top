@@ -1,54 +1,41 @@
 [
   {
-    "badge": "🤖 AI",
+    "badge": "🚀 Стартапы",
     "t": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz"
+      "ru": "Календарь возможностей для стартапов на сентябрь 2026 года - https://the-tech.kz/",
+      "uz": "Календарь возможностей для стартапов на сентябрь 2026 года - https://the-tech.kz/",
+      "en": "Календарь возможностей для стартапов на сентябрь 2026 года - https://the-tech.kz/"
     },
     "b": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5"
-    }
-  },
-  {
-    "badge": "💼 Карьера",
-    "t": {
-      "ru": "Женщины в IT: главные карьерные возможности в июле 2026 года - the-tech.kz",
-      "uz": "Женщины в IT: главные карьерные возможности в июле 2026 года - the-tech.kz",
-      "en": "Женщины в IT: главные карьерные возможности в июле 2026 года - the-tech.kz"
-    },
-    "b": {
-      "ru": "Женщины в IT: главные карьерные возможности в июле 2026 года the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMijAFBVV95cUxOdlZscFd6ZmFaeGh4MHFqSWloZ1JERW9YSDZhM19iTlkzTVlCbXYxY0pZOWVFZ2NyM1BOZ2FZd2ZrVHhqYnNxSG85Q2hXYVJ2MjN0VzNlZHhxWWliTjMtTU9xSS1QOXJ4dUg2dEZuTWhPUk1wdmVGNXJYalVRM3lwNWoyZUQycFJJU0xZTw?oc=5",
-      "uz": "Женщины в IT: главные карьерные возможности в июле 2026 года the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMijAFBVV95cUxOdlZscFd6ZmFaeGh4MHFqSWloZ1JERW9YSDZhM19iTlkzTVlCbXYxY0pZOWVFZ2NyM1BOZ2FZd2ZrVHhqYnNxSG85Q2hXYVJ2MjN0VzNlZHhxWWliTjMtTU9xSS1QOXJ4dUg2dEZuTWhPUk1wdmVGNXJYalVRM3lwNWoyZUQycFJJU0xZTw?oc=5",
-      "en": "Женщины в IT: главные карьерные возможности в июле 2026 года the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMijAFBVV95cUxOdlZscFd6ZmFaeGh4MHFqSWloZ1JERW9YSDZhM19iTlkzTVlCbXYxY0pZOWVFZ2NyM1BOZ2FZd2ZrVHhqYnNxSG85Q2hXYVJ2MjN0VzNlZHhxWWliTjMtTU9xSS1QOXJ4dUg2dEZuTWhPUk1wdmVGNXJYalVRM3lwNWoyZUQycFJJU0xZTw?oc=5"
-    }
-  },
-  {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
-      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
-      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz"
-    },
-    "b": {
-      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
-      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
-      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5"
+      "ru": "Календарь возможностей для стартапов на сентябрь 2026 года https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMihwFBVV95cUxQdTlEaGoxVUxRN3RaVjV5ZVNId3diajBHUnJuRXBCWjNSMUNCZjJsNDlmRmk2QUMwQ1lCWjhhYzg0eVMwQkJLZUZWVExOUlY5S1BPbjBValQwTTFfa3lJbEZqQUVsdmV6amxpUWt2SVc2VE03dHZnZmRWM3djSjZiYXllMmxlc3c?oc=5",
+      "uz": "Календарь возможностей для стартапов на сентябрь 2026 года https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMihwFBVV95cUxQdTlEaGoxVUxRN3RaVjV5ZVNId3diajBHUnJuRXBCWjNSMUNCZjJsNDlmRmk2QUMwQ1lCWjhhYzg0eVMwQkJLZUZWVExOUlY5S1BPbjBValQwTTFfa3lJbEZqQUVsdmV6amxpUWt2SVc2VE03dHZnZmRWM3djSjZiYXllMmxlc3c?oc=5",
+      "en": "Календарь возможностей для стартапов на сентябрь 2026 года https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMihwFBVV95cUxQdTlEaGoxVUxRN3RaVjV5ZVNId3diajBHUnJuRXBCWjNSMUNCZjJsNDlmRmk2QUMwQ1lCWjhhYzg0eVMwQkJLZUZWVExOUlY5S1BPbjBValQwTTFfa3lJbEZqQUVsdmV6amxpUWt2SVc2VE03dHZnZmRWM3djSjZiYXllMmxlc3c?oc=5"
     }
   },
   {
     "badge": "📰 Новости",
     "t": {
-      "ru": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код»",
-      "uz": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код»",
-      "en": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код»"
+      "ru": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
+      "uz": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
+      "en": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz"
     },
     "b": {
-      "ru": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
-      "uz": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
-      "en": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5"
+      "ru": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
+      "uz": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
+      "en": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Olzhas Bektenov Reviews Progress of Data Center Valley Project in Pavlodar Region - Ак Жайык",
+      "uz": "Olzhas Bektenov Reviews Progress of Data Center Valley Project in Pavlodar Region - Ак Жайык",
+      "en": "Olzhas Bektenov Reviews Progress of Data Center Valley Project in Pavlodar Region - Ак Жайык"
+    },
+    "b": {
+      "ru": "Olzhas Bektenov Reviews Progress of Data Center Valley Project in Pavlodar Region Ак Жайык. Подробнее: https://news.google.com/rss/articles/CBMiR0FVX3lxTFA3bzgwbDlSNDE3YVlHQUR1NFhwRmdSZ1NMd0hCQW9hUXlJdE94VlhzOEpVQzdhQnM5TnFNOHpQcnNvZ0x1VExz?oc=5",
+      "uz": "Olzhas Bektenov Reviews Progress of Data Center Valley Project in Pavlodar Region Ак Жайык. Подробнее: https://news.google.com/rss/articles/CBMiR0FVX3lxTFA3bzgwbDlSNDE3YVlHQUR1NFhwRmdSZ1NMd0hCQW9hUXlJdE94VlhzOEpVQzdhQnM5TnFNOHpQcnNvZ0x1VExz?oc=5",
+      "en": "Olzhas Bektenov Reviews Progress of Data Center Valley Project in Pavlodar Region Ак Жайык. Подробнее: https://news.google.com/rss/articles/CBMiR0FVX3lxTFA3bzgwbDlSNDE3YVlHQUR1NFhwRmdSZ1NMd0hCQW9hUXlJdE94VlhzOEpVQzdhQnM5TnFNOHpQcnNvZ0x1VExz?oc=5"
     }
   },
   {
@@ -65,19 +52,6 @@
     }
   },
   {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Daniyar Amangeldiev met with the delegation of the Business Council \"Turkey-Kyrgyzstan\" - open.kg",
-      "uz": "Daniyar Amangeldiev met with the delegation of the Business Council \"Turkey-Kyrgyzstan\" - open.kg",
-      "en": "Daniyar Amangeldiev met with the delegation of the Business Council \"Turkey-Kyrgyzstan\" - open.kg"
-    },
-    "b": {
-      "ru": "Daniyar Amangeldiev met with the delegation of the Business Council \"Turkey-Kyrgyzstan\" open.kg. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWjU2MGFVR0RhbzJBYUlmd2JOZkg0NlI1M1htUHVhaDhqWHB2SFdMc0FOUF8zbW5GQUxxMWJIRGhQX19vRGMwcUhfcm9UQ0FlMjRfU3dYRFNNWTQxa2lWRkhRd0xlSzEwWkswcmlvMTd2Z3BRWXlBVl96WkRXMWF4TTFLSFEtSGFnN1Y4VVNqNkN0aFZrNmlhN09tdmV0U3NPcFJUR1JqODFpQ2dISkhhRDlGZ3VFVTV6OHlPOFRsa05HM0E?oc=5",
-      "uz": "Daniyar Amangeldiev met with the delegation of the Business Council \"Turkey-Kyrgyzstan\" open.kg. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWjU2MGFVR0RhbzJBYUlmd2JOZkg0NlI1M1htUHVhaDhqWHB2SFdMc0FOUF8zbW5GQUxxMWJIRGhQX19vRGMwcUhfcm9UQ0FlMjRfU3dYRFNNWTQxa2lWRkhRd0xlSzEwWkswcmlvMTd2Z3BRWXlBVl96WkRXMWF4TTFLSFEtSGFnN1Y4VVNqNkN0aFZrNmlhN09tdmV0U3NPcFJUR1JqODFpQ2dISkhhRDlGZ3VFVTV6OHlPOFRsa05HM0E?oc=5",
-      "en": "Daniyar Amangeldiev met with the delegation of the Business Council \"Turkey-Kyrgyzstan\" open.kg. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWjU2MGFVR0RhbzJBYUlmd2JOZkg0NlI1M1htUHVhaDhqWHB2SFdMc0FOUF8zbW5GQUxxMWJIRGhQX19vRGMwcUhfcm9UQ0FlMjRfU3dYRFNNWTQxa2lWRkhRd0xlSzEwWkswcmlvMTd2Z3BRWXlBVl96WkRXMWF4TTFLSFEtSGFnN1Y4VVNqNkN0aFZrNmlhN09tdmV0U3NPcFJUR1JqODFpQ2dISkhhRDlGZ3VFVTV6OHlPOFRsa05HM0E?oc=5"
-    }
-  },
-  {
     "badge": "🚀 Стартапы",
     "t": {
       "ru": "Названы лучшие стартапы национальных отборов Road to TechCrunch Startup Battlefield 2026 - the-tech.kz",
@@ -88,6 +62,32 @@
       "ru": "Названы лучшие стартапы национальных отборов Road to TechCrunch Startup Battlefield 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMisAFBVV95cUxQMVNzTmVocGJ2NEFCNHZDNy10SWhMX25YSGdweGludDB6QnlfQXVUWnFmcWI5dkNidEdYa0J5QjhacTd3WDZ4NDBsOVRPQzRMeFNxYUFpeEI4ckNtV1BRSV81OVd6bUIwcHRvTkE4aGZuYUIwbmxNTXRWVEpOOExNNFVuNHUzYnF2S3JuVUxoLURWMjhPd1Bzcm50TVZtX29CX1ZCaEx5NV9rRkkzSlRGQQ?oc=5",
       "uz": "Названы лучшие стартапы национальных отборов Road to TechCrunch Startup Battlefield 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMisAFBVV95cUxQMVNzTmVocGJ2NEFCNHZDNy10SWhMX25YSGdweGludDB6QnlfQXVUWnFmcWI5dkNidEdYa0J5QjhacTd3WDZ4NDBsOVRPQzRMeFNxYUFpeEI4ckNtV1BRSV81OVd6bUIwcHRvTkE4aGZuYUIwbmxNTXRWVEpOOExNNFVuNHUzYnF2S3JuVUxoLURWMjhPd1Bzcm50TVZtX29CX1ZCaEx5NV9rRkkzSlRGQQ?oc=5",
       "en": "Названы лучшие стартапы национальных отборов Road to TechCrunch Startup Battlefield 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMisAFBVV95cUxQMVNzTmVocGJ2NEFCNHZDNy10SWhMX25YSGdweGludDB6QnlfQXVUWnFmcWI5dkNidEdYa0J5QjhacTd3WDZ4NDBsOVRPQzRMeFNxYUFpeEI4ckNtV1BRSV81OVd6bUIwcHRvTkE4aGZuYUIwbmxNTXRWVEpOOExNNFVuNHUzYnF2S3JuVUxoLURWMjhPd1Bzcm50TVZtX29CX1ZCaEx5NV9rRkkzSlRGQQ?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
+      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
+      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz"
+    },
+    "b": {
+      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
+      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
+      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае - https://the-tech.kz/",
+      "uz": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае - https://the-tech.kz/",
+      "en": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае - https://the-tech.kz/"
+    },
+    "b": {
+      "ru": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5",
+      "uz": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5",
+      "en": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5"
     }
   }
 ]
