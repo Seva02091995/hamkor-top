@@ -1,31 +1,5 @@
 [
   {
-    "badge": "💼 Карьера",
-    "t": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - https://the-tech.kz/",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - https://the-tech.kz/",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - https://the-tech.kz/"
-    },
-    "b": {
-      "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "uz": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5",
-      "en": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxPbHNScHVSd3A0MHhSeVBRbTIxYTVOSUl0T1ZIQTJfaGpSNE9CNF9tQ3l6aFd5dThwY2NaQWw5a01RMThKWkRGc0ZJV2pkdDlLc0xXbnEzU3JuMFFIUVB0N2tPdFBXS05kVy11eXdaOGRNd3ZhaVJkQzFmdUt1OEt2T2gtVElQRmRxdjdaSGhadnBoeWZ2enhzZk41cklhbFVFZnVGNHR4SHVSa0xSanIxaTF2VQ?oc=5"
-    }
-  },
-  {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "Мероприятие по AI-грамотности и кибербезопасности для девушек - Spot.uz",
-      "uz": "Мероприятие по AI-грамотности и кибербезопасности для девушек - Spot.uz",
-      "en": "Мероприятие по AI-грамотности и кибербезопасности для девушек - Spot.uz"
-    },
-    "b": {
-      "ru": "Мероприятие по AI-грамотности и кибербезопасности для девушек Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jTGJKNGM4UUx5S29uT3cyejNvU1JHZ0VDaXBGamRhbGR4bEZNRlk1YmozcC13X0J5dVNIYTQ4NnlLcTVMNzBvZGwtS1lHd2EtWEVNQU53?oc=5",
-      "uz": "Мероприятие по AI-грамотности и кибербезопасности для девушек Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jTGJKNGM4UUx5S29uT3cyejNvU1JHZ0VDaXBGamRhbGR4bEZNRlk1YmozcC13X0J5dVNIYTQ4NnlLcTVMNzBvZGwtS1lHd2EtWEVNQU53?oc=5",
-      "en": "Мероприятие по AI-грамотности и кибербезопасности для девушек Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jTGJKNGM4UUx5S29uT3cyejNvU1JHZ0VDaXBGamRhbGR4bEZNRlk1YmozcC13X0J5dVNIYTQ4NnlLcTVMNzBvZGwtS1lHd2EtWEVNQU53?oc=5"
-    }
-  },
-  {
     "badge": "🤖 AI",
     "t": {
       "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
@@ -39,55 +13,81 @@
     }
   },
   {
-    "badge": "🤖 AI",
+    "badge": "📰 Новости",
     "t": {
-      "ru": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане - Spot.uz",
-      "uz": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане - Spot.uz",
-      "en": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане - Spot.uz"
+      "ru": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
+      "uz": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
+      "en": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz"
     },
     "b": {
-      "ru": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMib0FVX3lxTE9tcGwyZnRTdUNUMnE4SjlFQjhQVGw0NDJzZW51MXczSEhXLXlZQjg3N3BUOERES3BlMGktdnhoNmVvb205Z1NOWU1hYlNIVjRCVWR1Z2pxT0RfamhhYTJJT3JIaDVPbExUZXpYS3pFVQ?oc=5",
-      "uz": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMib0FVX3lxTE9tcGwyZnRTdUNUMnE4SjlFQjhQVGw0NDJzZW51MXczSEhXLXlZQjg3N3BUOERES3BlMGktdnhoNmVvb205Z1NOWU1hYlNIVjRCVWR1Z2pxT0RfamhhYTJJT3JIaDVPbExUZXpYS3pFVQ?oc=5",
-      "en": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMib0FVX3lxTE9tcGwyZnRTdUNUMnE4SjlFQjhQVGw0NDJzZW51MXczSEhXLXlZQjg3N3BUOERES3BlMGktdnhoNmVvb205Z1NOWU1hYlNIVjRCVWR1Z2pxT0RfamhhYTJJT3JIaDVPbExUZXpYS3pFVQ?oc=5"
+      "ru": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
+      "uz": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
+      "en": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans - Ifimes",
+      "uz": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans - Ifimes",
+      "en": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans - Ifimes"
+    },
+    "b": {
+      "ru": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans Ifimes. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxORllmYzdpM250QkFTek1CS3NJa25Xa0FrcmVNSnRKUHlwWVptTVZSZXJ2MmYwX2Utc0lBVmY5bUpwY2ttQTAxUmZjamVGOWx0RkhZeUZ3SE9jZlRCZUt0NFAwZkFQUjV2cklVUkloekx5aW50VGFkdWc1YkxsMnlBTC1WSjRjMl9CQkJkTktZRVJIZHljQk9LeWUtdU41dDM0X3pmQkJpU3ZnTkJqUVdfcWhZRnluakRQeUhRU1dJZng?oc=5",
+      "uz": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans Ifimes. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxORllmYzdpM250QkFTek1CS3NJa25Xa0FrcmVNSnRKUHlwWVptTVZSZXJ2MmYwX2Utc0lBVmY5bUpwY2ttQTAxUmZjamVGOWx0RkhZeUZ3SE9jZlRCZUt0NFAwZkFQUjV2cklVUkloekx5aW50VGFkdWc1YkxsMnlBTC1WSjRjMl9CQkJkTktZRVJIZHljQk9LeWUtdU41dDM0X3pmQkJpU3ZnTkJqUVdfcWhZRnluakRQeUhRU1dJZng?oc=5",
+      "en": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans Ifimes. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxORllmYzdpM250QkFTek1CS3NJa25Xa0FrcmVNSnRKUHlwWVptTVZSZXJ2MmYwX2Utc0lBVmY5bUpwY2ttQTAxUmZjamVGOWx0RkhZeUZ3SE9jZlRCZUt0NFAwZkFQUjV2cklVUkloekx5aW50VGFkdWc1YkxsMnlBTC1WSjRjMl9CQkJkTktZRVJIZHljQk9LeWUtdU41dDM0X3pmQkJpU3ZnTkJqUVdfcWhZRnluakRQeUhRU1dJZng?oc=5"
     }
   },
   {
     "badge": "🤖 AI",
     "t": {
-      "ru": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры - Хабр",
-      "uz": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры - Хабр",
-      "en": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры - Хабр"
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz"
     },
     "b": {
-      "ru": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры Хабр. Подробнее: https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xR1NhZXZBTkFMcHJDLS15SThHYWE5UlhYb0ZCOHJ0REo3MmtwNm56dDZDMTNTY2xzZGRQcFVBdGRZTHd1WFBtdTYyUjZTcWhBN0g2dnBrdmo0VnlzR1N5MGw0dlduSW9i0gFYQVVfeXFMT0VLMDkzaXZQZ2xBU3N6UnJoRGJHdnFrb0hOWVNyOW54Qk9oZW5YTTdhQ0tQOEE2OWtBcm4zX19Uc0s2ODVTZWtlQlFEbFdhYTNMY2kwS3BRYw?oc=5",
-      "uz": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры Хабр. Подробнее: https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xR1NhZXZBTkFMcHJDLS15SThHYWE5UlhYb0ZCOHJ0REo3MmtwNm56dDZDMTNTY2xzZGRQcFVBdGRZTHd1WFBtdTYyUjZTcWhBN0g2dnBrdmo0VnlzR1N5MGw0dlduSW9i0gFYQVVfeXFMT0VLMDkzaXZQZ2xBU3N6UnJoRGJHdnFrb0hOWVNyOW54Qk9oZW5YTTdhQ0tQOEE2OWtBcm4zX19Uc0s2ODVTZWtlQlFEbFdhYTNMY2kwS3BRYw?oc=5",
-      "en": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры Хабр. Подробнее: https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xR1NhZXZBTkFMcHJDLS15SThHYWE5UlhYb0ZCOHJ0REo3MmtwNm56dDZDMTNTY2xzZGRQcFVBdGRZTHd1WFBtdTYyUjZTcWhBN0g2dnBrdmo0VnlzR1N5MGw0dlduSW9i0gFYQVVfeXFMT0VLMDkzaXZQZ2xBU3N6UnJoRGJHdnFrb0hOWVNyOW54Qk9oZW5YTTdhQ0tQOEE2OWtBcm4zX19Uc0s2ODVTZWtlQlFEbFdhYTNMY2kwS3BRYw?oc=5"
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5"
     }
   },
   {
-    "badge": "🚀 Стартапы",
+    "badge": "📰 Новости",
     "t": {
-      "ru": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается - Afisha.uz",
-      "uz": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается - Afisha.uz",
-      "en": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается - Afisha.uz"
+      "ru": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана - Газета.uz",
+      "uz": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана - Газета.uz",
+      "en": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана - Газета.uz"
     },
     "b": {
-      "ru": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается Afisha.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTE1fSmtWdDlZQ095U2xEZFF1c1BoODBUTG9yRFJoRHFfVG1MdWh1V0JyOGlYNnllcFRjNllJX1dJdm1GMWQ5UzBmcGlabWZUZFJNV3FYeW1DZDdwOTkyYkU0?oc=5",
-      "uz": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается Afisha.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTE1fSmtWdDlZQ095U2xEZFF1c1BoODBUTG9yRFJoRHFfVG1MdWh1V0JyOGlYNnllcFRjNllJX1dJdm1GMWQ5UzBmcGlabWZUZFJNV3FYeW1DZDdwOTkyYkU0?oc=5",
-      "en": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается Afisha.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTE1fSmtWdDlZQ095U2xEZFF1c1BoODBUTG9yRFJoRHFfVG1MdWh1V0JyOGlYNnllcFRjNllJX1dJdm1GMWQ5UzBmcGlabWZUZFJNV3FYeW1DZDdwOTkyYkU0?oc=5"
+      "ru": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiUEFVX3lxTFAxSThnVjZhZVE3ZnRYN3ZFLTVZVm9kNllnLVNPM2dOb3ZGbDJtaVR2WmJJbGt2bGs2cktmV0lhdnJ6UmIzeXJCMjhBeGxIVkNP?oc=5",
+      "uz": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiUEFVX3lxTFAxSThnVjZhZVE3ZnRYN3ZFLTVZVm9kNllnLVNPM2dOb3ZGbDJtaVR2WmJJbGt2bGs2cktmV0lhdnJ6UmIzeXJCMjhBeGxIVkNP?oc=5",
+      "en": "Почему узбекистанцы все чаще выбирают образование в Казахстане – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiUEFVX3lxTFAxSThnVjZhZVE3ZnRYN3ZFLTVZVm9kNllnLVNPM2dOb3ZGbDJtaVR2WmJJbGt2bGs2cktmV0lhdnJ6UmIzeXJCMjhBeGxIVkNP?oc=5"
     }
   },
   {
-    "badge": "📈 Тренд",
+    "badge": "🤖 AI",
     "t": {
-      "ru": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute",
-      "uz": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute",
-      "en": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute"
+      "ru": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz",
+      "uz": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz",
+      "en": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz"
     },
     "b": {
-      "ru": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5",
-      "uz": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5",
-      "en": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5"
+      "ru": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5",
+      "uz": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5",
+      "en": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае - https://the-tech.kz/",
+      "uz": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае - https://the-tech.kz/",
+      "en": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае - https://the-tech.kz/"
+    },
+    "b": {
+      "ru": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5",
+      "uz": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5",
+      "en": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5"
     }
   }
 ]
