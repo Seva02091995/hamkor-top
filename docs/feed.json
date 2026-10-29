@@ -1,80 +1,28 @@
 [
   {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана - Газета.uz",
-      "uz": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана - Газета.uz",
-      "en": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана - Газета.uz"
-    },
-    "b": {
-      "ru": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JSEI5UmJSOVZBRnJfeUFOMlVYaTlGZGlXXzRMaC13aXRUOUVhdnN1QjJRVHdWNU1SNE95bGptWFFpNS1nRmdzZGUwdFZpWTEyZGRR?oc=5",
-      "uz": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JSEI5UmJSOVZBRnJfeUFOMlVYaTlGZGlXXzRMaC13aXRUOUVhdnN1QjJRVHdWNU1SNE95bGptWFFpNS1nRmdzZGUwdFZpWTEyZGRR?oc=5",
-      "en": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JSEI5UmJSOVZBRnJfeUFOMlVYaTlGZGlXXzRMaC13aXRUOUVhdnN1QjJRVHdWNU1SNE95bGptWFFpNS1nRmdzZGUwdFZpWTEyZGRR?oc=5"
-    }
-  },
-  {
     "badge": "🚀 Стартапы",
     "t": {
-      "ru": "22-летний стартапер из Узбекистана прошел отбор в Y Combinator и получил $500 тысяч - DigitalBusiness.kz",
-      "uz": "22-летний стартапер из Узбекистана прошел отбор в Y Combinator и получил $500 тысяч - DigitalBusiness.kz",
-      "en": "22-летний стартапер из Узбекистана прошел отбор в Y Combinator и получил $500 тысяч - DigitalBusiness.kz"
+      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz",
+      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz",
+      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz"
     },
     "b": {
-      "ru": "22-летний стартапер из Узбекистана прошел отбор в Y Combinator и получил $500 тысяч DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxOa3FXaHZFY0FKSEJDM0lPN0hDVWY0dU9GSXVhU1NJLUZGbGNLMVJkQmEtMWlqVjlDU1hlMTZxRzVPZk85YVBnOEIwYndLOUc2VGxUUVBDSkhaYl9FU3RuXzExWElmaW91R1h1UVJXRE9kSjRuS2hZVGVpalIxY3dZOXVXZlYxZmNHaHVoNGV4QTllXzdPd3ZGZEI4UENSNE41VTJlbjE3T0I0cjNMRnFoNWlhOWZSbDRQU21CdHpRQVFrTUHSAcgBQVVfeXFMTlJpSGpMdWF0OHIxT2g1TG1uREwzd3hac1VVVkdKN2Y1R3ZhV3JUVUFyelJhSFJROU1qakZZTWszWVdja0ZUamdFX1VvS3ZIM0dGZTB3VTJraHVFU2xFVlVfbndPczB2LWd4MzY2WjBRT1gxcmtXS3VsZ0hpZldkd0o2VEUwX0djUjlEQ1hBTjNyM0g3UjdGQVpmM2dQaW5HSWRPaTV2WW1NX3k5RjFPV1FXZTItbTJXUWZKMGZGTll4Nl9TN2Q3SUM?oc=5",
-      "uz": "22-летний стартапер из Узбекистана прошел отбор в Y Combinator и получил $500 тысяч DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxOa3FXaHZFY0FKSEJDM0lPN0hDVWY0dU9GSXVhU1NJLUZGbGNLMVJkQmEtMWlqVjlDU1hlMTZxRzVPZk85YVBnOEIwYndLOUc2VGxUUVBDSkhaYl9FU3RuXzExWElmaW91R1h1UVJXRE9kSjRuS2hZVGVpalIxY3dZOXVXZlYxZmNHaHVoNGV4QTllXzdPd3ZGZEI4UENSNE41VTJlbjE3T0I0cjNMRnFoNWlhOWZSbDRQU21CdHpRQVFrTUHSAcgBQVVfeXFMTlJpSGpMdWF0OHIxT2g1TG1uREwzd3hac1VVVkdKN2Y1R3ZhV3JUVUFyelJhSFJROU1qakZZTWszWVdja0ZUamdFX1VvS3ZIM0dGZTB3VTJraHVFU2xFVlVfbndPczB2LWd4MzY2WjBRT1gxcmtXS3VsZ0hpZldkd0o2VEUwX0djUjlEQ1hBTjNyM0g3UjdGQVpmM2dQaW5HSWRPaTV2WW1NX3k5RjFPV1FXZTItbTJXUWZKMGZGTll4Nl9TN2Q3SUM?oc=5",
-      "en": "22-летний стартапер из Узбекистана прошел отбор в Y Combinator и получил $500 тысяч DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMiwwFBVV95cUxOa3FXaHZFY0FKSEJDM0lPN0hDVWY0dU9GSXVhU1NJLUZGbGNLMVJkQmEtMWlqVjlDU1hlMTZxRzVPZk85YVBnOEIwYndLOUc2VGxUUVBDSkhaYl9FU3RuXzExWElmaW91R1h1UVJXRE9kSjRuS2hZVGVpalIxY3dZOXVXZlYxZmNHaHVoNGV4QTllXzdPd3ZGZEI4UENSNE41VTJlbjE3T0I0cjNMRnFoNWlhOWZSbDRQU21CdHpRQVFrTUHSAcgBQVVfeXFMTlJpSGpMdWF0OHIxT2g1TG1uREwzd3hac1VVVkdKN2Y1R3ZhV3JUVUFyelJhSFJROU1qakZZTWszWVdja0ZUamdFX1VvS3ZIM0dGZTB3VTJraHVFU2xFVlVfbndPczB2LWd4MzY2WjBRT1gxcmtXS3VsZ0hpZldkd0o2VEUwX0djUjlEQ1hBTjNyM0g3UjdGQVpmM2dQaW5HSWRPaTV2WW1NX3k5RjFPV1FXZTItbTJXUWZKMGZGTll4Nl9TN2Q3SUM?oc=5"
-    }
-  },
-  {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр - Хабр",
-      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр - Хабр",
-      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр - Хабр"
-    },
-    "b": {
-      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dudw?oc=5",
-      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dudw?oc=5",
-      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dudw?oc=5"
+      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
+      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
+      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5"
     }
   },
   {
     "badge": "🤖 AI",
     "t": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz"
+      "ru": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz",
+      "uz": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz",
+      "en": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz"
     },
     "b": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается - Afisha.uz",
-      "uz": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается - Afisha.uz",
-      "en": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается - Afisha.uz"
-    },
-    "b": {
-      "ru": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается Afisha.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTE1fSmtWdDlZQ095U2xEZFF1c1BoODBUTG9yRFJoRHFfVG1MdWh1V0JyOGlYNnllcFRjNllJX1dJdm1GMWQ5UzBmcGlabWZUZFJNV3FYeW1DZDdwOTkyYkU0?oc=5",
-      "uz": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается Afisha.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTE1fSmtWdDlZQ095U2xEZFF1c1BoODBUTG9yRFJoRHFfVG1MdWh1V0JyOGlYNnllcFRjNllJX1dJdm1GMWQ5UzBmcGlabWZUZFJNV3FYeW1DZDdwOTkyYkU0?oc=5",
-      "en": "Стартапы смогут получить до 125 000 долларов: прием заявок на два президентских конкурса продолжается Afisha.uz. Подробнее: https://news.google.com/rss/articles/CBMiX0FVX3lxTE1fSmtWdDlZQ095U2xEZFF1c1BoODBUTG9yRFJoRHFfVG1MdWh1V0JyOGlYNnllcFRjNllJX1dJdm1GMWQ5UzBmcGlabWZUZFJNV3FYeW1DZDdwOTkyYkU0?oc=5"
-    }
-  },
-  {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры - Хабр",
-      "uz": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры - Хабр",
-      "en": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры - Хабр"
-    },
-    "b": {
-      "ru": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры Хабр. Подробнее: https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xR1NhZXZBTkFMcHJDLS15SThHYWE5UlhYb0ZCOHJ0REo3MmtwNm56dDZDMTNTY2xzZGRQcFVBdGRZTHd1WFBtdTYyUjZTcWhBN0g2dnBrdmo0VnlzR1N5MGw0dlduSW9i0gFYQVVfeXFMT0VLMDkzaXZQZ2xBU3N6UnJoRGJHdnFrb0hOWVNyOW54Qk9oZW5YTTdhQ0tQOEE2OWtBcm4zX19Uc0s2ODVTZWtlQlFEbFdhYTNMY2kwS3BRYw?oc=5",
-      "uz": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры Хабр. Подробнее: https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xR1NhZXZBTkFMcHJDLS15SThHYWE5UlhYb0ZCOHJ0REo3MmtwNm56dDZDMTNTY2xzZGRQcFVBdGRZTHd1WFBtdTYyUjZTcWhBN0g2dnBrdmo0VnlzR1N5MGw0dlduSW9i0gFYQVVfeXFMT0VLMDkzaXZQZ2xBU3N6UnJoRGJHdnFrb0hOWVNyOW54Qk9oZW5YTTdhQ0tQOEE2OWtBcm4zX19Uc0s2ODVTZWtlQlFEbFdhYTNMY2kwS3BRYw?oc=5",
-      "en": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры Хабр. Подробнее: https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xR1NhZXZBTkFMcHJDLS15SThHYWE5UlhYb0ZCOHJ0REo3MmtwNm56dDZDMTNTY2xzZGRQcFVBdGRZTHd1WFBtdTYyUjZTcWhBN0g2dnBrdmo0VnlzR1N5MGw0dlduSW9i0gFYQVVfeXFMT0VLMDkzaXZQZ2xBU3N6UnJoRGJHdnFrb0hOWVNyOW54Qk9oZW5YTTdhQ0tQOEE2OWtBcm4zX19Uc0s2ODVTZWtlQlFEbFdhYTNMY2kwS3BRYw?oc=5"
+      "ru": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5",
+      "uz": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5",
+      "en": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5"
     }
   },
   {
@@ -88,6 +36,58 @@
       "ru": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5",
       "uz": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5",
       "en": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5"
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
+      "uz": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz",
+      "en": "В Узбекистане впервые пройдет Startup World Cup - the-tech.kz"
+    },
+    "b": {
+      "ru": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
+      "uz": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5",
+      "en": "В Узбекистане впервые пройдет Startup World Cup the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMid0FVX3lxTE9GT0RPUDF6NXJ2M1pQRjhQQTBMSFBxTEhiWUlqeHVmNGJzX19hakhTcG1iU0U4OUFiOVZudlk5RzZKb2Q4cnNCUnhRZnd2YnRIdW01Nlg3b0NtYlpnQ3RkelZwekxUU3kwVnNWSmF0U292RExzX2RF?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане - Газета.uz"
+    },
+    "b": {
+      "ru": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "uz": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5",
+      "en": "Разработчик Claude опередил OpenAI по объёму уплаты налогов в Узбекистане Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiVEFVX3lxTE1SVThLV2ktR2ZjQVhNVWRfcVFIMHBhRy1OY2xXZUFuUVVEand1WTdRTXZ2S1dVUmNPOHI3UW1paXZJV0ZDclp2RXJDRVoxaXZoX2FpUA?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
+      "uz": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz",
+      "en": "ТГЮУ вошел в число 200 лучших вузов мира - UZA.uz"
+    },
+    "b": {
+      "ru": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
+      "uz": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5",
+      "en": "ТГЮУ вошел в число 200 лучших вузов мира UZA.uz. Подробнее: https://news.google.com/rss/articles/CBMiggFBVV95cUxNc2F5eC1sdEpoNGlJUGE2N1QxR2FIZTluRFo0clk0d1VZX19QZGVWT3JaQUdDcjJwbUM4emt6eE5tQXozMTlpa0xibFo2T3VUc0Z0bG5WcmhoUTIwa0loNHNpU2x6SzlldF9XYlhxVW5xYnZ4NEFtT3Z5VW1YV2gxNmxR?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код»",
+      "uz": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код»",
+      "en": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код»"
+    },
+    "b": {
+      "ru": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
+      "uz": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
+      "en": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5"
     }
   }
 ]
