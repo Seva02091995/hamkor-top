@@ -1,15 +1,54 @@
 [
   {
-    "badge": "📰 Новости",
+    "badge": "🤖 AI",
     "t": {
-      "ru": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства - Dunyo",
-      "uz": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства - Dunyo",
-      "en": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства - Dunyo"
+      "ru": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz",
+      "uz": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz",
+      "en": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz"
     },
     "b": {
-      "ru": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства Dunyo. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxNWTZLUG5RSVptX0M4RnNmYkFBSWxua0ozalFJOXhGVXU3RjBQemZvVGtlVGlkREMycXJfQVVnUHJXVWtSamZYSUlZTmM2TVpVX1l5a3hSM1k0YmN1bzVGNUFEUkdIRF9XSXNuWEd4TUhtYnlPN2ZDdlNSdDh5Qk5ReGFmUlRWczFRcHduU3BVV2ZnZkNfWHZleTRkMTV4VGhCZDBFbUlObkpxdl82Wi04YTh3?oc=5",
-      "uz": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства Dunyo. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxNWTZLUG5RSVptX0M4RnNmYkFBSWxua0ozalFJOXhGVXU3RjBQemZvVGtlVGlkREMycXJfQVVnUHJXVWtSamZYSUlZTmM2TVpVX1l5a3hSM1k0YmN1bzVGNUFEUkdIRF9XSXNuWEd4TUhtYnlPN2ZDdlNSdDh5Qk5ReGFmUlRWczFRcHduU3BVV2ZnZkNfWHZleTRkMTV4VGhCZDBFbUlObkpxdl82Wi04YTh3?oc=5",
-      "en": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства Dunyo. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxNWTZLUG5RSVptX0M4RnNmYkFBSWxua0ozalFJOXhGVXU3RjBQemZvVGtlVGlkREMycXJfQVVnUHJXVWtSamZYSUlZTmM2TVpVX1l5a3hSM1k0YmN1bzVGNUFEUkdIRF9XSXNuWEd4TUhtYnlPN2ZDdlNSdDh5Qk5ReGFmUlRWczFRcHduU3BVV2ZnZkNfWHZleTRkMTV4VGhCZDBFbUlObkpxdl82Wi04YTh3?oc=5"
+      "ru": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5",
+      "uz": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5",
+      "en": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр - Хабр",
+      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр - Хабр",
+      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр - Хабр"
+    },
+    "b": {
+      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dudw?oc=5",
+      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dudw?oc=5",
+      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dudw?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping - Mastercard",
+      "uz": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping - Mastercard",
+      "en": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping - Mastercard"
+    },
+    "b": {
+      "ru": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping Mastercard. Подробнее: https://news.google.com/rss/articles/CBMingFBVV95cUxQdlRTZUJaVmZqaC1oYmg0N3dDdE5WRXFnRGs4d2dRdlRYTFZRakV2c2tvYXM5aFFKMXVNRGozUnZaZFZWQzBVbVZBNUlLTXVtZG5HX3g2X0NTa0wyT2lNTkxDdi1KeTBtdER4M2VaOVBDQWtWUTJld2lwU3AwdE9xVW1PNWkxakxVeEVNNXJFdERuTkZOSG5JM01Mc0Y2Zw?oc=5",
+      "uz": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping Mastercard. Подробнее: https://news.google.com/rss/articles/CBMingFBVV95cUxQdlRTZUJaVmZqaC1oYmg0N3dDdE5WRXFnRGs4d2dRdlRYTFZRakV2c2tvYXM5aFFKMXVNRGozUnZaZFZWQzBVbVZBNUlLTXVtZG5HX3g2X0NTa0wyT2lNTkxDdi1KeTBtdER4M2VaOVBDQWtWUTJld2lwU3AwdE9xVW1PNWkxakxVeEVNNXJFdERuTkZOSG5JM01Mc0Y2Zw?oc=5",
+      "en": "Holiday spending forecast 2026: Retail sales expected to grow 5.5% as AI shapes shopping Mastercard. Подробнее: https://news.google.com/rss/articles/CBMingFBVV95cUxQdlRTZUJaVmZqaC1oYmg0N3dDdE5WRXFnRGs4d2dRdlRYTFZRakV2c2tvYXM5aFFKMXVNRGozUnZaZFZWQzBVbVZBNUlLTXVtZG5HX3g2X0NTa0wyT2lNTkxDdi1KeTBtdER4M2VaOVBDQWtWUTJld2lwU3AwdE9xVW1PNWkxakxVeEVNNXJFdERuTkZOSG5JM01Mc0Y2Zw?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане - UzDaily.uz",
+      "uz": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане - UzDaily.uz",
+      "en": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане - UzDaily.uz"
+    },
+    "b": {
+      "ru": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане UzDaily.uz. Подробнее: https://news.google.com/rss/articles/CBMitgFBVV95cUxNVnB6NzYwOHZGU0tWM09BSzgwdlZDdjdpUWw0V1VodWtfa1UzdmctODVzY2NsTzFXMHdUaEhxZVFHSHd3UTZGcEpSNlFxb0ZvVjVoYVB6VGVtRnVJYXVTNEc5Z0RoS0NybHpJemVhQ29SLS1mX1l3UnlWaURabUhZRDI1cFRlUDhfRk05TVZkTmktWFFCQU96UDl6VXdzdERpT29wZWhEbGtxSTc0RFg0R3JERzRtdw?oc=5",
+      "uz": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане UzDaily.uz. Подробнее: https://news.google.com/rss/articles/CBMitgFBVV95cUxNVnB6NzYwOHZGU0tWM09BSzgwdlZDdjdpUWw0V1VodWtfa1UzdmctODVzY2NsTzFXMHdUaEhxZVFHSHd3UTZGcEpSNlFxb0ZvVjVoYVB6VGVtRnVJYXVTNEc5Z0RoS0NybHpJemVhQ29SLS1mX1l3UnlWaURabUhZRDI1cFRlUDhfRk05TVZkTmktWFFCQU96UDl6VXdzdERpT29wZWhEbGtxSTc0RFg0R3JERzRtdw?oc=5",
+      "en": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане UzDaily.uz. Подробнее: https://news.google.com/rss/articles/CBMitgFBVV95cUxNVnB6NzYwOHZGU0tWM09BSzgwdlZDdjdpUWw0V1VodWtfa1UzdmctODVzY2NsTzFXMHdUaEhxZVFHSHd3UTZGcEpSNlFxb0ZvVjVoYVB6VGVtRnVJYXVTNEc5Z0RoS0NybHpJemVhQ29SLS1mX1l3UnlWaURabUhZRDI1cFRlUDhfRk05TVZkTmktWFFCQU96UDl6VXdzdERpT29wZWhEbGtxSTc0RFg0R3JERzRtdw?oc=5"
     }
   },
   {
@@ -39,55 +78,16 @@
     }
   },
   {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans - Ifimes",
-      "uz": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans - Ifimes",
-      "en": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans - Ifimes"
-    },
-    "b": {
-      "ru": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans Ifimes. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxORllmYzdpM250QkFTek1CS3NJa25Xa0FrcmVNSnRKUHlwWVptTVZSZXJ2MmYwX2Utc0lBVmY5bUpwY2ttQTAxUmZjamVGOWx0RkhZeUZ3SE9jZlRCZUt0NFAwZkFQUjV2cklVUkloekx5aW50VGFkdWc1YkxsMnlBTC1WSjRjMl9CQkJkTktZRVJIZHljQk9LeWUtdU41dDM0X3pmQkJpU3ZnTkJqUVdfcWhZRnluakRQeUhRU1dJZng?oc=5",
-      "uz": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans Ifimes. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxORllmYzdpM250QkFTek1CS3NJa25Xa0FrcmVNSnRKUHlwWVptTVZSZXJ2MmYwX2Utc0lBVmY5bUpwY2ttQTAxUmZjamVGOWx0RkhZeUZ3SE9jZlRCZUt0NFAwZkFQUjV2cklVUkloekx5aW50VGFkdWc1YkxsMnlBTC1WSjRjMl9CQkJkTktZRVJIZHljQk9LeWUtdU41dDM0X3pmQkJpU3ZnTkJqUVdfcWhZRnluakRQeUhRU1dJZng?oc=5",
-      "en": "Kyrgyzstan 2026: A new strategic hub between Central Asia and the Western Balkans Ifimes. Подробнее: https://news.google.com/rss/articles/CBMiwAFBVV95cUxORllmYzdpM250QkFTek1CS3NJa25Xa0FrcmVNSnRKUHlwWVptTVZSZXJ2MmYwX2Utc0lBVmY5bUpwY2ttQTAxUmZjamVGOWx0RkhZeUZ3SE9jZlRCZUt0NFAwZkFQUjV2cklVUkloekx5aW50VGFkdWc1YkxsMnlBTC1WSjRjMl9CQkJkTktZRVJIZHljQk9LeWUtdU41dDM0X3pmQkJpU3ZnTkJqUVdfcWhZRnluakRQeUhRU1dJZng?oc=5"
-    }
-  },
-  {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Как узбекистанец Шохрух Ибрагимов строит новую tech-экосистему Центральной Евразии - https://the-tech.kz/",
-      "uz": "Как узбекистанец Шохрух Ибрагимов строит новую tech-экосистему Центральной Евразии - https://the-tech.kz/",
-      "en": "Как узбекистанец Шохрух Ибрагимов строит новую tech-экосистему Центральной Евразии - https://the-tech.kz/"
-    },
-    "b": {
-      "ru": "Как узбекистанец Шохрух Ибрагимов строит новую tech-экосистему Центральной Евразии https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMiuwFBVV95cUxPc3lJNjRYMHhoYmpZZVlVb2tnaHRkczdxVVB4SmZhejdtRHUzNXQ2VHFFU1JOZ25NUmp4TnFzSjNxZXNRSHZjWFFHWmlMZFAwM0hXVzlrTlNpNDNWdkViNHk3d0Z4eXZRQmhMdVVmMnVIQUduOVhuZ1djdWFyRlRUTUdLZmtWSUhYQWNRYzdlZUE4UUZxanhqRzdNLUFTNEd6RV9pZVdwaXZDbzhLYVRBVmROUlhqTTlrYV9v?oc=5",
-      "uz": "Как узбекистанец Шохрух Ибрагимов строит новую tech-экосистему Центральной Евразии https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMiuwFBVV95cUxPc3lJNjRYMHhoYmpZZVlVb2tnaHRkczdxVVB4SmZhejdtRHUzNXQ2VHFFU1JOZ25NUmp4TnFzSjNxZXNRSHZjWFFHWmlMZFAwM0hXVzlrTlNpNDNWdkViNHk3d0Z4eXZRQmhMdVVmMnVIQUduOVhuZ1djdWFyRlRUTUdLZmtWSUhYQWNRYzdlZUE4UUZxanhqRzdNLUFTNEd6RV9pZVdwaXZDbzhLYVRBVmROUlhqTTlrYV9v?oc=5",
-      "en": "Как узбекистанец Шохрух Ибрагимов строит новую tech-экосистему Центральной Евразии https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMiuwFBVV95cUxPc3lJNjRYMHhoYmpZZVlVb2tnaHRkczdxVVB4SmZhejdtRHUzNXQ2VHFFU1JOZ25NUmp4TnFzSjNxZXNRSHZjWFFHWmlMZFAwM0hXVzlrTlNpNDNWdkViNHk3d0Z4eXZRQmhMdVVmMnVIQUduOVhuZ1djdWFyRlRUTUdLZmtWSUhYQWNRYzdlZUE4UUZxanhqRzdNLUFTNEd6RV9pZVdwaXZDbzhLYVRBVmROUlhqTTlrYV9v?oc=5"
-    }
-  },
-  {
     "badge": "🤖 AI",
     "t": {
-      "ru": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане - UzDaily.uz",
-      "uz": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане - UzDaily.uz",
-      "en": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане - UzDaily.uz"
+      "ru": "IT-афиша недели, 14-20 сентября: AWS Cloud & AI Day, Baku ID и Science Tech 2026 - https://the-tech.kz/",
+      "uz": "IT-афиша недели, 14-20 сентября: AWS Cloud & AI Day, Baku ID и Science Tech 2026 - https://the-tech.kz/",
+      "en": "IT-афиша недели, 14-20 сентября: AWS Cloud & AI Day, Baku ID и Science Tech 2026 - https://the-tech.kz/"
     },
     "b": {
-      "ru": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане UzDaily.uz. Подробнее: https://news.google.com/rss/articles/CBMitgFBVV95cUxNVnB6NzYwOHZGU0tWM09BSzgwdlZDdjdpUWw0V1VodWtfa1UzdmctODVzY2NsTzFXMHdUaEhxZVFHSHd3UTZGcEpSNlFxb0ZvVjVoYVB6VGVtRnVJYXVTNEc5Z0RoS0NybHpJemVhQ29SLS1mX1l3UnlWaURabUhZRDI1cFRlUDhfRk05TVZkTmktWFFCQU96UDl6VXdzdERpT29wZWhEbGtxSTc0RFg0R3JERzRtdw?oc=5",
-      "uz": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане UzDaily.uz. Подробнее: https://news.google.com/rss/articles/CBMitgFBVV95cUxNVnB6NzYwOHZGU0tWM09BSzgwdlZDdjdpUWw0V1VodWtfa1UzdmctODVzY2NsTzFXMHdUaEhxZVFHSHd3UTZGcEpSNlFxb0ZvVjVoYVB6VGVtRnVJYXVTNEc5Z0RoS0NybHpJemVhQ29SLS1mX1l3UnlWaURabUhZRDI1cFRlUDhfRk05TVZkTmktWFFCQU96UDl6VXdzdERpT29wZWhEbGtxSTc0RFg0R3JERzRtdw?oc=5",
-      "en": "«Классифайд нового поколения»: Основатель Listee Виталий Туманов — о том, как создать комфортную и безопасную онлайн-среду для частных сделок в Узбекистане UzDaily.uz. Подробнее: https://news.google.com/rss/articles/CBMitgFBVV95cUxNVnB6NzYwOHZGU0tWM09BSzgwdlZDdjdpUWw0V1VodWtfa1UzdmctODVzY2NsTzFXMHdUaEhxZVFHSHd3UTZGcEpSNlFxb0ZvVjVoYVB6VGVtRnVJYXVTNEc5Z0RoS0NybHpJemVhQ29SLS1mX1l3UnlWaURabUhZRDI1cFRlUDhfRk05TVZkTmktWFFCQU96UDl6VXdzdERpT29wZWhEbGtxSTc0RFg0R3JERzRtdw?oc=5"
-    }
-  },
-  {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz",
-      "uz": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz",
-      "en": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz"
-    },
-    "b": {
-      "ru": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5",
-      "uz": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5",
-      "en": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5"
+      "ru": "IT-афиша недели, 14-20 сентября: AWS Cloud & AI Day, Baku ID и Science Tech 2026 https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMioAFBVV95cUxPZmcyX0JtOWVhTWVBRnY3OW80NHhFdW5jbFY1TFBLUHlucGFQc3VaSlZUd1IweUcydi1jOHZ4eDNVd2twSDBKUzl1SC15NVE0ZXBXamY3VTR5aXBJYUs2UFZsQzdidU1xeldYTG83QmFWY1FrR2tBWE83dE9jZVM4a2hndzdzY3ZsN1hxNzJ3MFlRdXVlNWlhNFRzQ3RWMDJm?oc=5",
+      "uz": "IT-афиша недели, 14-20 сентября: AWS Cloud & AI Day, Baku ID и Science Tech 2026 https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMioAFBVV95cUxPZmcyX0JtOWVhTWVBRnY3OW80NHhFdW5jbFY1TFBLUHlucGFQc3VaSlZUd1IweUcydi1jOHZ4eDNVd2twSDBKUzl1SC15NVE0ZXBXamY3VTR5aXBJYUs2UFZsQzdidU1xeldYTG83QmFWY1FrR2tBWE83dE9jZVM4a2hndzdzY3ZsN1hxNzJ3MFlRdXVlNWlhNFRzQ3RWMDJm?oc=5",
+      "en": "IT-афиша недели, 14-20 сентября: AWS Cloud & AI Day, Baku ID и Science Tech 2026 https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMioAFBVV95cUxPZmcyX0JtOWVhTWVBRnY3OW80NHhFdW5jbFY1TFBLUHlucGFQc3VaSlZUd1IweUcydi1jOHZ4eDNVd2twSDBKUzl1SC15NVE0ZXBXamY3VTR5aXBJYUs2UFZsQzdidU1xeldYTG83QmFWY1FrR2tBWE83dE9jZVM4a2hndzdzY3ZsN1hxNzJ3MFlRdXVlNWlhNFRzQ3RWMDJm?oc=5"
     }
   }
 ]
