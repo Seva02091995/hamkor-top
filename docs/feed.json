@@ -1,80 +1,41 @@
 [
   {
-    "badge": "🤖 AI",
+    "badge": "📰 Новости",
     "t": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz"
+      "ru": "A new platform for trade and production will be created in Kyrgyzstan - open.kg",
+      "uz": "A new platform for trade and production will be created in Kyrgyzstan - open.kg",
+      "en": "A new platform for trade and production will be created in Kyrgyzstan - open.kg"
     },
     "b": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5"
+      "ru": "A new platform for trade and production will be created in Kyrgyzstan open.kg. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxOUjZvNXdwQ0hNaEVlYkZLVjV4ZWFsblY4aTRiTGsxaW5oSFhGNDVLTjRqdVNXSVNXSmxsM2hOTVItOF9jU3pWVXFtUEtRaUxIY3g5QjZ4d2VORFVleXphMkhNeWl0eTRkNUw5ekluaTRTX0Fkd2lLdzZsRUlteEZ3WHBCOVhoMWlWbUIyTlE2SlNXR0ROdEZiT0JKbjJzX3lnS0lra2pMYzdDSkdXSDE4eVdsbw?oc=5",
+      "uz": "A new platform for trade and production will be created in Kyrgyzstan open.kg. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxOUjZvNXdwQ0hNaEVlYkZLVjV4ZWFsblY4aTRiTGsxaW5oSFhGNDVLTjRqdVNXSVNXSmxsM2hOTVItOF9jU3pWVXFtUEtRaUxIY3g5QjZ4d2VORFVleXphMkhNeWl0eTRkNUw5ekluaTRTX0Fkd2lLdzZsRUlteEZ3WHBCOVhoMWlWbUIyTlE2SlNXR0ROdEZiT0JKbjJzX3lnS0lra2pMYzdDSkdXSDE4eVdsbw?oc=5",
+      "en": "A new platform for trade and production will be created in Kyrgyzstan open.kg. Подробнее: https://news.google.com/rss/articles/CBMiswFBVV95cUxOUjZvNXdwQ0hNaEVlYkZLVjV4ZWFsblY4aTRiTGsxaW5oSFhGNDVLTjRqdVNXSVNXSmxsM2hOTVItOF9jU3pWVXFtUEtRaUxIY3g5QjZ4d2VORFVleXphMkhNeWl0eTRkNUw5ekluaTRTX0Fkd2lLdzZsRUlteEZ3WHBCOVhoMWlWbUIyTlE2SlNXR0ROdEZiT0JKbjJzX3lnS0lra2pMYzdDSkdXSDE4eVdsbw?oc=5"
+    }
+  },
+  {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz",
+      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz",
+      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана - Газета.uz"
+    },
+    "b": {
+      "ru": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
+      "uz": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5",
+      "en": "Начался приём заявок на два президентских конкурса для стартапов – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTFBNZVBPRGxwaWFZNDhMRVpyMFA0eWdkdXBNbGk1SGRodXhrOW90cTZhME9LU0wxTVRmczVSVWVYVlBGdzl4ekgzeGZoNVozSG9VelRaSW5ucw?oc=5"
     }
   },
   {
     "badge": "📰 Новости",
     "t": {
-      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр - Хабр",
-      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр - Хабр",
-      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр - Хабр"
+      "ru": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
+      "uz": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
+      "en": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz"
     },
     "b": {
-      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dudw?oc=5",
-      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dudw?oc=5",
-      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте / Хабр Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dudw?oc=5"
-    }
-  },
-  {
-    "badge": "📈 Тренд",
-    "t": {
-      "ru": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute",
-      "uz": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute",
-      "en": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute"
-    },
-    "b": {
-      "ru": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5",
-      "uz": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5",
-      "en": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5"
-    }
-  },
-  {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz",
-      "uz": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz",
-      "en": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz"
-    },
-    "b": {
-      "ru": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5",
-      "uz": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5",
-      "en": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5"
-    }
-  },
-  {
-    "badge": "📰 Новости",
-    "t": {
-      "ru": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана - Газета.uz",
-      "uz": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана - Газета.uz",
-      "en": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана - Газета.uz"
-    },
-    "b": {
-      "ru": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JSEI5UmJSOVZBRnJfeUFOMlVYaTlGZGlXXzRMaC13aXRUOUVhdnN1QjJRVHdWNU1SNE95bGptWFFpNS1nRmdzZGUwdFZpWTEyZGRR?oc=5",
-      "uz": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JSEI5UmJSOVZBRnJfeUFOMlVYaTlGZGlXXzRMaC13aXRUOUVhdnN1QjJRVHdWNU1SNE95bGptWFFpNS1nRmdzZGUwdFZpWTEyZGRR?oc=5",
-      "en": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JSEI5UmJSOVZBRnJfeUFOMlVYaTlGZGlXXzRMaC13aXRUOUVhdnN1QjJRVHdWNU1SNE95bGptWFFpNS1nRmdzZGUwdFZpWTEyZGRR?oc=5"
-    }
-  },
-  {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США - Spot.uz",
-      "uz": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США - Spot.uz",
-      "en": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США - Spot.uz"
-    },
-    "b": {
-      "ru": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWEFVX3lxTE5YTEd3azM2ZUlVSzJRRkJtcU1EVU9GS3hoUE1mOU1HWnZDNVV0OW5yMERhWVgwbjVxX3k0NGJDaDhpYkNrVzN1Q2VMVXBCZHdkVEgtZ0dtZWM?oc=5",
-      "uz": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWEFVX3lxTE5YTEd3azM2ZUlVSzJRRkJtcU1EVU9GS3hoUE1mOU1HWnZDNVV0OW5yMERhWVgwbjVxX3k0NGJDaDhpYkNrVzN1Q2VMVXBCZHdkVEgtZ0dtZWM?oc=5",
-      "en": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWEFVX3lxTE5YTEd3azM2ZUlVSzJRRkJtcU1EVU9GS3hoUE1mOU1HWnZDNVV0OW5yMERhWVgwbjVxX3k0NGJDaDhpYkNrVzN1Q2VMVXBCZHdkVEgtZ0dtZWM?oc=5"
+      "ru": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
+      "uz": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
+      "en": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5"
     }
   },
   {
@@ -88,6 +49,45 @@
       "ru": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
       "uz": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
       "en": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае - https://the-tech.kz/",
+      "uz": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае - https://the-tech.kz/",
+      "en": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае - https://the-tech.kz/"
+    },
+    "b": {
+      "ru": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5",
+      "uz": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5",
+      "en": "6 стартапов из Центральной Азии смогут попасть на AI-программу в Китае https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOSkMyNlJOdTRzNE5YZVd5akhHcWtiTk52emJzeWRNczVmdjNNRnpJYjZneDZrQXF3bjg5YWx0NGctemROa0JRS25jNEFYY3ZXSi1JZ2hnYTVWMk5HbUdMV3lKamNVNXpqbE0wNXRHd1lubVFWOFVST1lIbjFySEV5b0VyRW1kVEF0d0lHU1F3R25MUGxp?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства - Dunyo",
+      "uz": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства - Dunyo",
+      "en": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства - Dunyo"
+    },
+    "b": {
+      "ru": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства Dunyo. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxNWTZLUG5RSVptX0M4RnNmYkFBSWxua0ozalFJOXhGVXU3RjBQemZvVGtlVGlkREMycXJfQVVnUHJXVWtSamZYSUlZTmM2TVpVX1l5a3hSM1k0YmN1bzVGNUFEUkdIRF9XSXNuWEd4TUhtYnlPN2ZDdlNSdDh5Qk5ReGFmUlRWczFRcHduU3BVV2ZnZkNfWHZleTRkMTV4VGhCZDBFbUlObkpxdl82Wi04YTh3?oc=5",
+      "uz": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства Dunyo. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxNWTZLUG5RSVptX0M4RnNmYkFBSWxua0ozalFJOXhGVXU3RjBQemZvVGtlVGlkREMycXJfQVVnUHJXVWtSamZYSUlZTmM2TVpVX1l5a3hSM1k0YmN1bzVGNUFEUkdIRF9XSXNuWEd4TUhtYnlPN2ZDdlNSdDh5Qk5ReGFmUlRWczFRcHduU3BVV2ZnZkNfWHZleTRkMTV4VGhCZDBFbUlObkpxdl82Wi04YTh3?oc=5",
+      "en": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства Dunyo. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxNWTZLUG5RSVptX0M4RnNmYkFBSWxua0ozalFJOXhGVXU3RjBQemZvVGtlVGlkREMycXJfQVVnUHJXVWtSamZYSUlZTmM2TVpVX1l5a3hSM1k0YmN1bzVGNUFEUkdIRF9XSXNuWEd4TUhtYnlPN2ZDdlNSdDh5Qk5ReGFmUlRWczFRcHduU3BVV2ZnZkNfWHZleTRkMTV4VGhCZDBFbUlObkpxdl82Wi04YTh3?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана - Газета.uz",
+      "uz": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана - Газета.uz",
+      "en": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана - Газета.uz"
+    },
+    "b": {
+      "ru": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JSEI5UmJSOVZBRnJfeUFOMlVYaTlGZGlXXzRMaC13aXRUOUVhdnN1QjJRVHdWNU1SNE95bGptWFFpNS1nRmdzZGUwdFZpWTEyZGRR?oc=5",
+      "uz": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JSEI5UmJSOVZBRnJfeUFOMlVYaTlGZGlXXzRMaC13aXRUOUVhdnN1QjJRVHdWNU1SNE95bGptWFFpNS1nRmdzZGUwdFZpWTEyZGRR?oc=5",
+      "en": "Практика с первого курса: как в IT Park University готовят студентов к работе в IT – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiU0FVX3lxTE9JSEI5UmJSOVZBRnJfeUFOMlVYaTlGZGlXXzRMaC13aXRUOUVhdnN1QjJRVHdWNU1SNE95bGptWFFpNS1nRmdzZGUwdFZpWTEyZGRR?oc=5"
     }
   }
 ]
