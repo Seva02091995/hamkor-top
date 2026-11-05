@@ -1,15 +1,28 @@
 [
   {
-    "badge": "📰 Новости",
+    "badge": "🤖 AI",
     "t": {
-      "ru": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код»",
-      "uz": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код»",
-      "en": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году - Журнал «Код»"
+      "ru": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США - Spot.uz",
+      "uz": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США - Spot.uz",
+      "en": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США - Spot.uz"
     },
     "b": {
-      "ru": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
-      "uz": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5",
-      "en": "Профессии в сфере нейросетей: кем работать и сколько платят в 2026 году Журнал «Код». Подробнее: https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MazZsUDV5bC1zWktNVUdobzdHbldmeERzVDdqemE4XzNqNUNwaGpfX08yQzdsbDhQRXd5bWVmdVRabnpxc1pCTFhnUGpuYlJubk5wc3gxeVZISnlSTUlFTDR3VGNfZ0nSAWxBVV95cUxQN0RpLXREazR3YnhJbnJSZGU0Q0ZlSjNSanZsT0txa1ZfcGMwdkRZaXF3TThTMHRySllkOU9FTnkwdkJmelYyeFE2RlJEX3BYYmkxTG1WYjdIUmM0eVl5Sm5FYVI4ZXZHOTAyYTM?oc=5"
+      "ru": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWEFVX3lxTE5YTEd3azM2ZUlVSzJRRkJtcU1EVU9GS3hoUE1mOU1HWnZDNVV0OW5yMERhWVgwbjVxX3k0NGJDaDhpYkNrVzN1Q2VMVXBCZHdkVEgtZ0dtZWM?oc=5",
+      "uz": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWEFVX3lxTE5YTEd3azM2ZUlVSzJRRkJtcU1EVU9GS3hoUE1mOU1HWnZDNVV0OW5yMERhWVgwbjVxX3k0NGJDaDhpYkNrVzN1Q2VMVXBCZHdkVEgtZ0dtZWM?oc=5",
+      "en": "Unitlab: как команда из Ташкента строит AI-бизнес для рынка США Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiWEFVX3lxTE5YTEd3azM2ZUlVSzJRRkJtcU1EVU9GS3hoUE1mOU1HWnZDNVV0OW5yMERhWVgwbjVxX3k0NGJDaDhpYkNrVzN1Q2VMVXBCZHdkVEgtZ0dtZWM?oc=5"
+    }
+  },
+  {
+    "badge": "📈 Тренд",
+    "t": {
+      "ru": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute",
+      "uz": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute",
+      "en": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute"
+    },
+    "b": {
+      "ru": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5",
+      "uz": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5",
+      "en": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5"
     }
   },
   {
@@ -26,68 +39,55 @@
     }
   },
   {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США - Газета.uz"
-    },
-    "b": {
-      "ru": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "uz": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5",
-      "en": "В Узбекистане 15 AI-стартапов получат инвестиции на общую сумму 1 млн долларов США Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiV0FVX3lxTE1pelVxZUVTWkhsQVlHT0dVVlBfSUVobF9VUFZWZ3p6QkZOaHctWnRlcDBfbFFDRUh0T2lBVW5XUTgyZXhwc3dNelFXdlZ2SHF6QWVtZTZRZw?oc=5"
-    }
-  },
-  {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz",
-      "uz": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz",
-      "en": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US - the-tech.kz"
-    },
-    "b": {
-      "ru": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5",
-      "uz": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5",
-      "en": "An entrepreneur from Uzbekistan built an AI gadget and conquered CES 2026 in the US the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMipwFBVV95cUxNU1dUMkZuekRrYTRXdzlkV1JUd1FjUDM5Q25yNmpadlBlUjlUSk9PSjlnT2NLOGRiZU05MUxjSzI1WVJsQW4tUzJBNWktVmhVWHN3cUtlZ1JhV0twMnp4SXJsY011cHJrWlplOGg2YVlIc29GWlZwQ0JsWkVoTk5MbW0tbUxKM3doellDNm5GV1ZKSjRnZVN6Y0JTS0dvdVFZZGVlLXpsZw?oc=5"
-    }
-  },
-  {
     "badge": "📰 Новости",
     "t": {
-      "ru": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz",
-      "uz": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz",
-      "en": "Workshop по цифровой грамотности для женщин и молодежи - Spot.uz"
+      "ru": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства - Dunyo",
+      "uz": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства - Dunyo",
+      "en": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства - Dunyo"
     },
     "b": {
-      "ru": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5",
-      "uz": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5",
-      "en": "Workshop по цифровой грамотности для женщин и молодежи Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMiVkFVX3lxTE5PUG5vdlFfbUtyT1RVaEM1RWxDMU9BcVp0ZDFWVVQ3TkthTS10YVl3d3pqWGNOUExyVnBMS1h0dFVIdDRvcTFvbU5kYUFqWGFBNnNmcmlR?oc=5"
+      "ru": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства Dunyo. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxNWTZLUG5RSVptX0M4RnNmYkFBSWxua0ozalFJOXhGVXU3RjBQemZvVGtlVGlkREMycXJfQVVnUHJXVWtSamZYSUlZTmM2TVpVX1l5a3hSM1k0YmN1bzVGNUFEUkdIRF9XSXNuWEd4TUhtYnlPN2ZDdlNSdDh5Qk5ReGFmUlRWczFRcHduU3BVV2ZnZkNfWHZleTRkMTV4VGhCZDBFbUlObkpxdl82Wi04YTh3?oc=5",
+      "uz": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства Dunyo. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxNWTZLUG5RSVptX0M4RnNmYkFBSWxua0ozalFJOXhGVXU3RjBQemZvVGtlVGlkREMycXJfQVVnUHJXVWtSamZYSUlZTmM2TVpVX1l5a3hSM1k0YmN1bzVGNUFEUkdIRF9XSXNuWEd4TUhtYnlPN2ZDdlNSdDh5Qk5ReGFmUlRWczFRcHduU3BVV2ZnZkNfWHZleTRkMTV4VGhCZDBFbUlObkpxdl82Wi04YTh3?oc=5",
+      "en": "Журнал «Business Central Asia»: Узбекистан – страна, в которой историческое наследие и современные процессы развития формируют новый образ государства Dunyo. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxNWTZLUG5RSVptX0M4RnNmYkFBSWxua0ozalFJOXhGVXU3RjBQemZvVGtlVGlkREMycXJfQVVnUHJXVWtSamZYSUlZTmM2TVpVX1l5a3hSM1k0YmN1bzVGNUFEUkdIRF9XSXNuWEd4TUhtYnlPN2ZDdlNSdDh5Qk5ReGFmUlRWczFRcHduU3BVV2ZnZkNfWHZleTRkMTV4VGhCZDBFbUlObkpxdl82Wi04YTh3?oc=5"
     }
   },
   {
-    "badge": "🚀 Стартапы",
+    "badge": "🤖 AI",
     "t": {
-      "ru": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане - Repost.uz",
-      "uz": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане - Repost.uz",
-      "en": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане - Repost.uz"
+      "ru": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане - Spot.uz",
+      "uz": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане - Spot.uz",
+      "en": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане - Spot.uz"
     },
     "b": {
-      "ru": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане Repost.uz. Подробнее: https://news.google.com/rss/articles/CBMidEFVX3lxTFBWUEVySXpZenRRVDhnajJ1am4wemt1alFPR0lfcFplRTNVZlpXYTFFUTZuTVJoem8xZVR2SjQtZEtsM1FkUDZ3WE9PY0ZoZlA5MkxzNksxLW1odkktY2pqVWJndVMySlVvQ1A2ZGpKUFNjMHlx?oc=5",
-      "uz": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане Repost.uz. Подробнее: https://news.google.com/rss/articles/CBMidEFVX3lxTFBWUEVySXpZenRRVDhnajJ1am4wemt1alFPR0lfcFplRTNVZlpXYTFFUTZuTVJoem8xZVR2SjQtZEtsM1FkUDZ3WE9PY0ZoZlA5MkxzNksxLW1odkktY2pqVWJndVMySlVvQ1A2ZGpKUFNjMHlx?oc=5",
-      "en": "От мировых корпораций до собственного стартапа: кто такой Виталий Туманов — основатель нового классифайда в Узбекистане Repost.uz. Подробнее: https://news.google.com/rss/articles/CBMidEFVX3lxTFBWUEVySXpZenRRVDhnajJ1am4wemt1alFPR0lfcFplRTNVZlpXYTFFUTZuTVJoem8xZVR2SjQtZEtsM1FkUDZ3WE9PY0ZoZlA5MkxzNksxLW1odkktY2pqVWJndVMySlVvQ1A2ZGpKUFNjMHlx?oc=5"
+      "ru": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMib0FVX3lxTE9tcGwyZnRTdUNUMnE4SjlFQjhQVGw0NDJzZW51MXczSEhXLXlZQjg3N3BUOERES3BlMGktdnhoNmVvb205Z1NOWU1hYlNIVjRCVWR1Z2pxT0RfamhhYTJJT3JIaDVPbExUZXpYS3pFVQ?oc=5",
+      "uz": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMib0FVX3lxTE9tcGwyZnRTdUNUMnE4SjlFQjhQVGw0NDJzZW51MXczSEhXLXlZQjg3N3BUOERES3BlMGktdnhoNmVvb205Z1NOWU1hYlNIVjRCVWR1Z2pxT0RfamhhYTJJT3JIaDVPbExUZXpYS3pFVQ?oc=5",
+      "en": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMib0FVX3lxTE9tcGwyZnRTdUNUMnE4SjlFQjhQVGw0NDJzZW51MXczSEhXLXlZQjg3N3BUOERES3BlMGktdnhoNmVvb205Z1NOWU1hYlNIVjRCVWR1Z2pxT0RfamhhYTJJT3JIaDVPbExUZXpYS3pFVQ?oc=5"
     }
   },
   {
-    "badge": "📰 Новости",
+    "badge": "🤖 AI",
     "t": {
-      "ru": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
-      "uz": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz",
-      "en": "Узбекистанец прошел в Y Combinator - DigitalBusiness.kz"
+      "ru": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz",
+      "uz": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz",
+      "en": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan - Газета.uz"
     },
     "b": {
-      "ru": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
-      "uz": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5",
-      "en": "Узбекистанец прошел в Y Combinator DigitalBusiness.kz. Подробнее: https://news.google.com/rss/articles/CBMigAFBVV95cUxOWkFZTVdoUnB5SGlrc3R4Wnp6dWVNXy1xb2RDakdYQk9QbVVPMVdNMExfZmVERzFUOVZtcFB5MVZDUXkwNlM1dzY3LWpJYUxoNm5QbUZpLS12Q2RqXzdrZTAyMU5IUWVuU0FaWFdfRTFBbUVDLWpCOWZRVXBrU0hTT9IBhgFBVV95cUxNYkVOSkJ4ZUR0aVhORmgtS2ZoTFhJc1NJb1E2NHQxd0pkb3I4ZXVsWlEteENRVGVkc285UDNTZ1VZY0c2NGpTQXlJYmwwQVgxN0hTNWNJQjQ1Z2F5aER3MXI0RmVFSUc1c0dhZ25KS28zQTF0R18yUUNfZFA2NjY3bzROSUQ2Zw?oc=5"
+      "ru": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5",
+      "uz": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5",
+      "en": "«Искусственный интеллект становится стратегической инфраструктурой» — эксперты ICT Week Uzbekistan Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMibEFVX3lxTE1aNEd1QmFndG5wX2pOTXhQWm1qSFFqVHpxQXR4aWdUOWo1T3A3cFZzeVM4UC1ORkVaV3hmajVUclV4Q3VwTVpZd1F1TTdWQ3oxeFo2SFZ0SU5YUkJtSWNpdGhZbFhOTndoQkJVMQ?oc=5"
+    }
+  },
+  {
+    "badge": "🤖 AI",
+    "t": {
+      "ru": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры - Хабр",
+      "uz": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры - Хабр",
+      "en": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры - Хабр"
+    },
+    "b": {
+      "ru": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры Хабр. Подробнее: https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xR1NhZXZBTkFMcHJDLS15SThHYWE5UlhYb0ZCOHJ0REo3MmtwNm56dDZDMTNTY2xzZGRQcFVBdGRZTHd1WFBtdTYyUjZTcWhBN0g2dnBrdmo0VnlzR1N5MGw0dlduSW9i0gFYQVVfeXFMT0VLMDkzaXZQZ2xBU3N6UnJoRGJHdnFrb0hOWVNyOW54Qk9oZW5YTTdhQ0tQOEE2OWtBcm4zX19Uc0s2ODVTZWtlQlFEbFdhYTNMY2kwS3BRYw?oc=5",
+      "uz": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры Хабр. Подробнее: https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xR1NhZXZBTkFMcHJDLS15SThHYWE5UlhYb0ZCOHJ0REo3MmtwNm56dDZDMTNTY2xzZGRQcFVBdGRZTHd1WFBtdTYyUjZTcWhBN0g2dnBrdmo0VnlzR1N5MGw0dlduSW9i0gFYQVVfeXFMT0VLMDkzaXZQZ2xBU3N6UnJoRGJHdnFrb0hOWVNyOW54Qk9oZW5YTTdhQ0tQOEE2OWtBcm4zX19Uc0s2ODVTZWtlQlFEbFdhYTNMY2kwS3BRYw?oc=5",
+      "en": "Рынок IT‑труда в 2026: реальность найма, приоритет для навыков в Ai, ловушки для «волков» и работающие стратегии карьеры Хабр. Подробнее: https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xR1NhZXZBTkFMcHJDLS15SThHYWE5UlhYb0ZCOHJ0REo3MmtwNm56dDZDMTNTY2xzZGRQcFVBdGRZTHd1WFBtdTYyUjZTcWhBN0g2dnBrdmo0VnlzR1N5MGw0dlduSW9i0gFYQVVfeXFMT0VLMDkzaXZQZ2xBU3N6UnJoRGJHdnFrb0hOWVNyOW54Qk9oZW5YTTdhQ0tQOEE2OWtBcm4zX19Uc0s2ODVTZWtlQlFEbFdhYTNMY2kwS3BRYw?oc=5"
     }
   }
 ]
