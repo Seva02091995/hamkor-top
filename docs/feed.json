@@ -1,5 +1,18 @@
 [
   {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "IT Park University объявляет о старте приемной кампании – Новости Узбекистана - Газета.uz",
+      "uz": "IT Park University объявляет о старте приемной кампании – Новости Узбекистана - Газета.uz",
+      "en": "IT Park University объявляет о старте приемной кампании – Новости Узбекистана - Газета.uz"
+    },
+    "b": {
+      "ru": "IT Park University объявляет о старте приемной кампании – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiZkFVX3lxTE9yMU1iRDVLNWtmZ21ITG1lMjJyWW5xMFdjQlg0XzJQUVZDai1UTWMxTld4M0RKTmhLbDBUaEtrbnBkRVZaOXphbzlIdENBUG41M29vNEZsRWtFM3pjZTZpQnJHSlB5UQ?oc=5",
+      "uz": "IT Park University объявляет о старте приемной кампании – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiZkFVX3lxTE9yMU1iRDVLNWtmZ21ITG1lMjJyWW5xMFdjQlg0XzJQUVZDai1UTWMxTld4M0RKTmhLbDBUaEtrbnBkRVZaOXphbzlIdENBUG41M29vNEZsRWtFM3pjZTZpQnJHSlB5UQ?oc=5",
+      "en": "IT Park University объявляет о старте приемной кампании – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiZkFVX3lxTE9yMU1iRDVLNWtmZ21ITG1lMjJyWW5xMFdjQlg0XzJQUVZDai1UTWMxTld4M0RKTmhLbDBUaEtrbnBkRVZaOXphbzlIdENBUG41M29vNEZsRWtFM3pjZTZpQnJHSlB5UQ?oc=5"
+    }
+  },
+  {
     "badge": "💼 Карьера",
     "t": {
       "ru": "Карьера в IT: 6 актуальных стажировок и программ для студентов и начинающих специалистов - https://the-tech.kz/",
@@ -15,53 +28,14 @@
   {
     "badge": "🤖 AI",
     "t": {
-      "ru": "IT-афиша недели, 11-17 мая: Global Tech Weekend Tashkent, Business Technology Expo и AI Fest - https://the-tech.kz/",
-      "uz": "IT-афиша недели, 11-17 мая: Global Tech Weekend Tashkent, Business Technology Expo и AI Fest - https://the-tech.kz/",
-      "en": "IT-афиша недели, 11-17 мая: Global Tech Weekend Tashkent, Business Technology Expo и AI Fest - https://the-tech.kz/"
+      "ru": "Servercore проведёт флагманский ужин «IT-плов»: итоги года в AI-инфраструктуре – Новости Узбекистана - Газета.uz",
+      "uz": "Servercore проведёт флагманский ужин «IT-плов»: итоги года в AI-инфраструктуре – Новости Узбекистана - Газета.uz",
+      "en": "Servercore проведёт флагманский ужин «IT-плов»: итоги года в AI-инфраструктуре – Новости Узбекистана - Газета.uz"
     },
     "b": {
-      "ru": "IT-афиша недели, 11-17 мая: Global Tech Weekend Tashkent, Business Technology Expo и AI Fest https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxQTHRoU0cwemV5Q2ZjODZKNkE3aEdPWkI1YjBSWGJfdTBVV19HUkRlSGx0cjU5dTJWWGoyVzFsRVEzLTZMZmtpc2ZyekV6WWI0dUpIQS1zd0hCQTRtNmdSYXczQktGUU1VVl84dEJ1ZUE3UnZ5VXg0c1JpQ3BvRXR6ZHdQZzdXMUdnNERjTHQwZzN2RVFfQjlkSGhMNHJqaFZFSGdUc1dWVEZNTmNpamJNRURB?oc=5",
-      "uz": "IT-афиша недели, 11-17 мая: Global Tech Weekend Tashkent, Business Technology Expo и AI Fest https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxQTHRoU0cwemV5Q2ZjODZKNkE3aEdPWkI1YjBSWGJfdTBVV19HUkRlSGx0cjU5dTJWWGoyVzFsRVEzLTZMZmtpc2ZyekV6WWI0dUpIQS1zd0hCQTRtNmdSYXczQktGUU1VVl84dEJ1ZUE3UnZ5VXg0c1JpQ3BvRXR6ZHdQZzdXMUdnNERjTHQwZzN2RVFfQjlkSGhMNHJqaFZFSGdUc1dWVEZNTmNpamJNRURB?oc=5",
-      "en": "IT-афиша недели, 11-17 мая: Global Tech Weekend Tashkent, Business Technology Expo и AI Fest https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMisgFBVV95cUxQTHRoU0cwemV5Q2ZjODZKNkE3aEdPWkI1YjBSWGJfdTBVV19HUkRlSGx0cjU5dTJWWGoyVzFsRVEzLTZMZmtpc2ZyekV6WWI0dUpIQS1zd0hCQTRtNmdSYXczQktGUU1VVl84dEJ1ZUE3UnZ5VXg0c1JpQ3BvRXR6ZHdQZzdXMUdnNERjTHQwZzN2RVFfQjlkSGhMNHJqaFZFSGdUc1dWVEZNTmNpamJNRURB?oc=5"
-    }
-  },
-  {
-    "badge": "🚀 Стартапы",
-    "t": {
-      "ru": "Стартап Cerberus стал победителем Startup World Cup Uzbekistan - https://the-tech.kz/",
-      "uz": "Стартап Cerberus стал победителем Startup World Cup Uzbekistan - https://the-tech.kz/",
-      "en": "Стартап Cerberus стал победителем Startup World Cup Uzbekistan - https://the-tech.kz/"
-    },
-    "b": {
-      "ru": "Стартап Cerberus стал победителем Startup World Cup Uzbekistan https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdEFkeWtJZ3h5QUh2b3hTZ2YxM2JhZTVXMFg5c05aUHI0d3Z0MkRSX2tkRjdiUzFVNWJ1bzdjZnFpd29lUlRBeGMtd1pNSnBMYWVRbWtKOU5nUm80bG9EQ0d5UEh1OVdSSFNqNVVaUmlVcDAwQXNtMGtoZ2tqRlJDMEZEME5pZ0Z6Qlkw?oc=5",
-      "uz": "Стартап Cerberus стал победителем Startup World Cup Uzbekistan https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdEFkeWtJZ3h5QUh2b3hTZ2YxM2JhZTVXMFg5c05aUHI0d3Z0MkRSX2tkRjdiUzFVNWJ1bzdjZnFpd29lUlRBeGMtd1pNSnBMYWVRbWtKOU5nUm80bG9EQ0d5UEh1OVdSSFNqNVVaUmlVcDAwQXNtMGtoZ2tqRlJDMEZEME5pZ0Z6Qlkw?oc=5",
-      "en": "Стартап Cerberus стал победителем Startup World Cup Uzbekistan https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdEFkeWtJZ3h5QUh2b3hTZ2YxM2JhZTVXMFg5c05aUHI0d3Z0MkRSX2tkRjdiUzFVNWJ1bzdjZnFpd29lUlRBeGMtd1pNSnBMYWVRbWtKOU5nUm80bG9EQ0d5UEh1OVdSSFNqNVVaUmlVcDAwQXNtMGtoZ2tqRlJDMEZEME5pZ0Z6Qlkw?oc=5"
-    }
-  },
-  {
-    "badge": "🤖 AI",
-    "t": {
-      "ru": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане - Spot.uz",
-      "uz": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане - Spot.uz",
-      "en": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане - Spot.uz"
-    },
-    "b": {
-      "ru": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMib0FVX3lxTE9tcGwyZnRTdUNUMnE4SjlFQjhQVGw0NDJzZW51MXczSEhXLXlZQjg3N3BUOERES3BlMGktdnhoNmVvb205Z1NOWU1hYlNIVjRCVWR1Z2pxT0RfamhhYTJJT3JIaDVPbExUZXpYS3pFVQ?oc=5",
-      "uz": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMib0FVX3lxTE9tcGwyZnRTdUNUMnE4SjlFQjhQVGw0NDJzZW51MXczSEhXLXlZQjg3N3BUOERES3BlMGktdnhoNmVvb205Z1NOWU1hYlNIVjRCVWR1Z2pxT0RfamhhYTJJT3JIaDVPbExUZXpYS3pFVQ?oc=5",
-      "en": "«Сейчас это окно возможностей»: как начать карьеру в AI и ML в Узбекистане Spot.uz. Подробнее: https://news.google.com/rss/articles/CBMib0FVX3lxTE9tcGwyZnRTdUNUMnE4SjlFQjhQVGw0NDJzZW51MXczSEhXLXlZQjg3N3BUOERES3BlMGktdnhoNmVvb205Z1NOWU1hYlNIVjRCVWR1Z2pxT0RfamhhYTJJT3JIaDVPbExUZXpYS3pFVQ?oc=5"
-    }
-  },
-  {
-    "badge": "📈 Тренд",
-    "t": {
-      "ru": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute",
-      "uz": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute",
-      "en": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia - Global Green Growth Institute"
-    },
-    "b": {
-      "ru": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5",
-      "uz": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5",
-      "en": "GGGI Holds a Closing Event for its Climate Finance Project in Central Asia Global Green Growth Institute. Подробнее: https://news.google.com/rss/articles/CBMilwFBVV95cUxQeTMzcHlsSGlYbUZibDBObHM5MjIwdk9QTWFHbU1VTk5pQ2E2bGlsamZVekpTR2E1OUgzN3hsQm5iY0ludnNPMWV3NE11eU9LeF9xY0hWRU5vcmhmVWt5NTNza1JlRmVqQkktbUlHTks4QXVJMnVQaUxIdEZWOWpMUjVDVE9EWGY3Y2pxblFCeEFJNzFJYVdV?oc=5"
+      "ru": "Servercore проведёт флагманский ужин «IT-плов»: итоги года в AI-инфраструктуре – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiW0FVX3lxTE5qVDZmcHctSmh3dzlxZ21ycjEyZFdnczhQR1AtSWthaDgxeDFhSEVGMmVVVHF5cVNEQmVKLXVRS3Q1Tm02SnhEZmJJdmgtb21SS29uTWxOWl93ajg?oc=5",
+      "uz": "Servercore проведёт флагманский ужин «IT-плов»: итоги года в AI-инфраструктуре – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiW0FVX3lxTE5qVDZmcHctSmh3dzlxZ21ycjEyZFdnczhQR1AtSWthaDgxeDFhSEVGMmVVVHF5cVNEQmVKLXVRS3Q1Tm02SnhEZmJJdmgtb21SS29uTWxOWl93ajg?oc=5",
+      "en": "Servercore проведёт флагманский ужин «IT-плов»: итоги года в AI-инфраструктуре – Новости Узбекистана Газета.uz. Подробнее: https://news.google.com/rss/articles/CBMiW0FVX3lxTE5qVDZmcHctSmh3dzlxZ21ycjEyZFdnczhQR1AtSWthaDgxeDFhSEVGMmVVVHF5cVNEQmVKLXVRS3Q1Tm02SnhEZmJJdmgtb21SS29uTWxOWl93ajg?oc=5"
     }
   },
   {
@@ -78,6 +52,19 @@
     }
   },
   {
+    "badge": "🚀 Стартапы",
+    "t": {
+      "ru": "16 стартапов из Казахстана и Узбекистана представили свои технологии на TechCrunch Disrupt 2026 - https://the-tech.kz/",
+      "uz": "16 стартапов из Казахстана и Узбекистана представили свои технологии на TechCrunch Disrupt 2026 - https://the-tech.kz/",
+      "en": "16 стартапов из Казахстана и Узбекистана представили свои технологии на TechCrunch Disrupt 2026 - https://the-tech.kz/"
+    },
+    "b": {
+      "ru": "16 стартапов из Казахстана и Узбекистана представили свои технологии на TechCrunch Disrupt 2026 https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMitwFBVV95cUxNM0hBWTZadzVvQlpfXy1SSFhGVVZSV080d0FzNm9qMzRZUnV6R1Nic0lYR01JcFhRdmNxOFZTOFA5SW5zQnVBVHd4NnhSbWgtcWFsWnFfdDl5NkpYMWwtQzZQb2RoWjdSVC14dThIMkdxSHotejMzV3dtTWloZzVOaEtJdTY2RzhCVXJUQ1NqOVFPWEpCd0NselhwM0JCSGpKdkRGUEJHdU00XzJlUWx6bDFKNzRCbWc?oc=5",
+      "uz": "16 стартапов из Казахстана и Узбекистана представили свои технологии на TechCrunch Disrupt 2026 https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMitwFBVV95cUxNM0hBWTZadzVvQlpfXy1SSFhGVVZSV080d0FzNm9qMzRZUnV6R1Nic0lYR01JcFhRdmNxOFZTOFA5SW5zQnVBVHd4NnhSbWgtcWFsWnFfdDl5NkpYMWwtQzZQb2RoWjdSVC14dThIMkdxSHotejMzV3dtTWloZzVOaEtJdTY2RzhCVXJUQ1NqOVFPWEpCd0NselhwM0JCSGpKdkRGUEJHdU00XzJlUWx6bDFKNzRCbWc?oc=5",
+      "en": "16 стартапов из Казахстана и Узбекистана представили свои технологии на TechCrunch Disrupt 2026 https://the-tech.kz/. Подробнее: https://news.google.com/rss/articles/CBMitwFBVV95cUxNM0hBWTZadzVvQlpfXy1SSFhGVVZSV080d0FzNm9qMzRZUnV6R1Nic0lYR01JcFhRdmNxOFZTOFA5SW5zQnVBVHd4NnhSbWgtcWFsWnFfdDl5NkpYMWwtQzZQb2RoWjdSVC14dThIMkdxSHotejMzV3dtTWloZzVOaEtJdTY2RzhCVXJUQ1NqOVFPWEpCd0NselhwM0JCSGpKdkRGUEJHdU00XzJlUWx6bDFKNzRCbWc?oc=5"
+    }
+  },
+  {
     "badge": "🤖 AI",
     "t": {
       "ru": "В Узбекистане продолжается прием заявок на President AI Award 2026 - the-tech.kz",
@@ -88,6 +75,19 @@
       "ru": "В Узбекистане продолжается прием заявок на President AI Award 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOVVR3UTFpREFHS1A4dFBWazVuOElVbVRGbmpLaTM2cnZXM3ZZSmVSVzZpNXI5MC02Z0ExajZMdjhXSjJBUU9PUEU1ZWFTNldWd00xTmRQX0RSZFRtOFZUSHR2RUpVMFF6RUNWZFdxLTZDMUxnZlp2OVJZTGFybk53S3FtUDJyVUV5S2pLZVVmSnhmdFI3?oc=5",
       "uz": "В Узбекистане продолжается прием заявок на President AI Award 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOVVR3UTFpREFHS1A4dFBWazVuOElVbVRGbmpLaTM2cnZXM3ZZSmVSVzZpNXI5MC02Z0ExajZMdjhXSjJBUU9PUEU1ZWFTNldWd00xTmRQX0RSZFRtOFZUSHR2RUpVMFF6RUNWZFdxLTZDMUxnZlp2OVJZTGFybk53S3FtUDJyVUV5S2pLZVVmSnhmdFI3?oc=5",
       "en": "В Узбекистане продолжается прием заявок на President AI Award 2026 the-tech.kz. Подробнее: https://news.google.com/rss/articles/CBMilAFBVV95cUxOVVR3UTFpREFHS1A4dFBWazVuOElVbVRGbmpLaTM2cnZXM3ZZSmVSVzZpNXI5MC02Z0ExajZMdjhXSjJBUU9PUEU1ZWFTNldWd00xTmRQX0RSZFRtOFZUSHR2RUpVMFF6RUNWZFdxLTZDMUxnZlp2OVJZTGFybk53S3FtUDJyVUV5S2pLZVVmSnhmdFI3?oc=5"
+    }
+  },
+  {
+    "badge": "📰 Новости",
+    "t": {
+      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте - Хабр",
+      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте - Хабр",
+      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте - Хабр"
+    },
+    "b": {
+      "ru": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5",
+      "uz": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5",
+      "en": "Нулевой налог и узбекский «рай»: что на самом деле ждёт IT-бизнес в Ташкенте Хабр. Подробнее: https://news.google.com/rss/articles/CBMiTkFVX3lxTE02QUtQdnR5SWpLQ0drbzBYQnE3MGEtMkJoSUx1OVpPWGszRndnRXJRX3R4LUhBMzY5TlBnQW5Oa3JTbUt5S214S3NKV3dud9IBWEFVX3lxTE5xOGxtaG5IWjBvU0QtQVN0QlFqUnBpZU5MTmZGUV92Vl9sZ20tNl9GcWJVNm9PWGhla2J1UUxYRWQxVjlMSjRmZ3EyMWt2UG1YS2h3U0tDNkU?oc=5"
     }
   }
 ]
